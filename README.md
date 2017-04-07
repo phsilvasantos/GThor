@@ -11,7 +11,7 @@ MDF-e Manifesto Eletrônico de Documentos
 
 # Tecnologias Usadas
 
-.Net 4.6.1
+.Net 4.6.2
 
 NHibernate
 
