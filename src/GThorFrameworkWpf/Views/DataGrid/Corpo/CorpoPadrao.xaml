@@ -1,0 +1,93 @@
+﻿<UserControl x:Class="ComercialFrameworkWpf.Views.DataGrid.Corpo.CorpoPadrao"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             mc:Ignorable="d" 
+             d:DesignWidth="960"
+             Loaded="CorpoPadrao_OnLoaded">
+    
+    <DataGrid
+        Focusable="False"
+        DockPanel.Dock="Top"
+                  ItemsSource="{Binding ListaEntidades}"
+                  AutoGenerateColumns="False"
+                  IsReadOnly="True"
+                  SelectedItem="{Binding EntidadeSelecionada}"
+                  Name="DataGrid">
+
+        <DataGrid.RowStyle>
+            <Style TargetType="DataGridRow" BasedOn="{StaticResource ComercialDataGridRow}">
+                <EventSetter Event="MouseDoubleClick" Handler="DoubleClickDataGridRow" />
+            </Style>
+        </DataGrid.RowStyle>
+
+        <DataGrid.Columns>
+            <DataGridTemplateColumn Width="50">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+                            <Button Background="Transparent" 
+                                    Command="{Binding Path=DataContext.CommandButtonOpcoes,       
+                                     RelativeSource= {RelativeSource FindAncestor,
+                                      AncestorType={x:Type DataGrid}}}">
+                                <iconPacks:PackIconModern Width="24" Height="24"
+                                              Kind="List" Foreground="Blue"
+                                                      FontWeight="Bold"/>
+                            </Button>
+
+
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="50">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+
+
+                            <Button Background="Transparent" 
+                                    Command="{Binding Path=DataContext.CommandButtonEditar,       
+                                     RelativeSource= {RelativeSource FindAncestor,
+                                      AncestorType={x:Type DataGrid}}}">
+                                <iconPacks:PackIconModern Width="24" Height="24"
+                                              Kind="Edit" Foreground="Blue"
+                                                      FontWeight="Bold"/>
+                            </Button>
+
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+            <DataGridTemplateColumn Width="50">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                            <Button Background="Transparent" 
+                                    Command="{Binding Path=DataContext.CommandButtonDeletar,       
+                                     RelativeSource= {RelativeSource FindAncestor,
+                                      AncestorType={x:Type DataGrid}}}">
+                                
+                                <iconPacks:PackIconModern Width="24" Height="24"
+                                                      Kind="Delete" Foreground="Blue"
+                                                      FontWeight="Bold"/>
+                                
+                            </Button>
+
+
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid.Columns>
+
+    </DataGrid>
+</UserControl>
