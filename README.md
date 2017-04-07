@@ -9,3 +9,5 @@ Gerenciador Thor - Emissor Gratuito de Documentos Fiscais Eletrônicos - Nota Fi
 NHibernate
 
 Sqlite
+
+Pencil - Protótipo
