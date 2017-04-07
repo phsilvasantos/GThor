@@ -3,6 +3,9 @@ Gerenciador Thor - Emissor Gratuito de Documentos Fiscais Eletrônicos - Nota Fi
 
 
 # Tecnologias Usadas
+
 .Net 4.6.1
+
 NHibernate
+
 Sqlite
