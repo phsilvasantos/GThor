@@ -11,7 +11,6 @@ namespace GThor
 
         private void GerenciarUsuarios_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            
         }
     }
 }
