@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using GThor.Views;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
@@ -42,7 +43,10 @@ namespace GThor.Models.Usuarios
 
         public override void NovoRegistroAction(object obj)
         {
-            
+            var model = new UsuarioFormModel();
+            var usuarioForm = new UsuarioForm(model);
+
+            usuarioForm.ShowDialog();
         }
     }
 }
