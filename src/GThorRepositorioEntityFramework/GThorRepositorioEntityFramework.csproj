@@ -177,6 +177,10 @@
       <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
       <Name>GThorFrameworkDominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
+      <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
+      <Name>GThorRepositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
