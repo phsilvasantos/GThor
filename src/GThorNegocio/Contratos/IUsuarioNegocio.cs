@@ -7,5 +7,6 @@ namespace GThorNegocio.Contratos
     {
         IEnumerable<Usuario> Lista();
         void Deletar(Usuario usuario);
+        void Salvar(Usuario usuario);
     }
 }

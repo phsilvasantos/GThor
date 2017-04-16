@@ -1,6 +1,8 @@
-﻿namespace ComercialBiblioteca.Ferramentas.HelpersHidratacaoValores
+﻿using GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia;
+
+namespace GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores
 {
-    public static class StringHidratacao
+    public static class StringExtensions
     {
         public static bool IsNullOrEmpty(this string valor)
         {
@@ -20,6 +22,16 @@
         public static string TrimOrNull(this string valor)
         {
             return valor?.Trim();
+        }
+
+        public static bool IsContemEspacos(this string valor)
+        {
+            return valor.Contains(" ");
+        }
+
+        public static string Sha1(this string valor)
+        {
+            return Sha1Helper.Computar(valor);
         }
     }
 }

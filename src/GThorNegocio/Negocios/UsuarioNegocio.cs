@@ -33,5 +33,15 @@ namespace GThorNegocio.Negocios
                 _repositorioUsuario.SalvarAlteracoes();
             }
         }
+
+        public void Salvar(Usuario usuario)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioUsuario.GThorContexto = contexto;
+                _repositorioUsuario.SalvarOuAtualizar(usuario);
+                _repositorioUsuario.SalvarAlteracoes();
+            }
+        }
     }
 }

@@ -1,14 +1,32 @@
 ﻿using System;
 using GThorFrameworkWpf.Models.Base;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.Usuarios;
+using GThorNegocio.Contratos;
 
 namespace GThor.Models.Usuarios
 {
     public class UsuarioFormModel : ModelViewBase
     {
+        private readonly IUsuarioNegocio _usuarioNegocio;
+        public Usuario Usuario { get; set; }
+
+        public UsuarioFormModel(IUsuarioNegocio usuarioNegocio)
+        {
+            _usuarioNegocio = usuarioNegocio;
+        }
+
         protected override void LoadedCommandAction(object obj)
         {
             ValidaAntesSalvar += ValidarAntesDeSalvar;
+            Salvar += SalvarUsuario;
+
+            if (Usuario.Id != 0)
+            {
+                Login = Usuario.Login;
+            }
         }
+
 
         private string _login;
         private string _senha;
@@ -36,9 +54,23 @@ namespace GThor.Models.Usuarios
         }
 
 
+        private void SalvarUsuario(object sender, EventArgs e)
+        {
+            Usuario.Login = Login;
+            Usuario.Senha = Senha.Sha1();
+            _usuarioNegocio.Salvar(Usuario);
+        }
+
         private void ValidarAntesDeSalvar(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(Login)) throw new InvalidOperationException("Nao e permitido salvar");
+            Login = Login.TrimOrEmpty();
+            Senha = Senha.TrimOrEmpty();
+
+            if (Login.IsNullOrEmpty()) throw new ArgumentException("Hei, digite um login valido né");
+            if (Login.IsContemEspacos()) throw new ArgumentException("Não vou deixar você cadastrar um Login contendo espaços viu");
+
+            if (Senha.IsNullOrEmpty()) throw new ArgumentException("Hei, digite uma senha valida né");
+            if (Senha.IsContemEspacos()) throw new ArgumentException("Não vou deixar você cadastrar uma senha contendo espaços viu");
         }
 
     }

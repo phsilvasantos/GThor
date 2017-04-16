@@ -1,17 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace GThor
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
-    public partial class App : Application
+    
+    public partial class App
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            DispatcherUnhandledException += (sender, args) =>
+            {
+                UnhandledExcpetionHandler(args);
+            };
+        }
+
+        private void UnhandledExcpetionHandler(DispatcherUnhandledExceptionEventArgs e)
+        {
+            e.Handled = true;
+
+            Current.Dispatcher.Invoke(async () =>
+            {
+                var window = Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive) as MetroWindow;
+
+                if (window != null)
+                {
+                    var exception = e.Exception;
+
+                    if (typeof(ArgumentException) == exception.GetType())
+                    {
+                        await window.ShowMessageAsync("Validação Inválida", e.Exception.Message);
+                        return;
+                    }
+
+                    if (typeof(InvalidOperationException) == exception.GetType())
+                    {
+                        await window.ShowMessageAsync("Operação Inválida", e.Exception.Message);
+                        return;
+                    }
+
+
+                    await window.ShowMessageAsync("Operação Inválida", e.Exception.Message);
+                }
+            });
+        }
     }
 }

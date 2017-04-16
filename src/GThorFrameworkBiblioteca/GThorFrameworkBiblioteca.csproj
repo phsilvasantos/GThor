@@ -46,7 +46,7 @@
     <Compile Include="Ferramentas\HelpersCriptografia\Md5Helper.cs" />
     <Compile Include="Ferramentas\HelpersCriptografia\Sha1Helper.cs" />
     <Compile Include="Ferramentas\HelpersHidratacaoValores\DecimalHidratacao.cs" />
-    <Compile Include="Ferramentas\HelpersHidratacaoValores\StringHidratacao.cs" />
+    <Compile Include="Ferramentas\HelpersHidratacaoValores\StringExtensions.cs" />
     <Compile Include="Ferramentas\HelpersPasta\ManipulaPastaHelper.cs" />
     <Compile Include="Ferramentas\HelpersWpf\FocoAvancado.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

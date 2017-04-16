@@ -1,8 +1,8 @@
 ﻿using System.Security.Cryptography;
 using System.Text;
-using ComercialBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 
-namespace ComercialBiblioteca.Ferramentas.HelpersCriptografia
+namespace GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia
 {
     public static class Sha1Helper
     {
