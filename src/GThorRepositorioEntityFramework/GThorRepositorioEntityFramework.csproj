@@ -166,6 +166,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto\GThorContexto.cs" />
+    <Compile Include="Contratos\IRepositorioUsuario.cs" />
+    <Compile Include="Implementacao\Base\RepositorioBase.cs" />
+    <Compile Include="Implementacao\RepositorioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +179,10 @@
     <ProjectReference Include="..\GThorFrameworkDominio\GThorFrameworkDominio.csproj">
       <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
       <Name>GThorFrameworkDominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj">
+      <Project>{E9B13860-6C09-4CE9-8477-C82EE7743A57}</Project>
+      <Name>GThorFrameworkRepositorio</Name>
     </ProjectReference>
     <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
       <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
