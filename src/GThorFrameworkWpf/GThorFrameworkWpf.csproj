@@ -70,6 +70,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\PassowordHelper.cs" />
     <Compile Include="Models\Base\ModelViewBase.cs" />
     <Compile Include="Models\Command\RelayCommand.cs" />
     <Compile Include="Models\DataGrid\DataGridPadraoModel.cs" />
