@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -40,7 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contratos\IUsuarioNegocio.cs" />
+    <Compile Include="Negocios\UsuarioNegocio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GThorFrameworkDominio\GThorFrameworkDominio.csproj">
+      <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
+      <Name>GThorFrameworkDominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj">
+      <Project>{e9b13860-6c09-4ce9-8477-c82ee7743a57}</Project>
+      <Name>GThorFrameworkRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj">
+      <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
+      <Name>GThorRepositorioEntityFramework</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

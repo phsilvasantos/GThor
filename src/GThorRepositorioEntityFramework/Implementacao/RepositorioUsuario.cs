@@ -13,7 +13,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return GThorContexto.Usuario.Find(id);
         }
 
-        public IList<Usuario> Lista()
+        public IEnumerable<Usuario> Lista()
         {
             var lista = GThorContexto.Usuario.Take(1000).ToList();
 

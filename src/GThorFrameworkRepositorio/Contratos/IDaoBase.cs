@@ -6,6 +6,6 @@ namespace GThorFrameworkRepositorio.Contratos
     {
         TEntity CarregarPorId(TId id);
 
-        IList<TEntity> Lista();
+        IEnumerable<TEntity> Lista();
     }
 }

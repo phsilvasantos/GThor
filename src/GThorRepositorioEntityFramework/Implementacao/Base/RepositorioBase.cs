@@ -1,14 +1,14 @@
 ﻿using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Contratos;
 
 namespace GThorRepositorioEntityFramework.Implementacao.Base
 {
-    public class RepositorioBase
+    public class RepositorioBase : IRepositorioBase
     {
-        protected GThorContexto GThorContexto { get; }
+        public GThorContexto GThorContexto { get; set; }
 
         protected RepositorioBase()
         {
-            GThorContexto = new GThorContexto();
         }
 
         public void SalvarAlteracoes()
