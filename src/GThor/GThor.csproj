@@ -146,6 +146,10 @@
       <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
       <Name>GThorRepositorioEntityFramework</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
+      <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
+      <Name>GThorRepositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\IconesMenuPrincipal\clientes.png" />

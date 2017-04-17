@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorNegocio.Contratos;
+using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Contexto;
-using GThorRepositorioEntityFramework.Contratos;
+using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
 {
@@ -19,7 +20,7 @@ namespace GThorNegocio.Negocios
         {
             using (var contexto = new GThorContexto())
             {
-                _repositorioUsuario.GThorContexto = contexto;
+                _repositorioUsuario.SetGThorContexto(contexto);
                 return _repositorioUsuario.Lista();
             }
         }
@@ -28,7 +29,7 @@ namespace GThorNegocio.Negocios
         {
             using (var contexto = new GThorContexto())
             {
-                _repositorioUsuario.GThorContexto = contexto;
+                _repositorioUsuario.SetGThorContexto(contexto);
                 _repositorioUsuario.Deletar(usuario);
                 _repositorioUsuario.SalvarAlteracoes();
             }
@@ -38,7 +39,7 @@ namespace GThorNegocio.Negocios
         {
             using (var contexto = new GThorContexto())
             {
-                _repositorioUsuario.GThorContexto = contexto;
+                _repositorioUsuario.SetGThorContexto(contexto);
                 _repositorioUsuario.SalvarOuAtualizar(usuario);
                 _repositorioUsuario.SalvarAlteracoes();
             }

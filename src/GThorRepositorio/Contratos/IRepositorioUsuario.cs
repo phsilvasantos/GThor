@@ -2,10 +2,10 @@
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkRepositorio.Contratos;
 
-namespace GThorRepositorioEntityFramework.Contratos
+namespace GThorRepositorio.Contratos
 {
     public interface IRepositorioUsuario : 
-        IRepositorioBase,
+        IDaoContexto,
         IDaoBase<Usuario, int>, 
         IDisposable, 
         ISuporteSalvar<Usuario>,

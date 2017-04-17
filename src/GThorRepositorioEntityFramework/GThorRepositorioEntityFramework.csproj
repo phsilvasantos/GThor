@@ -167,7 +167,7 @@
   <ItemGroup>
     <Compile Include="Contexto\GThorContexto.cs" />
     <Compile Include="Contratos\IRepositorioBase.cs" />
-    <Compile Include="Contratos\IRepositorioUsuario.cs" />
+    <Compile Include="Extensoes\ExtContexto.cs" />
     <Compile Include="Implementacao\Base\RepositorioBase.cs" />
     <Compile Include="Implementacao\RepositorioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -190,6 +190,7 @@
       <Name>GThorRepositorio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
