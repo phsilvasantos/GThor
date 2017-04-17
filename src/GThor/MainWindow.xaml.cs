@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using GThor.Models.Usuarios;
+using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
@@ -35,6 +36,13 @@ namespace GThor
 
             TabControl.Items.Add(novaTab);
             novaTab.Focus();
+        }
+
+        private void CertificadoDigitais_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var negocio = new CertificadoDigitalNegocio(new RepositorioCertificadoDigital());
+
+            
         }
     }
 }

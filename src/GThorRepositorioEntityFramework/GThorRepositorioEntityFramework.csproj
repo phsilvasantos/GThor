@@ -169,6 +169,7 @@
     <Compile Include="Contratos\IRepositorioBase.cs" />
     <Compile Include="Extensoes\ExtContexto.cs" />
     <Compile Include="Implementacao\Base\RepositorioBase.cs" />
+    <Compile Include="Implementacao\RepositorioCertificadoDigital.cs" />
     <Compile Include="Implementacao\RepositorioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

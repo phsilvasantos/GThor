@@ -6,5 +6,6 @@
         public string CaminhoCertificado { get; set; }
         public string Serial { get; set; }
         public TipoCertificado Tipo { get; set; }
+        public string Senha { get; set; }
     }
 }
