@@ -34,6 +34,8 @@
     <Style TargetType="TextBox" x:Key="ComercialSearchTextBox" BasedOn="{StaticResource SearchMetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
+        <Setter Property="Height" Value="36"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
     </Style>
 
     <Style TargetType="PasswordBox" x:Key="ComercialPasswordBox" BasedOn="{StaticResource Win8MetroPasswordBox}">
@@ -46,6 +48,8 @@
     <Style TargetType="ComboBox" x:Key="ComercialComboBox" BasedOn="{StaticResource MetroComboBox}">
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
         <Setter Property="IsEditable" Value="True" />
+        <Setter Property="Height" Value="36"></Setter>
+        <Setter Property="FontSize" Value="20"></Setter>
     </Style>
 
     <Style TargetType="RadioButton" x:Key="ComercialRadioButton" BasedOn="{StaticResource MetroRadioButton}">

@@ -2,6 +2,7 @@
 using System.Windows.Controls;
 using System.Windows.Input;
 using GThor.Models.Usuarios;
+using GThor.Views;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Negocios;
@@ -42,7 +43,7 @@ namespace GThor
         {
             var negocio = new CertificadoDigitalNegocio(new RepositorioCertificadoDigital());
 
-            
+            new CertificadoDigitalForm().ShowDialog();
         }
     }
 }

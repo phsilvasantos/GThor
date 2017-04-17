@@ -73,6 +73,9 @@
     </ApplicationDefinition>
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />
+    <Compile Include="Views\CertificadoDigitalForm.xaml.cs">
+      <DependentUpon>CertificadoDigitalForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UsuarioForm.xaml.cs">
       <DependentUpon>UsuarioForm.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\CertificadoDigitalForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\UsuarioForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

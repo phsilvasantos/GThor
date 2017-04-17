@@ -45,5 +45,11 @@
     <Compile Include="Dominios\Usuarios\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GThorFrameworkWpf\GThorFrameworkWpf.csproj">
+      <Project>{6F258729-2159-4CCB-9162-14043B938D6E}</Project>
+      <Name>GThorFrameworkWpf</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
