@@ -1,4 +1,5 @@
-﻿using GThorFrameworkDominio.Dominios.Usuarios;
+﻿using GThorFrameworkDominio.Dominios.Certificados;
+using GThorFrameworkDominio.Dominios.Usuarios;
 using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Contexto
@@ -11,5 +12,6 @@ namespace GThorRepositorioEntityFramework.Contexto
         }
 
         public DbSet<Usuario> Usuario { get; set; }
+        public DbSet<CertificadoDigital> CertificadoDigital { get; set; }
     }
 }
