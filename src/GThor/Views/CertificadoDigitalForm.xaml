@@ -11,11 +11,14 @@
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
         Background="{StaticResource AccentColorBrush}"
-        Title="Certificado Digital" Height="400" Width="600">
+        Title="Certificado Digital" Height="460" Width="600">
 
 
     <StackPanel Margin="24">
-        <TextBlock Style="{StaticResource ControlForm}">Tipo Certificado Digital</TextBlock>
+        <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
+        <TextBox MaxLength="60" Text="{Binding Descricao}"></TextBox>
+
+        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Tipo Certificado Digital</TextBlock>
         <ComboBox
             IsEditable="False"
             ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoCertificado}}}"
@@ -23,13 +26,14 @@
             ></ComboBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Arquivo Certificado</TextBlock>
-        <TextBox Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Arquivo}"></TextBox>
+        <TextBox IsEnabled="{Binding IsArquivo}" Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Arquivo}" CharacterCasing="Normal"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Serial</TextBlock>
-        <TextBox Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Serial}"></TextBox>
+        <TextBox IsEnabled="{Binding IsSerial}" Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Serial}" CharacterCasing="Normal"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Senha</TextBlock>
-        <PasswordBox            
+        <PasswordBox     
+            IsEnabled="{Binding IsSenha}"
             controls:TextBoxHelper.Watermark="Senha"
             helpers:PasswordHelper.Attach="True"
             helpers:PasswordHelper.Password="{Binding Senha, Mode=TwoWay}"

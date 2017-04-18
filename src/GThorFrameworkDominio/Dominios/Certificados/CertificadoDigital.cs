@@ -2,6 +2,11 @@
 {
     public class CertificadoDigital
     {
+        public CertificadoDigital()
+        {
+            Tipo = TipoCertificado.A1Arquivo;
+        }
+
         public int Id { get; set; }
         public string CaminhoCertificado { get; set; }
         public string Serial { get; set; }

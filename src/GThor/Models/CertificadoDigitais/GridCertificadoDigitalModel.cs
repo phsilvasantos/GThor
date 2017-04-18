@@ -1,7 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using GThor.Views;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Negocios;
+using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThor.Models.CertificadoDigitais
 {
@@ -40,6 +44,24 @@ namespace GThor.Models.CertificadoDigitais
         protected override void DeletarRegistroSelecionado()
         {
             _certificadoDigitalNegocio.Deletar(EntidadeSelecionada);
+        }
+
+        public override void NovoRegistroAction(object obj)
+        {
+            var model = new CertificadoDigitalFormModel(new CertificadoDigitalNegocio(new RepositorioCertificadoDigital()))
+            {
+                CertificadoDigital = new CertificadoDigital()
+            };
+            model.AtualizarListaHandler += AtualizarLista;
+
+            var certificadoDigitalForm = new CertificadoDigitalForm(model);
+
+            certificadoDigitalForm.ShowDialog();
+        }
+
+        private void AtualizarLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }
