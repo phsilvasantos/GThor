@@ -19,13 +19,14 @@
         <ComboBox
             IsEditable="False"
             ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoCertificado}}}"
+            SelectedValue="{Binding TipoCertificado}"
             ></ComboBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Arquivo Certificado</TextBlock>
-        <TextBox Style="{StaticResource ComercialSearchTextBox}"></TextBox>
+        <TextBox Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Arquivo}"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Serial</TextBlock>
-        <TextBox Style="{StaticResource ComercialSearchTextBox}"></TextBox>
+        <TextBox Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Serial}"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Senha</TextBlock>
         <PasswordBox            
