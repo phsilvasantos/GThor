@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
+using GThor.Models.CertificadoDigitais;
 using GThor.Models.Usuarios;
 using GThor.Views;
 using GThorFrameworkDominio.Dominios.Certificados;
@@ -25,6 +26,18 @@ namespace GThor
             AbrirTabItem("Usuarios", DataGridPadrao.Criar(new GridUsuarioModel(negocio)));
         }
 
+        private void CertificadoDigitais_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var negocio = new CertificadoDigitalNegocio(new RepositorioCertificadoDigital());
+
+            AbrirTabItem("Certificados", DataGridPadrao.Criar(new GridCertificadoDigitalModel(negocio)));
+        }
+
+
+
+
+
+
         private void AbrirTabItem(string titulo, UserControl janela)
         {
             var novaTab = new MetroTabItem { Header = titulo, Content = janela, CloseButtonEnabled = true };
@@ -37,13 +50,6 @@ namespace GThor
 
             TabControl.Items.Add(novaTab);
             novaTab.Focus();
-        }
-
-        private void CertificadoDigitais_OnMouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var negocio = new CertificadoDigitalNegocio(new RepositorioCertificadoDigital());
-
-            new CertificadoDigitalForm().ShowDialog();
         }
     }
 }
