@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Windows.Input;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.Base;
@@ -114,6 +116,13 @@ namespace GThor.Models.CertificadoDigitais
 
         public CertificadoDigital CertificadoDigital { get; set; }
 
+        public ICommand CommandBuscarSerial => GetSimpleCommand(BuscarSerial);
+
+        private void BuscarSerial(object obj)
+        {
+            Serial = DFe.Utils.Assinatura.CertificadoDigital.ListareObterDoRepositorio()?.SerialNumber;
+        }
+
         private void MudarUiPorTipo(TipoCertificado tipoCertificado)
         {
             LimparCampos();
@@ -150,14 +159,25 @@ namespace GThor.Models.CertificadoDigitais
         {
             ValidaAntesSalvar += Validacoes;
             Salvar += SalvaCertificado;
+
+
+            if (CertificadoDigital.Id != 0)
+            {
+                TipoCertificado = CertificadoDigital.Tipo;
+                Senha = SimetricaHelper.Descomputar(CertificadoDigital.Senha);
+                Arquivo = CertificadoDigital.CaminhoCertificado;
+                Serial = SimetricaHelper.Descomputar(CertificadoDigital.Serial);
+                Descricao = CertificadoDigital.Descricao;
+            }
         }
 
         private void SalvaCertificado(object sender, EventArgs e)
         {
-            CertificadoDigital.Senha = Senha;
+            CertificadoDigital.Senha = SimetricaHelper.Computar(Senha);
             CertificadoDigital.CaminhoCertificado = Arquivo;
-            CertificadoDigital.Serial = Serial;
+            CertificadoDigital.Serial = SimetricaHelper.Computar(Serial);
             CertificadoDigital.Tipo = TipoCertificado;
+            CertificadoDigital.Descricao = Descricao;
 
             _certificadoDigitalNegocio.SalvarOuAtualizar(CertificadoDigital);
         }

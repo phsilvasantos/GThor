@@ -29,7 +29,10 @@
         <TextBox IsEnabled="{Binding IsArquivo}" Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Arquivo}" CharacterCasing="Normal"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Serial</TextBlock>
-        <TextBox IsEnabled="{Binding IsSerial}" Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Serial}" CharacterCasing="Normal"></TextBox>
+        <TextBox IsEnabled="{Binding IsSerial}" 
+                 controls:TextBoxHelper.ButtonCommand="{Binding CommandBuscarSerial}"
+                 Style="{StaticResource ComercialSearchTextBox}" 
+                 Text="{Binding Serial}" CharacterCasing="Normal"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Senha</TextBlock>
         <PasswordBox     

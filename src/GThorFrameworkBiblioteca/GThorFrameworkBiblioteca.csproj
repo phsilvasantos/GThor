@@ -45,6 +45,7 @@
     <Compile Include="Ferramentas\HelpersCriptografia\GuuidHelper.cs" />
     <Compile Include="Ferramentas\HelpersCriptografia\Md5Helper.cs" />
     <Compile Include="Ferramentas\HelpersCriptografia\Sha1Helper.cs" />
+    <Compile Include="Ferramentas\HelpersCriptografia\SimetricaHelper.cs" />
     <Compile Include="Ferramentas\HelpersHidratacaoValores\DecimalHidratacao.cs" />
     <Compile Include="Ferramentas\HelpersHidratacaoValores\StringExtensions.cs" />
     <Compile Include="Ferramentas\HelpersPasta\ManipulaPastaHelper.cs" />
