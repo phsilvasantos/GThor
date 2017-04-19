@@ -120,7 +120,12 @@ namespace GThor.Models.CertificadoDigitais
 
         private void BuscarSerial(object obj)
         {
-            Serial = DFe.Utils.Assinatura.CertificadoDigital.ListareObterDoRepositorio()?.SerialNumber;
+            var certificado = DFe.Utils.Assinatura.CertificadoDigital.ListareObterDoRepositorio();
+
+            using (certificado)
+            {
+                Serial = certificado.SerialNumber;
+            }
         }
 
         private void MudarUiPorTipo(TipoCertificado tipoCertificado)
