@@ -8,7 +8,7 @@ namespace GThorRepositorioEntityFramework.Contexto
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=GThor.db");
+            optionsBuilder.UseNpgsql("Host=localhost;Database=gthor;Username=postgres;Password=root");
         }
 
         public DbSet<Usuario> Usuario { get; set; }
