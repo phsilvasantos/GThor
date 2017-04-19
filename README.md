@@ -15,6 +15,6 @@ MDF-e Manifesto Eletrônico de Documentos
 
 NHibernate
 
-Sqlite
+PostgreSQL 9.6.2
 
 Pencil - Protótipo
