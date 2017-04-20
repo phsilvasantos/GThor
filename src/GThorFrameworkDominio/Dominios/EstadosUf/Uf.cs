@@ -8,6 +8,7 @@ namespace GThorFrameworkDominio.Dominios.EstadosUf
     {
         [Key]
         [Column("id")]
+        [Required]
         public int Id { get; set; }
 
         [Column("sigla")]
