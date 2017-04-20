@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using GThor.Models;
 using GThor.Models.CertificadoDigitais;
+using GThor.Models.DocumentosMdfe;
 using GThor.Models.Usuarios;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Negocios;
@@ -35,7 +36,9 @@ namespace GThor
 
         private void DocumentoMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
+            var negocio = new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe());
 
+            AbrirTabItem("Documentos MDF-e", DataGridPadrao.Criar(new GridDocumentoMdfeModel(negocio)));
         }
 
 

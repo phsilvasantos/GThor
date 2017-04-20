@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using GThor.Views;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
@@ -27,9 +29,20 @@ namespace GThor.Models.CertificadoDigitais
 
         public override void AplicaPesquisa(string pesquisarTexto)
         {
-            var listaFiltrada = Cache.ToList();
+            IEnumerable<CertificadoDigital> listaFiltrada = null;
+
+            if (pesquisarTexto.IsNotNullOrEmpty())
+            {
+                listaFiltrada = Cache.Where(c => c.Descricao.Contains(pesquisarTexto)).ToList();
+            }
+
+            if (pesquisarTexto.IsNullOrEmpty())
+            {
+                listaFiltrada = Cache.ToList();
+            }
 
             PreencherLista(listaFiltrada);
+
         }
 
         public override void CriarColunas()

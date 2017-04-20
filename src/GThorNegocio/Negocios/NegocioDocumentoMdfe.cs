@@ -2,6 +2,8 @@
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
+using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
 {
@@ -17,17 +19,32 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(DocumentoMdfe documentoMdfe)
         {
-            _repositorioDocumentoMdfe.SalvarOuAtualizar(documentoMdfe);
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+                _repositorioDocumentoMdfe.SalvarOuAtualizar(documentoMdfe);
+                _repositorioDocumentoMdfe.SalvarAlteracoes();
+            }
         }
 
         public IEnumerable<DocumentoMdfe> Lista()
         {
-            return _repositorioDocumentoMdfe.Lista();
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+
+                return _repositorioDocumentoMdfe.Lista();
+            }
         }
 
         public void Deletar(DocumentoMdfe documentoMdfe)
         {
-            _repositorioDocumentoMdfe.Deletar(documentoMdfe);
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+                _repositorioDocumentoMdfe.Deletar(documentoMdfe);
+                _repositorioDocumentoMdfe.SalvarAlteracoes();
+            }
         }
     }
 }

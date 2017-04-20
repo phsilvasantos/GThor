@@ -91,6 +91,7 @@
     </ApplicationDefinition>
     <Compile Include="Models\CertificadoDigitais\CertificadoDigitalFormModel.cs" />
     <Compile Include="Models\CertificadoDigitais\GridCertificadoDigitalModel.cs" />
+    <Compile Include="Models\DocumentosMdfe\GridDocumentoMdfeModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />
     <Compile Include="Views\CertificadoDigitalForm.xaml.cs">
