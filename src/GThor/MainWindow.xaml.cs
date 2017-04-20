@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Windows.Controls;
 using System.Windows.Input;
+using GThor.Models;
 using GThor.Models.CertificadoDigitais;
 using GThor.Models.Usuarios;
 using GThorFrameworkWpf.Views.DataGrid;
@@ -14,6 +15,7 @@ namespace GThor
     {
         public MainWindow()
         {
+            DataContext = new MainWindowModel();
             InitializeComponent();
         }
 
