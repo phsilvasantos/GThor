@@ -3,6 +3,7 @@ using System.Windows.Input;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
+using GThorFrameworkWpf.Helpers.Dialogs;
 using GThorFrameworkWpf.Models.Base;
 using GThorNegocio.Negocios;
 
@@ -117,6 +118,16 @@ namespace GThor.Models.CertificadoDigitais
         public CertificadoDigital CertificadoDigital { get; set; }
 
         public ICommand CommandBuscarSerial => GetSimpleCommand(BuscarSerial);
+        public ICommand CommandBuscarArquivo => GetSimpleCommand(BuscarArquivo);
+
+        private void BuscarArquivo(object obj)
+        {
+            var caminhoCompletoDoArquivo = FileDialog.DialogDeArquivo("Certificado digital(*.pfx)|*.pfx");
+
+            if(caminhoCompletoDoArquivo.IsNullOrEmpty()) throw new ArgumentException("Ohh, percebi que você não adicionou nem um certificado digital a1");
+
+            Arquivo = caminhoCompletoDoArquivo;
+        }
 
         private void BuscarSerial(object obj)
         {

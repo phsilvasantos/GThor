@@ -71,6 +71,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Helpers\Conversores\EnumTypeDescriptionConverter.cs" />
+    <Compile Include="Helpers\Dialogs\FileDialog.cs" />
     <Compile Include="Helpers\MarkupExtensions\EnumBindingSourceExtension.cs" />
     <Compile Include="Helpers\PassowordHelper.cs" />
     <Compile Include="Models\Base\ModelViewBase.cs" />
