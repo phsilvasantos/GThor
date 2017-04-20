@@ -225,6 +225,10 @@
     <Compile Include="Migrations\20170420224136_AddDescricaoTableaDocumentoMdfe.designer.cs">
       <DependentUpon>20170420224136_AddDescricaoTableaDocumentoMdfe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170420225943_AlteradoDescricaoDocMdfeCDigital.cs" />
+    <Compile Include="Migrations\20170420225943_AlteradoDescricaoDocMdfeCDigital.designer.cs">
+      <DependentUpon>20170420225943_AlteradoDescricaoDocMdfeCDigital.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GThorContextoModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

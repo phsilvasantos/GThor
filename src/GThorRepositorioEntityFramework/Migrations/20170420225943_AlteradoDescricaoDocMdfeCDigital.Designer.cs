@@ -10,9 +10,10 @@ using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;
 namespace GThorRepositorioEntityFramework.Migrations
 {
     [DbContext(typeof(GThorContexto))]
-    partial class GThorContextoModelSnapshot : ModelSnapshot
+    [Migration("20170420225943_AlteradoDescricaoDocMdfeCDigital")]
+    partial class AlteradoDescricaoDocMdfeCDigital
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
