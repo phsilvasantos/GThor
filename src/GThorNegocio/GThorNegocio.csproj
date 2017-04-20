@@ -48,9 +48,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contratos\INegocioCertificadoDigital.cs" />
+    <Compile Include="Contratos\INegocioDocumentoMdfe.cs" />
     <Compile Include="Contratos\INegocioMigracaoBancoDados.cs" />
     <Compile Include="Contratos\INegocioUsuario.cs" />
     <Compile Include="Negocios\NegocioCertificadoDigital.cs" />
+    <Compile Include="Negocios\NegocioDocumentoMdfe.cs" />
     <Compile Include="Negocios\NegocioMigracaoBancoDados.cs" />
     <Compile Include="Negocios\NegocioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
