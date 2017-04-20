@@ -10,7 +10,7 @@ namespace GThor.Models.CertificadoDigitais
 {
     public class CertificadoDigitalFormModel : ModelViewBase
     {
-        private readonly CertificadoDigitalNegocio _certificadoDigitalNegocio;
+        private readonly NegocioCertificadoDigital _certificadoDigitalNegocio;
         private string _arquivo;
         private string _descricao;
         private bool _isArquivo;
@@ -20,7 +20,7 @@ namespace GThor.Models.CertificadoDigitais
         private string _serial;
         private TipoCertificado _tipoCertificado;
 
-        public CertificadoDigitalFormModel(CertificadoDigitalNegocio certificadoDigitalNegocio)
+        public CertificadoDigitalFormModel(NegocioCertificadoDigital certificadoDigitalNegocio)
         {
             _certificadoDigitalNegocio = certificadoDigitalNegocio;
         }

@@ -21,14 +21,14 @@ namespace GThor
 
         private void GerenciarUsuarios_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new UsuarioNegocio(new RepositorioUsuario());
+            var negocio = new NegocioUsuario(new RepositorioUsuario());
 
             AbrirTabItem("Usuarios", DataGridPadrao.Criar(new GridUsuarioModel(negocio)));
         }
 
         private void CertificadoDigitais_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new CertificadoDigitalNegocio(new RepositorioCertificadoDigital());
+            var negocio = new NegocioCertificadoDigital(new RepositorioCertificadoDigital());
 
             AbrirTabItem("Certificados", DataGridPadrao.Criar(new GridCertificadoDigitalModel(negocio)));
         }

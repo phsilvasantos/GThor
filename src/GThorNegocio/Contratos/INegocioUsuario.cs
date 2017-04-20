@@ -3,7 +3,7 @@ using GThorFrameworkDominio.Dominios.Usuarios;
 
 namespace GThorNegocio.Contratos
 {
-    public interface IUsuarioNegocio
+    public interface INegocioUsuario
     {
         IEnumerable<Usuario> Lista();
         void Deletar(Usuario usuario);

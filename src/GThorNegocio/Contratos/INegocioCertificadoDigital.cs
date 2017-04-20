@@ -3,7 +3,7 @@ using GThorFrameworkDominio.Dominios.Certificados;
 
 namespace GThorNegocio.Contratos
 {
-    public interface ICertificadoDigitalNegocio
+    public interface INegocioCertificadoDigital
     {
         void SalvarOuAtualizar(CertificadoDigital certificadoDigital);
         IEnumerable<CertificadoDigital> Lista();

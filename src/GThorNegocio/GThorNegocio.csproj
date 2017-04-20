@@ -31,6 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.EntityFrameworkCore, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" />
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=1.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.1.1.1\lib\net451\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,10 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contratos\ICertificadoDigitalNegocio.cs" />
-    <Compile Include="Contratos\IUsuarioNegocio.cs" />
-    <Compile Include="Negocios\CertificadoDigitalNegocio.cs" />
-    <Compile Include="Negocios\UsuarioNegocio.cs" />
+    <Compile Include="Contratos\INegocioCertificadoDigital.cs" />
+    <Compile Include="Contratos\INegocioMigracaoBancoDados.cs" />
+    <Compile Include="Contratos\INegocioUsuario.cs" />
+    <Compile Include="Negocios\NegocioCertificadoDigital.cs" />
+    <Compile Include="Negocios\NegocioMigracaoBancoDados.cs" />
+    <Compile Include="Negocios\NegocioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

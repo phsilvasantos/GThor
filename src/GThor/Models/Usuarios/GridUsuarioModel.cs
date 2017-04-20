@@ -11,9 +11,9 @@ namespace GThor.Models.Usuarios
 {
     public class GridUsuarioModel : DataGridPadraoModel<Usuario>
     {
-        private readonly IUsuarioNegocio _usuarioNegocio;
+        private readonly INegocioUsuario _usuarioNegocio;
 
-        public GridUsuarioModel(IUsuarioNegocio usuarioNegocio)
+        public GridUsuarioModel(INegocioUsuario usuarioNegocio)
         {
             _usuarioNegocio = usuarioNegocio;
         }
@@ -46,7 +46,7 @@ namespace GThor.Models.Usuarios
 
         public override void NovoRegistroAction(object obj)
         {
-            var model = new UsuarioFormModel(new UsuarioNegocio(new RepositorioUsuario())) {Usuario = new Usuario()};
+            var model = new UsuarioFormModel(new NegocioUsuario(new RepositorioUsuario())) {Usuario = new Usuario()};
             model.AtualizarListaHandler += AtualizarLista;
 
             var usuarioForm = new UsuarioForm(model);
@@ -56,7 +56,7 @@ namespace GThor.Models.Usuarios
 
         public override void DuploClickDataGrid()
         {
-            var model = new UsuarioFormModel(new UsuarioNegocio(new RepositorioUsuario())) { Usuario = EntidadeSelecionada };
+            var model = new UsuarioFormModel(new NegocioUsuario(new RepositorioUsuario())) { Usuario = EntidadeSelecionada };
             model.AtualizarListaHandler += AtualizarLista;
 
             var usuarioForm = new UsuarioForm(model);

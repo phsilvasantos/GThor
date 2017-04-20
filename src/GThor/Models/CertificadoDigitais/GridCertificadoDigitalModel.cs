@@ -13,9 +13,9 @@ namespace GThor.Models.CertificadoDigitais
 {
     public class GridCertificadoDigitalModel : DataGridPadraoModel<CertificadoDigital>
     {
-        private readonly ICertificadoDigitalNegocio _certificadoDigitalNegocio;
+        private readonly INegocioCertificadoDigital _certificadoDigitalNegocio;
 
-        public GridCertificadoDigitalModel(ICertificadoDigitalNegocio certificadoDigitalNegocio)
+        public GridCertificadoDigitalModel(INegocioCertificadoDigital certificadoDigitalNegocio)
         {
             _certificadoDigitalNegocio = certificadoDigitalNegocio;
             BotaoFiltroVisivel = false;
@@ -49,7 +49,7 @@ namespace GThor.Models.CertificadoDigitais
 
         public override void NovoRegistroAction(object obj)
         {
-            var model = new CertificadoDigitalFormModel(new CertificadoDigitalNegocio(new RepositorioCertificadoDigital()))
+            var model = new CertificadoDigitalFormModel(new NegocioCertificadoDigital(new RepositorioCertificadoDigital()))
             {
                 CertificadoDigital = new CertificadoDigital()
             };

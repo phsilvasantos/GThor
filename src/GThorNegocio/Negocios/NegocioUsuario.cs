@@ -7,11 +7,11 @@ using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
 {
-    public class UsuarioNegocio : IUsuarioNegocio
+    public class NegocioUsuario : INegocioUsuario
     {
         private readonly IRepositorioUsuario _repositorioUsuario;
 
-        public UsuarioNegocio(IRepositorioUsuario repositorioUsuario)
+        public NegocioUsuario(IRepositorioUsuario repositorioUsuario)
         {
             _repositorioUsuario = repositorioUsuario;
         }

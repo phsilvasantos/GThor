@@ -8,10 +8,10 @@ namespace GThor.Models.Usuarios
 {
     public class UsuarioFormModel : ModelViewBase
     {
-        private readonly IUsuarioNegocio _usuarioNegocio;
+        private readonly INegocioUsuario _usuarioNegocio;
         public Usuario Usuario { get; set; }
 
-        public UsuarioFormModel(IUsuarioNegocio usuarioNegocio)
+        public UsuarioFormModel(INegocioUsuario usuarioNegocio)
         {
             _usuarioNegocio = usuarioNegocio;
         }
