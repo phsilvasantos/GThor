@@ -58,6 +58,19 @@ namespace GThor.Models.CertificadoDigitais
             certificadoDigitalForm.ShowDialog();
         }
 
+        public override void DuploClickDataGrid()
+        {
+            var model = new CertificadoDigitalFormModel(new NegocioCertificadoDigital(new RepositorioCertificadoDigital()))
+            {
+                CertificadoDigital = EntidadeSelecionada
+            };
+            model.AtualizarListaHandler += AtualizarLista;
+
+            var certificadoDigitalForm = new CertificadoDigitalForm(model);
+
+            certificadoDigitalForm.ShowDialog();
+        }
+
         private void AtualizarLista(object sender, EventArgs e)
         {
             IniciaPesquisa(PesquisarTexto);

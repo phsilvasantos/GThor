@@ -27,7 +27,13 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         public void SalvarOuAtualizar(Usuario entity)
         {
-            GThorContexto.Usuario.Add(entity);
+            if (entity.Id == 0)
+            {
+                GThorContexto.Usuario.Add(entity);
+                return;
+            }
+
+            GThorContexto.Usuario.Update(entity);
         }
 
         public void Deletar(Usuario entity)

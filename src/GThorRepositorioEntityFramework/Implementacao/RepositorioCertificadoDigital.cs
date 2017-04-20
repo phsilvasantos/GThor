@@ -25,7 +25,13 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         public void SalvarOuAtualizar(CertificadoDigital entity)
         {
-            GThorContexto.CertificadoDigital.Add(entity);
+            if (entity.Id == 0)
+            {
+                GThorContexto.CertificadoDigital.Add(entity);
+                return;
+            }
+
+            GThorContexto.CertificadoDigital.Update(entity);
         }
 
         public void Deletar(CertificadoDigital entity)
