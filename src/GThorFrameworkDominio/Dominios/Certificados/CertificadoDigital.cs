@@ -35,7 +35,7 @@ namespace GThorFrameworkDominio.Dominios.Certificados
         public string Senha { get; set; }
 
         [Required]
-        [MaxLength(255)]
+        [MaxLength(100)]
         [Column("descricao")]
         public string Descricao { get; set; }
     }
