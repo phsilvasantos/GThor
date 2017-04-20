@@ -16,7 +16,7 @@
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
-        <TextBox MaxLength="60" Text="{Binding Descricao}"></TextBox>
+        <TextBox MaxLength="100" Text="{Binding Descricao}"></TextBox>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Tipo Certificado Digital</TextBlock>
         <ComboBox

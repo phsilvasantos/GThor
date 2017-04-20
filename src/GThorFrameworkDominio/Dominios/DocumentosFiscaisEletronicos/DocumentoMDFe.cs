@@ -13,6 +13,11 @@ namespace GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos
         public int Id { get; set; }
 
         [Required]
+        [MaxLength(100)]
+        [Column("descricao")]
+        public string Descricao { get; set; }
+
+        [Required]
         [Column("ambienteSefaz")]
         public AmbienteSefaz AmbienteSefaz { get; set; }
 
