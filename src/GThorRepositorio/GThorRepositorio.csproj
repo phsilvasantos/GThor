@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contratos\IRepositorioCertificadoDigital.cs" />
+    <Compile Include="Contratos\IRepositorioDocumentoMdfe.cs" />
     <Compile Include="Contratos\IRepositorioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

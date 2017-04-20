@@ -10,7 +10,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public Usuario CarregarPorId(int id)
         {
-            return GThorContexto.Usuario.Find(id);
+            return GThorContexto.Usuario.FirstOrDefault(u => u.Id == id);
         }
 
         public IEnumerable<Usuario> Lista()

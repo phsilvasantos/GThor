@@ -33,7 +33,10 @@ namespace GThor
             AbrirTabItem("Certificados", DataGridPadrao.Criar(new GridCertificadoDigitalModel(negocio)));
         }
 
+        private void DocumentoMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
 
+        }
 
 
 

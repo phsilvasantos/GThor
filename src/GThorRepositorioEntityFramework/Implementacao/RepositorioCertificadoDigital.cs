@@ -10,7 +10,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public CertificadoDigital CarregarPorId(int id)
         {
-            return GThorContexto.CertificadoDigital.Find(id);
+            return GThorContexto.CertificadoDigital.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<CertificadoDigital> Lista()
