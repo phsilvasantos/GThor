@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
-using System.Windows.Data;
 using GThor.Views;
-using GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
@@ -38,7 +36,7 @@ namespace GThor.Models.CertificadoDigitais
         {
             CertificadoDigital certificadoDigital = null;
             AdicionarDataGridColumn(() => certificadoDigital.Id, 40);
-            AdicionarDataGridColumn(() => certificadoDigital.Tipo);
+            AdicionarDataGridColumn(() => certificadoDigital.Tipo, 150);
             AdicionarDataGridColumn(() => certificadoDigital.Descricao);
         }
 
