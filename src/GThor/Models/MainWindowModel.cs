@@ -1,5 +1,6 @@
 ﻿using System;
 using GThorFrameworkWpf.Models.Base;
+using GThorNegocio.Negocios;
 
 namespace GThor.Models
 {
@@ -9,6 +10,8 @@ namespace GThor.Models
 
         protected override void LoadedCommandAction(object obj)
         {
+            var negocioMigracao = new NegocioMigracaoBancoDados();
+            negocioMigracao.Migrar();
             OnInicializaStartHandler();
         }
 

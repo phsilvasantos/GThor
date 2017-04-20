@@ -3,8 +3,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using GThor.Models.CertificadoDigitais;
 using GThor.Models.Usuarios;
-using GThor.Views;
-using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
