@@ -97,6 +97,9 @@
     <Compile Include="Views\CertificadoDigitalForm.xaml.cs">
       <DependentUpon>CertificadoDigitalForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DocumentosMdfe\DocumentoMdfeForm.xaml.cs">
+      <DependentUpon>DocumentoMdfeForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\UsuarioForm.xaml.cs">
       <DependentUpon>UsuarioForm.xaml</DependentUpon>
     </Compile>
@@ -113,6 +116,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\CertificadoDigitalForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DocumentosMdfe\DocumentoMdfeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

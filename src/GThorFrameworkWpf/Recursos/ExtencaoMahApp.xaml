@@ -19,17 +19,21 @@
     <SolidColorBrush x:Key="DangerBrush" Color="Red" />
     <SolidColorBrush x:Key="WarningBrush" Color="Yellow" />
 
-    <Style TargetType="TextBox" x:Key="ComercialTextBox" BasedOn="{StaticResource MetroTextBox}">
+    <Style TargetType="TextBox" x:Key="GThorTextBox" BasedOn="{StaticResource MetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
         <Setter Property="Height" Value="36"></Setter>
         <Setter Property="FontSize" Value="20"></Setter>
+        <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True" />
     </Style>
+    
+    <Style TargetType="TextBox" x:Key="GThorTextBoxNumeroInteiro" BasedOn="{StaticResource GThorTextBox}"></Style>
 
     <Style TargetType="TextBlock" x:Key="ControlForm" BasedOn="{StaticResource MetroTextBlock}">
         <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
+
 
     <Style TargetType="TextBox" x:Key="ComercialSearchTextBox" BasedOn="{StaticResource SearchMetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
@@ -138,7 +142,7 @@
 
 
 
-    <Style TargetType="TextBox" BasedOn="{StaticResource ComercialTextBox}" />
+    <Style TargetType="TextBox" BasedOn="{StaticResource GThorTextBox}" />
     <Style TargetType="PasswordBox" BasedOn="{StaticResource ComercialPasswordBox}" />
     <Style TargetType="GroupBox" BasedOn="{StaticResource ComercialGroupBox}" />
     <Style TargetType="ComboBox" BasedOn="{StaticResource ComercialComboBox}" />
