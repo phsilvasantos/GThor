@@ -13,7 +13,7 @@ MDF-e Manifesto Eletrônico de Documentos
 
 .Net 4.6.2
 
-NHibernate
+Npgsql.EntityFrameworkCore.PostgreSQL
 
 PostgreSQL 9.6.2
 
