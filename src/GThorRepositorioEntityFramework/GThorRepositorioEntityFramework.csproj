@@ -212,6 +212,10 @@
     <Compile Include="Migrations\20170420005553_CriaTabelaUf.designer.cs">
       <DependentUpon>20170420005553_CriaTabelaUf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170420025210_CriaTabelaCidade.cs" />
+    <Compile Include="Migrations\20170420025210_CriaTabelaCidade.designer.cs">
+      <DependentUpon>20170420025210_CriaTabelaCidade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GThorContextoModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

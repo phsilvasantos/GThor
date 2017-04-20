@@ -21,9 +21,11 @@ namespace GThorFrameworkDominio.Dominios.Cidades
         [Column("codigoIbge")]
         public int CodigoIbge { get; set; }
 
+
         [Required]
         [Column("ufId")]
-        [ForeignKey("fk_cidade__uf")]
+        public int UfId { get; set; }
+
         public Uf Uf { get; set; }
     }
 }

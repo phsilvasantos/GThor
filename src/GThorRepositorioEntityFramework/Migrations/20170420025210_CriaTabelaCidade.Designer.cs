@@ -9,9 +9,10 @@ using GThorFrameworkDominio.Dominios.Certificados;
 namespace GThorRepositorioEntityFramework.Migrations
 {
     [DbContext(typeof(GThorContexto))]
-    partial class GThorContextoModelSnapshot : ModelSnapshot
+    [Migration("20170420025210_CriaTabelaCidade")]
+    partial class CriaTabelaCidade
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
