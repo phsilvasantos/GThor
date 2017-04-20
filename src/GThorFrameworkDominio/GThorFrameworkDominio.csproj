@@ -44,6 +44,8 @@
     <Compile Include="Dominios\Certificados\CertificadoDigital.cs" />
     <Compile Include="Dominios\Certificados\TipoCertificado.cs" />
     <Compile Include="Dominios\Cidades\Cidade.cs" />
+    <Compile Include="Dominios\DocumentosFiscaisEletronicos\DocumentoMdfe.cs" />
+    <Compile Include="Dominios\DocumentosFiscaisEletronicos\flags\AmbienteSefaz.cs" />
     <Compile Include="Dominios\EstadosUf\Uf.cs" />
     <Compile Include="Dominios\Usuarios\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
