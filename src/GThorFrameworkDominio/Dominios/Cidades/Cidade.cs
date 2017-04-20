@@ -23,6 +23,7 @@ namespace GThorFrameworkDominio.Dominios.Cidades
 
         [Required]
         [Column("ufId")]
+        [ForeignKey("fk_cidade__uf")]
         public Uf Uf { get; set; }
     }
 }
