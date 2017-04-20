@@ -19,7 +19,7 @@ namespace GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos
 
         [Required]
         [Column("ambienteSefaz")]
-        public AmbienteSefaz AmbienteSefaz { get; set; }
+        public AmbienteSefaz AmbienteSefaz { get; set; } = AmbienteSefaz.Producao;
 
         [Required]
         [Column("serie")]

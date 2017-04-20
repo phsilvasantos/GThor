@@ -2,7 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
                     xmlns:system="clr-namespace:System;assembly=mscorlib"
-                    xmlns:helpersWpf="clr-namespace:ComercialBiblioteca.Ferramentas.HelpersWpf;assembly=GThorFrameworkBiblioteca">
+                    xmlns:helpersWpf="clr-namespace:ComercialBiblioteca.Ferramentas.HelpersWpf;assembly=GThorFrameworkBiblioteca"
+                    xmlns:helpers="clr-namespace:GThorFrameworkWpf.Helpers">
 
     <system:Double x:Key="TabItemFontSize">15.67</system:Double>
     <system:Double x:Key="GroupBoxHeaderFontSize">10</system:Double>
@@ -27,7 +28,9 @@
         <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True" />
     </Style>
     
-    <Style TargetType="TextBox" x:Key="GThorTextBoxNumeroInteiro" BasedOn="{StaticResource GThorTextBox}"></Style>
+    <Style TargetType="TextBox" x:Key="GThorTextBoxNumeroInteiro" BasedOn="{StaticResource GThorTextBox}">
+        <Setter Property="helpers:GThorTextBoxHelper.NumeroInteiro" Value="True" />
+    </Style>
 
     <Style TargetType="TextBlock" x:Key="ControlForm" BasedOn="{StaticResource MetroTextBlock}">
         <Setter Property="FontSize" Value="15"></Setter>

@@ -1,8 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using GThor.Views.DocumentosMdfe;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Negocios;
+using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThor.Models.DocumentosMdfe
 {
@@ -41,6 +44,45 @@ namespace GThor.Models.DocumentosMdfe
             AdicionarDataGridColumn(() => documentoMdfe.Serie, 80);
             AdicionarDataGridColumn(() => documentoMdfe.UltimoNumeroUsado, 170);
             AdicionarDataGridColumn(() => documentoMdfe.Descricao);
+        }
+
+
+        public override void NovoRegistroAction(object obj)
+        {
+            var model = new DocumentoMdfeFormModel(new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe()))
+            {
+                DocumentoMdfe = new DocumentoMdfe()
+            };
+
+            model.AtualizarListaHandler += AtualizaLista;
+
+            var formulario = new DocumentoMdfeForm(model);
+
+            formulario.ShowDialog();
+        }
+
+        public override void DuploClickDataGrid()
+        {
+            var model = new DocumentoMdfeFormModel(new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe()))
+            {
+                DocumentoMdfe = EntidadeSelecionada
+            };
+
+            model.AtualizarListaHandler += AtualizaLista;
+
+            var formulario = new DocumentoMdfeForm(model);
+
+            formulario.ShowDialog();
+        }
+
+        protected override void DeletarRegistroSelecionado()
+        {
+            _negocioDocumentoMdfe.Deletar(EntidadeSelecionada);
+        }
+
+        private void AtualizaLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }

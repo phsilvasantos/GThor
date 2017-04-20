@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
-        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-        xmlns:helpers="clr-namespace:GThorFrameworkWpf.Helpers;assembly=GThorFrameworkWpf"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:flags1="clr-namespace:GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;assembly=GThorFrameworkDominio"
         mc:Ignorable="d"
@@ -14,13 +12,13 @@
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
         Background="{StaticResource AccentColorBrush}"
-        Title="Documento MDF-e" Height="460" Width="600">
+        Title="Documento MDF-e" Height="400" Width="600">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
         <TextBox MaxLength="100" Text="{Binding Descricao}"></TextBox>
 
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Tipo Certificado Digital</TextBlock>
+        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Ambiente Sefaz</TextBlock>
         <ComboBox
             IsEditable="False"
             ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags1:AmbienteSefaz}}}"
@@ -29,26 +27,16 @@
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Série</TextBlock>
         <TextBox 
-            IsReadOnly="True"
-            IsEnabled="{Binding IsArquivo}" Style="{StaticResource ComercialSearchTextBox}" Text="{Binding Arquivo}" CharacterCasing="Normal"
-            controls:TextBoxHelper.ButtonCommand="{Binding CommandBuscarArquivo}"></TextBox>
+            MaxLength="3"
+            Style="{StaticResource GThorTextBoxNumeroInteiro}" 
+            Text="{Binding Serie}"></TextBox>
 
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Serial</TextBlock>
-        <TextBox IsEnabled="{Binding IsSerial}" 
-                 IsReadOnly="True"
-                 controls:TextBoxHelper.ButtonCommand="{Binding CommandBuscarSerial}"
-                 Style="{StaticResource ComercialSearchTextBox}" 
-                 Text="{Binding Serial}" CharacterCasing="Normal"></TextBox>
-
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Senha</TextBlock>
-        <PasswordBox     
-            IsEnabled="{Binding IsSenha}"
-            controls:TextBoxHelper.Watermark="Senha"
-            helpers:PasswordHelper.Attach="True"
-            helpers:PasswordHelper.Password="{Binding Senha, Mode=TwoWay}"
-            MaxLength="20"
-        ></PasswordBox>
-
+        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Ultimo Número Usado (Primeira vez é? Então é 0)</TextBlock>
+        <TextBox
+            MaxLength="9"
+            Style="{StaticResource GThorTextBoxNumeroInteiro}" 
+            Text="{Binding UltimoNumeroUsado}"></TextBox>
+        
         <views1:BotoesCrud></views1:BotoesCrud>
     </StackPanel>
 
