@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Contratos;
+using GThorNegocio.Dto;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Contexto;
 using GThorRepositorioEntityFramework.Extensoes;
@@ -16,12 +18,19 @@ namespace GThorNegocio.Negocios
             _repositorioUf = repositorioUf;
         }
 
-        public IEnumerable<Uf> Lista()
+        public IEnumerable<UfComboBoxDto> ListaParaComboBox()
         {
             using (var contexto = new GThorContexto())
             {
                 _repositorioUf.SetGThorContexto(contexto);
-                return _repositorioUf.Lista();
+                var listaUfs = _repositorioUf.Lista();
+
+                return listaUfs.Select(uf => new UfComboBoxDto
+                    {
+                        Id = uf.Id,
+                        Nome = uf.Nome
+                    })
+                    .ToList();
             }
         }
     }
