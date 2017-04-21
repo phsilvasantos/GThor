@@ -43,7 +43,7 @@ namespace GThor.Models.Veiculos
         {
             Veiculo veiculo = null;
             AdicionarDataGridColumn(() => veiculo.Id, 40);
-            AdicionarDataGridColumn(() => veiculo.Descricao);
+            AdicionarDataGridColumn(() => veiculo.Descricao, 400);
             AdicionarDataGridColumn(() => veiculo.CodigoInterno, 100);
             AdicionarDataGridColumn(() => veiculo.Placa, 100);
             AdicionarDataGridColumn(() => veiculo.Renavam, 200);
