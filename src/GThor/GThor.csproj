@@ -95,6 +95,7 @@
     <Compile Include="Models\DocumentosMdfe\GridDocumentoMdfeModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />
+    <Compile Include="Models\Veiculos\GridVeiculoModel.cs" />
     <Compile Include="Views\CertificadoDigitalForm.xaml.cs">
       <DependentUpon>CertificadoDigitalForm.xaml</DependentUpon>
     </Compile>

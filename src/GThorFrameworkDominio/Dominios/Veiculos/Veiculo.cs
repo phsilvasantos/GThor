@@ -42,6 +42,10 @@ namespace GThorFrameworkDominio.Dominios.Veiculos
         public int CapacidadeEmKg { get; set; }
 
         [Required]
+        [Column("capacidadeEmM3")]
+        public short CapacidadeEmM3 { get; set; }
+
+        [Required]
         [Column("tipoRodado")]
         public TipoRodado TipoRodado { get; set; }
 
