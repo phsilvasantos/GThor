@@ -48,6 +48,9 @@
     <Compile Include="Dominios\DocumentosFiscaisEletronicos\flags\AmbienteSefaz.cs" />
     <Compile Include="Dominios\EstadosUf\Uf.cs" />
     <Compile Include="Dominios\Usuarios\Usuario.cs" />
+    <Compile Include="Dominios\Veiculos\Flags\TipoCarroceria.cs" />
+    <Compile Include="Dominios\Veiculos\Flags\TipoRodado.cs" />
+    <Compile Include="Dominios\Veiculos\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
