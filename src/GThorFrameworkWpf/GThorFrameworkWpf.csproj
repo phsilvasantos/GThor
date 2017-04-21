@@ -94,6 +94,9 @@
     <Compile Include="Views\BotoesCrud.xaml.cs">
       <DependentUpon>BotoesCrud.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ComboBoxUf.xaml.cs">
+      <DependentUpon>ComboBoxUf.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GThorWindow.cs" />
     <Compile Include="Views\DataGrid\Cabecalho\CabecalhoPadrao.xaml.cs">
       <DependentUpon>CabecalhoPadrao.xaml</DependentUpon>
@@ -135,6 +138,10 @@
     <Page Include="Views\BotoesCrud.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ComboBoxUf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DataGrid\Cabecalho\CabecalhoPadrao.xaml">
       <Generator>MSBuild:Compile</Generator>
