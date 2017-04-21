@@ -229,6 +229,14 @@
     <Compile Include="Migrations\20170420225943_AlteradoDescricaoDocMdfeCDigital.designer.cs">
       <DependentUpon>20170420225943_AlteradoDescricaoDocMdfeCDigital.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170421011133_CriaTabelaVeiculo.cs" />
+    <Compile Include="Migrations\20170421011133_CriaTabelaVeiculo.designer.cs">
+      <DependentUpon>20170421011133_CriaTabelaVeiculo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20170421011256_AlteradoColunaDescricaoVeiculo.cs" />
+    <Compile Include="Migrations\20170421011256_AlteradoColunaDescricaoVeiculo.designer.cs">
+      <DependentUpon>20170421011256_AlteradoColunaDescricaoVeiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GThorContextoModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

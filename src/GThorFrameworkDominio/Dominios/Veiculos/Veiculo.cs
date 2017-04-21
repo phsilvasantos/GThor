@@ -18,6 +18,7 @@ namespace GThorFrameworkDominio.Dominios.Veiculos
         [Column("descricao")]
         public string Descricao { get; set; }
 
+        [Required]
         [MaxLength(10)]
         [Column("codigoInterno")]
         public string CodigoInterno { get; set; }

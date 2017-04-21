@@ -11,9 +11,10 @@ using GThorFrameworkDominio.Dominios.Veiculos.Flags;
 namespace GThorRepositorioEntityFramework.Migrations
 {
     [DbContext(typeof(GThorContexto))]
-    partial class GThorContextoModelSnapshot : ModelSnapshot
+    [Migration("20170421011256_AlteradoColunaDescricaoVeiculo")]
+    partial class AlteradoColunaDescricaoVeiculo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
