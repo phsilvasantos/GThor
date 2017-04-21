@@ -238,6 +238,10 @@
     <Compile Include="Migrations\20170421011256_AlteradoColunaDescricaoVeiculo.designer.cs">
       <DependentUpon>20170421011256_AlteradoColunaDescricaoVeiculo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20170421014053_AdicionadoM3Veiculo.cs" />
+    <Compile Include="Migrations\20170421014053_AdicionadoM3Veiculo.designer.cs">
+      <DependentUpon>20170421014053_AdicionadoM3Veiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\GThorContextoModelSnapshot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

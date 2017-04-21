@@ -5,6 +5,7 @@ using GThor.Models;
 using GThor.Models.CertificadoDigitais;
 using GThor.Models.DocumentosMdfe;
 using GThor.Models.Usuarios;
+using GThor.Models.Veiculos;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
@@ -41,7 +42,12 @@ namespace GThor
             AbrirTabItem("Documentos MDF-e", DataGridPadrao.Criar(new GridDocumentoMdfeModel(negocio)));
         }
 
+        private void Veiculo_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            var negocio = new NegocioVeiculo(new RepositorioVeiculo());
 
+            AbrirTabItem("Veículos", DataGridPadrao.Criar(new GridVeiculoModel(negocio)));
+        }
 
 
         private void AbrirTabItem(string titulo, UserControl janela)
