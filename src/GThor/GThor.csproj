@@ -170,6 +170,10 @@
       <Project>{F9E16566-E224-4339-80D6-E5B48592A5E5}</Project>
       <Name>GThorFrameworkBiblioteca</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GThorFrameworkComponentes\GThorFrameworkComponentes.csproj">
+      <Project>{C61C35EB-A391-4778-9755-99602C89D7C2}</Project>
+      <Name>GThorFrameworkComponentes</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GThorFrameworkDominio\GThorFrameworkDominio.csproj">
       <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
       <Name>GThorFrameworkDominio</Name>

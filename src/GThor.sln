@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26403.0
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThor", "GThor\GThor.csproj", "{4EAF6E54-25B4-404A-BF75-740A0F21030E}"
 EndProject
@@ -22,6 +22,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorRepositorioEntityFramework", "GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj", "{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorFrameworkRepositorio", "GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj", "{E9B13860-6C09-4CE9-8477-C82EE7743A57}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorFrameworkComponentes", "GThorFrameworkComponentes\GThorFrameworkComponentes.csproj", "{C61C35EB-A391-4778-9755-99602C89D7C2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{E9B13860-6C09-4CE9-8477-C82EE7743A57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9B13860-6C09-4CE9-8477-C82EE7743A57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9B13860-6C09-4CE9-8477-C82EE7743A57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C61C35EB-A391-4778-9755-99602C89D7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C61C35EB-A391-4778-9755-99602C89D7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C61C35EB-A391-4778-9755-99602C89D7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C61C35EB-A391-4778-9755-99602C89D7C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

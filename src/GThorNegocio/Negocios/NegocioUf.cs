@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Contratos;
 using GThorNegocio.Dto;
 using GThorRepositorio.Contratos;
