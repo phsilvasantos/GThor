@@ -10,12 +10,12 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public Usuario CarregarPorId(int id)
         {
-            return GThorContexto.Usuario.FirstOrDefault(u => u.Id == id);
+            return GThorContexto.Usuarios.FirstOrDefault(u => u.Id == id);
         }
 
         public IEnumerable<Usuario> Lista()
         {
-            var lista = GThorContexto.Usuario.Take(1000).ToList();
+            var lista = GThorContexto.Usuarios.Take(1000).ToList();
 
             return lista;
         }
@@ -29,16 +29,16 @@ namespace GThorRepositorioEntityFramework.Implementacao
         {
             if (entity.Id == 0)
             {
-                GThorContexto.Usuario.Add(entity);
+                GThorContexto.Usuarios.Add(entity);
                 return;
             }
 
-            GThorContexto.Usuario.Update(entity);
+            GThorContexto.Usuarios.Update(entity);
         }
 
         public void Deletar(Usuario entity)
         {
-            GThorContexto.Usuario.Remove(entity);
+            GThorContexto.Usuarios.Remove(entity);
         }
     }
 }

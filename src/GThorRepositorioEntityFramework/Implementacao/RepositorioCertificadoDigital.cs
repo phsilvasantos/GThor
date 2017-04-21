@@ -10,12 +10,12 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public CertificadoDigital CarregarPorId(int id)
         {
-            return GThorContexto.CertificadoDigital.FirstOrDefault(c => c.Id == id);
+            return GThorContexto.CertificadosDigitais.FirstOrDefault(c => c.Id == id);
         }
 
         public IEnumerable<CertificadoDigital> Lista()
         {
-            return GThorContexto.CertificadoDigital.ToList();
+            return GThorContexto.CertificadosDigitais.ToList();
         }
 
         public void Dispose()
@@ -27,16 +27,16 @@ namespace GThorRepositorioEntityFramework.Implementacao
         {
             if (entity.Id == 0)
             {
-                GThorContexto.CertificadoDigital.Add(entity);
+                GThorContexto.CertificadosDigitais.Add(entity);
                 return;
             }
 
-            GThorContexto.CertificadoDigital.Update(entity);
+            GThorContexto.CertificadosDigitais.Update(entity);
         }
 
         public void Deletar(CertificadoDigital entity)
         {
-            GThorContexto.CertificadoDigital.Remove(entity);
+            GThorContexto.CertificadosDigitais.Remove(entity);
         }
     }
 }
