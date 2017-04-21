@@ -11,20 +11,11 @@ namespace GThorFrameworkComponentes.ComboBox
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {
+
         public static readonly DependencyProperty EstadoUfSelecionadoProperty =
-            DependencyProperty.Register("EstadoUfSelecionado", typeof(UfComboBoxDto), typeof(ComboBoxUf), new PropertyMetadata(default(UfComboBoxDto), PropertyChangedCallback));
+            DependencyProperty.Register("EstadoUfSelecionado", typeof(object), typeof(ComboBoxUf), new UIPropertyMetadata(null));
 
-
-        private static void PropertyChangedCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-            var control = d as ComboBoxUf;
-
-            if (control != null)
-            {
-                control.UfSelecionado = (UfComboBoxDto) e.NewValue;
-            }
-        }
-
+        
         public UfComboBoxDto EstadoUfSelecionado
         {
             get => (UfComboBoxDto)GetValue(EstadoUfSelecionadoProperty);
@@ -42,6 +33,7 @@ namespace GThorFrameworkComponentes.ComboBox
             {
                 if (Equals(value, _ufSelecionado)) return;
                 _ufSelecionado = value;
+                EstadoUfSelecionado = value;
                 OnPropertyChanged();
             }
         }

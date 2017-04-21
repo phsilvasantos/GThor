@@ -11,7 +11,7 @@
         <ComboBox 
             ItemsSource="{Binding Path=ListaEstadoUf}"
                   DisplayMemberPath="Nome"
-                  SelectedItem="{Binding UfSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                   SelectedValuePath="Id"
                   SelectedValue="{Binding UfSelecionado.Id}" />
     </StackPanel>
