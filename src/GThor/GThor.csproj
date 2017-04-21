@@ -105,6 +105,9 @@
     <Compile Include="Views\UsuarioForm.xaml.cs">
       <DependentUpon>UsuarioForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Veiculos\VeiculoForm.xaml.cs">
+      <DependentUpon>VeiculoForm.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +129,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\UsuarioForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Veiculos\VeiculoForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

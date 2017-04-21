@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using GThor.Views.Veiculos;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Veiculos;
 using GThorFrameworkWpf.Models.DataGrid;
@@ -52,6 +53,11 @@ namespace GThor.Models.Veiculos
             AdicionarDataGridColumn(() => veiculo.CapacidadeEmM3, 80);
             AdicionarDataGridColumn(() => veiculo.TipoRodado, 150);
             AdicionarDataGridColumn(() => veiculo.TipoCarroceria, 150);
+        }
+
+        public override void NovoRegistroAction(object obj)
+        {
+            new VeiculoForm().ShowDialog();
         }
     }
 }
