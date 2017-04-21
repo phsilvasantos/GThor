@@ -20,11 +20,6 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return lista;
         }
 
-        public void Dispose()
-        {
-            GThorContexto.Dispose();
-        }
-
         public void SalvarOuAtualizar(Usuario entity)
         {
             if (entity.Id == 0)

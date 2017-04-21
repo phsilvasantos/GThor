@@ -205,6 +205,7 @@
     <Compile Include="Implementacao\RepositorioCertificadoDigital.cs" />
     <Compile Include="Implementacao\RepositorioDocumentoMdfe.cs" />
     <Compile Include="Implementacao\RepositorioUsuario.cs" />
+    <Compile Include="Implementacao\RepositorioVeiculo.cs" />
     <Compile Include="Migrations\20170420001945_CriaTabelaUsuarioECertificadoDigital.cs" />
     <Compile Include="Migrations\20170420001945_CriaTabelaUsuarioECertificadoDigital.designer.cs">
       <DependentUpon>20170420001945_CriaTabelaUsuarioECertificadoDigital.cs</DependentUpon>

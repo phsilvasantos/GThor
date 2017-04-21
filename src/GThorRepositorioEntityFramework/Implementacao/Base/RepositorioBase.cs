@@ -1,9 +1,10 @@
-﻿using GThorRepositorioEntityFramework.Contexto;
+﻿using System;
+using GThorRepositorioEntityFramework.Contexto;
 using GThorRepositorioEntityFramework.Contratos;
 
 namespace GThorRepositorioEntityFramework.Implementacao.Base
 {
-    public class RepositorioBase : IRepositorioBase
+    public class RepositorioBase : IRepositorioBase, IDisposable
     {
         public GThorContexto GThorContexto { get; set; }
 
@@ -14,6 +15,11 @@ namespace GThorRepositorioEntityFramework.Implementacao.Base
         public void SalvarAlteracoes()
         {
             GThorContexto.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            GThorContexto?.Dispose();
         }
     }
 }

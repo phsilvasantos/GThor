@@ -18,11 +18,6 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return GThorContexto.DocumentosMdfe.ToList();
         }
 
-        public void Dispose()
-        {
-            GThorContexto.Dispose();
-        }
-
         public void SalvarOuAtualizar(DocumentoMdfe entity)
         {
             if (entity.Id == 0)

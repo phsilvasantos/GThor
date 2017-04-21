@@ -18,11 +18,6 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return GThorContexto.CertificadosDigitais.ToList();
         }
 
-        public void Dispose()
-        {
-            GThorContexto.Dispose();
-        }
-
         public void SalvarOuAtualizar(CertificadoDigital entity)
         {
             if (entity.Id == 0)
