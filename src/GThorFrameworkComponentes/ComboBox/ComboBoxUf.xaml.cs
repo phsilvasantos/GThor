@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using GThorNegocio.Dto;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
 using JetBrains.Annotations;
@@ -26,10 +26,10 @@ namespace GThorFrameworkComponentes.ComboBox
             RaiseEvent(new RoutedEventArgs(PickItemEvent, this));
         }
 
-        private ObservableCollection<UfComboBoxDto> _listaEstadoUf;
-        private UfComboBoxDto _ufSelecionado;
+        private ObservableCollection<Uf> _listaEstadoUf;
+        private Uf _ufSelecionado;
 
-        public UfComboBoxDto UfSelecionado
+        public Uf UfSelecionado
         {
             get => _ufSelecionado;
             set
@@ -41,7 +41,7 @@ namespace GThorFrameworkComponentes.ComboBox
             }
         }
 
-        public ObservableCollection<UfComboBoxDto> ListaEstadoUf
+        public ObservableCollection<Uf> ListaEstadoUf
         {
             get => _listaEstadoUf;
             set
@@ -69,7 +69,7 @@ namespace GThorFrameworkComponentes.ComboBox
 
         private void PreencherListaEstadoUf()
         {
-            ListaEstadoUf = new ObservableCollection<UfComboBoxDto>();
+            ListaEstadoUf = new ObservableCollection<Uf>();
 
             var listaUf = new NegocioUf(new RepositorioUf()).ListaParaComboBox();
 

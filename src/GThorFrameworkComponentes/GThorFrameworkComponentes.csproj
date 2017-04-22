@@ -92,6 +92,10 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\GThorFrameworkDominio\GThorFrameworkDominio.csproj">
+      <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
+      <Name>GThorFrameworkDominio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj">
       <Project>{E9B13860-6C09-4CE9-8477-C82EE7743A57}</Project>
       <Name>GThorFrameworkRepositorio</Name>

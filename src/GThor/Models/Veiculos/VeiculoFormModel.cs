@@ -1,19 +1,19 @@
 ﻿using System;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkWpf.Models.Base;
-using GThorNegocio.Dto;
 
 namespace GThor.Models.Veiculos
 {
     public class VeiculoFormModel : ModelViewBase
     {
-        private UfComboBoxDto _ufDtoSelecionado;
+        private Uf _ufSelecionado;
 
-        public UfComboBoxDto UfDtoSelecionado
+        public Uf UfSelecionado
         {
-            get { return _ufDtoSelecionado; }
+            get => _ufSelecionado;
             set
             {
-                _ufDtoSelecionado = value;
+                _ufSelecionado = value;
                 OnPropertyChanged();
             }
         }
@@ -25,7 +25,7 @@ namespace GThor.Models.Veiculos
 
         private void SalvarConcluido(object sender, EventArgs e)
         {
-            var uf = UfDtoSelecionado;
+            var uf = UfSelecionado;
 
         }
     }
