@@ -36,7 +36,12 @@ namespace GThorFrameworkWpf.Views.DataGrid
 
         private void DataGridPadrao_OnLoaded(object sender, RoutedEventArgs e)
         {
-            
+            _model.AtualizaCorpoGrid += AtualizaCorpoGrid;
+        }
+
+        private void AtualizaCorpoGrid(object sender, EventArgs e)
+        {
+            DefineCropoGrid();
         }
 
         private void ConstruirEstruturaDataGridPadao()
@@ -45,7 +50,7 @@ namespace GThorFrameworkWpf.Views.DataGrid
                 DocPanelCabecalho.Children.Add(_cabecalho);
 
             if (_corpoGrid != null)
-                DockPanelCorpo.Children.Add(_corpoGrid);
+                DockPanelGrid.Children.Add(_corpoGrid);
 
             if (_popupFiltro != null)
                 _model.PopupFiltro = _popupFiltro;
@@ -53,10 +58,15 @@ namespace GThorFrameworkWpf.Views.DataGrid
             if (_model != null)
                 DataContext = _model;
 
-            DockPanelCorpo.Children.Add(_corpoNovoRegistro);
+            DockPanelNovoRegistro.Children.Add(_corpoNovoRegistro);
 
-            _corpoGrid.Visibility = _model.NaoTemRegistros() == false ? Visibility.Visible : Visibility.Collapsed;
-            _corpoNovoRegistro.Visibility = _model.NaoTemRegistros() ? Visibility.Visible : Visibility.Collapsed;
+            DefineCropoGrid();
+        }
+
+        private void DefineCropoGrid()
+        {
+            DockPanelGrid.Visibility = _model.NaoTemRegistros() == false ? Visibility.Visible : Visibility.Collapsed;
+            DockPanelNovoRegistro.Visibility = _model.NaoTemRegistros() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void AddCorpoECabecalhoPadrao()

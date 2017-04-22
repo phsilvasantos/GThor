@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System;
+using System.Collections.ObjectModel;
 using System.Windows.Controls;
 
 namespace GThorFrameworkWpf.Models.DataGrid
@@ -19,6 +20,7 @@ namespace GThorFrameworkWpf.Models.DataGrid
         bool IniciaPesquisa(string pesquisarTexto);
         void AplicaPesquisa(string pesquisarTexto);
         void DuploClickDataGrid();
+        event EventHandler AtualizaCorpoGrid;
 
         bool NaoTemRegistros();
     }

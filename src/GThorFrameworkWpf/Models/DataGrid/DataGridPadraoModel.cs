@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace GThorFrameworkWpf.Models.DataGrid
 {
     public abstract class DataGridPadraoModel<TEntidade> : ModelViewBase, IDataGridModel
     {
+        public event EventHandler AtualizaCorpoGrid;
 
         public DataGridPadraoModel()
         {
@@ -24,7 +26,14 @@ namespace GThorFrameworkWpf.Models.DataGrid
             DescricaoPesquisa = "Pesquisa rapida";
             ColunasDataGrid = new ObservableCollection<DataGridColumn>();
             ListaEntidades = new ObservableCollection<TEntidade>();
+            ListaEntidades.CollectionChanged += ListaChanged;
+
             AdicionaColunasNaLista();
+        }
+
+        private void ListaChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            OnAtualizaCorpoGrid();
         }
 
         private bool _isOpenPopupFiltro;
@@ -325,6 +334,11 @@ namespace GThorFrameworkWpf.Models.DataGrid
             {
                 ListaEntidades.Add(entidade);
             }
+        }
+
+        protected virtual void OnAtualizaCorpoGrid()
+        {
+            AtualizaCorpoGrid?.Invoke(this, EventArgs.Empty);
         }
     }
 }

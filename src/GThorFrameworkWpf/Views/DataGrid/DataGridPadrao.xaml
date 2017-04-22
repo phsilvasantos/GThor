@@ -7,9 +7,10 @@
              d:DesignWidth="960"
              Language="pt-BR"
              Loaded="DataGridPadrao_OnLoaded">
-    <DockPanel Name="DockPanelCorpo" Margin="0,5,0,0">
+    <DockPanel Margin="0,5,0,0">
         <DockPanel DockPanel.Dock="Top" Name="DocPanelCabecalho"/>
-
+        <DockPanel DockPanel.Dock="Top" Name="DockPanelGrid"/>
+        <DockPanel DockPanel.Dock="Top" Name="DockPanelNovoRegistro"/>
         
     </DockPanel>
 </UserControl>
