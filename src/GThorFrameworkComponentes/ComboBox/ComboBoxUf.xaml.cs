@@ -11,19 +11,19 @@ namespace GThorFrameworkComponentes.ComboBox
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {
-        private static readonly RoutedEvent OnPickItemEvent =
-            EventManager.RegisterRoutedEvent("OnPickItem", RoutingStrategy.Bubble,
+        private static readonly RoutedEvent PickItemEvent =
+            EventManager.RegisterRoutedEvent("PickItem", RoutingStrategy.Bubble,
                 typeof(RoutedEventHandler), typeof(ComboBoxUf));
 
-        public event RoutedEventHandler OnPickItem
+        public event RoutedEventHandler PickItem
         {
-            add => AddHandler(OnPickItemEvent, value);
-            remove => RemoveHandler(OnPickItemEvent, value);
+            add => AddHandler(PickItemEvent, value);
+            remove => RemoveHandler(PickItemEvent, value);
         }
 
         private void OnChanceItem()
         {
-            RaiseEvent(new RoutedEventArgs(OnPickItemEvent, this));
+            RaiseEvent(new RoutedEventArgs(PickItemEvent, this));
         }
 
         private ObservableCollection<UfComboBoxDto> _listaEstadoUf;

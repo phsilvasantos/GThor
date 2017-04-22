@@ -14,7 +14,7 @@ namespace GThor.Views.Veiculos
             InitializeComponent();
         }
 
-        private void ComboBoxUf_OnOnPickItem(object sender, RoutedEventArgs e)
+        private void ComboBoxUf_OnPickItem(object sender, RoutedEventArgs e)
         {
             var comboBoxUf = e.Source as ComboBoxUf;
             _model.UfDtoSelecionado = comboBoxUf?.UfSelecionado;
