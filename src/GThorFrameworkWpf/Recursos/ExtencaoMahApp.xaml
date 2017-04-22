@@ -37,6 +37,10 @@
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
 
+    <Style TargetType="TextBlock" x:Key="ControlFormBlack" BasedOn="{StaticResource ControlForm}">
+        <Setter Property="Foreground" Value="Black"></Setter>
+    </Style>
+
 
     <Style TargetType="TextBox" x:Key="ComercialSearchTextBox" BasedOn="{StaticResource SearchMetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />

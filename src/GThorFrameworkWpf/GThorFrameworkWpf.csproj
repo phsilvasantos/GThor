@@ -94,6 +94,9 @@
     <Compile Include="Views\BotoesCrud.xaml.cs">
       <DependentUpon>BotoesCrud.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\DataGrid\Corpo\CorpoCriaNovoRegistro.xaml.cs">
+      <DependentUpon>CorpoCriaNovoRegistro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\GThorWindow.cs" />
     <Compile Include="Views\DataGrid\Cabecalho\CabecalhoPadrao.xaml.cs">
       <DependentUpon>CabecalhoPadrao.xaml</DependentUpon>
@@ -139,6 +142,10 @@
     <Page Include="Views\DataGrid\Cabecalho\CabecalhoPadrao.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DataGrid\Corpo\CorpoCriaNovoRegistro.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DataGrid\Corpo\CorpoPadrao.xaml">
       <Generator>MSBuild:Compile</Generator>

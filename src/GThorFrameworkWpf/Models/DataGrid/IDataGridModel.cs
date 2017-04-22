@@ -19,5 +19,7 @@ namespace GThorFrameworkWpf.Models.DataGrid
         bool IniciaPesquisa(string pesquisarTexto);
         void AplicaPesquisa(string pesquisarTexto);
         void DuploClickDataGrid();
+
+        bool NaoTemRegistros();
     }
 }

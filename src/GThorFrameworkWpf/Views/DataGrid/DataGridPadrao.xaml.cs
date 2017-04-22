@@ -6,6 +6,7 @@ using ComercialFrameworkWpf.Views.DataGrid.Corpo;
 using ComercialFrameworkWpf.Views.DataGrid.Filtro;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorFrameworkWpf.Views.DataGrid.Cabecalho;
+using GThorFrameworkWpf.Views.DataGrid.Corpo;
 
 namespace GThorFrameworkWpf.Views.DataGrid
 {
@@ -20,7 +21,9 @@ namespace GThorFrameworkWpf.Views.DataGrid
         {
             _model = model;
             InitializeComponent();
-            InicializaComponentes();
+            _model.BuscarRegistros();
+            AddCorpoECabecalhoPadrao();
+            ConstruirEstruturaDataGridPadao();
         }
 
         private DataGridPadrao(IDataGridModel model, CabecalhoGridModel cabecalhoGridModel, CorpoGridModel corpo, PopupFiltro popupFiltro) : this(model)
@@ -32,13 +35,7 @@ namespace GThorFrameworkWpf.Views.DataGrid
 
         private void DataGridPadrao_OnLoaded(object sender, RoutedEventArgs e)
         {
-            _model.BuscarRegistros();
-        }
-
-        private void InicializaComponentes()
-        {
-            AddCorpoECabecalhoPadrao();
-            ConstruirEstruturaDataGridPadao();
+            
         }
 
         private void ConstruirEstruturaDataGridPadao()
@@ -61,8 +58,13 @@ namespace GThorFrameworkWpf.Views.DataGrid
             if (_cabecalho == null)
                 _cabecalho = new CabecalhoPadrao();
 
-            if (_corpo == null)
+            if (_corpo == null && !_model.NaoTemRegistros())
                 _corpo = new CorpoPadrao();
+
+            if (_model.NaoTemRegistros())
+            {
+                _corpo = new CorpoCriaNovoRegistro();
+            }
 
             if (_popupFiltro == null)
                 _popupFiltro = new PopupExFiltroPadrao();

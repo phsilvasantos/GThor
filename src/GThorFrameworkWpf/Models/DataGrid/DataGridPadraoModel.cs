@@ -314,6 +314,11 @@ namespace GThorFrameworkWpf.Models.DataGrid
             
         }
 
+        public bool NaoTemRegistros()
+        {
+            return ListaEntidades.Count == 0;
+        }
+
         public void PreencherLista(IEnumerable<TEntidade> lista)
         {
             foreach (var entidade in lista)
