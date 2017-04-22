@@ -13,7 +13,8 @@ namespace GThorFrameworkWpf.Views.DataGrid
     public partial class DataGridPadrao
     {
         private UserControl _cabecalho;
-        private UserControl _corpo;
+        private UserControl _corpoGrid;
+        private UserControl _corpoNovoRegistro;
         private readonly IDataGridModel _model;
         private UserControl _popupFiltro;
 
@@ -29,7 +30,7 @@ namespace GThorFrameworkWpf.Views.DataGrid
         private DataGridPadrao(IDataGridModel model, CabecalhoGridModel cabecalhoGridModel, CorpoGridModel corpo, PopupFiltro popupFiltro) : this(model)
         {
             _cabecalho = cabecalhoGridModel?.Cabecalho;
-            _corpo = corpo?.Cropo;
+            _corpoGrid = corpo?.Cropo;
             _popupFiltro = popupFiltro?.Filtro;
         }
 
@@ -43,28 +44,30 @@ namespace GThorFrameworkWpf.Views.DataGrid
             if (_cabecalho != null)
                 DocPanelCabecalho.Children.Add(_cabecalho);
 
-            if (_corpo != null)
-                DockPanelCorpo.Children.Add(_corpo);
+            if (_corpoGrid != null)
+                DockPanelCorpo.Children.Add(_corpoGrid);
 
             if (_popupFiltro != null)
                 _model.PopupFiltro = _popupFiltro;
 
             if (_model != null)
                 DataContext = _model;
+
+            DockPanelCorpo.Children.Add(_corpoNovoRegistro);
+
+            _corpoGrid.Visibility = _model.NaoTemRegistros() == false ? Visibility.Visible : Visibility.Collapsed;
+            _corpoNovoRegistro.Visibility = _model.NaoTemRegistros() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         private void AddCorpoECabecalhoPadrao()
         {
+            _corpoNovoRegistro = new CorpoCriaNovoRegistro();
+
             if (_cabecalho == null)
                 _cabecalho = new CabecalhoPadrao();
 
-            if (_corpo == null && !_model.NaoTemRegistros())
-                _corpo = new CorpoPadrao();
-
-            if (_model.NaoTemRegistros())
-            {
-                _corpo = new CorpoCriaNovoRegistro();
-            }
+            if (_corpoGrid == null)
+                _corpoGrid = new CorpoPadrao();
 
             if (_popupFiltro == null)
                 _popupFiltro = new PopupExFiltroPadrao();
