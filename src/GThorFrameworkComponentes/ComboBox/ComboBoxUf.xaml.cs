@@ -56,7 +56,6 @@ namespace GThorFrameworkComponentes.ComboBox
         {
             DataContext = this;
             PreencherListaEstadoUf();
-            UfSelecionado = ListaEstadoUf[0];
             InitializeComponent();
         }
 
