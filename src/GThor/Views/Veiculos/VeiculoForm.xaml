@@ -36,7 +36,7 @@
             </StackPanel>
 
             <StackPanel Margin="5,0,0,0" Grid.Column="1">
-                <comboBox:ComboBoxUf PickItem="ComboBoxUf_OnPickItem" ></comboBox:ComboBoxUf>
+                <comboBox:ComboBoxUf Name="ComboBoxUf"></comboBox:ComboBoxUf>
             </StackPanel>
 
             <StackPanel Margin="5,0,0,0" Grid.Column="2">

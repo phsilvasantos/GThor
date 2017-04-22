@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using GThor.Models.Veiculos;
 using GThorFrameworkComponentes.ComboBox;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 
 namespace GThor.Views.Veiculos
 {
@@ -12,6 +13,14 @@ namespace GThor.Views.Veiculos
             _model = new VeiculoFormModel();
             DataContext = _model;
             InitializeComponent();
+
+            InicializaComboBox();
+        }
+
+        private void InicializaComboBox()
+        {
+            ComboBoxUf.PickItem += ComboBoxUf_OnPickItem;
+            ComboBoxUf.UfSelecionado = new Uf {Id = 1};
         }
 
         private void ComboBoxUf_OnPickItem(object sender, RoutedEventArgs e)
