@@ -11,17 +11,20 @@ namespace GThorFrameworkComponentes.ComboBox
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {
+        private static readonly RoutedEvent OnPickItemEvent =
+            EventManager.RegisterRoutedEvent("OnPickItem", RoutingStrategy.Bubble,
+                typeof(RoutedEventHandler), typeof(ComboBoxUf));
 
-        public static readonly DependencyProperty EstadoUfSelecionadoProperty =
-            DependencyProperty.Register("EstadoUfSelecionado", typeof(object), typeof(ComboBoxUf), new UIPropertyMetadata(null));
-
-        
-        public UfComboBoxDto EstadoUfSelecionado
+        public event RoutedEventHandler OnPickItem
         {
-            get => (UfComboBoxDto)GetValue(EstadoUfSelecionadoProperty);
-            set => SetValue(EstadoUfSelecionadoProperty, value);
+            add => AddHandler(OnPickItemEvent, value);
+            remove => RemoveHandler(OnPickItemEvent, value);
         }
 
+        private void OnChanceItem()
+        {
+            RaiseEvent(new RoutedEventArgs(OnPickItemEvent, this));
+        }
 
         private ObservableCollection<UfComboBoxDto> _listaEstadoUf;
         private UfComboBoxDto _ufSelecionado;
@@ -33,8 +36,8 @@ namespace GThorFrameworkComponentes.ComboBox
             {
                 if (Equals(value, _ufSelecionado)) return;
                 _ufSelecionado = value;
-                EstadoUfSelecionado = value;
                 OnPropertyChanged();
+                OnChanceItem();
             }
         }
 
