@@ -21,6 +21,11 @@ namespace GThor.Views.Veiculos
         {
             ComboBoxUf.PickItem += ComboBoxUf_OnPickItem;
             ComboBoxUf.UfSelecionado = new Uf {Id = 1};
+
+            if (_model.Veiculo.Id != 0)
+            {
+                ComboBoxUf.UfSelecionado = new Uf {Id = _model.Veiculo.UfId};
+            }
         }
 
         private void ComboBoxUf_OnPickItem(object sender, RoutedEventArgs e)

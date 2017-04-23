@@ -1,4 +1,8 @@
-﻿using GThorFrameworkDominio.Dominios.Empresas;
+﻿using System;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.Cidades;
+using GThorFrameworkDominio.Dominios.Empresas;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkWpf.Models.Base;
 using GThorNegocio.Contratos;
 
@@ -158,6 +162,22 @@ namespace GThor.Models.Empresas
                 _cep = value;
                 OnPropertyChanged();
             }
+        }
+
+        public Uf Uf { get; set; }
+        public Cidade Cidade { get; set; }
+
+
+        protected override void LoadedCommandAction(object obj)
+        {
+            ValidaAntesSalvar += ValidarInformacoes;
+        }
+
+        private void ValidarInformacoes(object sender, EventArgs e)
+        {
+            RazaoSocial = RazaoSocial.TrimOrEmpty();
+
+            if (RazaoSocial.IsNullOrEmpty()) throw new ArgumentException("");
         }
     }
 }

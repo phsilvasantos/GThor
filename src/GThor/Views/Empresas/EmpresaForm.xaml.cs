@@ -1,17 +1,17 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using GThor.Models.Empresas;
 using GThorFrameworkComponentes.ComboBox;
-using GThorFrameworkDominio.Dominios.Cidades;
-using GThorFrameworkDominio.Dominios.EstadosUf;
 
 namespace GThor.Views.Empresas
 {
     public partial class EmpresaForm
     {
+        private readonly EmpresaFormModel _model;
+
         public EmpresaForm(EmpresaFormModel model)
         {
-            DataContext = model;
+            _model = model;
+            DataContext = _model;
             InitializeComponent();
         }
 
@@ -22,8 +22,8 @@ namespace GThor.Views.Empresas
             var uf = comboBoxUfCidade?.UfSelecionado;
             var cidade = comboBoxUfCidade?.CidadeSelecionada;
 
-            Console.WriteLine(uf?.Nome);
-            Console.WriteLine(cidade?.Nome);
+            _model.Uf = uf;
+            _model.Cidade = cidade;
         }
     }
 }

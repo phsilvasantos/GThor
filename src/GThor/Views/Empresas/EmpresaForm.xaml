@@ -155,7 +155,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Margin="0,8,0,0">
-                    <comboBox:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
+                    <comboBox:ComboBoxUfCidade PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="5,0,0,0">

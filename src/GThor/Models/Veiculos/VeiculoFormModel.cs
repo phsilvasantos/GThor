@@ -187,6 +187,7 @@ namespace GThor.Models.Veiculos
             Veiculo.CapacidadeEmKg = CapacidadeEmKg;
             Veiculo.CapacidadeEmM3 = CapacidadeEmM3;
             Veiculo.TipoCarroceria = TipoCarroceria;
+            Veiculo.Uf = null;
 
             _negocioVeiculo.SalvarOuAtualizar(Veiculo);
         }

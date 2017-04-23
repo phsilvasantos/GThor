@@ -84,6 +84,11 @@ namespace GThorFrameworkComponentes.ComboBox
 
         public void PesquisaPorUf(Uf uf)
         {
+            if (uf == null)
+            {
+                return;
+            }
+
             ListaCidade.Clear();
             var cidadesFiltradas = _cacheCidades.Where(c => c.UfId == uf.Id);
 
