@@ -4,7 +4,7 @@ using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkDominio.Dominios.Veiculos;
-using GThorRepositorioEntityFramework.Log;
+using GThorRepositorioEntityFramework.Rastreamento;
 using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Contexto
