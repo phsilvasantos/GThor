@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
@@ -10,6 +11,8 @@ namespace GThorFrameworkComponentes.ComboBox
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {
+        private static IEnumerable<Uf> _cacheUfs;
+
         private static readonly RoutedEvent PickItemEvent =
             EventManager.RegisterRoutedEvent("PickItem", RoutingStrategy.Bubble,
                 typeof(RoutedEventHandler), typeof(ComboBoxUf));
@@ -70,9 +73,12 @@ namespace GThorFrameworkComponentes.ComboBox
         {
             ListaEstadoUf = new ObservableCollection<Uf>();
 
-            var listaUf = NegocioCriador.CriaNegocioUf().Lista();
+            if (_cacheUfs == null)
+            {
+                _cacheUfs = NegocioCriador.CriaNegocioUf().Lista();
+            }
 
-            foreach (var ufComboBoxDto in listaUf)
+            foreach (var ufComboBoxDto in _cacheUfs)
             {
                 ListaEstadoUf.Add(ufComboBoxDto);
             }
