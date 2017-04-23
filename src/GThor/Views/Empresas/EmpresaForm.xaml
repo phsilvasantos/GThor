@@ -7,12 +7,13 @@
         xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
+        xmlns:comboBox="clr-namespace:GThorFrameworkComponentes.ComboBox;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
             Style="{StaticResource ComercialDialog}"
             WindowStartupLocation="CenterScreen"
             LoadedCommand="{Binding LoadedCommand}"
             Background="{StaticResource AccentColorBrush}"
-            Title="CADASTRO DE EMPRESA" Height="600" Width="900">
+            Title="CADASTRO DE EMPRESA" Height="615" Width="900">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Razão Social</TextBlock>
@@ -140,6 +141,29 @@
                         Text="{Binding Email}"
                         controls:TextBoxHelper.Watermark="Email"
                         MaxLength="255">
+                    </TextBox>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*" />
+                    <ColumnDefinition Width="3*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Margin="0,8,0,0">
+                    <comboBox:ComboBoxUfCidade></comboBox:ComboBoxUfCidade>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">CEP</TextBlock>
+                    <TextBox
+                        Text="{Binding Cep}"
+                        controls:TextBoxHelper.Watermark="Cep"
+                        MaxLength="60">
                     </TextBox>
                 </StackPanel>
 

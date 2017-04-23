@@ -24,6 +24,7 @@ namespace GThor.Models.Empresas
         private string _complemento;
         private string _telefone;
         private string _email;
+        private string _cep;
 
         public Empresa Empresa { get; set; }
 
@@ -144,6 +145,17 @@ namespace GThor.Models.Empresas
             {
                 if (value == _email) return;
                 _email = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Cep
+        {
+            get => _cep;
+            set
+            {
+                if (value == _cep) return;
+                _cep = value;
                 OnPropertyChanged();
             }
         }

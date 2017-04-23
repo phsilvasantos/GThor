@@ -62,6 +62,9 @@
     <Compile Include="ComboBox\ComboBoxUf.xaml.cs">
       <DependentUpon>ComboBoxUf.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ComboBox\ComboBoxUfCidade.xaml.cs">
+      <DependentUpon>ComboBoxUfCidade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +99,10 @@
     <Page Include="ComboBox\ComboBoxUf.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ComboBox\ComboBoxUfCidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
