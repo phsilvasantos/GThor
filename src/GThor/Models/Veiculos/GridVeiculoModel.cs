@@ -26,7 +26,7 @@ namespace GThor.Models.Veiculos
 
         public override void AplicaPesquisa(string pesquisarTexto)
         {
-            if (pesquisarTexto.IsNullOrEmpty())
+            if (pesquisarTexto.IsNotNullOrEmpty())
             {
                 var listaFiltrada = Cache.Where(
                     v => v.Id.ToString() == pesquisarTexto
@@ -69,6 +69,22 @@ namespace GThor.Models.Veiculos
         private void AtualizarLista(object sender, EventArgs e)
         {
             IniciaPesquisa(PesquisarTexto);
+        }
+
+        public override void DuploClickDataGrid()
+        {
+            var veiculo = _negocioVeiculo.CarregarPorId(EntidadeSelecionada.Id);
+
+            var model = new VeiculoFormModel(NegocioCriador.CriaNegocioVeiculo()) { Veiculo =  veiculo};
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new VeiculoForm(model).ShowDialog();
+        }
+
+        protected override void DeletarRegistroSelecionado()
+        {
+            _negocioVeiculo.Deletar(EntidadeSelecionada);
         }
     }
 }

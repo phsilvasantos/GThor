@@ -3,6 +3,7 @@ using System.Linq;
 using GThorFrameworkDominio.Dominios.Veiculos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
@@ -10,12 +11,12 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public Veiculo CarregarPorId(int id)
         {
-            return GThorContexto.Veiculos.FirstOrDefault(v => v.Id == id);
+            return GThorContexto.Veiculos.Include(v => v.Uf).FirstOrDefault(v => v.Id == id);
         }
 
         public IEnumerable<Veiculo> Lista()
         {
-            return GThorContexto.Veiculos.ToList();
+            return GThorContexto.Veiculos.OrderByDescending(v => v.Id).ToList();
         }
 
         public void SalvarOuAtualizar(Veiculo entity)
