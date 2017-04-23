@@ -6,6 +6,7 @@ using GThorFrameworkDominio.Dominios.Pessoas.Flags;
 
 namespace GThorFrameworkDominio.Dominios.Pessoas
 {
+    [Table("pessoa")]
     public class Pessoa
     {
         [Key]
