@@ -53,6 +53,7 @@
     <Compile Include="Contratos\INegocioUf.cs" />
     <Compile Include="Contratos\INegocioUsuario.cs" />
     <Compile Include="Contratos\INegocioVeiculo.cs" />
+    <Compile Include="Criadores\NegocioCriador.cs" />
     <Compile Include="Negocios\NegocioCertificadoDigital.cs" />
     <Compile Include="Negocios\NegocioDocumentoMdfe.cs" />
     <Compile Include="Negocios\NegocioMigracaoBancoDados.cs" />
@@ -82,8 +83,6 @@
   <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dto\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

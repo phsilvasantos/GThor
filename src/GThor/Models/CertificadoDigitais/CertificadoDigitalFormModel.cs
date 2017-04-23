@@ -5,13 +5,13 @@ using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Helpers.Dialogs;
 using GThorFrameworkWpf.Models.Base;
-using GThorNegocio.Negocios;
+using GThorNegocio.Contratos;
 
 namespace GThor.Models.CertificadoDigitais
 {
     public class CertificadoDigitalFormModel : ModelViewBase
     {
-        private readonly NegocioCertificadoDigital _certificadoDigitalNegocio;
+        private readonly INegocioCertificadoDigital _certificadoDigitalNegocio;
         private string _arquivo;
         private string _descricao;
         private bool _isArquivo;
@@ -21,7 +21,7 @@ namespace GThor.Models.CertificadoDigitais
         private string _serial;
         private TipoCertificado _tipoCertificado;
 
-        public CertificadoDigitalFormModel(NegocioCertificadoDigital certificadoDigitalNegocio)
+        public CertificadoDigitalFormModel(INegocioCertificadoDigital certificadoDigitalNegocio)
         {
             _certificadoDigitalNegocio = certificadoDigitalNegocio;
         }

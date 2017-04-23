@@ -6,6 +6,7 @@ using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
 
@@ -60,7 +61,7 @@ namespace GThor.Models.CertificadoDigitais
 
         public override void NovoRegistroAction(object obj)
         {
-            var model = new CertificadoDigitalFormModel(new NegocioCertificadoDigital(new RepositorioCertificadoDigital()))
+            var model = new CertificadoDigitalFormModel(NegocioCriador.CriaNegocioCertificadoDigital())
             {
                 CertificadoDigital = new CertificadoDigital()
             };
@@ -73,7 +74,7 @@ namespace GThor.Models.CertificadoDigitais
 
         public override void DuploClickDataGrid()
         {
-            var model = new CertificadoDigitalFormModel(new NegocioCertificadoDigital(new RepositorioCertificadoDigital()))
+            var model = new CertificadoDigitalFormModel(NegocioCriador.CriaNegocioCertificadoDigital())
             {
                 CertificadoDigital = EntidadeSelecionada
             };
