@@ -23,6 +23,11 @@ namespace GThorRepositorioEntityFramework.Contexto
         }
 
 
+        public void MigrarBancoDados()
+        {
+            Database.Migrate();
+        }
+
         public void SaveChangesThor()
         {
             SaveChanges();

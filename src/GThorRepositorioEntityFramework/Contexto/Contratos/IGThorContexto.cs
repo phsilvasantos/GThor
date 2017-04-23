@@ -14,6 +14,8 @@ namespace GThorRepositorioEntityFramework.Contexto.Contratos
     {
         DatabaseFacade Database { get; }
 
+        void MigrarBancoDados();
+
         void SaveChangesThor();
 
         DbSet<Usuario> Usuarios { get; set; }
