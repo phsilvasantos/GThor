@@ -2,7 +2,6 @@
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
 using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 

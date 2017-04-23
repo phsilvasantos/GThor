@@ -3,15 +3,15 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
-using GThorFrameworkDominio.Dominios.EstadosUf;
+using GThorFrameworkDominio.Dominios.Cidades;
 using GThorNegocio.Criadores;
 using JetBrains.Annotations;
 
 namespace GThorFrameworkComponentes.ComboBox
 {
-    public partial class ComboBoxUf : INotifyPropertyChanged
+    public partial class ComboBoxCidade : INotifyPropertyChanged
     {
-        private static IEnumerable<Uf> _cacheUfs;
+        private static IEnumerable<Cidade> _cacheCidades;
 
         private static readonly RoutedEvent PickItemEvent =
             EventManager.RegisterRoutedEvent("PickItem", RoutingStrategy.Bubble,
@@ -28,52 +28,53 @@ namespace GThorFrameworkComponentes.ComboBox
             RaiseEvent(new RoutedEventArgs(PickItemEvent, this));
         }
 
-        private ObservableCollection<Uf> _listaEstadoUf;
-        private Uf _ufSelecionado;
+        private ObservableCollection<Cidade> _listaCidade;
+        private Cidade _cidadeSelecionado;
 
-        public Uf UfSelecionado
+        public Cidade CidadeSelecionado
         {
-            get => _ufSelecionado;
+            get => _cidadeSelecionado;
             set
             {
-                if (Equals(value, _ufSelecionado)) return;
-                _ufSelecionado = value;
+                if (Equals(value, _cidadeSelecionado)) return;
+                _cidadeSelecionado = value;
                 OnPropertyChanged();
                 OnChanceItem();
             }
         }
 
-        public ObservableCollection<Uf> ListaEstadoUf
+        public ObservableCollection<Cidade> ListaCidade
         {
-            get => _listaEstadoUf;
+            get => _listaCidade;
             set
             {
-                if (Equals(value, _listaEstadoUf)) return;
-                _listaEstadoUf = value;
+                if (Equals(value, _listaCidade)) return;
+                _listaCidade = value;
                 OnPropertyChanged();
             }
         }
 
-        private void PreencherListaEstadoUf()
+        private void PreencherListaCidade()
         {
-            ListaEstadoUf = new ObservableCollection<Uf>();
+            ListaCidade = new ObservableCollection<Cidade>();
 
-            if (_cacheUfs == null)
+            if (_cacheCidades == null)
             {
-                _cacheUfs = NegocioCriador.CriaNegocioUf().Lista();
+                _cacheCidades = NegocioCriador.CriaNegocioCidade().Lista();
             }
 
-            foreach (var ufComboBoxDto in _cacheUfs)
+            foreach (var ufComboBoxDto in _cacheCidades)
             {
-                ListaEstadoUf.Add(ufComboBoxDto);
+                ListaCidade.Add(ufComboBoxDto);
             }
         }
 
-        public ComboBoxUf()
+
+        public ComboBoxCidade()
         {
             DataContext = this;
-            PreencherListaEstadoUf();
             InitializeComponent();
+            PreencherListaCidade();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

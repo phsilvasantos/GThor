@@ -206,6 +206,7 @@
     <Compile Include="Extensoes\ExtContexto.cs" />
     <Compile Include="Implementacao\Base\RepositorioBase.cs" />
     <Compile Include="Implementacao\RepositorioCertificadoDigital.cs" />
+    <Compile Include="Implementacao\RepositorioCidade.cs" />
     <Compile Include="Implementacao\RepositorioDocumentoMdfe.cs" />
     <Compile Include="Implementacao\RepositorioUf.cs" />
     <Compile Include="Implementacao\RepositorioUsuario.cs" />

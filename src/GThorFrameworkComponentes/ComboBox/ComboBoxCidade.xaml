@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="GThorFrameworkComponentes.ComboBox.ComboBoxCidade"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GThorFrameworkComponentes.ComboBox"
+             mc:Ignorable="d" 
+             d:DesignHeight="70" d:DesignWidth="300" Background="Transparent">
+    <StackPanel>
+        <TextBlock Style="{StaticResource ControlForm}">Cidade</TextBlock>
+        <ComboBox
+            ItemsSource="{Binding Path=ListaCidade}"
+            DisplayMemberPath="Nome"
+            SelectedItem="{Binding CidadeSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+            SelectedValuePath="Id"
+            SelectedValue="{Binding CidadeSelecionado.Id}"/>
+    </StackPanel>
+</UserControl>

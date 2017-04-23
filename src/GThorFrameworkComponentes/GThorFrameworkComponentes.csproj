@@ -56,6 +56,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBox\ComboBoxCidade.xaml.cs">
+      <DependentUpon>ComboBoxCidade.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ComboBox\ComboBoxUf.xaml.cs">
       <DependentUpon>ComboBoxUf.xaml</DependentUpon>
     </Compile>
@@ -86,6 +89,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ComboBox\ComboBoxCidade.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboBox\ComboBoxUf.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

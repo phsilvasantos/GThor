@@ -29,5 +29,10 @@ namespace GThorRepositorioEntityFramework.Criadores
         {
             return new RepositorioVeiculo();
         }
+
+        public static IRepositorioCidade CriaRepositorioCidade()
+        {
+            return new RepositorioCidade();
+        }
     }
 }
