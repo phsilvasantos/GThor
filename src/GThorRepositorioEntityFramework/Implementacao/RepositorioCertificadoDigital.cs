@@ -6,7 +6,7 @@ using GThorRepositorioEntityFramework.Implementacao.Base;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
-    public class RepositorioCertificadoDigital : RepositorioBase, IRepositorioCertificadoDigital
+    internal class RepositorioCertificadoDigital : RepositorioBase, IRepositorioCertificadoDigital
     {
         public CertificadoDigital CarregarPorId(int id)
         {

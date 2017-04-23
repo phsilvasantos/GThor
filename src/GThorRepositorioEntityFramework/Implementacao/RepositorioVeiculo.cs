@@ -6,7 +6,7 @@ using GThorRepositorioEntityFramework.Implementacao.Base;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
-    public class RepositorioVeiculo : RepositorioBase, IRepositorioVeiculo
+    internal class RepositorioVeiculo : RepositorioBase, IRepositorioVeiculo
     {
         public Veiculo CarregarPorId(int id)
         {

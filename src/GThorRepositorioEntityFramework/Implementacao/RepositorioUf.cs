@@ -6,7 +6,7 @@ using GThorRepositorioEntityFramework.Implementacao.Base;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
-    public class RepositorioUf : RepositorioBase, IRepositorioUf
+    internal class RepositorioUf : RepositorioBase, IRepositorioUf
     {
         public Uf CarregarPorId(int id)
         {

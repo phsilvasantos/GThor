@@ -6,7 +6,7 @@ using GThorRepositorioEntityFramework.Implementacao.Base;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
-    public class RepositorioDocumentoMdfe : RepositorioBase, IRepositorioDocumentoMdfe
+    internal class RepositorioDocumentoMdfe : RepositorioBase, IRepositorioDocumentoMdfe
     {
         public DocumentoMdfe CarregarPorId(int id)
         {

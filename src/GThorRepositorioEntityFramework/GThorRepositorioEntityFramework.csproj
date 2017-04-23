@@ -200,6 +200,7 @@
   <ItemGroup>
     <Compile Include="Contexto\GThorContexto.cs" />
     <Compile Include="Contratos\IRepositorioBase.cs" />
+    <Compile Include="Criadores\RepositorioCriador.cs" />
     <Compile Include="Extensoes\ExtContexto.cs" />
     <Compile Include="Implementacao\Base\RepositorioBase.cs" />
     <Compile Include="Implementacao\RepositorioCertificadoDigital.cs" />
