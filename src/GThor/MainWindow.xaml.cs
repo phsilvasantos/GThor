@@ -50,6 +50,10 @@ namespace GThor
             AbrirTabItem("Veículos", DataGridPadrao.Criar(new GridVeiculoModel(negocio)));
         }
 
+        private void GerenciarEmpresa_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
 
         private void AbrirTabItem(string titulo, UserControl janela)
         {

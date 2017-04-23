@@ -52,6 +52,7 @@
                     </BulletDecorator>
                 </Expander.Header>
                 <WrapPanel Orientation="Vertical"  Focusable="False">
+                    <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Empresas" MouseDown="GerenciarEmpresa_OnMouseDown"/>
                     <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Usuários" MouseDown="GerenciarUsuarios_OnMouseDown"/>
                     <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Certificado Digitais" MouseDown="CertificadoDigitais_OnMouseDown" />
                     <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Documento MDF-e" MouseDown="DocumentoMdfe_OnMouseDown"/>
