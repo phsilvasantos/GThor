@@ -171,13 +171,73 @@ namespace GThor.Models.Empresas
         protected override void LoadedCommandAction(object obj)
         {
             ValidaAntesSalvar += ValidarInformacoes;
+
+            Salvar += SalvarConclui;
+        }
+
+        private void SalvarConclui(object sender, EventArgs e)
+        {
+            Empresa.RazaoSocial = RazaoSocial;
+            Empresa.NomeFantasia = NomeFantasia;
+            Empresa.Cnpj = Cnpj;
+            Empresa.InscricaoEstadual = InscricaoEstadual;
+            Empresa.Rntrc = Rntrc;
+            Empresa.Logradouro = Logradouro;
+            Empresa.Numero = Numero;
+            Empresa.Bairro = Bairro;
+            Empresa.Complemento = Complemento;
+            Empresa.Telefone = Telefone;
+            Empresa.Email = Email;
+            Empresa.Cep = Cep;
+            Empresa.UfId = Uf.Id;
+            Empresa.CidadeId = Cidade.Id;
+            Empresa.Uf = null;
+            Empresa.Cidade = null;
+
+            _negocioEmpresa.SalvarOuAtualizar(Empresa);
         }
 
         private void ValidarInformacoes(object sender, EventArgs e)
         {
             RazaoSocial = RazaoSocial.TrimOrEmpty();
+            NomeFantasia = NomeFantasia.TrimOrEmpty();
+            Cnpj = Cnpj.TrimOrEmpty();
+            InscricaoEstadual = InscricaoEstadual.TrimOrEmpty();
+            Rntrc = Rntrc.TrimOrEmpty();
+            Logradouro = Logradouro.TrimOrEmpty();
+            Numero = Numero.TrimOrEmpty();
+            Bairro = Bairro.TrimOrEmpty();
+            Complemento = Complemento.TrimOrEmpty();
+            Telefone = Telefone.TrimOrEmpty();
+            Email = Email.TrimOrEmpty();
+            Cep = Cep.TrimOrEmpty();
 
-            if (RazaoSocial.IsNullOrEmpty()) throw new ArgumentException("");
+            if (RazaoSocial.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem razão social? So pode cadastrar se tiver");
+            if (NomeFantasia.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem nome fantasia? So pode cadastrar se tiver");
+
+            if (Cnpj.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem cnpj? So pode cadastrar se tiver");
+            if (Cnpj.Length != 14) throw new ArgumentException("Hmm, esse cnpj está incorreto");
+            // todo validar cnpj
+
+            if (Rntrc.IsNotNullOrEmpty())
+                if (Rntrc.Length != 8) throw new ArgumentException("Hmm, esse rntrc está incorreto, o mesmo deve ter 8 digitos");
+
+            if (Logradouro.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem logradouro? So pode cadastrar se tiver");
+
+            if (Numero.IsNullOrEmpty()) Numero = "S/N";
+
+            if (Bairro.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem bairro? So pode cadastrar se tiver");
+
+            if (Telefone.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem telefone? So pode cadastrar se tiver");
+
+            if (Email.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem email? So pode cadastrar se tiver");
+            // todo validar email
+
+            if (Uf == null) throw new ArgumentException("Hmm, sua empresa não tem estado(uf)? So pode cadastrar se tiver");
+
+            if (Cidade == null) throw new ArgumentException("Hmm, sua empresa não tem cidade? So pode cadastrar se tiver");
+
+            if (Cep.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem cep? So pode cadastrar se tiver");
         }
     }
 }
