@@ -4,6 +4,7 @@ using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkDominio.Dominios.Veiculos;
+using GThorRepositorioEntityFramework.Log;
 using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Contexto
@@ -13,6 +14,11 @@ namespace GThorRepositorioEntityFramework.Contexto
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("Host=localhost;Database=gthor;Username=postgres;Password=root");
+
+        #if DEBUG
+            optionsBuilder.UseLoggerFactory(new EfLoggerFactory());
+        #endif
+
         }
 
         public DbSet<Usuario> Usuarios { get; set; }
