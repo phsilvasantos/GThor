@@ -26,6 +26,8 @@ namespace ComercialFrameworkWpf.Views.DataGrid.Corpo
 
         private void MontarColunasDataGrid()
         {
+            if (DataGrid.Columns.Count != 3) return;
+
             var starWidth = new DataGridLength(1.0, DataGridLengthUnitType.Star);
 
             if (!Model.BotaoOpcoes)
