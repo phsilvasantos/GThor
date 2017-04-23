@@ -48,6 +48,11 @@
     <Compile Include="Dominios\DocumentosFiscaisEletronicos\flags\AmbienteSefaz.cs" />
     <Compile Include="Dominios\Empresas\Empresa.cs" />
     <Compile Include="Dominios\EstadosUf\Uf.cs" />
+    <Compile Include="Dominios\Pessoas\Condutor.cs" />
+    <Compile Include="Dominios\Pessoas\Flags\TipoPessoa.cs" />
+    <Compile Include="Dominios\Pessoas\Flags\TipoProprietario.cs" />
+    <Compile Include="Dominios\Pessoas\Pessoa.cs" />
+    <Compile Include="Dominios\Pessoas\Transportadora.cs" />
     <Compile Include="Dominios\Usuarios\Usuario.cs" />
     <Compile Include="Dominios\Veiculos\Flags\TipoCarroceria.cs" />
     <Compile Include="Dominios\Veiculos\Flags\TipoRodado.cs" />
