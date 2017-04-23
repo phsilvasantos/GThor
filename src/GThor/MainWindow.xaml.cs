@@ -7,6 +7,7 @@ using GThor.Models.DocumentosMdfe;
 using GThor.Models.Usuarios;
 using GThor.Models.Veiculos;
 using GThorFrameworkWpf.Views.DataGrid;
+using GThorNegocio.Criadores;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
 using MahApps.Metro.Controls;
@@ -30,14 +31,14 @@ namespace GThor
 
         private void CertificadoDigitais_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new NegocioCertificadoDigital(new RepositorioCertificadoDigital());
+            var negocio = NegocioCriador.CriaNegocioCertificadoDigital();
 
             AbrirTabItem("Certificados", DataGridPadrao.Criar(new GridCertificadoDigitalModel(negocio)));
         }
 
         private void DocumentoMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe());
+            var negocio = NegocioCriador.CriaNegocioDocumentoMdfe();
 
             AbrirTabItem("Documentos MDF-e", DataGridPadrao.Criar(new GridDocumentoMdfeModel(negocio)));
         }

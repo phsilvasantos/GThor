@@ -7,8 +7,6 @@ using GThorFrameworkDominio.Dominios.Certificados;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
 using GThorNegocio.Criadores;
-using GThorNegocio.Negocios;
-using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThor.Models.CertificadoDigitais
 {

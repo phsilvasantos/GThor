@@ -10,5 +10,10 @@ namespace GThorNegocio.Criadores
         {
             return new NegocioCertificadoDigital(new RepositorioCertificadoDigital());
         }
+
+        public static INegocioDocumentoMdfe CriaNegocioDocumentoMdfe()
+        {
+            return new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe());
+        }
     }
 }

@@ -4,16 +4,17 @@ using GThor.Views.DocumentosMdfe;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkWpf.Models.DataGrid;
-using GThorNegocio.Negocios;
+using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThor.Models.DocumentosMdfe
 {
     public class GridDocumentoMdfeModel : DataGridPadraoModel<DocumentoMdfe>
     {
-        private readonly NegocioDocumentoMdfe _negocioDocumentoMdfe;
+        private readonly INegocioDocumentoMdfe _negocioDocumentoMdfe;
 
-        public GridDocumentoMdfeModel(NegocioDocumentoMdfe negocioDocumentoMdfe)
+        public GridDocumentoMdfeModel(INegocioDocumentoMdfe negocioDocumentoMdfe)
         {
             _negocioDocumentoMdfe = negocioDocumentoMdfe;
         }
@@ -49,7 +50,7 @@ namespace GThor.Models.DocumentosMdfe
 
         public override void NovoRegistroAction(object obj)
         {
-            var model = new DocumentoMdfeFormModel(new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe()))
+            var model = new DocumentoMdfeFormModel(NegocioCriador.CriaNegocioDocumentoMdfe())
             {
                 DocumentoMdfe = new DocumentoMdfe()
             };
@@ -63,7 +64,7 @@ namespace GThor.Models.DocumentosMdfe
 
         public override void DuploClickDataGrid()
         {
-            var model = new DocumentoMdfeFormModel(new NegocioDocumentoMdfe(new RepositorioDocumentoMdfe()))
+            var model = new DocumentoMdfeFormModel(NegocioCriador.CriaNegocioDocumentoMdfe())
             {
                 DocumentoMdfe = EntidadeSelecionada
             };
