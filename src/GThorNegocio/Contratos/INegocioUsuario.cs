@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.Usuarios;
+﻿using GThorFrameworkDominio.Dominios.Usuarios;
+using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
-    public interface INegocioUsuario
+    public interface INegocioUsuario :
+        INegocioBase<Usuario, int>,
+        INegocioSalvar<Usuario>,
+        INegocioDeletar<Usuario>
     {
-        IEnumerable<Usuario> Lista();
-        void Deletar(Usuario usuario);
-        void Salvar(Usuario usuario);
+        
     }
 }

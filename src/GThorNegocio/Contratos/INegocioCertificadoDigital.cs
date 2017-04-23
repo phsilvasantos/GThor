@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.Certificados;
+﻿using GThorFrameworkDominio.Dominios.Certificados;
+using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
-    public interface INegocioCertificadoDigital
+    public interface INegocioCertificadoDigital : 
+        INegocioBase<CertificadoDigital, int>,
+        INegocioSalvar<CertificadoDigital>,
+        INegocioDeletar<CertificadoDigital>
     {
-        void SalvarOuAtualizar(CertificadoDigital certificadoDigital);
-        IEnumerable<CertificadoDigital> Lista();
-        void Deletar(CertificadoDigital certificadoDigital);
     }
 }

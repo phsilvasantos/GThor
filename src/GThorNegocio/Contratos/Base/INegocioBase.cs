@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 
-namespace GThorFrameworkRepositorio.Contratos
+namespace GThorNegocio.Contratos.Base
 {
-    public interface IDaoBase<out TEntity, in TId>
+    public interface INegocioBase<out TEntity, in TId>
     {
         TEntity CarregarPorId(TId id);
 

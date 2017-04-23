@@ -58,7 +58,7 @@ namespace GThor.Models.Usuarios
         {
             Usuario.Login = Login;
             Usuario.Senha = Senha.Sha1();
-            _usuarioNegocio.Salvar(Usuario);
+            _usuarioNegocio.SalvarOuAtualizar(Usuario);
         }
 
         private void ValidarAntesDeSalvar(object sender, EventArgs e)

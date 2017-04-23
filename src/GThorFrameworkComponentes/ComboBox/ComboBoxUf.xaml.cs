@@ -70,7 +70,7 @@ namespace GThorFrameworkComponentes.ComboBox
         {
             ListaEstadoUf = new ObservableCollection<Uf>();
 
-            var listaUf = NegocioCriador.CriaNegocioUf().ListaParaComboBox();
+            var listaUf = NegocioCriador.CriaNegocioUf().Lista();
 
             foreach (var ufComboBoxDto in listaUf)
             {

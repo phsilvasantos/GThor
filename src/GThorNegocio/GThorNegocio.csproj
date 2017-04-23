@@ -47,6 +47,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contratos\Base\INegocioBase.cs" />
+    <Compile Include="Contratos\Base\INegocioDeletar.cs" />
+    <Compile Include="Contratos\Base\INegocioSalvar.cs" />
     <Compile Include="Contratos\INegocioCertificadoDigital.cs" />
     <Compile Include="Contratos\INegocioDocumentoMdfe.cs" />
     <Compile Include="Contratos\INegocioMigracaoBancoDados.cs" />

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.EstadosUf;
+﻿using GThorFrameworkDominio.Dominios.EstadosUf;
+using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
-    public interface INegocioUf
+    public interface INegocioUf : 
+        INegocioBase<Uf, int>
     {
-        IEnumerable<Uf> ListaParaComboBox();
     }
 }

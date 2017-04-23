@@ -26,6 +26,15 @@ namespace GThorNegocio.Negocios
             }
         }
 
+        public CertificadoDigital CarregarPorId(int id)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioCertificadoDigital.SetGThorContexto(contexto);
+                return _repositorioCertificadoDigital.CarregarPorId(id);
+            }
+        }
+
         public IEnumerable<CertificadoDigital> Lista()
         {
             using (var contexto = new GThorContexto())

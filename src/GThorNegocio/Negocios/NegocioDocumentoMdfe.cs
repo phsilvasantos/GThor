@@ -27,6 +27,16 @@ namespace GThorNegocio.Negocios
             }
         }
 
+        public DocumentoMdfe CarregarPorId(int id)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+
+                return _repositorioDocumentoMdfe.CarregarPorId(id);
+            }
+        }
+
         public IEnumerable<DocumentoMdfe> Lista()
         {
             using (var contexto = new GThorContexto())

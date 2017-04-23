@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.Veiculos;
+﻿using GThorFrameworkDominio.Dominios.Veiculos;
+using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
-    public interface INegocioVeiculo
+    public interface INegocioVeiculo :
+        INegocioBase<Veiculo, int>,
+        INegocioSalvar<Veiculo>,
+        INegocioDeletar<Veiculo>
     {
-        void SalvarOuAtualizar(Veiculo veiculo);
-        IEnumerable<Veiculo> Lista();
-        void Deletar(Veiculo veiculo);
     }
 }

@@ -16,7 +16,18 @@ namespace GThorNegocio.Negocios
             _repositorioUf = repositorioUf;
         }
 
-        public IEnumerable<Uf> ListaParaComboBox()
+        public Uf CarregarPorId(int id)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioUf.SetGThorContexto(contexto);
+                var uf = _repositorioUf.CarregarPorId(id);
+
+                return uf;
+            }
+        }
+
+        public IEnumerable<Uf> Lista()
         {
             using (var contexto = new GThorContexto())
             {

@@ -16,6 +16,15 @@ namespace GThorNegocio.Negocios
             _repositorioUsuario = repositorioUsuario;
         }
 
+        public Usuario CarregarPorId(int id)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioUsuario.SetGThorContexto(contexto);
+                return _repositorioUsuario.CarregarPorId(id);
+            }
+        }
+
         public IEnumerable<Usuario> Lista()
         {
             using (var contexto = new GThorContexto())
@@ -35,12 +44,12 @@ namespace GThorNegocio.Negocios
             }
         }
 
-        public void Salvar(Usuario usuario)
+        public void SalvarOuAtualizar(Usuario entity)
         {
             using (var contexto = new GThorContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);
-                _repositorioUsuario.SalvarOuAtualizar(usuario);
+                _repositorioUsuario.SalvarOuAtualizar(entity);
                 _repositorioUsuario.SalvarAlteracoes();
             }
         }

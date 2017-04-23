@@ -26,6 +26,15 @@ namespace GThorNegocio.Negocios
             }
         }
 
+        public Veiculo CarregarPorId(int id)
+        {
+            using (var contexto = new GThorContexto())
+            {
+                _repositorioVeiculo.SetGThorContexto(contexto);
+                return _repositorioVeiculo.CarregarPorId(id);
+            }
+        }
+
         public IEnumerable<Veiculo> Lista()
         {
             using (var contexto = new GThorContexto())

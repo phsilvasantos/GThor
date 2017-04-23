@@ -1,12 +1,13 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
+﻿using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
+using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
-    public interface INegocioDocumentoMdfe
+    public interface INegocioDocumentoMdfe :
+        INegocioBase<DocumentoMdfe, int>,
+        INegocioSalvar<DocumentoMdfe>,
+        INegocioDeletar<DocumentoMdfe>
     {
-        void SalvarOuAtualizar(DocumentoMdfe documentoMdfe);
-        IEnumerable<DocumentoMdfe> Lista();
-        void Deletar(DocumentoMdfe documentoMdfe);
+        
     }
 }
