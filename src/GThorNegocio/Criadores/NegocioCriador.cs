@@ -1,7 +1,6 @@
 ﻿using GThorNegocio.Contratos;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThorNegocio.Criadores
 {
