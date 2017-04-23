@@ -93,6 +93,7 @@
     <Compile Include="Models\CertificadoDigitais\GridCertificadoDigitalModel.cs" />
     <Compile Include="Models\DocumentosMdfe\DocumentoMdfeFormModel.cs" />
     <Compile Include="Models\DocumentosMdfe\GridDocumentoMdfeModel.cs" />
+    <Compile Include="Models\Empresas\EmpresaFormModel.cs" />
     <Compile Include="Models\Empresas\GridEmpresaModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />

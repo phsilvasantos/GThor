@@ -5,13 +5,147 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GThor.Views.Empresas"
         xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
+        xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         mc:Ignorable="d"
             Style="{StaticResource ComercialDialog}"
             WindowStartupLocation="CenterScreen"
             LoadedCommand="{Binding LoadedCommand}"
             Background="{StaticResource AccentColorBrush}"
-            Title="CADASTRO DE EMPRESA" Height="800" Width="1000">
-    <Grid>
+            Title="CADASTRO DE EMPRESA" Height="600" Width="900">
+
+    <StackPanel Margin="24">
+        <TextBlock Style="{StaticResource ControlForm}">Razão Social</TextBlock>
+        <TextBox
+            Text="{Binding RazaoSocial}"
+            controls:TextBoxHelper.Watermark="Razão Social"
+            MaxLength="255">
+        </TextBox>
         
-    </Grid>
+        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Nome Fantasia</TextBlock>
+        <TextBox
+            Text="{Binding NomeFantasia}"
+            controls:TextBoxHelper.Watermark="Nome Fantasia"
+            MaxLength="255">
+        </TextBox>
+
+        <StackPanel Margin="0,8,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                
+                <StackPanel>
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">CNPJ</TextBlock>
+                    <TextBox
+                        Text="{Binding Cnpj}"
+                        controls:TextBoxHelper.Watermark="CNPJ"
+                        MaxLength="14">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Inscrição Estadual</TextBlock>
+                    <TextBox
+                        Text="{Binding InscricaoEstadual}"
+                        controls:TextBoxHelper.Watermark="Inscrição Estadual"
+                        MaxLength="30">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Rntrc</TextBlock>
+                    <TextBox
+                        Text="{Binding Rntrc}"
+                        controls:TextBoxHelper.Watermark="Rntrc"
+                        MaxLength="8">
+                    </TextBox>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+
+        <StackPanel Margin="0,8,0,0">
+            <TextBlock Style="{StaticResource ControlForm}">Logradouro</TextBlock>
+            <TextBox
+                Text="{Binding Logradouro}"
+                controls:TextBoxHelper.Watermark="Logradouro"
+                MaxLength="255">
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Margin="0,8,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel>
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Número</TextBlock>
+                    <TextBox
+                        Text="{Binding Numero}"
+                        controls:TextBoxHelper.Watermark="Número"
+                        MaxLength="60">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Bairro</TextBlock>
+                    <TextBox
+                        Text="{Binding Bairro}"
+                        controls:TextBoxHelper.Watermark="Bairro"
+                        MaxLength="60">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="2" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Complemento</TextBlock>
+                    <TextBox
+                        Text="{Binding Complemento}"
+                        controls:TextBoxHelper.Watermark="Complemento"
+                        MaxLength="60">
+                    </TextBox>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Margin="0,8,0,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel>
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Telefone</TextBlock>
+                    <TextBox
+                        Text="{Binding Telefone}"
+                        controls:TextBoxHelper.Watermark="Telefone"
+                        MaxLength="11">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                    <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Email</TextBlock>
+                    <TextBox
+                        Text="{Binding Email}"
+                        controls:TextBoxHelper.Watermark="Email"
+                        MaxLength="255">
+                    </TextBox>
+                </StackPanel>
+
+            </Grid>
+        </StackPanel>
+
+        <views1:BotoesCrud></views1:BotoesCrud>
+    </StackPanel>
 </views:GThorWindow>

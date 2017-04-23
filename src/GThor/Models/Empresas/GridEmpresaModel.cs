@@ -1,8 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using GThor.Views.Empresas;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 
 namespace GThor.Models.Empresas
 {
@@ -43,6 +47,20 @@ namespace GThor.Models.Empresas
             AdicionarDataGridColumn(() => empresaDto.RazaoSocial);
             AdicionarDataGridColumn(() => empresaDto.NomeFantasia);
             AdicionarDataGridColumn(() => empresaDto.Cnpj);
+        }
+
+        public override void NovoRegistroAction(object obj)
+        {
+            var model = new EmpresaFormModel(NegocioCriador.CriaNegocioEmpresa()) {Empresa = new Empresa()};
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new EmpresaForm(model).ShowDialog();
+        }
+
+        private void AtualizarLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }
