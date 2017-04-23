@@ -46,6 +46,7 @@
     <Compile Include="Dominios\Cidades\Cidade.cs" />
     <Compile Include="Dominios\DocumentosFiscaisEletronicos\DocumentoMdfe.cs" />
     <Compile Include="Dominios\DocumentosFiscaisEletronicos\flags\AmbienteSefaz.cs" />
+    <Compile Include="Dominios\Empresas\Empresa.cs" />
     <Compile Include="Dominios\EstadosUf\Uf.cs" />
     <Compile Include="Dominios\Usuarios\Usuario.cs" />
     <Compile Include="Dominios\Veiculos\Flags\TipoCarroceria.cs" />
