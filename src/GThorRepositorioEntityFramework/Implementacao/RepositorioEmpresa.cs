@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using GThorFrameworkDominio.Dominios.Empresas;
+using GThorFrameworkDominio.Dto;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao.Base;
 
@@ -32,6 +33,22 @@ namespace GThorRepositorioEntityFramework.Implementacao
         public void Deletar(Empresa entity)
         {
             GThorContexto.Empresas.Remove(entity);
+        }
+
+        public IEnumerable<EmpresaDto> BuscarParaGridModel()
+        {
+            var query = from e in GThorContexto.Empresas
+                select new EmpresaDto
+                {
+                    Id = e.Id,
+                    Cnpj = e.Cnpj,
+                    NomeFantasia = e.NomeFantasia,
+                    RazaoSocial = e.RazaoSocial
+                };
+
+            var lista = query.ToList();
+
+            return lista;
         }
     }
 }

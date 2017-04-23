@@ -1,4 +1,6 @@
-﻿using GThorFrameworkDominio.Dominios.Empresas;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.Empresas;
+using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
@@ -8,6 +10,6 @@ namespace GThorNegocio.Contratos
         INegocioSalvar<Empresa>,
         INegocioDeletar<Empresa>
     {
-        
+        IEnumerable<EmpresaDto> BuscarParaGridModel();
     }
 }

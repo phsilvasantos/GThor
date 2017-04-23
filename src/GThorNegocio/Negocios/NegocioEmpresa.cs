@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Empresas;
+using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Criadores;
@@ -51,6 +52,15 @@ namespace GThorNegocio.Negocios
                 _repositorioEmpresa.SetGThorContexto(contexto);
                 _repositorioEmpresa.Deletar(entity);
                 _repositorioEmpresa.SalvarAlteracoes();
+            }
+        }
+
+        public IEnumerable<EmpresaDto> BuscarParaGridModel()
+        {
+            using (var contexto = ContextoCriador.CriaContexto())
+            {
+                _repositorioEmpresa.SetGThorContexto(contexto);
+                return _repositorioEmpresa.BuscarParaGridModel();
             }
         }
     }

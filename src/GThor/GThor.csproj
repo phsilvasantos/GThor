@@ -93,6 +93,7 @@
     <Compile Include="Models\CertificadoDigitais\GridCertificadoDigitalModel.cs" />
     <Compile Include="Models\DocumentosMdfe\DocumentoMdfeFormModel.cs" />
     <Compile Include="Models\DocumentosMdfe\GridDocumentoMdfeModel.cs" />
+    <Compile Include="Models\Empresas\GridEmpresaModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />
     <Compile Include="Models\Veiculos\GridVeiculoModel.cs" />
@@ -102,6 +103,9 @@
     </Compile>
     <Compile Include="Views\DocumentosMdfe\DocumentoMdfeForm.xaml.cs">
       <DependentUpon>DocumentoMdfeForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Empresas\EmpresaForm.xaml.cs">
+      <DependentUpon>EmpresaForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\UsuarioForm.xaml.cs">
       <DependentUpon>UsuarioForm.xaml</DependentUpon>
@@ -126,6 +130,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DocumentosMdfe\DocumentoMdfeForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Empresas\EmpresaForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
