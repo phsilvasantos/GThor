@@ -4,6 +4,7 @@ using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dominios.EstadosUf;
+using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkDominio.Dominios.Veiculos;
 using Microsoft.EntityFrameworkCore;
@@ -26,5 +27,8 @@ namespace GThorRepositorioEntityFramework.Contexto.Contratos
         DbSet<DocumentoMdfe> DocumentosMdfe { get; set; }
         DbSet<Veiculo> Veiculos { get; set; }
         DbSet<Empresa> Empresas { get; set; }
+        DbSet<Pessoa> Pessoas { get; set; }
+        DbSet<Transportadora> Transportadoras { get; set; }
+        DbSet<Condutor> Condutores { get; set; }
     }
 }
