@@ -4,6 +4,7 @@ using GThor.Views;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
 
@@ -46,7 +47,7 @@ namespace GThor.Models.Usuarios
 
         public override void NovoRegistroAction(object obj)
         {
-            var model = new UsuarioFormModel(new NegocioUsuario(new RepositorioUsuario())) {Usuario = new Usuario()};
+            var model = new UsuarioFormModel(NegocioCriador.CriaNegocioUsuario()) { Usuario = new Usuario()};
             model.AtualizarListaHandler += AtualizarLista;
 
             var usuarioForm = new UsuarioForm(model);
@@ -56,7 +57,7 @@ namespace GThor.Models.Usuarios
 
         public override void DuploClickDataGrid()
         {
-            var model = new UsuarioFormModel(new NegocioUsuario(new RepositorioUsuario())) { Usuario = EntidadeSelecionada };
+            var model = new UsuarioFormModel(NegocioCriador.CriaNegocioUsuario()) { Usuario = EntidadeSelecionada };
             model.AtualizarListaHandler += AtualizarLista;
 
             var usuarioForm = new UsuarioForm(model);

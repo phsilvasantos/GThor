@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GThorNegocio.Negocios
 {
-    public class NegocioMigracaoBancoDados : INegocioMigracaoBancoDados
+    internal class NegocioMigracaoBancoDados : INegocioMigracaoBancoDados
     {
         public void Migrar()
         {

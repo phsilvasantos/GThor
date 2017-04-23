@@ -7,7 +7,7 @@ using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
 {
-    public class NegocioVeiculo : INegocioVeiculo
+    internal class NegocioVeiculo : INegocioVeiculo
     {
         private readonly IRepositorioVeiculo _repositorioVeiculo;
 

@@ -3,8 +3,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using GThorFrameworkDominio.Dominios.EstadosUf;
-using GThorNegocio.Negocios;
-using GThorRepositorioEntityFramework.Implementacao;
+using GThorNegocio.Criadores;
 using JetBrains.Annotations;
 
 namespace GThorFrameworkComponentes.ComboBox
@@ -71,7 +70,7 @@ namespace GThorFrameworkComponentes.ComboBox
         {
             ListaEstadoUf = new ObservableCollection<Uf>();
 
-            var listaUf = new NegocioUf(new RepositorioUf()).ListaParaComboBox();
+            var listaUf = NegocioCriador.CriaNegocioUf().ListaParaComboBox();
 
             foreach (var ufComboBoxDto in listaUf)
             {

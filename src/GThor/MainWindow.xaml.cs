@@ -24,7 +24,7 @@ namespace GThor
 
         private void GerenciarUsuarios_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new NegocioUsuario(new RepositorioUsuario());
+            var negocio = NegocioCriador.CriaNegocioUsuario();
 
             AbrirTabItem("Usuarios", DataGridPadrao.Criar(new GridUsuarioModel(negocio)));
         }
@@ -45,7 +45,7 @@ namespace GThor
 
         private void Veiculo_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-            var negocio = new NegocioVeiculo(new RepositorioVeiculo());
+            var negocio = NegocioCriador.CriaNegocioVeiculo();
 
             AbrirTabItem("Veículos", DataGridPadrao.Criar(new GridVeiculoModel(negocio)));
         }
