@@ -1,9 +1,11 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using GThor.Views.Veiculos;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Veiculos;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 
 namespace GThor.Models.Veiculos
 {
@@ -57,7 +59,16 @@ namespace GThor.Models.Veiculos
 
         public override void NovoRegistroAction(object obj)
         {
-            new VeiculoForm().ShowDialog();
+            var model = new VeiculoFormModel(NegocioCriador.CriaNegocioVeiculo()) {Veiculo = new Veiculo()};
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new VeiculoForm(model).ShowDialog();
+        }
+
+        private void AtualizarLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }

@@ -8,9 +8,9 @@ namespace GThor.Views.Veiculos
     public partial class VeiculoForm
     {
         private readonly VeiculoFormModel _model;
-        public VeiculoForm()
+        public VeiculoForm(VeiculoFormModel model)
         {
-            _model = new VeiculoFormModel();
+            _model = model;
             DataContext = _model;
             InitializeComponent();
 

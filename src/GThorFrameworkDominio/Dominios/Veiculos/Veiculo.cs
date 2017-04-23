@@ -47,16 +47,16 @@ namespace GThorFrameworkDominio.Dominios.Veiculos
 
         [Required]
         [Column("tipoRodado")]
-        public TipoRodado TipoRodado { get; set; }
+        public TipoRodado TipoRodado { get; set; } = TipoRodado.Truck;
 
         [Required]
         [Column("tipoCarroceria")]
-        public TipoCarroceria TipoCarroceria { get; set; }
+        public TipoCarroceria TipoCarroceria { get; set; } = TipoCarroceria.NaoAplicavel;
 
         [Required]
         [Column("ufId")]
         public int UfId { get; set; }
 
-        public Uf Uf { get; set; }
+        public virtual Uf Uf { get; set; }
     }
 }
