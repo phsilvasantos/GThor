@@ -1,12 +1,12 @@
 ﻿using GThorFrameworkRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Contexto.Contratos;
 using GThorRepositorioEntityFramework.Contratos;
 
 namespace GThorRepositorioEntityFramework.Extensoes
 {
     public static class ExtContexto
     {
-        public static void SetGThorContexto(this IDaoContexto repositorioBase, GThorContexto contexto)
+        public static void SetGThorContexto(this IDaoContexto repositorioBase, IGThorContexto contexto)
         {
             var repositorio = (IRepositorioBase) repositorioBase;
 

@@ -2,7 +2,7 @@
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
@@ -18,7 +18,7 @@ namespace GThorNegocio.Negocios
 
         public Usuario CarregarPorId(int id)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);
                 return _repositorioUsuario.CarregarPorId(id);
@@ -27,7 +27,7 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<Usuario> Lista()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);
                 return _repositorioUsuario.Lista();
@@ -36,7 +36,7 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(Usuario usuario)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);
                 _repositorioUsuario.Deletar(usuario);
@@ -46,7 +46,7 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(Usuario entity)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);
                 _repositorioUsuario.SalvarOuAtualizar(entity);

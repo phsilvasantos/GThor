@@ -1,10 +1,10 @@
-﻿using GThorRepositorioEntityFramework.Contexto;
+﻿using GThorRepositorioEntityFramework.Contexto.Contratos;
 
 namespace GThorRepositorioEntityFramework.Contratos
 {
     public interface IRepositorioBase
     {
-        GThorContexto GThorContexto { get; set; }
+        IGThorContexto GThorContexto { get; set; }
         void SalvarAlteracoes();
     }
 }

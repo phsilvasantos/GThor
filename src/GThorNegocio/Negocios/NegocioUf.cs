@@ -2,7 +2,7 @@
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
@@ -18,7 +18,7 @@ namespace GThorNegocio.Negocios
 
         public Uf CarregarPorId(int id)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUf.SetGThorContexto(contexto);
                 var uf = _repositorioUf.CarregarPorId(id);
@@ -29,7 +29,7 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<Uf> Lista()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUf.SetGThorContexto(contexto);
                 var listaUfs = _repositorioUf.Lista();

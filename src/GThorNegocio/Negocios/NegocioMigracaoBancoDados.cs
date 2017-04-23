@@ -1,5 +1,5 @@
 ﻿using GThorNegocio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using Microsoft.EntityFrameworkCore;
 
 namespace GThorNegocio.Negocios
@@ -8,7 +8,7 @@ namespace GThorNegocio.Negocios
     {
         public void Migrar()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 contexto.Database.Migrate();
             }

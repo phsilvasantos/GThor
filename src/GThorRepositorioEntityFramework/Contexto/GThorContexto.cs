@@ -4,12 +4,13 @@ using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkDominio.Dominios.Veiculos;
+using GThorRepositorioEntityFramework.Contexto.Contratos;
 using GThorRepositorioEntityFramework.Rastreamento;
 using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Contexto
 {
-    public class GThorContexto : DbContext
+    internal class GThorContexto : DbContext, IGThorContexto
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -19,6 +20,12 @@ namespace GThorRepositorioEntityFramework.Contexto
             optionsBuilder.UseLoggerFactory(new EfLoggerFactory());
         #endif
 
+        }
+
+
+        public void SaveChangesThor()
+        {
+            SaveChanges();
         }
 
         public DbSet<Usuario> Usuarios { get; set; }

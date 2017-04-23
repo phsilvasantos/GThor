@@ -198,6 +198,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contexto\Contratos\IGThorContexto.cs" />
     <Compile Include="Contexto\GThorContexto.cs" />
     <Compile Include="Contratos\IRepositorioBase.cs" />
     <Compile Include="Criadores\ContextoCriador.cs" />

@@ -2,7 +2,7 @@
 using GThorFrameworkDominio.Dominios.Veiculos;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
@@ -18,7 +18,7 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(Veiculo veiculo)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioVeiculo.SetGThorContexto(contexto);
                 _repositorioVeiculo.SalvarOuAtualizar(veiculo);
@@ -28,7 +28,7 @@ namespace GThorNegocio.Negocios
 
         public Veiculo CarregarPorId(int id)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioVeiculo.SetGThorContexto(contexto);
                 return _repositorioVeiculo.CarregarPorId(id);
@@ -37,7 +37,7 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<Veiculo> Lista()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioVeiculo.SetGThorContexto(contexto);
                 return _repositorioVeiculo.Lista();
@@ -46,7 +46,7 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(Veiculo veiculo)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioVeiculo.SetGThorContexto(contexto);
                 _repositorioVeiculo.Deletar(veiculo);

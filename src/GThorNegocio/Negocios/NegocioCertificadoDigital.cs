@@ -3,6 +3,7 @@ using GThorFrameworkDominio.Dominios.Certificados;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
@@ -18,7 +19,7 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(CertificadoDigital certificadoDigital)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioCertificadoDigital.SetGThorContexto(contexto);
                 _repositorioCertificadoDigital.SalvarOuAtualizar(certificadoDigital);
@@ -28,7 +29,7 @@ namespace GThorNegocio.Negocios
 
         public CertificadoDigital CarregarPorId(int id)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioCertificadoDigital.SetGThorContexto(contexto);
                 return _repositorioCertificadoDigital.CarregarPorId(id);
@@ -37,7 +38,7 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<CertificadoDigital> Lista()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioCertificadoDigital.SetGThorContexto(contexto);
                 return _repositorioCertificadoDigital.Lista();
@@ -46,7 +47,7 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(CertificadoDigital certificadoDigital)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioCertificadoDigital.SetGThorContexto(contexto);
                 _repositorioCertificadoDigital.Deletar(certificadoDigital);

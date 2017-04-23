@@ -1,11 +1,11 @@
 ﻿using GThorRepositorioEntityFramework.Contexto;
-using Microsoft.EntityFrameworkCore;
+using GThorRepositorioEntityFramework.Contexto.Contratos;
 
 namespace GThorRepositorioEntityFramework.Criadores
 {
-    public class ContextoCriador
+    public static class ContextoCriador
     {
-        public DbContext CriaContexto()
+        public static IGThorContexto CriaContexto()
         {
             return new GThorContexto();
         }

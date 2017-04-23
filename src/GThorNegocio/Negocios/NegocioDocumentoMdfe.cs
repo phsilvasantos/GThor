@@ -2,7 +2,7 @@
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Contexto;
+using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
 
 namespace GThorNegocio.Negocios
@@ -19,7 +19,7 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(DocumentoMdfe documentoMdfe)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioDocumentoMdfe.SetGThorContexto(contexto);
                 _repositorioDocumentoMdfe.SalvarOuAtualizar(documentoMdfe);
@@ -29,7 +29,7 @@ namespace GThorNegocio.Negocios
 
         public DocumentoMdfe CarregarPorId(int id)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioDocumentoMdfe.SetGThorContexto(contexto);
 
@@ -39,7 +39,7 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<DocumentoMdfe> Lista()
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioDocumentoMdfe.SetGThorContexto(contexto);
 
@@ -49,7 +49,7 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(DocumentoMdfe documentoMdfe)
         {
-            using (var contexto = new GThorContexto())
+            using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioDocumentoMdfe.SetGThorContexto(contexto);
                 _repositorioDocumentoMdfe.Deletar(documentoMdfe);
