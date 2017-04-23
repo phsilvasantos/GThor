@@ -173,6 +173,23 @@ namespace GThor.Models.Empresas
             ValidaAntesSalvar += ValidarInformacoes;
 
             Salvar += SalvarConclui;
+
+            if (Empresa.Id == 0) return;
+
+            RazaoSocial = Empresa.RazaoSocial;
+            NomeFantasia = Empresa.NomeFantasia;
+            Cnpj = Empresa.Cnpj;
+            InscricaoEstadual = Empresa.InscricaoEstadual;
+            Rntrc = Empresa.Rntrc;
+            Logradouro = Empresa.Logradouro;
+            Numero = Empresa.Numero;
+            Bairro = Empresa.Bairro;
+            Complemento = Empresa.Complemento;
+            Telefone = Empresa.Telefone;
+            Email = Empresa.Email;
+            Cep = Empresa.Cep;
+            Uf = Empresa.Uf;
+            Cidade = Empresa.Cidade;
         }
 
         private void SalvarConclui(object sender, EventArgs e)
@@ -217,7 +234,7 @@ namespace GThor.Models.Empresas
 
             if (Cnpj.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem cnpj? So pode cadastrar se tiver");
             if (Cnpj.Length != 14) throw new ArgumentException("Hmm, esse cnpj está incorreto");
-            // todo validar cnpj
+            Cnpj.EumCnpj();
 
             if (Rntrc.IsNotNullOrEmpty())
                 if (Rntrc.Length != 8) throw new ArgumentException("Hmm, esse rntrc está incorreto, o mesmo deve ter 8 digitos");
@@ -231,7 +248,8 @@ namespace GThor.Models.Empresas
             if (Telefone.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem telefone? So pode cadastrar se tiver");
 
             if (Email.IsNullOrEmpty()) throw new ArgumentException("Hmm, sua empresa não tem email? So pode cadastrar se tiver");
-            // todo validar email
+            
+            Email.EumEmail();
 
             if (Uf == null) throw new ArgumentException("Hmm, sua empresa não tem estado(uf)? So pode cadastrar se tiver");
 

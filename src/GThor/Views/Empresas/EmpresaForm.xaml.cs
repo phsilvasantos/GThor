@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using GThor.Models.Empresas;
 using GThorFrameworkComponentes.ComboBox;
 
@@ -24,6 +25,18 @@ namespace GThor.Views.Empresas
 
             _model.Uf = uf;
             _model.Cidade = cidade;
+        }
+
+        private void EmpresaForm_OnContentRendered(object sender, EventArgs e)
+        {
+            ContentLoaded();
+        }
+
+        private void ContentLoaded()
+        {
+            if (_model.Empresa.Id == 0) return;
+            ComboBoxUfCidade.SetEstadoUf(_model.Empresa.Uf);
+            ComboBoxUfCidade.SetCidade(_model.Empresa.Cidade);
         }
     }
 }

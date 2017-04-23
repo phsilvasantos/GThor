@@ -61,5 +61,15 @@ namespace GThorFrameworkComponentes.ComboBox
         {
             InicializaComboBox();
         }
+
+        public void SetEstadoUf(Uf uf)
+        {
+            ComboBoxUfPicker.UfSelecionado = uf;
+        }
+
+        public void SetCidade(Cidade cidade)
+        {
+            ComboBoxCidadePicker.CidadeSelecionado = cidade;
+        }
     }
 }

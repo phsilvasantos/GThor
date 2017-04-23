@@ -4,6 +4,7 @@ using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
@@ -11,7 +12,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
     {
         public Empresa CarregarPorId(int id)
         {
-            return GThorContexto.Empresas.FirstOrDefault(e => e.Id == id);
+            return GThorContexto.Empresas.Include(e => e.Uf).Include(e => e.Cidade).FirstOrDefault(e => e.Id == id);
         }
 
         public IEnumerable<Empresa> Lista()

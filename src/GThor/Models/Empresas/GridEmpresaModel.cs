@@ -58,9 +58,26 @@ namespace GThor.Models.Empresas
             new EmpresaForm(model).ShowDialog();
         }
 
+        public override void DuploClickDataGrid()
+        {
+
+            var empresaBuscada = _negocioEmpresa.CarregarPorId(EntidadeSelecionada.Id);
+
+            var model = new EmpresaFormModel(NegocioCriador.CriaNegocioEmpresa()) { Empresa = empresaBuscada };
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new EmpresaForm(model).ShowDialog();
+        }
+
         private void AtualizarLista(object sender, EventArgs e)
         {
             IniciaPesquisa(PesquisarTexto);
+        }
+
+        protected override void DeletarRegistroSelecionado()
+        {
+            _negocioEmpresa.Deletar(new Empresa{Id = EntidadeSelecionada.Id});
         }
     }
 }

@@ -13,7 +13,8 @@
             WindowStartupLocation="CenterScreen"
             LoadedCommand="{Binding LoadedCommand}"
             Background="{StaticResource AccentColorBrush}"
-            Title="CADASTRO DE EMPRESA" Height="615" Width="900">
+            Title="CADASTRO DE EMPRESA" Height="615" Width="900"
+            ContentRendered="EmpresaForm_OnContentRendered">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Razão Social</TextBlock>
@@ -139,6 +140,7 @@
                     <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Email</TextBlock>
                     <TextBox
                         Text="{Binding Email}"
+                        CharacterCasing="Normal"
                         controls:TextBoxHelper.Watermark="Email"
                         MaxLength="255">
                     </TextBox>
@@ -155,7 +157,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Margin="0,8,0,0">
-                    <comboBox:ComboBoxUfCidade PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
+                    <comboBox:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
