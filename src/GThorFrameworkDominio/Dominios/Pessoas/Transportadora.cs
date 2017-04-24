@@ -4,6 +4,7 @@ using GThorFrameworkDominio.Dominios.Pessoas.Flags;
 
 namespace GThorFrameworkDominio.Dominios.Pessoas
 {
+    [Table("transportadora")]
     public class Transportadora : Pessoa
     {
         [Column("rntrc")]
