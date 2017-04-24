@@ -5,6 +5,7 @@ using GThor.Models;
 using GThor.Models.CertificadoDigitais;
 using GThor.Models.DocumentosMdfe;
 using GThor.Models.Empresas;
+using GThor.Models.Pessoas;
 using GThor.Models.Usuarios;
 using GThor.Models.Veiculos;
 using GThorFrameworkWpf.Views.DataGrid;
@@ -54,6 +55,11 @@ namespace GThor
         private void GerenciarEmpresa_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
             AbrirTabItem("Empresas", DataGridPadrao.Criar(new GridEmpresaModel(NegocioCriador.CriaNegocioEmpresa())));
+        }
+
+        private void GerenciarPessoa_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            AbrirTabItem("Pessoas", DataGridPadrao.Criar(new GridPessoaModel(NegocioCriador.CriaNegocioPessoa())));
         }
 
         private void AbrirTabItem(string titulo, UserControl janela)

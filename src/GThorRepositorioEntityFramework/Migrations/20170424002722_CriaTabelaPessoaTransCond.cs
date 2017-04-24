@@ -18,7 +18,7 @@ namespace GThorRepositorioEntityFramework.Migrations
                     cidadeId = table.Column<int>(nullable: false),
                     cnpj = table.Column<string>(maxLength: 14, nullable: false),
                     cpf = table.Column<string>(maxLength: 11, nullable: false),
-                    discriminator = table.Column<string>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
                     email = table.Column<string>(maxLength: 255, nullable: false),
                     InscricaoEstadual = table.Column<string>(maxLength: 30, nullable: false),
                     nome = table.Column<string>(maxLength: 255, nullable: false),
