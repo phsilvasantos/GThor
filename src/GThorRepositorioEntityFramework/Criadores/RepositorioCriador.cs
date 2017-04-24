@@ -39,5 +39,10 @@ namespace GThorRepositorioEntityFramework.Criadores
         {
             return new RepositorioEmpresa();
         }
+
+        public static IRepositorioPessoa CriaRepositorioPessoa()
+        {
+            return new RepositorioPessoa();
+        }
     }
 }

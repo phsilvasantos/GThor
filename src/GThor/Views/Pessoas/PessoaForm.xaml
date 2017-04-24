@@ -1,0 +1,18 @@
+﻿<views:GThorWindow x:Class="GThor.Views.Pessoas.PessoaForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GThor.Views.Pessoas"
+        xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
+        mc:Ignorable="d"
+        Style="{StaticResource ComercialDialog}"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource AccentColorBrush}"
+        Title="CADASTRO DE PESSOA" Height="615" Width="900"
+        LoadedCommand="{Binding LoadedCommand}">
+    <Grid>
+        
+    </Grid>
+</views:GThorWindow>
+

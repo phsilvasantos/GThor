@@ -209,6 +209,7 @@
     <Compile Include="Implementacao\RepositorioCidade.cs" />
     <Compile Include="Implementacao\RepositorioDocumentoMdfe.cs" />
     <Compile Include="Implementacao\RepositorioEmpresa.cs" />
+    <Compile Include="Implementacao\RepositorioPessoa.cs" />
     <Compile Include="Implementacao\RepositorioUf.cs" />
     <Compile Include="Implementacao\RepositorioUsuario.cs" />
     <Compile Include="Implementacao\RepositorioVeiculo.cs" />

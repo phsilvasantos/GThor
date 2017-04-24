@@ -1,16 +1,16 @@
-﻿using System.Collections.Generic;
-using GThorFrameworkDominio.Dominios.Empresas;
+﻿using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
 using GThorFrameworkRepositorio.Contratos;
+using GThorRepositorio.Contratos.Base;
 
 namespace GThorRepositorio.Contratos
 {
     public interface IRepositorioEmpresa :
-        IDaoContexto,
-        IDaoBase<Empresa, int>,
+        IRepositorioContexto,
+        IRepositorioBase<Empresa, int>,
         ISuporteSalvar<Empresa>,
-        ISuporteDeletar<Empresa>
+        ISuporteDeletar<Empresa>,
+        ISuporteGridModel<EmpresaDto>
     {
-        IEnumerable<EmpresaDto> BuscarParaGridModel();
     }
 }

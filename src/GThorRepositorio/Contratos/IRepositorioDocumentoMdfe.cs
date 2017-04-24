@@ -4,8 +4,8 @@ using GThorFrameworkRepositorio.Contratos;
 namespace GThorRepositorio.Contratos
 {
     public interface IRepositorioDocumentoMdfe :
-        IDaoContexto,
-        IDaoBase<DocumentoMdfe, int>,
+        IRepositorioContexto,
+        IRepositorioBase<DocumentoMdfe, int>,
         ISuporteSalvar<DocumentoMdfe>,
         ISuporteDeletar<DocumentoMdfe>
     {

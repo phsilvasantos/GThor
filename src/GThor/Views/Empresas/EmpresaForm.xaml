@@ -9,12 +9,12 @@
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:comboBox="clr-namespace:GThorFrameworkComponentes.ComboBox;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
-            Style="{StaticResource ComercialDialog}"
-            WindowStartupLocation="CenterScreen"
-            LoadedCommand="{Binding LoadedCommand}"
-            Background="{StaticResource AccentColorBrush}"
-            Title="CADASTRO DE EMPRESA" Height="615" Width="900"
-            ContentRendered="EmpresaForm_OnContentRendered">
+        Style="{StaticResource ComercialDialog}"
+        WindowStartupLocation="CenterScreen"
+        LoadedCommand="{Binding LoadedCommand}"
+        Background="{StaticResource AccentColorBrush}"
+        Title="CADASTRO DE EMPRESA" Height="615" Width="900"
+        ContentRendered="EmpresaForm_OnContentRendered">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Razão Social</TextBlock>

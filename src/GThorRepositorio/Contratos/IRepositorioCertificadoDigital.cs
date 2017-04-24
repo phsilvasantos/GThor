@@ -4,8 +4,8 @@ using GThorFrameworkRepositorio.Contratos;
 namespace GThorRepositorio.Contratos
 {
     public interface IRepositorioCertificadoDigital :
-        IDaoContexto,
-        IDaoBase<CertificadoDigital, int>,
+        IRepositorioContexto,
+        IRepositorioBase<CertificadoDigital, int>,
         ISuporteSalvar<CertificadoDigital>,
         ISuporteDeletar<CertificadoDigital>
     {

@@ -6,14 +6,14 @@ namespace GThorRepositorioEntityFramework.Extensoes
 {
     public static class ExtContexto
     {
-        public static void SetGThorContexto(this IDaoContexto repositorioBase, IGThorContexto contexto)
+        public static void SetGThorContexto(this IRepositorioContexto repositorioBase, IGThorContexto contexto)
         {
             var repositorio = (IRepositorioBase) repositorioBase;
 
             repositorio.GThorContexto = contexto;
         }
 
-        public static void SalvarAlteracoes(this IDaoContexto repositorioBase)
+        public static void SalvarAlteracoes(this IRepositorioContexto repositorioBase)
         {
             var repositorio = (IRepositorioBase)repositorioBase;
 

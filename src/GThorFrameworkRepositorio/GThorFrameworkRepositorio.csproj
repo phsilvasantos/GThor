@@ -40,8 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contratos\IDaoContexto.cs" />
-    <Compile Include="Contratos\IDaoBase.cs" />
+    <Compile Include="Contratos\IRepositorioContexto.cs" />
+    <Compile Include="Contratos\IRepositorioBase.cs" />
     <Compile Include="Contratos\ISuporteDeletar.cs" />
     <Compile Include="Contratos\ISuporteSalvar.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,8 +4,8 @@ using GThorFrameworkRepositorio.Contratos;
 namespace GThorRepositorio.Contratos
 {
     public interface IRepositorioUf :
-        IDaoContexto,
-        IDaoBase<Uf, int>
+        IRepositorioContexto,
+        IRepositorioBase<Uf, int>
     {
         
     }

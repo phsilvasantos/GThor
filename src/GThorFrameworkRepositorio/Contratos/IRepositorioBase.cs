@@ -2,7 +2,7 @@
 
 namespace GThorFrameworkRepositorio.Contratos
 {
-    public interface IDaoBase<out TEntity, in TId>
+    public interface IRepositorioBase<out TEntity, in TId>
     {
         TEntity CarregarPorId(TId id);
 
