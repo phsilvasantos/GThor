@@ -1,8 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
+using GThor.Views.Pessoas;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dto;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 
 namespace GThor.Models.Pessoas
 {
@@ -42,6 +46,23 @@ namespace GThor.Models.Pessoas
             AdicionarDataGridColumn(() => pessoaDto.Id);
             AdicionarDataGridColumn(() => pessoaDto.Nome);
             AdicionarDataGridColumn(() => pessoaDto.DocumentoUnico);
+        }
+
+        public override void NovoRegistroAction(object obj)
+        {
+            var model = new PessoaFormModel(NegocioCriador.CriaNegocioPessoa())
+            {
+                Pessoa = new Pessoa()
+            };
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new PessoaForm(model).ShowDialog();
+        }
+
+        private void AtualizarLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }

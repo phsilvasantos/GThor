@@ -96,6 +96,7 @@
     <Compile Include="Models\Empresas\EmpresaFormModel.cs" />
     <Compile Include="Models\Empresas\GridEmpresaModel.cs" />
     <Compile Include="Models\Pessoas\GridPessoaModel.cs" />
+    <Compile Include="Models\Pessoas\PessoaFormModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
     <Compile Include="Models\Usuarios\UsuarioFormModel.cs" />
     <Compile Include="Models\Veiculos\GridVeiculoModel.cs" />
