@@ -43,11 +43,13 @@
     <Compile Include="Contratos\Base\INegocioBase.cs" />
     <Compile Include="Contratos\Base\INegocioDeletar.cs" />
     <Compile Include="Contratos\Base\INegocioSalvar.cs" />
+    <Compile Include="Contratos\Base\INegocioSuporteGridModel.cs" />
     <Compile Include="Contratos\INegocioCertificadoDigital.cs" />
     <Compile Include="Contratos\INegocioCidade.cs" />
     <Compile Include="Contratos\INegocioDocumentoMdfe.cs" />
     <Compile Include="Contratos\INegocioEmpresa.cs" />
     <Compile Include="Contratos\INegocioMigracaoBancoDados.cs" />
+    <Compile Include="Contratos\INegocioPessoa.cs" />
     <Compile Include="Contratos\INegocioUf.cs" />
     <Compile Include="Contratos\INegocioUsuario.cs" />
     <Compile Include="Contratos\INegocioVeiculo.cs" />
@@ -57,6 +59,7 @@
     <Compile Include="Negocios\NegocioDocumentoMdfe.cs" />
     <Compile Include="Negocios\NegocioEmpresa.cs" />
     <Compile Include="Negocios\NegocioMigracaoBancoDados.cs" />
+    <Compile Include="Negocios\NegocioPessoa.cs" />
     <Compile Include="Negocios\NegocioUf.cs" />
     <Compile Include="Negocios\NegocioUsuario.cs" />
     <Compile Include="Negocios\NegocioVeiculo.cs" />

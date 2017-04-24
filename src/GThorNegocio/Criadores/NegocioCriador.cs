@@ -45,5 +45,10 @@ namespace GThorNegocio.Criadores
         {
             return new NegocioEmpresa(RepositorioCriador.CriaRepositorioEmpresa());
         }
+
+        public static INegocioPessoa CriaNegocioPessoa()
+        {
+            return new NegocioPessoa(RepositorioCriador.CriaRepositorioPessoa());
+        }
     }
 }
