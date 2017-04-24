@@ -217,10 +217,6 @@
     <Compile Include="Migrations\20170423172133_CriaTabelaEmpresa.designer.cs">
       <DependentUpon>20170423172133_CriaTabelaEmpresa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20170424002722_CriaTabelaPessoaTransCond.cs" />
-    <Compile Include="Migrations\20170424002722_CriaTabelaPessoaTransCond.designer.cs">
-      <DependentUpon>20170424002722_CriaTabelaPessoaTransCond.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rastreamento\EfLogger.cs" />
     <Compile Include="Rastreamento\EfLoggerFactory.cs" />
     <Compile Include="Migrations\20170420001945_CriaTabelaUsuarioECertificadoDigital.cs" />

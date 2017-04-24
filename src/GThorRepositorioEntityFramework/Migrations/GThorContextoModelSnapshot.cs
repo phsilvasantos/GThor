@@ -4,10 +4,6 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using GThorRepositorioEntityFramework.Contexto;
-using GThorFrameworkDominio.Dominios.Certificados;
-using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;
-using GThorFrameworkDominio.Dominios.Pessoas.Flags;
-using GThorFrameworkDominio.Dominios.Veiculos.Flags;
 
 namespace GThorRepositorioEntityFramework.Migrations
 {
@@ -207,70 +203,6 @@ namespace GThorRepositorioEntityFramework.Migrations
                     b.ToTable("uf");
                 });
 
-            modelBuilder.Entity("GThorFrameworkDominio.Dominios.Pessoas.Pessoa", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnName("id");
-
-                    b.Property<int>("CidadeId")
-                        .HasColumnName("cidadeId");
-
-                    b.Property<string>("Cnpj")
-                        .IsRequired()
-                        .HasColumnName("cnpj")
-                        .HasMaxLength(14);
-
-                    b.Property<string>("Cpf")
-                        .IsRequired()
-                        .HasColumnName("cpf")
-                        .HasMaxLength(11);
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired();
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnName("email")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("InscricaoEstadual")
-                        .IsRequired()
-                        .HasColumnName("InscricaoEstadual")
-                        .HasMaxLength(30);
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnName("nome")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("NomeFantasia")
-                        .IsRequired()
-                        .HasColumnName("nomeFantasia")
-                        .HasMaxLength(255);
-
-                    b.Property<string>("Telefone")
-                        .IsRequired()
-                        .HasColumnName("telefone")
-                        .HasMaxLength(11);
-
-                    b.Property<int>("TipoPessoa")
-                        .HasColumnName("tipoPessoa");
-
-                    b.Property<int>("UfId")
-                        .HasColumnName("ufId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CidadeId");
-
-                    b.HasIndex("UfId");
-
-                    b.ToTable("pessoa");
-
-                    b.HasDiscriminator<string>("Discriminator").HasValue("Pessoa");
-                });
-
             modelBuilder.Entity("GThorFrameworkDominio.Dominios.Usuarios.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -343,33 +275,6 @@ namespace GThorRepositorioEntityFramework.Migrations
                     b.ToTable("veiculo");
                 });
 
-            modelBuilder.Entity("GThorFrameworkDominio.Dominios.Pessoas.Condutor", b =>
-                {
-                    b.HasBaseType("GThorFrameworkDominio.Dominios.Pessoas.Pessoa");
-
-
-                    b.ToTable("pessoa");
-
-                    b.HasDiscriminator().HasValue("Condutor");
-                });
-
-            modelBuilder.Entity("GThorFrameworkDominio.Dominios.Pessoas.Transportadora", b =>
-                {
-                    b.HasBaseType("GThorFrameworkDominio.Dominios.Pessoas.Pessoa");
-
-                    b.Property<string>("Rntrc")
-                        .IsRequired()
-                        .HasColumnName("rntrc")
-                        .HasMaxLength(8);
-
-                    b.Property<int>("TipoProprietario")
-                        .HasColumnName("tipoProprietario");
-
-                    b.ToTable("pessoa");
-
-                    b.HasDiscriminator().HasValue("Transportadora");
-                });
-
             modelBuilder.Entity("GThorFrameworkDominio.Dominios.Cidades.Cidade", b =>
                 {
                     b.HasOne("GThorFrameworkDominio.Dominios.EstadosUf.Uf", "Uf")
@@ -379,19 +284,6 @@ namespace GThorRepositorioEntityFramework.Migrations
                 });
 
             modelBuilder.Entity("GThorFrameworkDominio.Dominios.Empresas.Empresa", b =>
-                {
-                    b.HasOne("GThorFrameworkDominio.Dominios.Cidades.Cidade", "Cidade")
-                        .WithMany()
-                        .HasForeignKey("CidadeId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("GThorFrameworkDominio.Dominios.EstadosUf.Uf", "Uf")
-                        .WithMany()
-                        .HasForeignKey("UfId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("GThorFrameworkDominio.Dominios.Pessoas.Pessoa", b =>
                 {
                     b.HasOne("GThorFrameworkDominio.Dominios.Cidades.Cidade", "Cidade")
                         .WithMany()
