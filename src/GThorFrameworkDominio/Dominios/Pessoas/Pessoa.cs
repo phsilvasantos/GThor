@@ -62,5 +62,7 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
         [MaxLength(255)]
         [Required]
         public string Email { get; set; }
+
+        public Transportadora Transportadora { get; set; }
     }
 }

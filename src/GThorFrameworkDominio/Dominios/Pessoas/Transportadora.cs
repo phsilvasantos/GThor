@@ -5,8 +5,13 @@ using GThorFrameworkDominio.Dominios.Pessoas.Flags;
 namespace GThorFrameworkDominio.Dominios.Pessoas
 {
     [Table("transportadora")]
-    public class Transportadora : Pessoa
+    public class Transportadora
     {
+        [Key]
+        [Column("pessoaId")]
+        public int PessoaId { get; set; }
+        public Pessoa Pessoa { get; set; }
+
         [Column("rntrc")]
         [MaxLength(8)]
         [Required]
