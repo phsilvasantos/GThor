@@ -10,6 +10,7 @@
         xmlns:flags="clr-namespace:GThorFrameworkDominio.Dominios.Pessoas.Flags;assembly=GThorFrameworkDominio"
         xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
         xmlns:comboBox="clr-namespace:GThorFrameworkComponentes.ComboBox;assembly=GThorFrameworkComponentes"
+        xmlns:helpers="clr-namespace:GThorFrameworkWpf.Helpers;assembly=GThorFrameworkWpf"
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"

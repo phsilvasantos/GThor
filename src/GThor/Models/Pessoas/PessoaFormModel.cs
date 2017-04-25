@@ -1,4 +1,6 @@
-﻿using GThorFrameworkDominio.Dominios.Cidades;
+﻿using System;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dominios.Pessoas.Flags;
@@ -235,6 +237,14 @@ namespace GThor.Models.Pessoas
             }
         }
 
+        protected override void LoadedCommandAction(object obj)
+        {
+            ValidaAntesSalvar += ValidarInformacoes;
+        }
 
+        private void ValidarInformacoes(object sender, EventArgs e)
+        {
+            Nome = Nome.TrimOrEmpty();
+        }
     }
 }

@@ -26,6 +26,7 @@
         <Setter Property="Height" Value="36"></Setter>
         <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True" />
+        <Setter Property="helpers:GThorTextBoxHelper.Trim" Value="True"></Setter>
     </Style>
     
     <Style TargetType="TextBox" x:Key="GThorTextBoxNumeroInteiro" BasedOn="{StaticResource GThorTextBox}">
