@@ -63,8 +63,8 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
         [Required]
         public string Email { get; set; }
 
-        public virtual Transportadora Transportadora { get; set; }
+        public virtual Transportadora Transportadora { get; set; } = new Transportadora();
 
-        public virtual Condutor Condutor { get; set; }
+        public virtual Condutor Condutor { get; set; } = new Condutor();
     }
 }

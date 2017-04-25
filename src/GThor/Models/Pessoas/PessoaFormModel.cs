@@ -32,8 +32,6 @@ namespace GThor.Models.Pessoas
         public PessoaFormModel(INegocioPessoa negocioPessoa)
         {
             _negocioPessoa = negocioPessoa;
-
-            TipoPessoa = TipoPessoa.Fisica;
         }
 
         public Pessoa Pessoa { get; set; }
@@ -239,12 +237,78 @@ namespace GThor.Models.Pessoas
 
         protected override void LoadedCommandAction(object obj)
         {
+            TipoPessoa = TipoPessoa.Fisica;
+            TipoProprietario = TipoProprietario.Agregado;
             ValidaAntesSalvar += ValidarInformacoes;
+            Salvar += SalvarAction;
+        }
+
+        private void SalvarAction(object sender, EventArgs e)
+        {
+            if (IsTransportadora)
+            {
+                Pessoa.Transportadora.PessoaId = Pessoa.Id;
+                Pessoa.Transportadora.Pessoa = null;
+                Pessoa.Transportadora.Rntrc = Rntrc;
+                Pessoa.Transportadora.TipoProprietario = TipoProprietario;
+            }
+
+            if (IsCondutor)
+            {
+                Pessoa.Condutor.PessoaId = Pessoa.Id;
+                Pessoa.Condutor.Pessoa = null;
+            }
+
+            if (!IsTransportadora)
+            {
+                Pessoa.Transportadora = null;
+            }
+
+            if (!IsCondutor)
+            {
+                Pessoa.Condutor = null;
+            }
+
+            Pessoa.Nome = Nome;
+            Pessoa.TipoPessoa = TipoPessoa;
+            Pessoa.InscricaoEstadual = InscricaoEstadual;
+            Pessoa.NomeFantasia = NomeFantasia;
+            Pessoa.Cnpj = Cnpj;
+            Pessoa.Cpf = Cpf;
+            Pessoa.Email = Email;
+            Pessoa.Telefone = Telefone;
+            Pessoa.UfId = Uf.Id;
+            Pessoa.Uf = null;
+            Pessoa.CidadeId = Cidade.Id;
+            Pessoa.Cidade = null;
+
+            _negocioPessoa.SalvarOuAtualizar(Pessoa);
         }
 
         private void ValidarInformacoes(object sender, EventArgs e)
         {
-            Nome = Nome.TrimOrEmpty();
+            if (Nome.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um nome não posso te cadastrar");
+
+            ValidaPorTipoPessoa();
+        }
+
+        private void ValidaPorTipoPessoa()
+        {
+            switch (TipoPessoa)
+            {
+                case TipoPessoa.Fisica:
+                    if (Cpf.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um CPF não posso te cadastrar");
+
+                    break;
+
+                case TipoPessoa.Juridica:
+                    if (Cnpj.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um CNPJ não posso te cadastrar");
+
+                    if (NomeFantasia.IsNullOrEmpty())
+                        throw new ArgumentException("Sem me informar um nome fantasia te cadastrar");
+
+                    break;
+            }
         }
     }
 }

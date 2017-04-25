@@ -42,6 +42,11 @@ namespace GThorFrameworkWpf.Helpers
 
             if (textBox == null) return;
 
+            if (textBox.Text.IsNullOrEmpty())
+            {
+                textBox.Text = string.Empty;
+            }
+
             textBox.Text = textBox.Text?.TrimOrEmpty();
         }
 

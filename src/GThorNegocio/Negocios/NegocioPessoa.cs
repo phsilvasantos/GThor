@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
@@ -22,6 +23,16 @@ namespace GThorNegocio.Negocios
             {
                 _repositorioPessoa.SetGThorContexto(contexto);
                 return _repositorioPessoa.BuscarParaGridModel();
+            }
+        }
+
+        public void SalvarOuAtualizar(Pessoa entity)
+        {
+            using (var contexto = ContextoCriador.CriaContexto())
+            {
+                _repositorioPessoa.SetGThorContexto(contexto);
+                _repositorioPessoa.SalvarOuAtualizar(entity);
+                _repositorioPessoa.SalvarAlteracoes();
             }
         }
     }

@@ -20,6 +20,6 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
 
         [Column("tipoProprietario")]
         [Required]
-        public TipoProprietario TipoProprietario { get; set; }
+        public TipoProprietario TipoProprietario { get; set; } = TipoProprietario.Agregado;
     }
 }

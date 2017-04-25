@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dto;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao.Base;
@@ -22,6 +23,19 @@ namespace GThorRepositorioEntityFramework.Implementacao
             var lista = query.ToList();
 
             return lista;
+        }
+
+        public void SalvarOuAtualizar(Pessoa entity)
+        {
+            GThorContexto.Pessoas.Add(entity);
+
+            if (entity.Transportadora != null)
+                GThorContexto.Transportadoras.Add(entity.Transportadora);
+
+            if (entity.Condutor != null)
+            {
+                GThorContexto.Condutores.Add(entity.Condutor);
+            }
         }
     }
 }

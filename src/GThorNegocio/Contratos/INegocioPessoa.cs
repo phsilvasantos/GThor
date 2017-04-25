@@ -1,10 +1,12 @@
-﻿using GThorFrameworkDominio.Dto;
+﻿using GThorFrameworkDominio.Dominios.Pessoas;
+using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos.Base;
 
 namespace GThorNegocio.Contratos
 {
     public interface INegocioPessoa :
-        INegocioSuporteGridModel<PessoaDto>
+        INegocioSuporteGridModel<PessoaDto>,
+        INegocioSalvar<Pessoa>
     {
         
     }
