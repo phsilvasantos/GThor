@@ -171,7 +171,7 @@ namespace GThor.Models.CertificadoDigitais
             Serial = string.Empty;
         }
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             ValidaAntesSalvar += Validacoes;
             Salvar += SalvaCertificado;

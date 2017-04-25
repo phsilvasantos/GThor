@@ -139,7 +139,7 @@ namespace GThor.Models.Veiculos
             }
         }
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             TipoRodado = TipoRodado.Truck;
             TipoCarroceria = TipoCarroceria.NaoAplicavel;

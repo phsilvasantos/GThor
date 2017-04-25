@@ -235,7 +235,7 @@ namespace GThor.Models.Pessoas
             }
         }
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             TipoPessoa = TipoPessoa.Fisica;
             TipoProprietario = TipoProprietario.Agregado;
@@ -290,6 +290,9 @@ namespace GThor.Models.Pessoas
             if (Nome.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um nome não posso te cadastrar");
 
             ValidaPorTipoPessoa();
+
+            if (!IsCondutor) return;
+            if (TipoPessoa != TipoPessoa.Fisica) throw new ArgumentException("Xiii, para você ser um condutor você deve ser uma pessoa física");
         }
 
         private void ValidaPorTipoPessoa()
@@ -306,8 +309,9 @@ namespace GThor.Models.Pessoas
 
                     if (NomeFantasia.IsNullOrEmpty())
                         throw new ArgumentException("Sem me informar um nome fantasia te cadastrar");
-
                     break;
+                default:
+                    throw new ArgumentException("Oxi, esse tipo pessoa não existe");
             }
         }
     }

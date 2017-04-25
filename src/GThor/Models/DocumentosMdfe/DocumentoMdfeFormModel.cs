@@ -67,7 +67,7 @@ namespace GThor.Models.DocumentosMdfe
             }
         }
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             ValidaAntesSalvar += Validacoes;
             Salvar += SalvarAction;

@@ -77,9 +77,27 @@ namespace GThorFrameworkWpf.Models.Base
 
         public ICommand LoadedCommand => GetSimpleCommand(LoadedCommandAction);
 
-        protected virtual void LoadedCommandAction(object obj)
+        public void LoadedCommandAction(object obj)
+        {
+            DeixaTipoStringVazia();
+
+            Loaded();
+        }
+
+        protected virtual void Loaded()
         {
             
+        }
+
+        private void DeixaTipoStringVazia()
+        {
+            foreach (var propertyInfo in GetType().GetProperties())
+            {
+                if (propertyInfo.PropertyType == typeof(string))
+                {
+                    propertyInfo.SetValue(this, string.Empty);
+                }
+            }
         }
 
         private void SalvarAction(object obj)

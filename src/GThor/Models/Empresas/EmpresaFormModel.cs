@@ -168,7 +168,7 @@ namespace GThor.Models.Empresas
         public Cidade Cidade { get; set; }
 
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             ValidaAntesSalvar += ValidarInformacoes;
 

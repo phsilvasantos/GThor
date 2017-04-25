@@ -8,7 +8,7 @@ namespace GThor.Models
     {
         public event EventHandler InicializaStartHandler;
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             var negocioMigracao = NegocioCriador.CriaNegocioMigracaoBancoDados();
             negocioMigracao.Migrar();

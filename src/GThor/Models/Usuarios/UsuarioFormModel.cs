@@ -16,7 +16,7 @@ namespace GThor.Models.Usuarios
             _usuarioNegocio = usuarioNegocio;
         }
 
-        protected override void LoadedCommandAction(object obj)
+        protected override void Loaded()
         {
             ValidaAntesSalvar += ValidarAntesDeSalvar;
             Salvar += SalvarUsuario;
