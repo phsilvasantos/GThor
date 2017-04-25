@@ -7,10 +7,11 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
     [Table("transportadora")]
     public class Transportadora
     {
-        [Key]
-        [ForeignKey("transportadora__pessoa")]
+        [Key, ForeignKey("Pessoa")]
         [Column("pessoaId")]
         public int PessoaId { get; set; }
+
+        public virtual Pessoa Pessoa { get; set; }
 
         [Column("rntrc")]
         [MaxLength(8)]
