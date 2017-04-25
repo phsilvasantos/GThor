@@ -7,7 +7,7 @@ using GThorFrameworkDominio.Dominios.Pessoas.Flags;
 namespace GThorFrameworkDominio.Dominios.Pessoas
 {
     [Table("pessoa")]
-    public abstract class Pessoa
+    public class Pessoa
     {
         [Key]
         [Column("id")]
@@ -64,5 +64,7 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
         public string Email { get; set; }
 
         public Transportadora Transportadora { get; set; }
+
+        public Condutor Condutor { get; set; }
     }
 }
