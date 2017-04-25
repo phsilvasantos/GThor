@@ -52,7 +52,7 @@ namespace GThor.Models.Pessoas
         {
             var model = new PessoaFormModel(NegocioCriador.CriaNegocioPessoa())
             {
-                
+                Pessoa = new Pessoa()
             };
 
             model.AtualizarListaHandler += AtualizarLista;

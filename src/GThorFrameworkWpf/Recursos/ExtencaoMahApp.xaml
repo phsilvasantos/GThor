@@ -129,6 +129,11 @@
         <Setter Property="ResizeMode" Value="CanMinimize"></Setter>
     </Style>
 
+    <Style x:Key="ToggleSwitchWin10" TargetType="controls:ToggleSwitch"
+           BasedOn="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}">
+        <Setter Property="Margin" Value="5" />
+    </Style>
+
     <Style x:Key="ComercialDialog"
            TargetType="controls:MetroWindow"
            BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
@@ -147,12 +152,11 @@
         <Setter Property="Height" Value="40"></Setter>
     </Style>
 
-
-
     <Style TargetType="TextBox" BasedOn="{StaticResource GThorTextBox}" />
     <Style TargetType="PasswordBox" BasedOn="{StaticResource ComercialPasswordBox}" />
     <Style TargetType="GroupBox" BasedOn="{StaticResource ComercialGroupBox}" />
     <Style TargetType="ComboBox" BasedOn="{StaticResource ComercialComboBox}" />
+    <Style TargetType="controls:ToggleSwitch" BasedOn="{StaticResource ToggleSwitchWin10}" />
     <Style TargetType="RadioButton" BasedOn="{StaticResource ComercialRadioButton}" />
     <Style TargetType="CheckBox" BasedOn="{StaticResource ComercialCheckBox}" />
     <Style TargetType="Button" BasedOn="{StaticResource ComercialFlatButton}" />
