@@ -24,6 +24,8 @@ namespace GThor.Models.Pessoas
         private TipoProprietario _tipoProprietario;
         private bool _isTransportadora;
         private bool _isCondutor;
+        private bool _isFisica;
+        private bool _isJuridica;
 
         public PessoaFormModel(INegocioPessoa negocioPessoa)
         {
@@ -64,7 +66,51 @@ namespace GThor.Models.Pessoas
                 if (value == _tipoPessoa) return;
                 _tipoPessoa = value;
                 OnPropertyChanged();
+
+                switch (value)
+                {
+                    case TipoPessoa.Fisica:
+                        IsJuridica = false;
+                        IsFisica = true;
+                        break;
+                    case TipoPessoa.Juridica:
+                        IsJuridica = true;
+                        IsFisica = false;
+                        break;
+                }
             }
+        }
+
+        public bool IsFisica
+        {
+            get => _isFisica;
+            set
+            {
+                if (value == _isFisica) return;
+                _isFisica = value;
+                OnPropertyChanged();
+
+                LimpaCamposPessoaFisicaEJuridica();
+            }
+        }
+
+        public bool IsJuridica
+        {
+            get => _isJuridica; set
+            {
+                if (value == _isJuridica) return;
+                _isJuridica = value;
+                OnPropertyChanged();
+
+                LimpaCamposPessoaFisicaEJuridica();
+            }
+        }
+
+        private void LimpaCamposPessoaFisicaEJuridica()
+        {
+            Cnpj = string.Empty;
+            NomeFantasia = string.Empty;
+            Cpf = string.Empty;
         }
 
         public string InscricaoEstadual
@@ -173,6 +219,9 @@ namespace GThor.Models.Pessoas
                 if (value == _isTransportadora) return;
                 _isTransportadora = value;
                 OnPropertyChanged();
+
+                Rntrc = string.Empty;
+                TipoProprietario = TipoProprietario.Agregado;
             }
         }
 

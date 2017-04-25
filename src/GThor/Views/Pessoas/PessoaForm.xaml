@@ -14,146 +14,154 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource AccentColorBrush}"
-        Title="CADASTRO DE PESSOA" Height="715" Width="900"
+        Title="CADASTRO DE PESSOA" Height="665" Width="900"
         LoadedCommand="{Binding LoadedCommand}"
                    ContentRendered="PessoaForm_OnContentRendered">
 
-    <StackPanel Margin="24">
-        
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            
-            
-            <StackPanel>
-                <controls:ToggleSwitch OnLabel="E Uma Transportadora" OffLabel="Não E Uma Transportadora" IsChecked="{Binding IsTransportadora}"></controls:ToggleSwitch>
-            </StackPanel>
+    <DockPanel Margin="24">
+        <StackPanel DockPanel.Dock="Top">
 
-            <StackPanel Grid.Column="2">
-                <controls:ToggleSwitch OnLabel="E Um Condutor" OffLabel="Não E Um Condutor" IsChecked="{Binding IsCondutor}"></controls:ToggleSwitch>
-            </StackPanel>
-
-        </Grid>
-        
-        <TextBlock Style="{StaticResource ControlForm}">Nome</TextBlock>
-        <TextBox
-            Text="{Binding Nome}"
-            controls:TextBoxHelper.Watermark="Nome"
-            MaxLength="255">
-        </TextBox>
-
-        <StackPanel Margin="0,8,0,0">
             <Grid>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                
+
+
                 <StackPanel>
-                    <TextBlock Style="{StaticResource ControlForm}">Tipo Pessoa</TextBlock>
-                    <ComboBox
-                        IsEditable="False"
-                        ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoPessoa}}}"
-                        SelectedValue="{Binding TipoPessoa}"
-                    ></ComboBox>
+                    <controls:ToggleSwitch OnLabel="E Uma Transportadora" OffLabel="Não E Uma Transportadora" IsChecked="{Binding IsTransportadora}"></controls:ToggleSwitch>
                 </StackPanel>
 
-                <StackPanel Grid.Column="1" Margin="3,0,0,0">
-                    <TextBlock Style="{StaticResource ControlForm}">Inscrição Estadual</TextBlock>
-                    <TextBox Text="{Binding InscricaoEstadual}" 
-                             controls:TextBoxHelper.Watermark="Inscrição Estadual"
-                             MaxLength="30"></TextBox>
+                <StackPanel Grid.Column="2">
+                    <controls:ToggleSwitch OnLabel="E Um Condutor" OffLabel="Não E Um Condutor" IsChecked="{Binding IsCondutor}"></controls:ToggleSwitch>
                 </StackPanel>
 
             </Grid>
-        </StackPanel>
 
-        <StackPanel Margin="0,8,0,0">
-            <TextBlock Style="{StaticResource ControlForm}">Nome Fantasia</TextBlock>
+            <TextBlock Style="{StaticResource ControlForm}">Nome</TextBlock>
             <TextBox
-                Text="{Binding NomeFantasia}"
-                controls:TextBoxHelper.Watermark="Nome Fantasia"
+                Text="{Binding Nome}"
+                controls:TextBoxHelper.Watermark="Nome"
                 MaxLength="255">
             </TextBox>
-        </StackPanel>
-        
-        <StackPanel Margin="0,8,0,0">
-            <StackPanel>
-                <TextBlock Style="{StaticResource ControlForm}">Cnpj</TextBlock>
+
+            <StackPanel Margin="0,8,0,0">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource ControlForm}">Tipo Pessoa</TextBlock>
+                        <ComboBox
+                            IsEditable="False"
+                            ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoPessoa}}}"
+                            SelectedValue="{Binding TipoPessoa}"
+                        ></ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="3,0,0,0">
+                        <TextBlock Style="{StaticResource ControlForm}">Inscrição Estadual</TextBlock>
+                        <TextBox Text="{Binding InscricaoEstadual}" 
+                                 controls:TextBoxHelper.Watermark="Inscrição Estadual"
+                                 MaxLength="30"></TextBox>
+                    </StackPanel>
+
+                </Grid>
+            </StackPanel>
+
+            <StackPanel Margin="0,8,0,0" controls:VisibilityHelper.IsVisible="{Binding IsJuridica}">
+                <TextBlock Style="{StaticResource ControlForm}">Nome Fantasia</TextBlock>
                 <TextBox
-                    Text="{Binding Cnpj}"
-                    controls:TextBoxHelper.Watermark="Cnpj"
-                    MaxLength="14">
+                    Text="{Binding NomeFantasia}"
+                    controls:TextBoxHelper.Watermark="Nome Fantasia"
+                    MaxLength="255">
                 </TextBox>
             </StackPanel>
 
-            <StackPanel>
-                <TextBlock Style="{StaticResource ControlForm}">Cpf</TextBlock>
-                <TextBox
-                    Text="{Binding Cpf}"
-                    controls:TextBoxHelper.Watermark="Cpf"
-                    MaxLength="11">
-                </TextBox>
-            </StackPanel>
-        </StackPanel>
+            <StackPanel Margin="0,8,0,0">
+                <StackPanel controls:VisibilityHelper.IsVisible="{Binding IsJuridica}">
+                    <TextBlock Style="{StaticResource ControlForm}">Cnpj</TextBlock>
+                    <TextBox
+                        Style="{StaticResource GThorTextBoxNumeroInteiro}"
+                        Text="{Binding Cnpj}"
+                        controls:TextBoxHelper.Watermark="Cnpj"
+                        MaxLength="14">
+                    </TextBox>
+                </StackPanel>
 
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Email</TextBlock>
-        <TextBox
-            Text="{Binding Email}"
-            controls:TextBoxHelper.Watermark="Email"
-            MaxLength="255">
-        </TextBox>
-
-        <Grid Margin="0,8,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*"/>
-                <ColumnDefinition Width="7*"/>
-            </Grid.ColumnDefinitions>
-
-            <StackPanel Grid.Column="0">
-                <TextBlock Style="{StaticResource ControlForm}">Telefone</TextBlock>
-                <TextBox Text="{Binding Telefone}"
-                         controls:TextBoxHelper.Watermark="Telefone" MaxLength="11"></TextBox>
+                <StackPanel controls:VisibilityHelper.IsVisible="{Binding IsFisica}">
+                    <TextBlock Style="{StaticResource ControlForm}">Cpf</TextBlock>
+                    <TextBox
+                        Style="{StaticResource GThorTextBoxNumeroInteiro}"
+                        Text="{Binding Cpf}"
+                        controls:TextBoxHelper.Watermark="Cpf"
+                        MaxLength="11">
+                    </TextBox>
+                </StackPanel>
             </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                <comboBox:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
-            </StackPanel>
+            <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Email</TextBlock>
+            <TextBox
+                CharacterCasing="Normal"
+                Text="{Binding Email}"
+                controls:TextBoxHelper.Watermark="Email"
+                MaxLength="255">
+            </TextBox>
 
-        </Grid>
-        
-        <StackPanel Margin="0,8,0,0" controls:VisibilityHelper.IsVisible="{Binding IsTransportadora}">
-            <TextBlock Style="{StaticResource ControlForm}" FontWeight="Bold">Transportadora</TextBlock>
-            
-            <Grid>
+            <Grid Margin="0,8,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="7*"/>
                 </Grid.ColumnDefinitions>
-                
-                <StackPanel>
-                    <TextBlock Style="{StaticResource ControlForm}" Margin="0,8,0,0">Rntrc</TextBlock>
-                    <TextBox Text="{Binding Rntrc}" MaxLength="8"></TextBox>
+
+                <StackPanel Grid.Column="0">
+                    <TextBlock Style="{StaticResource ControlForm}">Telefone</TextBlock>
+                    <TextBox Text="{Binding Telefone}"
+                             Style="{StaticResource GThorTextBoxNumeroInteiro}"
+                             controls:TextBoxHelper.Watermark="Telefone" MaxLength="11"></TextBox>
                 </StackPanel>
-                
+
                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
-                    <TextBlock Style="{StaticResource ControlForm}" Margin="0,8,0,0">Tipo Proprietário</TextBlock>
-                    <ComboBox
-                        IsEditable="False"
-                        ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoProprietario}}}"
-                        SelectedValue="{Binding TipoProprietario}"
-                    ></ComboBox>
+                    <comboBox:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
                 </StackPanel>
-                
+
             </Grid>
+
+            <StackPanel Margin="0,8,0,0" controls:VisibilityHelper.IsVisible="{Binding IsTransportadora}">
+                <TextBlock Style="{StaticResource ControlForm}" FontWeight="Bold">Transportadora</TextBlock>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel>
+                        <TextBlock Style="{StaticResource ControlForm}" Margin="0,8,0,0">Rntrc</TextBlock>
+                        <TextBox Text="{Binding Rntrc}" MaxLength="8"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                        <TextBlock Style="{StaticResource ControlForm}" Margin="0,8,0,0">Tipo Proprietário</TextBlock>
+                        <ComboBox
+                            IsEditable="False"
+                            ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoProprietario}}}"
+                            SelectedValue="{Binding TipoProprietario}"
+                        ></ComboBox>
+                    </StackPanel>
+
+                </Grid>
+
+            </StackPanel>
+
             
         </StackPanel>
 
-        <views1:BotoesCrud></views1:BotoesCrud>
-    </StackPanel>
+        <views1:BotoesCrud DockPanel.Dock="Bottom"></views1:BotoesCrud>
+    </DockPanel>
 
 </views:GThorWindow>
 
