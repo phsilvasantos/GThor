@@ -9,6 +9,11 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
     [Table("pessoa")]
     public class Pessoa
     {
+        public Pessoa()
+        {
+            TipoPessoa = TipoPessoa.Fisica;
+        }
+
         [Key]
         [Column("id")]
         [Required]
@@ -16,7 +21,7 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
 
         [Column("tipoPessoa")]
         [Required]
-        public TipoPessoa TipoPessoa { get; set; } = TipoPessoa.Fisica;
+        public TipoPessoa TipoPessoa { get; set; }
 
         [Column("nome")]
         [MaxLength(255)]

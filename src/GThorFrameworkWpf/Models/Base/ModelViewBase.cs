@@ -5,6 +5,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
+using DFe.Utils;
+using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkWpf.Models.Command;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
@@ -79,9 +81,9 @@ namespace GThorFrameworkWpf.Models.Base
 
         public void LoadedCommandAction(object obj)
         {
-            DeixaTipoStringVazia();
-
             Loaded();
+
+            DeixaTipoStringVazia();
         }
 
         protected virtual void Loaded()
@@ -93,10 +95,12 @@ namespace GThorFrameworkWpf.Models.Base
         {
             foreach (var propertyInfo in GetType().GetProperties())
             {
-                if (propertyInfo.PropertyType == typeof(string))
-                {
-                    propertyInfo.SetValue(this, string.Empty);
-                }
+                if (propertyInfo.PropertyType != typeof(string)) continue;
+
+                var valor = propertyInfo.GetValue(this, null) as string;
+
+                if (valor.IsNullOrEmpty()) 
+                   propertyInfo.SetValue(this, string.Empty);
             }
         }
 

@@ -64,5 +64,19 @@ namespace GThor.Models.Pessoas
         {
             IniciaPesquisa(PesquisarTexto);
         }
+
+        public override void DuploClickDataGrid()
+        {
+            var pessoa = _negocioPessoa.CarregarPorId(EntidadeSelecionada.Id);
+
+            var model = new PessoaFormModel(NegocioCriador.CriaNegocioPessoa())
+            {
+                Pessoa = pessoa
+            };
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new PessoaForm(model).ShowDialog();
+        }
     }
 }

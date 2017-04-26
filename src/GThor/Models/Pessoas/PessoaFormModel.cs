@@ -241,6 +241,25 @@ namespace GThor.Models.Pessoas
             TipoProprietario = TipoProprietario.Agregado;
             ValidaAntesSalvar += ValidarInformacoes;
             Salvar += SalvarAction;
+
+
+            if (Pessoa.Id == 0) return;
+            {
+                if (Pessoa.Transportadora.PessoaId != 0)
+                {
+                    Rntrc = Pessoa.Transportadora.Rntrc;
+                    TipoProprietario = Pessoa.Transportadora.TipoProprietario;
+                }
+
+                Nome = Pessoa.Nome;
+                TipoPessoa = Pessoa.TipoPessoa;
+                InscricaoEstadual = Pessoa.InscricaoEstadual;
+                NomeFantasia = Pessoa.NomeFantasia;
+                Cnpj = Pessoa.Cnpj;
+                Cpf = Pessoa.Cpf;
+                Email = Pessoa.Email;
+                Telefone = Pessoa.Telefone;
+            }
         }
 
         private void SalvarAction(object sender, EventArgs e)

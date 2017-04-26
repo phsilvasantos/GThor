@@ -6,7 +6,8 @@ namespace GThorNegocio.Contratos
 {
     public interface INegocioPessoa :
         INegocioSuporteGridModel<PessoaDto>,
-        INegocioSalvar<Pessoa>
+        INegocioSalvar<Pessoa>,
+        INegocioBase<Pessoa, int>
     {
         
     }

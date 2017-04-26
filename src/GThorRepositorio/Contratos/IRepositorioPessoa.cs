@@ -8,7 +8,8 @@ namespace GThorRepositorio.Contratos
     public interface IRepositorioPessoa :
         IRepositorioContexto,
         ISuporteGridModel<PessoaDto>,
-        ISuporteSalvar<Pessoa>
+        ISuporteSalvar<Pessoa>,
+        IRepositorioBase<Pessoa, int>
     {
         
     }

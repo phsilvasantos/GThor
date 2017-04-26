@@ -4,6 +4,7 @@ using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dto;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace GThorRepositorioEntityFramework.Implementacao
 {
@@ -36,6 +37,16 @@ namespace GThorRepositorioEntityFramework.Implementacao
             {
                 GThorContexto.Condutores.Add(entity.Condutor);
             }
+        }
+
+        public Pessoa CarregarPorId(int id)
+        {
+            return GThorContexto.Pessoas.Include(p => p.Transportadora).Include(p => p.Condutor).FirstOrDefault(p => p.Id == id);
+        }
+
+        public IEnumerable<Pessoa> Lista()
+        {
+            return GThorContexto.Pessoas.Include(p => p.Transportadora).Include(p => p.Condutor).Take(1000);
         }
     }
 }

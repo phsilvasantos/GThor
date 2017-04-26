@@ -35,5 +35,23 @@ namespace GThorNegocio.Negocios
                 _repositorioPessoa.SalvarAlteracoes();
             }
         }
+
+        public Pessoa CarregarPorId(int id)
+        {
+            using (var contexto = ContextoCriador.CriaContexto())
+            {
+                _repositorioPessoa.SetGThorContexto(contexto);
+                return _repositorioPessoa.CarregarPorId(id);
+            }
+        }
+
+        public IEnumerable<Pessoa> Lista()
+        {
+            using (var contexto = ContextoCriador.CriaContexto())
+            {
+                _repositorioPessoa.SetGThorContexto(contexto);
+                return _repositorioPessoa.Lista();
+            }
+        }
     }
 }
