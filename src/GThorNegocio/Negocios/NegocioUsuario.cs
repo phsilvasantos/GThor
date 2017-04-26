@@ -3,6 +3,7 @@ using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -19,7 +20,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUsuario.Sessao = instancia.Sessao;
+                _repositorioUsuario.SetSession(instancia);
                 return _repositorioUsuario.CarregarPorId(id);
             }
         }
@@ -28,7 +29,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUsuario.Sessao = instancia.Sessao;
+                _repositorioUsuario.SetSession(instancia);
                 return _repositorioUsuario.Lista();
             }
         }
@@ -37,7 +38,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioUsuario.Sessao = instancia.Sessao;
+                _repositorioUsuario.SetSession(instancia);
                 _repositorioUsuario.Deletar(usuario);
                 
                 instancia.SalvarAlteracoes();
@@ -48,7 +49,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioUsuario.Sessao = instancia.Sessao;
+                _repositorioUsuario.SetSession(instancia);
                 _repositorioUsuario.SalvarOuAtualizar(entity);
                 
                 instancia.SalvarAlteracoes();

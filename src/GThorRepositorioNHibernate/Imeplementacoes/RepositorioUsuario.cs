@@ -1,14 +1,12 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorRepositorio.Contratos;
-using NHibernate;
+using GThorRepositorioNHibernate.Imeplementacoes.Base;
 
 namespace GThorRepositorioNHibernate.Imeplementacoes
 {
-    public class RepositorioUsuario : IRepositorioUsuario
+    public class RepositorioUsuario : RepositorioBase, IRepositorioUsuario
     {
-        public ISession Sessao { get; set; }
-
         public Usuario CarregarPorId(int id)
         {
             return Sessao.Get<Usuario>(id);

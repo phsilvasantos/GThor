@@ -57,8 +57,11 @@
     <Compile Include="Criadores\Contratos\ICriaSessionFactory.cs" />
     <Compile Include="Criadores\CriaSessionFactoryPostgreSql.cs" />
     <Compile Include="Helpers\Contratos\INHibernateHelper.cs" />
+    <Compile Include="Helpers\Ext\ExNHibernateHelper.cs" />
     <Compile Include="Helpers\NHibernateHelper.cs" />
+    <Compile Include="Imeplementacoes\Base\RepositorioBase.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
+    <Compile Include="IRepositorioBase.cs" />
     <Compile Include="Mapeamentos\Usuarios\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
