@@ -17,6 +17,7 @@ namespace GThor.Models.Pessoas
         public GridPessoaModel(INegocioPessoa negocioPessoa)
         {
             _negocioPessoa = negocioPessoa;
+            BotaoDeletar = false;
         }
 
         public override void BuscarRegistros()

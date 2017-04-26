@@ -69,12 +69,21 @@ namespace GThorRepositorioEntityFramework.Implementacao
         {
             GThorContexto.Pessoas.Update(entity);
 
+            var deletarTransportadora = entity.Transportadora == null;
+            var deletarCondutor = entity.Condutor == null;
+
+            var transportadora = BuscaTransportadoraPorId(entity);
+
+            if (deletarTransportadora && transportadora != null)
+            {
+                GThorContexto.Transportadoras.Remove(transportadora);
+                entity.Transportadora = null;
+            }
+
             if (entity.Transportadora != null)
             {
                 if (entity.Transportadora.PessoaId != 0)
                 {
-                    var transportadora = BuscaTransportadoraPorId(entity);
-
                     if (transportadora == null)
                     {
                         GThorContexto.Transportadoras.Add(entity.Transportadora);
@@ -85,13 +94,18 @@ namespace GThorRepositorioEntityFramework.Implementacao
                 }
             }
 
+            var condutor = BuscaCondutorPorId(entity);
+
+            if (deletarCondutor && condutor != null)
+            {
+                GThorContexto.Condutores.Remove(condutor);
+                entity.Condutor = null;
+            }
 
             if (entity.Condutor != null)
             {
                 if (entity.Condutor.PessoaId != 0)
                 {
-                    var condutor = BuscaCondutorPorId(entity);
-
                     if (condutor == null)
                     {
                         GThorContexto.Condutores.Add(entity.Condutor);
@@ -105,14 +119,14 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         private Condutor BuscaCondutorPorId(Pessoa entity)
         {
-            var condutor = GThorContexto.Condutores.FirstOrDefault(c => c.PessoaId == entity.Condutor.PessoaId);
+            var condutor = GThorContexto.Condutores.FirstOrDefault(c => c.PessoaId == entity.Id);
             return condutor;
         }
 
         private Transportadora BuscaTransportadoraPorId(Pessoa entity)
         {
             var transportadora =
-                GThorContexto.Transportadoras.FirstOrDefault(t => t.PessoaId == entity.Transportadora.PessoaId);
+                GThorContexto.Transportadoras.FirstOrDefault(t => t.PessoaId == entity.Id);
             return transportadora;
         }
     }
