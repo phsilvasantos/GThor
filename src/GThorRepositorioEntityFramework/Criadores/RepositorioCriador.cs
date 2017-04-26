@@ -1,6 +1,5 @@
 ﻿using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao;
-using GThorRepositorioNHibernate.Imeplementacoes;
 
 namespace GThorRepositorioEntityFramework.Criadores
 {
@@ -19,11 +18,6 @@ namespace GThorRepositorioEntityFramework.Criadores
         public static IRepositorioUf CriaRepositorioUf()
         {
             return new RepositorioUf();
-        }
-
-        public static IRepositorioUsuario CriaRepositorioUsuario()
-        {
-            return new RepositorioUsuario();
         }
 
         public static IRepositorioVeiculo CriaRepositorioVeiculo()

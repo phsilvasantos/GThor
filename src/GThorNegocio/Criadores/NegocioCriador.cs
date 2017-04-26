@@ -23,7 +23,7 @@ namespace GThorNegocio.Criadores
 
         public static INegocioUsuario CriaNegocioUsuario()
         {
-            return new NegocioUsuario(RepositorioCriador.CriaRepositorioUsuario());
+            return new NegocioUsuario(GThorRepositorioNHibernate.Criadores.RepositorioCriador.CriaRepositorioUsuario());
         }
 
         public static INegocioVeiculo CriaNegocioVeiculo()

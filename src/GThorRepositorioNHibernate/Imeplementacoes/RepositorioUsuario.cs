@@ -5,7 +5,7 @@ using GThorRepositorioNHibernate.Imeplementacoes.Base;
 
 namespace GThorRepositorioNHibernate.Imeplementacoes
 {
-    public class RepositorioUsuario : RepositorioBase, IRepositorioUsuario
+    internal class RepositorioUsuario : RepositorioBase, IRepositorioUsuario
     {
         public Usuario CarregarPorId(int id)
         {
