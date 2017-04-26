@@ -4,6 +4,7 @@ using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
 
 namespace GThorNegocio.Negocios
 {
@@ -18,6 +19,12 @@ namespace GThorNegocio.Negocios
 
         public Usuario CarregarPorId(int id)
         {
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                
+            }
+
+
             using (var contexto = ContextoCriador.CriaContexto())
             {
                 _repositorioUsuario.SetGThorContexto(contexto);

@@ -10,9 +10,6 @@ using GThor.Models.Usuarios;
 using GThor.Models.Veiculos;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Criadores;
-using GThorNegocio.Negocios;
-using GThorRepositorioEntityFramework.Implementacao;
-using GThorRepositorioNHibernate.Criadores;
 using MahApps.Metro.Controls;
 
 namespace GThor

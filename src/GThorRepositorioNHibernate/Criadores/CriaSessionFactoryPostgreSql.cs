@@ -20,7 +20,7 @@ namespace GThorRepositorioNHibernate.Criadores
 
             cfg.AddProperties(ObterPropriedades());
             cfg.AddAssembly(assembly);
-            cfg.AddDeserializedMapping(mappingClass, "GThorRepositorioNHibernate");
+            cfg.AddDeserializedMapping(mappingClass, assembly.GetName().Name);
             var iSessionFactory = cfg.BuildSessionFactory();
 
             return iSessionFactory;

@@ -10,16 +10,16 @@ namespace GThorFrameworkDominio.Dominios.Usuarios
         [Key]
         [Column("id")]
         [Required]
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
         [Column("login")]
         [MaxLength(20)]
         [Required]
-        public string Login { get; set; }
+        public virtual string Login { get; set; }
 
         [Column("senha")]
         [MaxLength(40)]
         [Required]
-        public string Senha { get; set; }
+        public virtual string Senha { get; set; }
     }
 }

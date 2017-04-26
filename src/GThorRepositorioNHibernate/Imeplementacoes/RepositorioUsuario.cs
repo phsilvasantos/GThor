@@ -7,31 +7,26 @@ namespace GThorRepositorioNHibernate.Imeplementacoes
 {
     public class RepositorioUsuario : IRepositorioUsuario
     {
-        private readonly ISession _sessao;
-
-        public RepositorioUsuario(ISession sessao)
-        {
-            _sessao = sessao;
-        }
+        public ISession Sessao { get; set; }
 
         public Usuario CarregarPorId(int id)
         {
-            return _sessao.Get<Usuario>(id);
+            return Sessao.Get<Usuario>(id);
         }
 
         public IEnumerable<Usuario> Lista()
         {
-            return _sessao.QueryOver<Usuario>().List<Usuario>();
+            return Sessao.QueryOver<Usuario>().List<Usuario>();
         }
 
         public void SalvarOuAtualizar(Usuario entity)
         {
-            _sessao.SaveOrUpdate(entity);
+            Sessao.SaveOrUpdate(entity);
         }
 
         public void Deletar(Usuario entity)
         {
-            _sessao.Delete(entity);
+            Sessao.Delete(entity);
         }
     }
 }

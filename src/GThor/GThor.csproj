@@ -66,9 +66,6 @@
     <Reference Include="NFe.Wsdl, Version=1.0.1.456, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\NFe.Wsdl.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate, Version=4.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\NHibernate.4.1.1.4000\lib\net40\NHibernate.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.105.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -218,10 +215,6 @@
     <ProjectReference Include="..\GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj">
       <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
       <Name>GThorRepositorioEntityFramework</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GThorRepositorioNHibernate\GThorRepositorioNHibernate.csproj">
-      <Project>{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}</Project>
-      <Name>GThorRepositorioNHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
       <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
