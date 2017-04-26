@@ -35,7 +35,6 @@ namespace GThorRepositorioEntityFramework.Contexto
             SaveChanges();
         }
 
-        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<CertificadoDigital> CertificadosDigitais { get; set; }
         public DbSet<Uf> Ufs { get; set; }
         public DbSet<Cidade> Cidades { get; set; }
