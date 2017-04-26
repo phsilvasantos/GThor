@@ -15,7 +15,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         public IEnumerable<Cidade> Lista()
         {
-            return GThorContexto.Cidades.ToList();
+            return GThorContexto.Cidades.OrderBy(cid => cid.Nome).ToList();
         }
     }
 }

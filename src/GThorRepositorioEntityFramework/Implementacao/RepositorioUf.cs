@@ -15,7 +15,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         public IEnumerable<Uf> Lista()
         {
-            return GThorContexto.Ufs.ToList();
+            return GThorContexto.Ufs.OrderBy(uf => uf.Sigla).ToList();
         }
     }
 }
