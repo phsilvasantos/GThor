@@ -51,7 +51,7 @@ namespace GThorRepositorioNHibernate.Helpers
         public static INHibernateHelper Instancia()
         {
             if(_instancia == null)
-                _instancia = new NHibernateHelper(new CriaSessionFactorySqlite());
+                _instancia = new NHibernateHelper(new CriaSessionFactoryPostgreSql());
 
             _instancia.Inicializa();
 

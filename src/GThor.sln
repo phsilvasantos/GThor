@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorFrameworkRepositorio",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorFrameworkComponentes", "GThorFrameworkComponentes\GThorFrameworkComponentes.csproj", "{C61C35EB-A391-4778-9755-99602C89D7C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorRepositorioNHibernate", "GThorRepositorioNHibernate\GThorRepositorioNHibernate.csproj", "{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{C61C35EB-A391-4778-9755-99602C89D7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C61C35EB-A391-4778-9755-99602C89D7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C61C35EB-A391-4778-9755-99602C89D7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

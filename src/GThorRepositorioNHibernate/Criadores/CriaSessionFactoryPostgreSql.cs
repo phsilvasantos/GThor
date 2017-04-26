@@ -5,7 +5,7 @@ using NHibernate.Cfg;
 
 namespace GThorRepositorioNHibernate.Criadores
 {
-    public class CriaSessionFactorySqlite : ICriaSessionFactory
+    public class CriaSessionFactoryPostgreSql : ICriaSessionFactory
     {
         public ISessionFactory CriaSessionFactoryNHibernate()
         { 

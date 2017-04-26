@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <hibernate-configuration xmlns="urn:nhibernate-configuration-2.2">
   <session-factory>
-    <property name="dialect">NHibernate.Dialect.SQLiteDialect</property>
-    <property name="connection.driver_class">NHibernate.Driver.SQLite20Driver</property>
+    <property name="dialect">NHibernate.Dialect.PostgreSQL82Dialect</property>
+    <property name="connection.driver_class">NHibernate.Driver.NpgsqlDriver</property>
     <property name="connection.connection_string">
-      Data Source=GThor.db; Pooling=true; FailIfMissing=false; BinaryGUID=false; New=false; Compress=true; Version=3
+      Server=localhost;Port=5432;User ID=postgresql;Password=root;Database=gthor
     </property>
   </session-factory>
 </hibernate-configuration>
