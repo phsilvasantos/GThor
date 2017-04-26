@@ -4,7 +4,7 @@
     <property name="dialect">NHibernate.Dialect.PostgreSQL82Dialect</property>
     <property name="connection.driver_class">NHibernate.Driver.NpgsqlDriver</property>
     <property name="connection.connection_string">
-      Server=localhost;Port=5432;User ID=postgresql;Password=root;Database=gthor
+      Server=localhost;Port=5432;User ID=postgres;Password=root;Database=gthor
     </property>
   </session-factory>
 </hibernate-configuration>

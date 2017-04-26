@@ -12,6 +12,7 @@ using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Criadores;
 using GThorNegocio.Negocios;
 using GThorRepositorioEntityFramework.Implementacao;
+using GThorRepositorioNHibernate.Criadores;
 using MahApps.Metro.Controls;
 
 namespace GThor
@@ -22,6 +23,7 @@ namespace GThor
         {
             DataContext = new MainWindowModel();
             InitializeComponent();
+            new CriaSessionFactoryPostgreSql().CriaSessionFactoryNHibernate();
         }
 
         private void GerenciarUsuarios_OnMouseDown(object sender, MouseButtonEventArgs e)
