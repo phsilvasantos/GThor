@@ -23,7 +23,6 @@ namespace GThor
         {
             DataContext = new MainWindowModel();
             InitializeComponent();
-            new CriaSessionFactoryPostgreSql().CriaSessionFactoryNHibernate();
         }
 
         private void GerenciarUsuarios_OnMouseDown(object sender, MouseButtonEventArgs e)

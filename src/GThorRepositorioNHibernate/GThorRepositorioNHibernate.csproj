@@ -58,6 +58,8 @@
     <Compile Include="Criadores\CriaSessionFactoryPostgreSql.cs" />
     <Compile Include="Helpers\Contratos\INHibernateHelper.cs" />
     <Compile Include="Helpers\NHibernateHelper.cs" />
+    <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
+    <Compile Include="Mapeamentos\Usuarios\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -67,8 +69,20 @@
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mapeamentos\Usuarios\Usuario.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\GThorFrameworkDominio\GThorFrameworkDominio.csproj">
+      <Project>{FDEF06A8-6D03-400F-80D2-EEF2A06326F2}</Project>
+      <Name>GThorFrameworkDominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj">
+      <Project>{E9B13860-6C09-4CE9-8477-C82EE7743A57}</Project>
+      <Name>GThorFrameworkRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
+      <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
+      <Name>GThorRepositorio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

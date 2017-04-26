@@ -3,6 +3,8 @@ using System.Reflection;
 using GThorRepositorioNHibernate.Criadores.Contratos;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Cfg.MappingSchema;
+using NHibernate.Mapping.ByCode;
 
 namespace GThorRepositorioNHibernate.Criadores
 {
@@ -14,11 +16,23 @@ namespace GThorRepositorioNHibernate.Criadores
 
             var assembly = Assembly.GetAssembly(GetType());
 
+            var mappingClass = ObterMapemanetoDeClasses();
+
             cfg.AddProperties(ObterPropriedades());
             cfg.AddAssembly(assembly);
+            cfg.AddDeserializedMapping(mappingClass, "GThorRepositorioNHibernate");
             var iSessionFactory = cfg.BuildSessionFactory();
 
             return iSessionFactory;
+        }
+
+        private HbmMapping ObterMapemanetoDeClasses()
+        {
+            var mapper = new ModelMapper();
+
+            mapper.AddMappings(Assembly.GetAssembly(GetType()).GetExportedTypes());
+            var mapping = mapper.CompileMappingForAllExplicitlyAddedEntities();
+            return mapping;
         }
 
         private IDictionary<string, string> ObterPropriedades()
