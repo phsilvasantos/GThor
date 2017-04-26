@@ -2,8 +2,6 @@
 using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
 using GThorRepositorioNHibernate.Helpers;
 
 namespace GThorNegocio.Negocios
@@ -21,43 +19,39 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                
-            }
-
-
-            using (var contexto = ContextoCriador.CriaContexto())
-            {
-                _repositorioUsuario.SetGThorContexto(contexto);
+                _repositorioUsuario.Sessao = instancia.Sessao;
                 return _repositorioUsuario.CarregarPorId(id);
             }
         }
 
         public IEnumerable<Usuario> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUsuario.SetGThorContexto(contexto);
+                _repositorioUsuario.Sessao = instancia.Sessao;
                 return _repositorioUsuario.Lista();
             }
         }
 
         public void Deletar(Usuario usuario)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioUsuario.SetGThorContexto(contexto);
+                _repositorioUsuario.Sessao = instancia.Sessao;
                 _repositorioUsuario.Deletar(usuario);
-                _repositorioUsuario.SalvarAlteracoes();
+                
+                instancia.SalvarAlteracoes();
             }
         }
 
         public void SalvarOuAtualizar(Usuario entity)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioUsuario.SetGThorContexto(contexto);
+                _repositorioUsuario.Sessao = instancia.Sessao;
                 _repositorioUsuario.SalvarOuAtualizar(entity);
-                _repositorioUsuario.SalvarAlteracoes();
+                
+                instancia.SalvarAlteracoes();
             }
         }
     }

@@ -211,7 +211,6 @@
     <Compile Include="Implementacao\RepositorioEmpresa.cs" />
     <Compile Include="Implementacao\RepositorioPessoa.cs" />
     <Compile Include="Implementacao\RepositorioUf.cs" />
-    <Compile Include="Implementacao\RepositorioUsuario.cs" />
     <Compile Include="Implementacao\RepositorioVeiculo.cs" />
     <Compile Include="Migrations\20170423172133_CriaTabelaEmpresa.cs" />
     <Compile Include="Migrations\20170423172133_CriaTabelaEmpresa.designer.cs">
@@ -274,6 +273,10 @@
     <ProjectReference Include="..\GThorFrameworkRepositorio\GThorFrameworkRepositorio.csproj">
       <Project>{E9B13860-6C09-4CE9-8477-C82EE7743A57}</Project>
       <Name>GThorFrameworkRepositorio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GThorRepositorioNHibernate\GThorRepositorioNHibernate.csproj">
+      <Project>{EAAFD741-F4F7-4A87-9A1D-8270FBF19B69}</Project>
+      <Name>GThorRepositorioNHibernate</Name>
     </ProjectReference>
     <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
       <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>

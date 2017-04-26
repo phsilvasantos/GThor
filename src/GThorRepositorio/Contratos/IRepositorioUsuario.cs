@@ -1,5 +1,6 @@
 ﻿using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorFrameworkRepositorio.Contratos;
+using NHibernate;
 
 namespace GThorRepositorio.Contratos
 {
@@ -9,6 +10,6 @@ namespace GThorRepositorio.Contratos
         ISuporteSalvar<Usuario>,
         ISuporteDeletar<Usuario>
     {
-        
+        ISession Sessao { get; set; }
     }
 }

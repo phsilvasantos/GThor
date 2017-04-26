@@ -1,5 +1,6 @@
 ﻿using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Implementacao;
+using GThorRepositorioNHibernate.Imeplementacoes;
 
 namespace GThorRepositorioEntityFramework.Criadores
 {
