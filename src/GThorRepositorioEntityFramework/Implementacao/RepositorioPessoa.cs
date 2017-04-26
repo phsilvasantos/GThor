@@ -28,6 +28,15 @@ namespace GThorRepositorioEntityFramework.Implementacao
 
         public void SalvarOuAtualizar(Pessoa entity)
         {
+            if (Insere(entity)) return;
+
+            Atualiza(entity);
+        }
+
+        private bool Insere(Pessoa entity)
+        {
+            if (entity.Id != 0) return false;
+
             GThorContexto.Pessoas.Add(entity);
 
             if (entity.Transportadora != null)
@@ -37,16 +46,44 @@ namespace GThorRepositorioEntityFramework.Implementacao
             {
                 GThorContexto.Condutores.Add(entity.Condutor);
             }
+
+            return true;
+        }
+
+        private void Atualiza(Pessoa entity)
+        {
+            GThorContexto.Pessoas.Update(entity);
+
+            if (entity.Transportadora != null)
+            {
+                if (entity.Transportadora.PessoaId != 0)
+                {
+                    GThorContexto.Transportadoras.Add(entity.Transportadora);
+                }
+            }
+                
+
+            if (entity.Condutor != null)
+            {
+                if (entity.Condutor.PessoaId != 0)
+                {
+                    GThorContexto.Condutores.Add(entity.Condutor);
+                }
+            }
         }
 
         public Pessoa CarregarPorId(int id)
         {
-            return GThorContexto.Pessoas.Include(p => p.Transportadora).Include(p => p.Condutor).FirstOrDefault(p => p.Id == id);
+            return GThorContexto.Pessoas.Include(p => p.Transportadora)
+                .Include(p => p.Condutor)
+                .FirstOrDefault(p => p.Id == id);
         }
 
         public IEnumerable<Pessoa> Lista()
         {
-            return GThorContexto.Pessoas.Include(p => p.Transportadora).Include(p => p.Condutor).Take(1000);
+            return GThorContexto.Pessoas.Include(p => p.Transportadora)
+                .Include(p => p.Condutor)
+                .Take(1000);
         }
     }
 }

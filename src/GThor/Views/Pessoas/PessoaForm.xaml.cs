@@ -22,8 +22,8 @@ namespace GThor.Views.Pessoas
         {
             if (_model.Pessoa.Id == 0) return;
 
-            ComboBoxUfCidade.SetEstadoUfId(_model.Pessoa.Id);
-            ComboBoxUfCidade.SetCidadeId(_model.Pessoa.Id);
+            ComboBoxUfCidade.SetEstadoUfId(_model.Pessoa.UfId);
+            ComboBoxUfCidade.SetCidadeId(_model.Pessoa.CidadeId);
         }
 
         private void ComboBoxUfCidade_OnPickItemComboUfCidade(object sender, RoutedEventArgs e)

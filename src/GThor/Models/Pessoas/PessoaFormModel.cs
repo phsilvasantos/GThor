@@ -249,6 +249,12 @@ namespace GThor.Models.Pessoas
                 {
                     Rntrc = Pessoa.Transportadora.Rntrc;
                     TipoProprietario = Pessoa.Transportadora.TipoProprietario;
+                    IsTransportadora = true;
+                }
+
+                if (Pessoa.Condutor.PessoaId != 0)
+                {
+                    IsCondutor = true;
                 }
 
                 Nome = Pessoa.Nome;
