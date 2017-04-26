@@ -21,7 +21,7 @@ namespace GThorRepositorioEntityFramework.Implementacao
                     Cpf = p.Cpf
                 };
 
-            var lista = query.ToList();
+            var lista = query.OrderByDescending(p => p.Id).ToList();
 
             return lista;
         }
@@ -50,28 +50,6 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return true;
         }
 
-        private void Atualiza(Pessoa entity)
-        {
-            GThorContexto.Pessoas.Update(entity);
-
-            if (entity.Transportadora != null)
-            {
-                if (entity.Transportadora.PessoaId != 0)
-                {
-                    GThorContexto.Transportadoras.Add(entity.Transportadora);
-                }
-            }
-                
-
-            if (entity.Condutor != null)
-            {
-                if (entity.Condutor.PessoaId != 0)
-                {
-                    GThorContexto.Condutores.Add(entity.Condutor);
-                }
-            }
-        }
-
         public Pessoa CarregarPorId(int id)
         {
             return GThorContexto.Pessoas.Include(p => p.Transportadora)
@@ -84,6 +62,58 @@ namespace GThorRepositorioEntityFramework.Implementacao
             return GThorContexto.Pessoas.Include(p => p.Transportadora)
                 .Include(p => p.Condutor)
                 .Take(1000);
+        }
+
+
+        private void Atualiza(Pessoa entity)
+        {
+            GThorContexto.Pessoas.Update(entity);
+
+            if (entity.Transportadora != null)
+            {
+                if (entity.Transportadora.PessoaId != 0)
+                {
+                    var transportadora = BuscaTransportadoraPorId(entity);
+
+                    if (transportadora == null)
+                    {
+                        GThorContexto.Transportadoras.Add(entity.Transportadora);
+                        return;
+                    }
+
+                    GThorContexto.Transportadoras.Update(entity.Transportadora);
+                }
+            }
+
+
+            if (entity.Condutor != null)
+            {
+                if (entity.Condutor.PessoaId != 0)
+                {
+                    var condutor = BuscaCondutorPorId(entity);
+
+                    if (condutor == null)
+                    {
+                        GThorContexto.Condutores.Add(entity.Condutor);
+                        return;
+                    }
+
+                    GThorContexto.Condutores.Update(entity.Condutor);
+                }
+            }
+        }
+
+        private Condutor BuscaCondutorPorId(Pessoa entity)
+        {
+            var condutor = GThorContexto.Condutores.FirstOrDefault(c => c.PessoaId == entity.Condutor.PessoaId);
+            return condutor;
+        }
+
+        private Transportadora BuscaTransportadoraPorId(Pessoa entity)
+        {
+            var transportadora =
+                GThorContexto.Transportadoras.FirstOrDefault(t => t.PessoaId == entity.Transportadora.PessoaId);
+            return transportadora;
         }
     }
 }
