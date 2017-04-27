@@ -19,6 +19,10 @@ namespace GThorMigracaoBancoDados.Migracoes
                 .WithColumn("tipoRodado").AsInt16().NotNullable()
                 .WithColumn("tipoCarroceria").AsInt16().NotNullable()
                 .WithColumn("ufId").AsInt32().NotNullable();
+
+            Create.ForeignKey("fk_veiculo__uf")
+                .FromTable("veiculo").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
         }
 
         public override void Down()

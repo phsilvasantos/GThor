@@ -23,6 +23,14 @@ namespace GThorMigracaoBancoDados.Migracoes
                 .WithColumn("email").AsString(255).NotNullable()
                 .WithColumn("cidadeId").AsInt32().NotNullable()
                 .WithColumn("ufId").AsInt32().NotNullable();
+
+            Create.ForeignKey("fk_empresa__uf")
+                .FromTable("empresa").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
+
+            Create.ForeignKey("fk_empresa__cidade")
+                .FromTable("empresa").ForeignColumn("cidadeId")
+                .ToTable("cidade").PrimaryColumn("id");
         }
 
         public override void Down()

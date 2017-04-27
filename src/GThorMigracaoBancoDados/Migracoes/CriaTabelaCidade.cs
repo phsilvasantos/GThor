@@ -21,6 +21,10 @@ namespace GThorMigracaoBancoDados.Migracoes
                 .WithColumn("ufId")
                 .AsInt32()
                 .NotNullable();
+
+            Create.ForeignKey("fk_cidade__uf")
+                .FromTable("cidade").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
         }
 
         public override void Down()
