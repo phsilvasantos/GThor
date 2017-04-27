@@ -2,8 +2,6 @@
 using GThorFrameworkDominio.Dominios.Certificados;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
 using GThorRepositorioNHibernate.Helpers;
 using GThorRepositorioNHibernate.Helpers.Ext;
 
@@ -20,11 +18,10 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(CertificadoDigital certificadoDigital)
         {
-            using (var instancia = NHibernateHelper.Instancia())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
                 _repositorioCertificadoDigital.SetSession(instancia);
                 _repositorioCertificadoDigital.SalvarOuAtualizar(certificadoDigital);
-                _repositorioCertificadoDigital.SalvarAlteracoes();
             }
         }
 
@@ -48,11 +45,10 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(CertificadoDigital certificadoDigital)
         {
-            using (var instancia = NHibernateHelper.Instancia())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
                 _repositorioCertificadoDigital.SetSession(instancia);
                 _repositorioCertificadoDigital.Deletar(certificadoDigital);
-                _repositorioCertificadoDigital.SalvarAlteracoes();
             }
         }
     }
