@@ -2,7 +2,7 @@
 
 namespace GThorMigracaoBancoDados.Migracoes
 {
-    [Migration(5)]
+    [Migration(6)]
     public class CriaTabelaVeiculo : Migration
     {
         public override void Up()
