@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="ExecutaMigracao.cs" />
     <Compile Include="Migracoes\CriaTabelaCertificado.cs" />
+    <Compile Include="Migracoes\CriaTabelaCidade.cs" />
     <Compile Include="Migracoes\CriaTabelaDocumentoMdfe.cs" />
     <Compile Include="Migracoes\CriaTabelaUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
