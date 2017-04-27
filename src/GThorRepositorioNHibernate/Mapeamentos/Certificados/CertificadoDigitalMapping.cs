@@ -8,7 +8,7 @@ namespace GThorRepositorioNHibernate.Mapeamentos.Certificados
     {
         public CertificadoDigitalMapping()
         {
-            Table("certificado_digital");
+            Table("certificadoDigital");
 
             Id(u => u.Id, m =>
             {

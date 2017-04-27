@@ -7,7 +7,7 @@ namespace GThorMigracaoBancoDados.Migracoes
     {
         public override void Up()
         {
-            Create.Table("certificado_digital")
+            Create.Table("certificadoDigital")
                 .WithColumn("id")
                 .AsInt32()
                 .PrimaryKey()
