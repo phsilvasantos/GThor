@@ -5,11 +5,6 @@ namespace GThorRepositorioEntityFramework.Criadores
 {
     public static class RepositorioCriador
     {
-        public static IRepositorioCertificadoDigital CriaRepositorioCertificadoDigital()
-        {
-            return new RepositorioCertificadoDigital();
-        }
-
         public static IRepositorioDocumentoMdfe CriaRepositorioDocumentoMdfe()
         {
             return new RepositorioDocumentoMdfe();

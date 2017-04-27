@@ -8,7 +8,7 @@ namespace GThorNegocio.Criadores
     {
         public static INegocioCertificadoDigital CriaNegocioCertificadoDigital()
         {
-            return new NegocioCertificadoDigital(RepositorioCriador.CriaRepositorioCertificadoDigital());
+            return new NegocioCertificadoDigital(GThorRepositorioNHibernate.Criadores.RepositorioCriador.CriaRepositorioCertificadoDigital());
         }
 
         public static INegocioDocumentoMdfe CriaNegocioDocumentoMdfe()

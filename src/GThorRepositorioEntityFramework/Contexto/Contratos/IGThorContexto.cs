@@ -20,7 +20,6 @@ namespace GThorRepositorioEntityFramework.Contexto.Contratos
 
         void SaveChangesThor();
 
-        DbSet<CertificadoDigital> CertificadosDigitais { get; set; }
         DbSet<Uf> Ufs { get; set; }
         DbSet<Cidade> Cidades { get; set; }
         DbSet<DocumentoMdfe> DocumentosMdfe { get; set; }

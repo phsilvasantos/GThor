@@ -9,5 +9,10 @@ namespace GThorRepositorioNHibernate.Criadores
         {
             return new RepositorioUsuario();
         }
+
+        public static IRepositorioCertificadoDigital CriaRepositorioCertificadoDigital()
+        {
+            return new RepositorioCertificadoDigital();
+        }
     }
 }

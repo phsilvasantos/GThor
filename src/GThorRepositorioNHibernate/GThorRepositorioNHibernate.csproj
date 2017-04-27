@@ -61,6 +61,7 @@
     <Compile Include="Helpers\Ext\ExNHibernateHelper.cs" />
     <Compile Include="Helpers\NHibernateHelper.cs" />
     <Compile Include="Imeplementacoes\Base\RepositorioBase.cs" />
+    <Compile Include="Imeplementacoes\RepositorioCertificadoDigital.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
     <Compile Include="IRepositorioBase.cs" />
     <Compile Include="Mapeamentos\Usuarios\UsuarioMapping.cs" />
