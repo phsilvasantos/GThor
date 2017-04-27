@@ -1,12 +1,9 @@
-﻿using System;
-using System.Reflection;
-using FluentMigrator;
+﻿using System.Reflection;
 using FluentMigrator.Runner;
 using FluentMigrator.Runner.Announcers;
 using FluentMigrator.Runner.Initialization;
 using FluentMigrator.Runner.Processors;
 using FluentMigrator.Runner.Processors.Postgres;
-using FluentMigrator.Runner.Processors.SqlServer;
 
 namespace GThorMigracaoBancoDados
 {

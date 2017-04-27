@@ -51,6 +51,7 @@
     <Compile Include="Migracoes\CriaTabelaCidade.cs" />
     <Compile Include="Migracoes\CriaTabelaDocumentoMdfe.cs" />
     <Compile Include="Migracoes\CriaTabelaUsuario.cs" />
+    <Compile Include="Migracoes\CriaTabelaVeiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
