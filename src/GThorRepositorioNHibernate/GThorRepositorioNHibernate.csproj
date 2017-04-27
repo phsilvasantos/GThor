@@ -64,6 +64,7 @@
     <Compile Include="Imeplementacoes\RepositorioCertificadoDigital.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
     <Compile Include="IRepositorioBase.cs" />
+    <Compile Include="Mapeamentos\Certificados\CertificadoDigitalMapping.cs" />
     <Compile Include="Mapeamentos\Usuarios\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

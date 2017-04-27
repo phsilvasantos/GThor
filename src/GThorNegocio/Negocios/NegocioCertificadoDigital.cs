@@ -4,6 +4,8 @@ using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioEntityFramework.Criadores;
 using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -18,9 +20,9 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(CertificadoDigital certificadoDigital)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetGThorContexto(contexto);
+                _repositorioCertificadoDigital.SetSession(instancia);
                 _repositorioCertificadoDigital.SalvarOuAtualizar(certificadoDigital);
                 _repositorioCertificadoDigital.SalvarAlteracoes();
             }
@@ -28,27 +30,27 @@ namespace GThorNegocio.Negocios
 
         public CertificadoDigital CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetGThorContexto(contexto);
+                _repositorioCertificadoDigital.SetSession(instancia);
                 return _repositorioCertificadoDigital.CarregarPorId(id);
             }
         }
 
         public IEnumerable<CertificadoDigital> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetGThorContexto(contexto);
+                _repositorioCertificadoDigital.SetSession(instancia);
                 return _repositorioCertificadoDigital.Lista();
             }
         }
 
         public void Deletar(CertificadoDigital certificadoDigital)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetGThorContexto(contexto);
+                _repositorioCertificadoDigital.SetSession(instancia);
                 _repositorioCertificadoDigital.Deletar(certificadoDigital);
                 _repositorioCertificadoDigital.SalvarAlteracoes();
             }
