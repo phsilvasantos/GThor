@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
+using GThorFrameworkDominio.Dominios.Usuarios;
 using GThorRepositorioNHibernate.Criadores.Contratos;
+using GThorRepositorioNHibernate.Helpers;
 using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Cfg.MappingSchema;
@@ -13,14 +15,18 @@ namespace GThorRepositorioNHibernate.Criadores
         public ISessionFactory CriaSessionFactoryNHibernate()
         { 
             var cfg = new Configuration();
-
+            cfg.SetNamingStrategy(new PostgreSqlNamingStrategy());
             var assembly = Assembly.GetAssembly(GetType());
 
             var mappingClass = ObterMapemanetoDeClasses();
 
             cfg.AddProperties(ObterPropriedades());
             cfg.AddAssembly(assembly);
+            cfg.AddAssembly(Assembly.GetAssembly(typeof(Usuario)));
             cfg.AddDeserializedMapping(mappingClass, assembly.GetName().Name);
+
+
+
             var iSessionFactory = cfg.BuildSessionFactory();
 
             return iSessionFactory;
