@@ -1,4 +1,5 @@
-﻿using GThorNegocio.Contratos;
+﻿using GThorMigracaoBancoDados;
+using GThorNegocio.Contratos;
 
 namespace GThorNegocio.Negocios
 {
@@ -6,7 +7,7 @@ namespace GThorNegocio.Negocios
     {
         public void Migrar()
         {
-            
+            new ExecutaMigracao().Executa();
         }
     }
 }
