@@ -63,7 +63,13 @@
     <Compile Include="Helpers\PostgreSqlNamingStrategy.cs" />
     <Compile Include="Imeplementacoes\Base\RepositorioBase.cs" />
     <Compile Include="Imeplementacoes\RepositorioCertificadoDigital.cs" />
+    <Compile Include="Imeplementacoes\RepositorioCidade.cs" />
+    <Compile Include="Imeplementacoes\RepositorioDocumentoMdfe.cs" />
+    <Compile Include="Imeplementacoes\RepositorioEmpresa.cs" />
+    <Compile Include="Imeplementacoes\RepositorioPessoa.cs" />
+    <Compile Include="Imeplementacoes\RepositorioUf.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
+    <Compile Include="Imeplementacoes\RepositorioVeiculo.cs" />
     <Compile Include="IRepositorioBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

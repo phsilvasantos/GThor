@@ -1,6 +1,6 @@
 ﻿using GThorNegocio.Contratos;
 using GThorNegocio.Negocios;
-using GThorRepositorioEntityFramework.Criadores;
+using GThorRepositorioNHibernate.Criadores;
 
 namespace GThorNegocio.Criadores
 {
@@ -8,7 +8,7 @@ namespace GThorNegocio.Criadores
     {
         public static INegocioCertificadoDigital CriaNegocioCertificadoDigital()
         {
-            return new NegocioCertificadoDigital(GThorRepositorioNHibernate.Criadores.RepositorioCriador.CriaRepositorioCertificadoDigital());
+            return new NegocioCertificadoDigital(RepositorioCriador.CriaRepositorioCertificadoDigital());
         }
 
         public static INegocioDocumentoMdfe CriaNegocioDocumentoMdfe()
@@ -23,7 +23,7 @@ namespace GThorNegocio.Criadores
 
         public static INegocioUsuario CriaNegocioUsuario()
         {
-            return new NegocioUsuario(GThorRepositorioNHibernate.Criadores.RepositorioCriador.CriaRepositorioUsuario());
+            return new NegocioUsuario(RepositorioCriador.CriaRepositorioUsuario());
         }
 
         public static INegocioVeiculo CriaNegocioVeiculo()

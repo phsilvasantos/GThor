@@ -6,7 +6,6 @@ using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
 using GThorNegocio.Criadores;
-using GThorRepositorioEntityFramework.Implementacao;
 
 namespace GThor.Models.DocumentosMdfe
 {

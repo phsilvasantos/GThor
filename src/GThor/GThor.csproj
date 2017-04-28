@@ -43,7 +43,7 @@
       <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\DFe.Utils.dll</HintPath>
     </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
-      <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
+      <HintPath>..\packages\Iesi.Collections.4.0.1.4000\lib\net40\Iesi.Collections.dll</HintPath>
     </Reference>
     <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
       <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
@@ -211,10 +211,6 @@
     <ProjectReference Include="..\GThorNegocio\GThorNegocio.csproj">
       <Project>{B64AC92C-0F2F-46FC-A8FB-D210D23B8450}</Project>
       <Name>GThorNegocio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj">
-      <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
-      <Name>GThorRepositorioEntityFramework</Name>
     </ProjectReference>
     <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
       <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>

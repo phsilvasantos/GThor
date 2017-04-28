@@ -3,8 +3,8 @@ using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -19,47 +19,45 @@ namespace GThorNegocio.Negocios
 
         public Empresa CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioEmpresa.SetGThorContexto(contexto);
+                _repositorioEmpresa.SetSession(instancia);
                 return _repositorioEmpresa.CarregarPorId(id);
             }
         }
 
         public IEnumerable<Empresa> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioEmpresa.SetGThorContexto(contexto);
+                _repositorioEmpresa.SetSession(instancia);
                 return _repositorioEmpresa.Lista();
             }
         }
 
         public void SalvarOuAtualizar(Empresa entity)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioEmpresa.SetGThorContexto(contexto);
+                _repositorioEmpresa.SetSession(instancia);
                 _repositorioEmpresa.SalvarOuAtualizar(entity);
-                _repositorioEmpresa.SalvarAlteracoes();
             }
         }
 
         public void Deletar(Empresa entity)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioEmpresa.SetGThorContexto(contexto);
+                _repositorioEmpresa.SetSession(instancia);
                 _repositorioEmpresa.Deletar(entity);
-                _repositorioEmpresa.SalvarAlteracoes();
             }
         }
 
         public IEnumerable<EmpresaDto> BuscarParaGridModel()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioEmpresa.SetGThorContexto(contexto);
+                _repositorioEmpresa.SetSession(instancia);
                 return _repositorioEmpresa.BuscarParaGridModel();
             }
         }

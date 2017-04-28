@@ -2,8 +2,8 @@
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -18,9 +18,9 @@ namespace GThorNegocio.Negocios
 
         public Uf CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUf.SetGThorContexto(contexto);
+                _repositorioUf.SetSession(instancia);
                 var uf = _repositorioUf.CarregarPorId(id);
 
                 return uf;
@@ -29,9 +29,9 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<Uf> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUf.SetGThorContexto(contexto);
+                _repositorioUf.SetSession(instancia);
                 var listaUfs = _repositorioUf.Lista();
 
                 return listaUfs;

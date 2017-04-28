@@ -2,8 +2,8 @@
 using GThorFrameworkDominio.Dominios.Veiculos;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -18,39 +18,37 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(Veiculo veiculo)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioVeiculo.SetGThorContexto(contexto);
+                _repositorioVeiculo.SetSession(instancia);
                 _repositorioVeiculo.SalvarOuAtualizar(veiculo);
-                _repositorioVeiculo.SalvarAlteracoes();
             }
         }
 
         public Veiculo CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioVeiculo.SetGThorContexto(contexto);
+                _repositorioVeiculo.SetSession(instancia);
                 return _repositorioVeiculo.CarregarPorId(id);
             }
         }
 
         public IEnumerable<Veiculo> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioVeiculo.SetGThorContexto(contexto);
+                _repositorioVeiculo.SetSession(instancia);
                 return _repositorioVeiculo.Lista();
             }
         }
 
         public void Deletar(Veiculo veiculo)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioVeiculo.SetGThorContexto(contexto);
+                _repositorioVeiculo.SetSession(instancia);
                 _repositorioVeiculo.Deletar(veiculo);
-                _repositorioVeiculo.SalvarAlteracoes();
             }
         }
     }

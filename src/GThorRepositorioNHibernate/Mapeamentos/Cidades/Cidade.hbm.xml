@@ -14,7 +14,7 @@
     <property name="UfId" column="ufId" not-null="true"/>
 
     <many-to-one name="Uf" 
-                 column="UfId" 
+                 column="ufId" 
                  class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"
                  cascade="none" fetch="join" />
     

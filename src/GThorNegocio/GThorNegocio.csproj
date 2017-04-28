@@ -78,10 +78,6 @@
       <Project>{3BC11483-A686-4753-96C7-31A2E9C66A56}</Project>
       <Name>GThorMigracaoBancoDados</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj">
-      <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
-      <Name>GThorRepositorioEntityFramework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GThorRepositorioNHibernate\GThorRepositorioNHibernate.csproj">
       <Project>{eaafd741-f4f7-4a87-9a1d-8270fbf19b69}</Project>
       <Name>GThorRepositorioNHibernate</Name>

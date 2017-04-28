@@ -2,8 +2,8 @@
 using GThorFrameworkDominio.Dominios.Cidades;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -18,18 +18,18 @@ namespace GThorNegocio.Negocios
 
         public Cidade CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCidade.SetGThorContexto(contexto);
+                _repositorioCidade.SetSession(instancia);
                 return _repositorioCidade.CarregarPorId(id);
             }
         }
 
         public IEnumerable<Cidade> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCidade.SetGThorContexto(contexto);
+                _repositorioCidade.SetSession(instancia);
                 return _repositorioCidade.Lista();
             }
         }

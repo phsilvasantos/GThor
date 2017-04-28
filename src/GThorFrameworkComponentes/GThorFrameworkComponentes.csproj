@@ -118,10 +118,6 @@
       <Project>{B64AC92C-0F2F-46FC-A8FB-D210D23B8450}</Project>
       <Name>GThorNegocio</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GThorRepositorioEntityFramework\GThorRepositorioEntityFramework.csproj">
-      <Project>{F76B05BB-FA4A-4896-9A83-BE8CF1DE1CD3}</Project>
-      <Name>GThorRepositorioEntityFramework</Name>
-    </ProjectReference>
     <ProjectReference Include="..\GThorRepositorio\GThorRepositorio.csproj">
       <Project>{50881F48-DE6F-4BE7-A859-EBE1A582DEC9}</Project>
       <Name>GThorRepositorio</Name>

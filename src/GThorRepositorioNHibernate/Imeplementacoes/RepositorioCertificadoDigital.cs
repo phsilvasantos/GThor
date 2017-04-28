@@ -5,7 +5,7 @@ using GThorRepositorioNHibernate.Imeplementacoes.Base;
 
 namespace GThorRepositorioNHibernate.Imeplementacoes
 {
-    public class RepositorioCertificadoDigital : RepositorioBase, IRepositorioCertificadoDigital
+    internal class RepositorioCertificadoDigital : RepositorioBase, IRepositorioCertificadoDigital
     {
         public CertificadoDigital CarregarPorId(int id)
         {

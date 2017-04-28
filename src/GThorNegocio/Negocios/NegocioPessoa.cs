@@ -3,8 +3,8 @@ using GThorFrameworkDominio.Dominios.Pessoas;
 using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -19,37 +19,36 @@ namespace GThorNegocio.Negocios
 
         public IEnumerable<PessoaDto> BuscarParaGridModel()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetGThorContexto(contexto);
+                _repositorioPessoa.SetSession(instancia);
                 return _repositorioPessoa.BuscarParaGridModel();
             }
         }
 
         public void SalvarOuAtualizar(Pessoa entity)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioPessoa.SetGThorContexto(contexto);
+                _repositorioPessoa.SetSession(instancia);
                 _repositorioPessoa.SalvarOuAtualizar(entity);
-                _repositorioPessoa.SalvarAlteracoes();
             }
         }
 
         public Pessoa CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetGThorContexto(contexto);
+                _repositorioPessoa.SetSession(instancia);
                 return _repositorioPessoa.CarregarPorId(id);
             }
         }
 
         public IEnumerable<Pessoa> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetGThorContexto(contexto);
+                _repositorioPessoa.SetSession(instancia);
                 return _repositorioPessoa.Lista();
             }
         }

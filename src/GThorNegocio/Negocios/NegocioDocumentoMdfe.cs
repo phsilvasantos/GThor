@@ -2,8 +2,8 @@
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
-using GThorRepositorioEntityFramework.Criadores;
-using GThorRepositorioEntityFramework.Extensoes;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -19,29 +19,27 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(DocumentoMdfe documentoMdfe)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+                _repositorioDocumentoMdfe.SetSession(instancia);
                 _repositorioDocumentoMdfe.SalvarOuAtualizar(documentoMdfe);
-                _repositorioDocumentoMdfe.SalvarAlteracoes();
             }
         }
 
         public DocumentoMdfe CarregarPorId(int id)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
-
+                _repositorioDocumentoMdfe.SetSession(instancia);
                 return _repositorioDocumentoMdfe.CarregarPorId(id);
             }
         }
 
         public IEnumerable<DocumentoMdfe> Lista()
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+                _repositorioDocumentoMdfe.SetSession(instancia);
 
                 return _repositorioDocumentoMdfe.Lista();
             }
@@ -49,11 +47,10 @@ namespace GThorNegocio.Negocios
 
         public void Deletar(DocumentoMdfe documentoMdfe)
         {
-            using (var contexto = ContextoCriador.CriaContexto())
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioDocumentoMdfe.SetGThorContexto(contexto);
+                _repositorioDocumentoMdfe.SetSession(instancia);
                 _repositorioDocumentoMdfe.Deletar(documentoMdfe);
-                _repositorioDocumentoMdfe.SalvarAlteracoes();
             }
         }
     }
