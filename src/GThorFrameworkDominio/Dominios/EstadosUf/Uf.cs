@@ -1,16 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace GThorFrameworkDominio.Dominios.EstadosUf
+﻿namespace GThorFrameworkDominio.Dominios.EstadosUf
 {
-    [Table("uf")]
     public class Uf
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Sigla { get; set; }
+        public virtual string Sigla { get; set; }
 
-        public string Nome { get; set; }
+        public virtual string Nome { get; set; }
 
-        public byte CodigoIbge { get; set; }
+        public virtual byte CodigoIbge { get; set; }
     }
 }

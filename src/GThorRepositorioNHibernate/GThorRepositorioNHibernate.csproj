@@ -65,8 +65,6 @@
     <Compile Include="Imeplementacoes\RepositorioCertificadoDigital.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />
     <Compile Include="IRepositorioBase.cs" />
-    <Compile Include="Mapeamentos\Certificados\CertificadoDigitalMapping.cs" />
-    <Compile Include="Mapeamentos\Usuarios\UsuarioMapping.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +88,27 @@
       <Project>{50881f48-de6f-4be7-a859-ebe1a582dec9}</Project>
       <Name>GThorRepositorio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Usuarios\Usuario.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\DocumentosFiscaisEletronicos\DocumentoMdfe.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Certificados\CertificadoDigital.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Ufs\Uf.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Cidades\Cidade.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Empresas\Empresa.hbm.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\Veiculos\Veiculo.hbm.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

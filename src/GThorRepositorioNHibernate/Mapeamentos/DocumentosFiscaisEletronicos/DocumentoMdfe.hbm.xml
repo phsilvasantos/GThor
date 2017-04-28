@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="DocumentoMdfe" table="documentoMdfe">
+
+    <id name="Id" column="id" generator="native"/>
+
+    <property name="Descricao" column="descricao" length="100" not-null="true"/>
+    
+    <property name="AmbienteSefaz" column="ambienteSefaz" not-null="true"/>
+    
+    <property name="Serie" column="serie" not-null="true"/>
+
+    <property name="UltimoNumeroUsado" column="ultimoNumeroUsado" not-null="true" />
+    
+  </class>
+  
+</hibernate-mapping>

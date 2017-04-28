@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Usuarios"
+                   xmlns="urn:nhibernate-mapping-2.2">
+  
+  <class name="Usuario" table="usuario">
+    <id name="Id" column="id" generator="native" />
+
+    <property name="Login" column="login" length="20" not-null="true" />
+    
+    <property name="Senha" column="senha" length="40" not-null="true" />
+  </class>
+  
+</hibernate-mapping>

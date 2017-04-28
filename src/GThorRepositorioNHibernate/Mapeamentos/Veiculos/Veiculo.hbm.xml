@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Veiculos"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Veiculo" table="veiculo">
+    
+    <id name="Id" column="id" generator="native"/>
+    
+    <property name="Descricao" column="descricao" length="100" not-null="true"/>
+    
+    <property name="CodigoInterno" column="codigoInterno" length="10" not-null="true"/>
+    
+    <property name="Placa" column="placa" length="7" not-null="true" />
+
+    <property name="Renavam" column="renavam" length="11" not-null="true"/>
+    
+    <property name="TaraEmKg" column="taraEmKg" not-null="true"/>
+    
+    <property name="CapacidadeEmKg" column="capacidadeEmKg" not-null="true"/>
+    
+    <property name="CapacidadeEmM3" column="capacidadeEmM3" not-null="true"/>
+    
+    <property name="TipoRodado" column="tipoRodado" not-null="true"/>
+    
+    <property name="TipoCarroceria" column="tipoCarroceria" not-null="true"/>
+    
+    <property name="UfId" column="ufId" not-null="true"/>
+
+    <many-to-one name="Uf" column="ufId"
+                 cascade="none"
+                 fetch="join"
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"/>
+    
+  </class>
+  
+</hibernate-mapping>

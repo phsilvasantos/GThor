@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Empresas"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Empresa" table="empresa">
+    
+    <id name="Id" column="id" generator="native"/>
+    
+    <property name="Cnpj" column="cnpj" length="14" not-null="true"/>
+    
+    <property name="InscricaoEstadual" column="inscricaoEstadual" length="30" not-null="true"/>
+    
+    <property name="Rntrc" column="rntrc" length="8" not-null="true"/>
+    
+    <property name="RazaoSocial" column="razaoSocial" length="255" not-null="true"/>
+    
+    <property name="NomeFantasia" column="nomeFantasia" length="255" not-null="true"/>
+    
+    <property name="Logradouro" column="logradouro" length="255" not-null="true"/>
+    
+    <property name="Numero" column="numero" length="60" not-null="true"/>
+    
+    <property name="Complemento" column="complemento" length="60" not-null="true"/>
+    
+    <property name="Bairro" column="bairro" length="60" not-null="true"/>
+    
+    <property name="Cep" column="cep" length="8" not-null="true"/>
+    
+    <property name="Email" column="email" length="255" not-null="true"/>
+    
+    <property name="CidadeId" column="cidadeId" not-null="true"/>
+
+    <many-to-one name="Cidade" column="cidadeId" 
+                 class="GThorFrameworkDominio.Dominios.Cidades.Cidade"
+                 cascade="none"
+                 fetch="join"
+                 />
+    
+    <property name="UfId" column="ufId" not-null="true"/>
+    
+    <many-to-one name="Uf" column="ufId" 
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"
+                 cascade="none"
+                 fetch="join"/>
+    
+  </class>
+  
+</hibernate-mapping>
+                   

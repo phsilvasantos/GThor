@@ -4,14 +4,14 @@ namespace GThorFrameworkDominio.Dominios.Cidades
 {
     public class Cidade
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Nome { get; set; }
+        public virtual string Nome { get; set; }
 
-        public int CodigoIbge { get; set; }
+        public virtual int CodigoIbge { get; set; }
 
-        public int UfId { get; set; }
+        public virtual int UfId { get; set; }
 
-        public Uf Uf { get; set; }
+        public virtual Uf Uf { get; set; }
     }
 }

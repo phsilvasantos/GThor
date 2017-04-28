@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                    namespace="GThorFrameworkDominio.Dominios.Cidades"
+                    xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Cidade" table="cidade">
+    
+    <id name="Id" column="id" generator="native"/>
+    
+    <property name="Nome" column="nome" not-null="true" length="100"/>
+    
+    <property name="CodigoIbge" column="codigoIbge" not-null="true"/>
+    
+    <property name="UfId" column="ufId" not-null="true"/>
+
+    <many-to-one name="Uf" 
+                 column="UfId" 
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"
+                 cascade="none" fetch="join" />
+    
+  </class>
+  
+</hibernate-mapping>

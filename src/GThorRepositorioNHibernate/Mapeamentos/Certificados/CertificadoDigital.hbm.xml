@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Certificados"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="CertificadoDigital" table="certificadoDigital">
+    <id name="Id" column="id" generator="native" />
+
+    <property name="CaminhoCertificado" column="caminhoCertificado" length="255" not-null="true"/>
+    
+    <property name="Serial" column="serial" length="255" not-null="true"/>
+    
+    <property name="Tipo" column="tipo" not-null="true"/>
+    
+    <property name="Senha" column="senha" not-null="true" length="255"/>
+
+    <property name="Descricao" column="descricao" length="100" not-null="true"/>
+    
+  </class>
+  
+</hibernate-mapping>
