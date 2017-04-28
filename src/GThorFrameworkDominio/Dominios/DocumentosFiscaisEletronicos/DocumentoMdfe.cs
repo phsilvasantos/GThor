@@ -1,8 +1,9 @@
-﻿using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;
+﻿using GThorFrameworkDominio.Base;
+using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;
 
 namespace GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos
 {
-    public class DocumentoMdfe
+    public class DocumentoMdfe : EntidadeDominio
     {
         public virtual int Id { get; set; }
 
@@ -13,5 +14,7 @@ namespace GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos
         public virtual short Serie { get; set; }
 
         public virtual long UltimoNumeroUsado { get; set; }
+
+        protected override int IdUnico => Id;
     }
 }
