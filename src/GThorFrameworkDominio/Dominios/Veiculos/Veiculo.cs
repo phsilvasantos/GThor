@@ -1,9 +1,10 @@
-﻿using GThorFrameworkDominio.Dominios.EstadosUf;
+﻿using GThorFrameworkDominio.Base;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Veiculos.Flags;
 
 namespace GThorFrameworkDominio.Dominios.Veiculos
 {
-    public class Veiculo
+    public class Veiculo : EntidadeDominio
     {
         public virtual int Id { get; set; }
 
@@ -28,5 +29,7 @@ namespace GThorFrameworkDominio.Dominios.Veiculos
         public virtual int UfId { get; set; }
 
         public virtual Uf Uf { get; set; }
+
+        protected override int IdUnico => Id;
     }
 }

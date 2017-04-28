@@ -1,6 +1,8 @@
-﻿namespace GThorFrameworkDominio.Dominios.Certificados
+﻿using GThorFrameworkDominio.Base;
+
+namespace GThorFrameworkDominio.Dominios.Certificados
 {
-    public class CertificadoDigital
+    public class CertificadoDigital : EntidadeDominio
     {
         public CertificadoDigital()
         {
@@ -18,5 +20,7 @@
         public virtual string Senha { get; set; }
 
         public virtual string Descricao { get; set; }
+
+        protected override int IdUnico => Id;
     }
 }

@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\EntidadeDominio.cs" />
     <Compile Include="Dominios\Certificados\CertificadoDigital.cs" />
     <Compile Include="Dominios\Certificados\TipoCertificado.cs" />
     <Compile Include="Dominios\Cidades\Cidade.cs" />

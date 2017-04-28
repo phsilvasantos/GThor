@@ -1,10 +1,16 @@
-﻿using System.Security.Cryptography;
+﻿using System;
+using System.Security.Cryptography;
 using System.Text;
 
-namespace ComercialBiblioteca.Ferramentas.HelpersCriptografia
+namespace GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia
 {
     public static class Md5Helper
     {
+        public static string CriaUnica()
+        {
+            return Criar(DateTime.Now.ToString("O"));
+        }
+
         public static string Criar(string input)
         {
             using (var md5Hash = MD5.Create())

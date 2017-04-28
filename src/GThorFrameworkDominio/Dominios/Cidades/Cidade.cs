@@ -1,8 +1,9 @@
-﻿using GThorFrameworkDominio.Dominios.EstadosUf;
+﻿using GThorFrameworkDominio.Base;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 
 namespace GThorFrameworkDominio.Dominios.Cidades
 {
-    public class Cidade
+    public class Cidade : EntidadeDominio
     {
         public virtual int Id { get; set; }
 
@@ -13,5 +14,7 @@ namespace GThorFrameworkDominio.Dominios.Cidades
         public virtual int UfId { get; set; }
 
         public virtual Uf Uf { get; set; }
+
+        protected override int IdUnico => Id;
     }
 }

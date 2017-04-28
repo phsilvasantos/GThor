@@ -1,9 +1,10 @@
-﻿using GThorFrameworkDominio.Dominios.Cidades;
+﻿using GThorFrameworkDominio.Base;
+using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 
 namespace GThorFrameworkDominio.Dominios.Empresas
 {
-    public class Empresa
+    public class Empresa : EntidadeDominio
     {
         public virtual int Id { get; set; }
 
@@ -36,5 +37,7 @@ namespace GThorFrameworkDominio.Dominios.Empresas
         public virtual string Telefone { get; set; }
 
         public virtual string Email { get; set; }
+
+        protected override int IdUnico => Id;
     }
 }

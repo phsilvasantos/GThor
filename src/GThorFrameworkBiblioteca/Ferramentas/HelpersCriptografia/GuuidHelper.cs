@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ComercialBiblioteca.Ferramentas.HelpersCriptografia
+namespace GThorFrameworkBiblioteca.Ferramentas.HelpersCriptografia
 {
     public static class GuuidHelper
     {
