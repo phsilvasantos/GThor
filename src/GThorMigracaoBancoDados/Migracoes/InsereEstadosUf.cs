@@ -37,7 +37,7 @@ namespace GThorMigracaoBancoDados.Migracoes
 
         public override void Down()
         {
-            
+            Delete.FromTable("uf").AllRows();
         }
     }
 }
