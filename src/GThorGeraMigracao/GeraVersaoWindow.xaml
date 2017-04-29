@@ -10,10 +10,12 @@
         LoadedCommand="{Binding LoadedCommand}"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource AccentColorBrush}"
-        Title="GERA MIGRAÇÃO" Height="190" Width="525">
+        Title="GERA MIGRAÇÃO" Height="230" Width="525">
     <StackPanel Margin="24">
-        <TextBlock Style="{StaticResource ControlForm}">Nome do Arquivo de migração, não pode conter espaços</TextBlock>
+        <TextBlock Style="{StaticResource ControlForm}">VERIFIQUE A DATA E A HORA DO COMPUTADOR</TextBlock>
+        <TextBlock Style="{StaticResource ControlForm}">PARA A GERAÇÃO DA VERSÃO HORARIO DE BRASILIA!</TextBlock>
+        <TextBlock Style="{StaticResource ControlForm}">VERSÃO DA MIGRAÇÃO</TextBlock>
         <TextBox Text="{Binding NomeArquivoMigracao}" IsReadOnly="True"></TextBox>
-        <Button Command="{Binding GerarVersaoMigracao}" Style="{StaticResource ComercialSuccessButton}" Margin="0,8,0,0" Height="45">Criar Migração</Button>
+        <Button Command="{Binding GerarVersaoMigracao}" Style="{StaticResource ComercialSuccessButton}" Margin="0,8,0,0" Height="45">CRIAR VERSÃO</Button>
     </StackPanel>
 </views:GThorWindow>
