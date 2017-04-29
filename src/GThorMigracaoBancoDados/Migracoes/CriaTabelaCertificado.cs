@@ -2,7 +2,7 @@
 
 namespace GThorMigracaoBancoDados.Migracoes
 {
-    [Migration(4)]
+    [Migration(131379040434583657)]
     public class CriaTabelaCertificado : Migration
     {
         public override void Up()

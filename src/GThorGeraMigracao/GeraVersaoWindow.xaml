@@ -1,4 +1,4 @@
-﻿<views:GThorWindow x:Class="GThorGeraMigracao.MainWindow"
+﻿<views:GThorWindow x:Class="GThorGeraMigracao.GeraVersaoWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -13,7 +13,7 @@
         Title="GERA MIGRAÇÃO" Height="190" Width="525">
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Nome do Arquivo de migração, não pode conter espaços</TextBlock>
-        <TextBox Text="{Binding NomeArquivoMigracao}"></TextBox>
-        <Button Command="{Binding SalvarCommand}" Style="{StaticResource ComercialSuccessButton}" Margin="0,8,0,0" Height="45">Criar Migração</Button>
+        <TextBox Text="{Binding NomeArquivoMigracao}" IsReadOnly="True"></TextBox>
+        <Button Command="{Binding GerarVersaoMigracao}" Style="{StaticResource ComercialSuccessButton}" Margin="0,8,0,0" Height="45">Criar Migração</Button>
     </StackPanel>
 </views:GThorWindow>

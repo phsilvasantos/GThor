@@ -2,7 +2,7 @@
 
 namespace GThorMigracaoBancoDados.Migracoes
 {
-    [Migration(9)]
+    [Migration(131379040918671606)]
     public class InsereCidades : Migration
     {
         public override void Up()
