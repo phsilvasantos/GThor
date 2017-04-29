@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorRepositorioNHibernate"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorMigracaoBancoDados", "GThorMigracaoBancoDados\GThorMigracaoBancoDados.csproj", "{3BC11483-A686-4753-96C7-31A2E9C66A56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GThorGeraMigracao", "GThorGeraMigracao\GThorGeraMigracao.csproj", "{8CE4A65A-C668-4916-AA0E-28D65E928911}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{3BC11483-A686-4753-96C7-31A2E9C66A56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC11483-A686-4753-96C7-31A2E9C66A56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC11483-A686-4753-96C7-31A2E9C66A56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CE4A65A-C668-4916-AA0E-28D65E928911}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CE4A65A-C668-4916-AA0E-28D65E928911}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CE4A65A-C668-4916-AA0E-28D65E928911}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CE4A65A-C668-4916-AA0E-28D65E928911}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
