@@ -36,7 +36,7 @@ namespace GThorFrameworkComponentes.ComboBox
         private void InicializaComboBox()
         {
             ComboBoxUfPicker.PickItem += ComboBoxUf_OnPickItem;
-            ComboBoxUfPicker.UfSelecionado = new Uf { Id = 1 };
+            ComboBoxUfPicker.UfSelecionado = ComboBoxUfPicker.Default;
 
             ComboBoxCidadePicker.PickItemCidade += ComboBoxCidade_OnPickItemCidade;
         }

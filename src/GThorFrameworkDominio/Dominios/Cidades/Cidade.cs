@@ -11,8 +11,6 @@ namespace GThorFrameworkDominio.Dominios.Cidades
 
         public virtual int CodigoIbge { get; set; }
 
-        public virtual int UfId { get; set; }
-
         public virtual Uf Uf { get; set; }
 
         protected override int IdUnico => Id;

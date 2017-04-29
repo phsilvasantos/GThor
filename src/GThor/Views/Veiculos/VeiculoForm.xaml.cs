@@ -20,7 +20,7 @@ namespace GThor.Views.Veiculos
         private void InicializaComboBox()
         {
             ComboBoxUf.PickItem += ComboBoxUf_OnPickItem;
-            ComboBoxUf.UfSelecionado = new Uf {Id = 1};
+            ComboBoxUf.UfSelecionado = ComboBoxUf.Default;
 
             if (_model.Veiculo.Id != 0)
             {

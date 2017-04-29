@@ -77,7 +77,7 @@ namespace GThor.Models.Empresas
 
         protected override void DeletarRegistroSelecionado()
         {
-            _negocioEmpresa.Deletar(new Empresa{Id = EntidadeSelecionada.Id});
+            _negocioEmpresa.Deletar(_negocioEmpresa.CarregarPorId(EntidadeSelecionada.Id));
         }
     }
 }

@@ -90,7 +90,7 @@ namespace GThorFrameworkComponentes.ComboBox
             }
 
             ListaCidade.Clear();
-            var cidadesFiltradas = _cacheCidades.Where(c => c.UfId == uf.Id);
+            var cidadesFiltradas = _cacheCidades.Where(c => c.Uf.Id == uf.Id);
 
             var ufComboBoxDtos = cidadesFiltradas as IList<Cidade> ?? cidadesFiltradas.ToList();
 

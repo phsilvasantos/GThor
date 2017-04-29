@@ -26,12 +26,10 @@ namespace GThorFrameworkDominio.Dominios.Empresas
 
         public virtual string Bairro { get; set; }
 
-        public virtual int CidadeId { get; set; }
         public virtual Cidade Cidade { get; set; }
 
         public virtual string Cep { get; set; }
 
-        public virtual int UfId { get; set; }
         public virtual Uf Uf { get; set; }
 
         public virtual string Telefone { get; set; }

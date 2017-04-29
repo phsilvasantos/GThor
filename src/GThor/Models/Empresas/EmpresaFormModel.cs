@@ -206,10 +206,8 @@ namespace GThor.Models.Empresas
             Empresa.Telefone = Telefone;
             Empresa.Email = Email;
             Empresa.Cep = Cep;
-            Empresa.UfId = Uf.Id;
-            Empresa.CidadeId = Cidade.Id;
-            Empresa.Uf = null;
-            Empresa.Cidade = null;
+            Empresa.Uf = Uf;
+            Empresa.Cidade = Cidade;
 
             _negocioEmpresa.SalvarOuAtualizar(Empresa);
         }

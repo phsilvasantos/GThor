@@ -28,16 +28,14 @@
     <property name="Cep" column="cep" length="8" not-null="true"/>
     
     <property name="Email" column="email" length="255" not-null="true"/>
-    
-    <property name="CidadeId" column="cidadeId" not-null="true"/>
+
+    <property name="Telefone" column="telefone" length="11" not-null="true"/>
 
     <many-to-one name="Cidade" column="cidadeId" 
                  class="GThorFrameworkDominio.Dominios.Cidades.Cidade"
                  cascade="none"
                  fetch="join"
                  />
-    
-    <property name="UfId" column="ufId" not-null="true"/>
     
     <many-to-one name="Uf" column="ufId" 
                  class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"

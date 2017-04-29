@@ -10,8 +10,6 @@
     <property name="Nome" column="nome" not-null="true" length="100"/>
     
     <property name="CodigoIbge" column="codigoIbge" not-null="true"/>
-    
-    <property name="UfId" column="ufId" not-null="true"/>
 
     <many-to-one name="Uf" 
                  column="ufId" 

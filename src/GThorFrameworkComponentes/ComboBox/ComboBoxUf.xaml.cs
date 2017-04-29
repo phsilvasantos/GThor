@@ -54,6 +54,8 @@ namespace GThorFrameworkComponentes.ComboBox
             }
         }
 
+        public Uf Default => ListaEstadoUf[0];
+
         private void PreencherListaEstadoUf()
         {
             ListaEstadoUf = new ObservableCollection<Uf>();

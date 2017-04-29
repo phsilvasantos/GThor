@@ -14,7 +14,9 @@ namespace GThorRepositorioNHibernate.Imeplementacoes
 
         public IEnumerable<Cidade> Lista()
         {
-            return Sessao.QueryOver<Cidade>().List<Cidade>();
+            var lista = Sessao.QueryOver<Cidade>().List<Cidade>();
+
+            return lista;
         }
     }
 }
