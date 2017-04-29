@@ -17,6 +17,7 @@ namespace GThorMigracaoBancoDados.Migracoes
             Insert.IntoTable("uf").Row(new { sigla = "ES", nome = "Espírito Santo", codigoIbge = 32 });
             Insert.IntoTable("uf").Row(new { sigla = "GO", nome = "Goiás", codigoIbge = 52 });
             Insert.IntoTable("uf").Row(new { sigla = "MA", nome = "Maranhão", codigoIbge = 21 });
+            Insert.IntoTable("uf").Row(new { sigla = "MG", nome = "Minas Gerais", codigoIbge = 31 });
             Insert.IntoTable("uf").Row(new { sigla = "MS", nome = "Mato Grosso do Sul", codigoIbge = 50 });
             Insert.IntoTable("uf").Row(new { sigla = "MT", nome = "Mato Grosso", codigoIbge = 51 });
             Insert.IntoTable("uf").Row(new { sigla = "PA", nome = "Pará", codigoIbge = 15 });
