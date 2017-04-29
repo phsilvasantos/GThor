@@ -114,6 +114,10 @@
       <Project>{E9B13860-6C09-4CE9-8477-C82EE7743A57}</Project>
       <Name>GThorFrameworkRepositorio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GThorFrameworkWpf\GThorFrameworkWpf.csproj">
+      <Project>{6f258729-2159-4ccb-9162-14043b938d6e}</Project>
+      <Name>GThorFrameworkWpf</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GThorNegocio\GThorNegocio.csproj">
       <Project>{B64AC92C-0F2F-46FC-A8FB-D210D23B8450}</Project>
       <Name>GThorNegocio</Name>

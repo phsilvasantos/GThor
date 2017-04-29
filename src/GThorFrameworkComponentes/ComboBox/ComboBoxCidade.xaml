@@ -2,8 +2,8 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:GThorFrameworkComponentes.ComboBox"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:helpers="clr-namespace:GThorFrameworkWpf.Helpers;assembly=GThorFrameworkWpf"
              mc:Ignorable="d" 
              d:DesignHeight="70" d:DesignWidth="300" Background="Transparent">
     <StackPanel>
@@ -13,6 +13,7 @@
             DisplayMemberPath="Nome"
             SelectedItem="{Binding CidadeSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             SelectedValuePath="Id"
-            SelectedValue="{Binding CidadeSelecionado.Id}"/>
+            SelectedValue="{Binding CidadeSelecionado.Id}"
+            helpers:GThorComboBoxHelper.AbreDropDown="True"/>
     </StackPanel>
 </UserControl>
