@@ -180,14 +180,13 @@ namespace GThor.Models.Veiculos
             Veiculo.CodigoInterno = CodigoInterno;
             Veiculo.Descricao = Descricao;
             Veiculo.Placa = Placa;
-            Veiculo.UfId = UfSelecionado.Id;
+            Veiculo.Uf = UfSelecionado;
             Veiculo.Renavam = Renavam;
             Veiculo.TipoRodado = TipoRodado;
             Veiculo.TaraEmKg = TaraEmKg;
             Veiculo.CapacidadeEmKg = CapacidadeEmKg;
             Veiculo.CapacidadeEmM3 = CapacidadeEmM3;
             Veiculo.TipoCarroceria = TipoCarroceria;
-            Veiculo.Uf = null;
 
             _negocioVeiculo.SalvarOuAtualizar(Veiculo);
         }

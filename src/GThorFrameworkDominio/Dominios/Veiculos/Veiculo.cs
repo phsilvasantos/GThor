@@ -26,8 +26,6 @@ namespace GThorFrameworkDominio.Dominios.Veiculos
 
         public virtual TipoCarroceria TipoCarroceria { get; set; } = TipoCarroceria.NaoAplicavel;
 
-        public virtual int UfId { get; set; }
-
         public virtual Uf Uf { get; set; }
 
         protected override int IdUnico => Id;

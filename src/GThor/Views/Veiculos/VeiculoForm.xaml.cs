@@ -24,7 +24,7 @@ namespace GThor.Views.Veiculos
 
             if (_model.Veiculo.Id != 0)
             {
-                ComboBoxUf.UfSelecionado = new Uf {Id = _model.Veiculo.UfId};
+                ComboBoxUf.UfSelecionado = ComboBoxUf.Default;
             }
         }
 

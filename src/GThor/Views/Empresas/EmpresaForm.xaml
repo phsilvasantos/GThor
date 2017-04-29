@@ -45,6 +45,7 @@
                     <TextBox
                         Text="{Binding Cnpj}"
                         controls:TextBoxHelper.Watermark="CNPJ"
+                        Style="{StaticResource GThorTextBoxNumeroInteiro}"
                         MaxLength="14">
                     </TextBox>
                 </StackPanel>
@@ -131,6 +132,7 @@
                     <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Telefone</TextBlock>
                     <TextBox
                         Text="{Binding Telefone}"
+                        Style="{StaticResource GThorTextBoxNumeroInteiro}"
                         controls:TextBoxHelper.Watermark="Telefone"
                         MaxLength="11">
                     </TextBox>
@@ -164,6 +166,7 @@
                     <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">CEP</TextBlock>
                     <TextBox
                         Text="{Binding Cep}"
+                        Style="{StaticResource GThorTextBoxNumeroInteiro}"
                         controls:TextBoxHelper.Watermark="Cep"
                         MaxLength="8">
                     </TextBox>

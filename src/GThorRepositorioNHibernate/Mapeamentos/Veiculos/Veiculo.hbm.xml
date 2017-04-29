@@ -24,8 +24,6 @@
     <property name="TipoRodado" column="tipoRodado" not-null="true"/>
     
     <property name="TipoCarroceria" column="tipoCarroceria" not-null="true"/>
-    
-    <property name="UfId" column="ufId" not-null="true"/>
 
     <many-to-one name="Uf" column="ufId"
                  cascade="none"
