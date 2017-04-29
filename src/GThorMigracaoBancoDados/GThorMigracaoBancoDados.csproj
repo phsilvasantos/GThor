@@ -54,6 +54,7 @@
     <Compile Include="Migracoes\CriaTabelaEstadoUf.cs" />
     <Compile Include="Migracoes\CriaTabelaUsuario.cs" />
     <Compile Include="Migracoes\CriaTabelaVeiculo.cs" />
+    <Compile Include="Migracoes\InsereEstadosUf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
