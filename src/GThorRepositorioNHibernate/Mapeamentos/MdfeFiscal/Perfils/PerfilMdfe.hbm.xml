@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="PerfilMdfe" table="perfilMdfe">
+    
+    <id name="Id" column="id" generator="native"/>
+
+    <many-to-one name="Empresa" cascade="none" not-null="true"
+                 column="empresaId" fetch="join" 
+                 class="GThorFrameworkDominio.Dominios.Empresas.Empresa"></many-to-one>
+
+    <many-to-one name="DocumentoMdfe" cascade="none" not-null="true"
+                 column="documentoMdfeId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.DocumentoMdfe"></many-to-one>
+
+    <many-to-one name="CertificadoDigital" cascade="none" not-null="true"
+                 column="certificadoDigitalId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.Certificados.CertificadoDigital"></many-to-one>
+
+
+    <many-to-one name="UfCarregamento" cascade="none" not-null="false"
+                 column="ufCarregamentoId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"></many-to-one>
+
+    <many-to-one name="UfDescarregamento" cascade="none" not-null="false"
+                 column="ufDescarregamentoId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"></many-to-one>
+
+    <many-to-one name="VeiculoTracao" cascade="none" not-null="false"
+                 column="veiculoTracaoId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.Veiculos.Veiculo"></many-to-one>
+
+    <property name="Observacao" column="observacao" length="5000" not-null="true"/>
+    
+  </class>
+
+</hibernate-mapping>

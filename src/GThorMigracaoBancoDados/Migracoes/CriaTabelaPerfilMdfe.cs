@@ -12,9 +12,9 @@ namespace GThorMigracaoBancoDados.Migracoes
                 .WithColumn("empresaId").AsInt32().NotNullable()
                 .WithColumn("documentoMdfeId").AsInt32().NotNullable()
                 .WithColumn("certificadoDigitalId").AsInt32().NotNullable()
-                .WithColumn("ufCarregamentoId").AsInt32()
-                .WithColumn("ufDescarregamentoId").AsInt32()
-                .WithColumn("veiculoTracaoId").AsInt32()
+                .WithColumn("ufCarregamentoId").AsInt32().Nullable()
+                .WithColumn("ufDescarregamentoId").AsInt32().Nullable()
+                .WithColumn("veiculoTracaoId").AsInt32().Nullable()
                 .WithColumn("observacao").AsString(5000).NotNullable();
 
             Create.ForeignKey("fk_perfilMdfe__empresa")

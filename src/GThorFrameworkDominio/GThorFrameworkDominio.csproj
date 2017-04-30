@@ -49,6 +49,7 @@
     <Compile Include="Dominios\DocumentosFiscaisEletronicos\flags\AmbienteSefaz.cs" />
     <Compile Include="Dominios\Empresas\Empresa.cs" />
     <Compile Include="Dominios\EstadosUf\Uf.cs" />
+    <Compile Include="Dominios\MdfeFiscal\Perfils\PerfilMdfe.cs" />
     <Compile Include="Dominios\Pessoas\Condutor.cs" />
     <Compile Include="Dominios\Pessoas\Flags\TipoPessoa.cs" />
     <Compile Include="Dominios\Pessoas\Flags\TipoProprietario.cs" />
@@ -73,8 +74,6 @@
       <Name>GThorFrameworkWpf</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dominios\MdfeFiscal\Perfils\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

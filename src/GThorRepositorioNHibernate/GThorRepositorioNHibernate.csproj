@@ -125,5 +125,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Mapeamentos\Pessoas\Transportadora.hbm.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Mapeamentos\MdfeFiscal\Perfils\PerfilMdfe.hbm.xml" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
