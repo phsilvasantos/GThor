@@ -29,7 +29,13 @@ namespace GThorRepositorioNHibernate.Imeplementacoes
 
         public void SalvarOuAtualizar(Pessoa entity)
         {
-            Sessao.SaveOrUpdate(entity);
+            if (entity.Id == 0)
+            {
+                Sessao.Save(entity);
+                return;
+            }
+
+            Sessao.Merge(entity);
         }
 
         public Pessoa CarregarPorId(int id)

@@ -245,14 +245,14 @@ namespace GThor.Models.Pessoas
 
             if (Pessoa.Id == 0) return;
             {
-                if (Pessoa.Transportadora.Id != 0)
+                if (Pessoa.Transportadora != null && Pessoa.Transportadora.Id != 0)
                 {
                     IsTransportadora = true;
                     Rntrc = Pessoa.Transportadora.Rntrc;
                     TipoProprietario = Pessoa.Transportadora.TipoProprietario;
                 }
 
-                if (Pessoa.Condutor.Id != 0)
+                if (Pessoa.Condutor != null && Pessoa.Condutor.Id != 0)
                 {
                     IsCondutor = true;
                 }
@@ -273,7 +273,9 @@ namespace GThor.Models.Pessoas
 
             if (IsTransportadora)
             {
-                Pessoa.Transportadora = new Transportadora(Pessoa, Pessoa.Transportadora.Id)
+                var idTransportadora = Pessoa.Transportadora == null ? 0 : Pessoa.Transportadora.Id;
+
+                Pessoa.Transportadora = new Transportadora(Pessoa, idTransportadora)
                 {
                     Rntrc = Rntrc,
                     TipoProprietario = TipoProprietario
@@ -282,7 +284,9 @@ namespace GThor.Models.Pessoas
 
             if (IsCondutor)
             {
-                Pessoa.Condutor = new Condutor(Pessoa, Pessoa.Condutor.Id);
+                var idCondutor = Pessoa.Condutor == null ? 0 : Pessoa.Condutor.Id;
+
+                Pessoa.Condutor = new Condutor(Pessoa, idCondutor);
             }
 
             if (!IsTransportadora)
@@ -315,6 +319,9 @@ namespace GThor.Models.Pessoas
 
             ValidaPorTipoPessoa();
 
+            if (Email.IsNotNullOrEmpty())
+                Email.EumEmail();
+
             if (!IsCondutor) return;
             if (TipoPessoa != TipoPessoa.Fisica) throw new ArgumentException("Xiii, para você ser um condutor você deve ser uma pessoa física");
         }
@@ -326,10 +333,14 @@ namespace GThor.Models.Pessoas
                 case TipoPessoa.Fisica:
                     if (Cpf.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um CPF não posso te cadastrar");
 
+                    Cpf.EumCpf();
+
                     break;
 
                 case TipoPessoa.Juridica:
                     if (Cnpj.IsNullOrEmpty()) throw new ArgumentException("Sem me informar um CNPJ não posso te cadastrar");
+
+                    Cnpj.EumCnpj();
 
                     if (NomeFantasia.IsNullOrEmpty())
                         throw new ArgumentException("Sem me informar um nome fantasia te cadastrar");

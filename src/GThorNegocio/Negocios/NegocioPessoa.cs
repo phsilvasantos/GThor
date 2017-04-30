@@ -32,11 +32,7 @@ namespace GThorNegocio.Negocios
             {
                 _repositorioPessoa.SetSession(instancia);
 
-                var pessoa = _repositorioPessoa.CarregarPorId(entity.Id);
-
-                pessoa.CopiarPropriedades(entity);
-
-                _repositorioPessoa.SalvarOuAtualizar(pessoa);
+                _repositorioPessoa.SalvarOuAtualizar(entity);
             }
         }
 
@@ -47,12 +43,6 @@ namespace GThorNegocio.Negocios
                 _repositorioPessoa.SetSession(instancia);
 
                 var pessoa = _repositorioPessoa.CarregarPorId(id);
-
-                if (pessoa.Transportadora == null)
-                    pessoa.Transportadora = new Transportadora(pessoa, 0);
-
-                if (pessoa.Condutor == null) 
-                    pessoa.Condutor = new Condutor(pessoa, 0);
 
                 return pessoa;
             }

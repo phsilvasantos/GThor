@@ -40,34 +40,5 @@ namespace GThorFrameworkDominio.Dominios.Pessoas
         public virtual Condutor Condutor { get; set; }
 
         protected override int IdUnico => Id;
-
-        public virtual void CopiarPropriedades(Pessoa pessoa)
-        {
-            Id = pessoa.Id;
-            TipoPessoa = pessoa.TipoPessoa;
-            Nome = pessoa.Nome;
-            NomeFantasia = pessoa.NomeFantasia;
-            Cnpj = pessoa.Cnpj;
-            Cpf = pessoa.Cpf;
-            InscricaoEstadual = pessoa.InscricaoEstadual;
-            Uf = pessoa.Uf;
-            Cidade = pessoa.Cidade;
-            Telefone = pessoa.Telefone;
-            Email = pessoa.Email;
-
-            if (pessoa.Transportadora != null)
-            {
-                Transportadora = new Transportadora(this, pessoa.Transportadora.Id)
-                {
-                    Rntrc = pessoa.Transportadora.Rntrc,
-                    TipoProprietario = pessoa.Transportadora.TipoProprietario
-                };
-            }
-
-            if (pessoa.Condutor != null)
-            {
-                Condutor = new Condutor(this, pessoa.Condutor.Id);
-            }
-        }
     }
 }
