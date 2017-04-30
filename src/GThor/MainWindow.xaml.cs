@@ -60,6 +60,11 @@ namespace GThor
             AbrirTabItem("Pessoas", DataGridPadrao.Criar(new GridPessoaModel(NegocioCriador.CriaNegocioPessoa())));
         }
 
+        private void PerfilMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
         private void AbrirTabItem(string titulo, UserControl janela)
         {
             var novaTab = new MetroTabItem { Header = titulo, Content = janela, CloseButtonEnabled = true };

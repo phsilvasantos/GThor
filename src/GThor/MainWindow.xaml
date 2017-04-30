@@ -100,9 +100,9 @@
                         <TextBlock Margin="10,0,0,0" Text="MDF-e" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White" />
                     </BulletDecorator>
                 </Expander.Header>
-                <WrapPanel>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Veículos   " MouseDown="Veiculo_OnMouseDown"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui aqui"/>
+                <WrapPanel Orientation="Vertical">
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Veículos" MouseDown="Veiculo_OnMouseDown"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Perfil MDF-e" MouseDown="PerfilMdfe_OnMouseDown"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui"/>
                 </WrapPanel>
             </Expander>
