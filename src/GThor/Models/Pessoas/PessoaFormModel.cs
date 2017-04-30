@@ -245,14 +245,14 @@ namespace GThor.Models.Pessoas
 
             if (Pessoa.Id == 0) return;
             {
-                if (Pessoa.Transportadora.PessoaId != 0)
+                if (Pessoa.Transportadora.Id != 0)
                 {
                     IsTransportadora = true;
                     Rntrc = Pessoa.Transportadora.Rntrc;
                     TipoProprietario = Pessoa.Transportadora.TipoProprietario;
                 }
 
-                if (Pessoa.Condutor.PessoaId != 0)
+                if (Pessoa.Condutor.Id != 0)
                 {
                     IsCondutor = true;
                 }
@@ -270,18 +270,19 @@ namespace GThor.Models.Pessoas
 
         private void SalvarAction(object sender, EventArgs e)
         {
+
             if (IsTransportadora)
             {
-                Pessoa.Transportadora.PessoaId = Pessoa.Id;
-                Pessoa.Transportadora.Pessoa = null;
-                Pessoa.Transportadora.Rntrc = Rntrc;
-                Pessoa.Transportadora.TipoProprietario = TipoProprietario;
+                Pessoa.Transportadora = new Transportadora(Pessoa, Pessoa.Transportadora.Id)
+                {
+                    Rntrc = Rntrc,
+                    TipoProprietario = TipoProprietario
+                };
             }
 
             if (IsCondutor)
             {
-                Pessoa.Condutor.PessoaId = Pessoa.Id;
-                Pessoa.Condutor.Pessoa = null;
+                Pessoa.Condutor = new Condutor(Pessoa, Pessoa.Condutor.Id);
             }
 
             if (!IsTransportadora)
@@ -302,10 +303,8 @@ namespace GThor.Models.Pessoas
             Pessoa.Cpf = Cpf;
             Pessoa.Email = Email;
             Pessoa.Telefone = Telefone;
-            Pessoa.UfId = Uf.Id;
-            Pessoa.Uf = null;
-            Pessoa.CidadeId = Cidade.Id;
-            Pessoa.Cidade = null;
+            Pessoa.Uf = Uf;
+            Pessoa.Cidade = Cidade;
 
             _negocioPessoa.SalvarOuAtualizar(Pessoa);
         }

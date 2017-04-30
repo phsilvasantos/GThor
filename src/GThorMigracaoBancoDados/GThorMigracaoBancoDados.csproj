@@ -52,6 +52,7 @@
     <Compile Include="Migracoes\CriaTabelaDocumentoMdfe.cs" />
     <Compile Include="Migracoes\CriaTabelaEmpresa.cs" />
     <Compile Include="Migracoes\CriaTabelaEstadoUf.cs" />
+    <Compile Include="Migracoes\CriaTabelaPessoaERelacoes.cs" />
     <Compile Include="Migracoes\CriaTabelaUsuario.cs" />
     <Compile Include="Migracoes\CriaTabelaVeiculo.cs" />
     <Compile Include="Migracoes\InsereCidades.cs" />

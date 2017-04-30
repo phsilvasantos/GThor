@@ -31,7 +31,12 @@ namespace GThorNegocio.Negocios
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
                 _repositorioPessoa.SetSession(instancia);
-                _repositorioPessoa.SalvarOuAtualizar(entity);
+
+                var pessoa = _repositorioPessoa.CarregarPorId(entity.Id);
+
+                pessoa.CopiarPropriedades(entity);
+
+                _repositorioPessoa.SalvarOuAtualizar(pessoa);
             }
         }
 
@@ -40,7 +45,16 @@ namespace GThorNegocio.Negocios
             using (var instancia = NHibernateHelper.Instancia())
             {
                 _repositorioPessoa.SetSession(instancia);
-                return _repositorioPessoa.CarregarPorId(id);
+
+                var pessoa = _repositorioPessoa.CarregarPorId(id);
+
+                if (pessoa.Transportadora == null)
+                    pessoa.Transportadora = new Transportadora(pessoa, 0);
+
+                if (pessoa.Condutor == null) 
+                    pessoa.Condutor = new Condutor(pessoa, 0);
+
+                return pessoa;
             }
         }
 

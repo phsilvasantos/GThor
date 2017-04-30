@@ -1,75 +1,73 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using GThorFrameworkDominio.Base;
 using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.Pessoas.Flags;
 
 namespace GThorFrameworkDominio.Dominios.Pessoas
 {
-    [Table("pessoa")]
-    public class Pessoa
+    public class Pessoa : EntidadeDominio, IPessoa
     {
         public Pessoa()
         {
             TipoPessoa = TipoPessoa.Fisica;
         }
 
-        [Key]
-        [Column("id")]
-        [Required]
-        public int Id { get; set; }
+        // ReSharper disable once UnusedAutoPropertyAccessor.Global
+        public virtual int Id { get; protected internal set; }
 
-        [Column("tipoPessoa")]
-        [Required]
-        public TipoPessoa TipoPessoa { get; set; }
+        public virtual TipoPessoa TipoPessoa { get; set; }
+        
+        public virtual string Nome { get; set; }
 
-        [Column("nome")]
-        [MaxLength(255)]
-        [Required]
-        public string Nome { get; set; }
+        public virtual string NomeFantasia { get; set; }
 
-        [Column("nomeFantasia")]
-        [MaxLength(255)]
-        [Required]
-        public string NomeFantasia { get; set; }
+        public virtual string Cnpj { get; set; }
 
-        [Column("cnpj")]
-        [MaxLength(14)]
-        [Required]
-        public string Cnpj { get; set; }
+        public virtual string Cpf { get; set; }
+        
+        public virtual string InscricaoEstadual { get; set; }
 
-        [Column("cpf")]
-        [MaxLength(11)]
-        [Required]
-        public string Cpf { get; set; }
+        public virtual Uf Uf { get; set; }
 
-        [Column("InscricaoEstadual")]
-        [MaxLength(30)]
-        [Required]
-        public string InscricaoEstadual { get; set; }
+        public virtual Cidade Cidade { get; set; }
 
-        [Column("ufId")]
-        [Required]
-        public int UfId { get; set; }
-        public Uf Uf { get; set; }
+        public virtual string Telefone { get; set; }
 
-        [Column("cidadeId")]
-        [Required]
-        public int CidadeId { get; set; }
-        public Cidade Cidade { get; set; }
+        public virtual string Email { get; set; }
 
-        [Column("telefone")]
-        [MaxLength(11)]
-        [Required]
-        public string Telefone { get; set; }
+        public virtual Transportadora Transportadora { get; set; }
 
-        [Column("email")]
-        [MaxLength(255)]
-        [Required]
-        public string Email { get; set; }
+        public virtual Condutor Condutor { get; set; }
 
-        public virtual Transportadora Transportadora { get; set; } = new Transportadora();
+        protected override int IdUnico => Id;
 
-        public virtual Condutor Condutor { get; set; } = new Condutor();
+        public virtual void CopiarPropriedades(Pessoa pessoa)
+        {
+            Id = pessoa.Id;
+            TipoPessoa = pessoa.TipoPessoa;
+            Nome = pessoa.Nome;
+            NomeFantasia = pessoa.NomeFantasia;
+            Cnpj = pessoa.Cnpj;
+            Cpf = pessoa.Cpf;
+            InscricaoEstadual = pessoa.InscricaoEstadual;
+            Uf = pessoa.Uf;
+            Cidade = pessoa.Cidade;
+            Telefone = pessoa.Telefone;
+            Email = pessoa.Email;
+
+            if (pessoa.Transportadora != null)
+            {
+                Transportadora = new Transportadora(this, pessoa.Transportadora.Id)
+                {
+                    Rntrc = pessoa.Transportadora.Rntrc,
+                    TipoProprietario = pessoa.Transportadora.TipoProprietario
+                };
+            }
+
+            if (pessoa.Condutor != null)
+            {
+                Condutor = new Condutor(this, pessoa.Condutor.Id);
+            }
+        }
     }
 }

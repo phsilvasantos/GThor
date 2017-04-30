@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Pessoas"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Pessoa" table="pessoa">
+    
+    <id name="Id" column="id" generator="native"/>
+    
+    <property name="TipoPessoa" column="tipoPessoa" not-null="true"/>
+
+    <property name="Nome" column="nome" length="255" not-null="true"/>
+    
+    <property name="NomeFantasia" column="nomeFantasia" length="255" not-null="true"/>
+    
+    <property name="Cnpj" column="cnpj" length="14" not-null="true"/>
+    
+    <property name="Cpf" column="cpf" length="11" not-null="true"/>
+    
+    <property name="InscricaoEstadual" column="inscricaoEstadual" length="30" not-null="true"/>
+    
+    <property name="Telefone" column="telefone" length="11" not-null="true"/>
+    
+    <property name="Email" column="email" length="255" not-null="true"/>
+    
+    <many-to-one name="Uf" column="ufId" 
+                 not-null="true" cascade="none" fetch="join" 
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"/>
+
+    <many-to-one name="Cidade" column="cidadeId"
+                 not-null="true" cascade="none" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.Cidades.Cidade"/>
+    
+    <one-to-one name="Condutor" cascade="all-delete-orphan" outer-join="true"/>
+    
+    <one-to-one name="Transportadora" cascade="all-delete-orphan" outer-join="true"/>
+    
+  </class>
+  
+</hibernate-mapping>

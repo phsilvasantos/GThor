@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.Pessoas"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Transportadora" table="transportadora">
+
+    <id access="field" name="_pessoaId" column="pessoaId">
+      <generator class="foreign">
+        <param name="property">Pessoa</param>
+      </generator>
+    </id>
+    
+    <one-to-one constrained="true" name="Pessoa" outer-join="true"/>
+    
+    <property name="Rntrc" column="rntrc" length="8" not-null="true"/>
+    
+    <property name="TipoProprietario" column="tipoProprietario" not-null="true"/>
+    
+  </class>
+  
+</hibernate-mapping>
