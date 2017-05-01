@@ -51,6 +51,7 @@
     <Compile Include="Contratos\IRepositorioCidade.cs" />
     <Compile Include="Contratos\IRepositorioDocumentoMdfe.cs" />
     <Compile Include="Contratos\IRepositorioEmpresa.cs" />
+    <Compile Include="Contratos\IRepositorioPerfilMdfe.cs" />
     <Compile Include="Contratos\IRepositorioPessoa.cs" />
     <Compile Include="Contratos\IRepositorioUf.cs" />
     <Compile Include="Contratos\IRepositorioUsuario.cs" />

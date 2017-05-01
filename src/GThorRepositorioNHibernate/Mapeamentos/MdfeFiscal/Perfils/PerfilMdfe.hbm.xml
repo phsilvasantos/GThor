@@ -6,6 +6,8 @@
   <class name="PerfilMdfe" table="perfilMdfe">
     
     <id name="Id" column="id" generator="native"/>
+    
+    <property name="Descricao" column="descricao" not-null="true" length="120"/>
 
     <many-to-one name="Empresa" cascade="none" not-null="true"
                  column="empresaId" fetch="join" 

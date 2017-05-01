@@ -44,5 +44,10 @@ namespace GThorRepositorioNHibernate.Criadores
         {
             return new RepositorioPessoa();
         }
+
+        public static IRepositorioPerfilMdfe CriaRepositorioPerfilMdfe()
+        {
+            return new RepositorioPerfilMdfe();
+        }
     }
 }

@@ -9,6 +9,7 @@ namespace GThorMigracaoBancoDados.Migracoes
         {
             Create.Table("perfilMdfe")
                 .WithColumn("id").AsInt32().PrimaryKey().Identity()
+                .WithColumn("descricao").AsString(120).NotNullable()
                 .WithColumn("empresaId").AsInt32().NotNullable()
                 .WithColumn("documentoMdfeId").AsInt32().NotNullable()
                 .WithColumn("certificadoDigitalId").AsInt32().NotNullable()

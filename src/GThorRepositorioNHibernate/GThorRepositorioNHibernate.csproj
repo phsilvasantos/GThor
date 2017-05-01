@@ -66,6 +66,7 @@
     <Compile Include="Imeplementacoes\RepositorioCidade.cs" />
     <Compile Include="Imeplementacoes\RepositorioDocumentoMdfe.cs" />
     <Compile Include="Imeplementacoes\RepositorioEmpresa.cs" />
+    <Compile Include="Imeplementacoes\RepositorioPerfilMdfe.cs" />
     <Compile Include="Imeplementacoes\RepositorioPessoa.cs" />
     <Compile Include="Imeplementacoes\RepositorioUf.cs" />
     <Compile Include="Imeplementacoes\RepositorioUsuario.cs" />

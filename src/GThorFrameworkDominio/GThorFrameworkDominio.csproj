@@ -61,6 +61,7 @@
     <Compile Include="Dominios\Veiculos\Flags\TipoRodado.cs" />
     <Compile Include="Dominios\Veiculos\Veiculo.cs" />
     <Compile Include="Dto\EmpresaDto.cs" />
+    <Compile Include="Dto\PerfilMdfeDto.cs" />
     <Compile Include="Dto\PessoaDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
