@@ -114,6 +114,9 @@
     <Compile Include="Views\Empresas\EmpresaForm.xaml.cs">
       <DependentUpon>EmpresaForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PerfilsMdfe\PerfilMdfeForm.xaml.cs">
+      <DependentUpon>PerfilMdfeForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Pessoas\PessoaForm.xaml.cs">
       <DependentUpon>PessoaForm.xaml</DependentUpon>
     </Compile>
@@ -144,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Empresas\EmpresaForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\PerfilsMdfe\PerfilMdfeForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -226,7 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Recursos\Imagens\" />
-    <Folder Include="Views\PerfilsMdfe\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\IconesMenuPrincipal\mdfe.png" />
