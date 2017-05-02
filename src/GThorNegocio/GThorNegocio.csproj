@@ -49,6 +49,7 @@
     <Compile Include="Contratos\INegocioDocumentoMdfe.cs" />
     <Compile Include="Contratos\INegocioEmpresa.cs" />
     <Compile Include="Contratos\INegocioMigracaoBancoDados.cs" />
+    <Compile Include="Contratos\INegocioPerfilMdfe.cs" />
     <Compile Include="Contratos\INegocioPessoa.cs" />
     <Compile Include="Contratos\INegocioUf.cs" />
     <Compile Include="Contratos\INegocioUsuario.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="Negocios\NegocioDocumentoMdfe.cs" />
     <Compile Include="Negocios\NegocioEmpresa.cs" />
     <Compile Include="Negocios\NegocioMigracaoBancoDados.cs" />
+    <Compile Include="Negocios\NegocioPerfilMdfe.cs" />
     <Compile Include="Negocios\NegocioPessoa.cs" />
     <Compile Include="Negocios\NegocioUf.cs" />
     <Compile Include="Negocios\NegocioUsuario.cs" />
