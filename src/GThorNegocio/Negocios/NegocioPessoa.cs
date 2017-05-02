@@ -21,7 +21,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetSession(instancia);
+                _repositorioPessoa.SetNHibernateHelper(instancia);
                 return _repositorioPessoa.BuscarParaGridModel();
             }
         }
@@ -30,7 +30,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioPessoa.SetSession(instancia);
+                _repositorioPessoa.SetNHibernateHelper(instancia);
 
                 _repositorioPessoa.SalvarOuAtualizar(entity);
             }
@@ -40,7 +40,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetSession(instancia);
+                _repositorioPessoa.SetNHibernateHelper(instancia);
 
                 var pessoa = _repositorioPessoa.CarregarPorId(id);
 
@@ -52,7 +52,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioPessoa.SetSession(instancia);
+                _repositorioPessoa.SetNHibernateHelper(instancia);
                 return _repositorioPessoa.Lista();
             }
         }

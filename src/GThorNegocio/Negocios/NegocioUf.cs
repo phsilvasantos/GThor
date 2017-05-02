@@ -20,7 +20,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUf.SetSession(instancia);
+                _repositorioUf.SetNHibernateHelper(instancia);
                 var uf = _repositorioUf.CarregarPorId(id);
 
                 return uf;
@@ -31,7 +31,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioUf.SetSession(instancia);
+                _repositorioUf.SetNHibernateHelper(instancia);
                 var listaUfs = _repositorioUf.Lista();
 
                 return listaUfs;

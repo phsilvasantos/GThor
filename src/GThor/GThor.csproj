@@ -98,6 +98,7 @@
     <Compile Include="Models\DocumentosMdfe\GridDocumentoMdfeModel.cs" />
     <Compile Include="Models\Empresas\EmpresaFormModel.cs" />
     <Compile Include="Models\Empresas\GridEmpresaModel.cs" />
+    <Compile Include="Models\PerfilsMdfe\GridPerfilMdfe.cs" />
     <Compile Include="Models\Pessoas\GridPessoaModel.cs" />
     <Compile Include="Models\Pessoas\PessoaFormModel.cs" />
     <Compile Include="Models\Usuarios\GridUsuarioModel.cs" />
@@ -225,6 +226,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Recursos\Imagens\" />
+    <Folder Include="Views\PerfilsMdfe\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Recursos\IconesMenuPrincipal\mdfe.png" />

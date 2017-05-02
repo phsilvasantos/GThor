@@ -20,7 +20,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCidade.SetSession(instancia);
+                _repositorioCidade.SetNHibernateHelper(instancia);
                 return _repositorioCidade.CarregarPorId(id);
             }
         }
@@ -29,7 +29,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCidade.SetSession(instancia);
+                _repositorioCidade.SetNHibernateHelper(instancia);
                 return _repositorioCidade.Lista();
             }
         }

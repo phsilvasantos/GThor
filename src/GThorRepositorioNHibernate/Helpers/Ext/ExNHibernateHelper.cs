@@ -5,7 +5,7 @@ namespace GThorRepositorioNHibernate.Helpers.Ext
 {
     public static class ExNHibernateHelper
     {
-        public static void SetSession(this IRepositorioContexto repositorioBase, INHibernateHelper hibernateHelper)
+        public static void SetNHibernateHelper(this IRepositorioContexto repositorioBase, INHibernateHelper hibernateHelper)
         {
             var repositorio = (IRepositorioBase) repositorioBase;
 

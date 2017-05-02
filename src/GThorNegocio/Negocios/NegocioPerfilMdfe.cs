@@ -3,6 +3,8 @@ using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
 using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
+using GThorRepositorioNHibernate.Helpers;
+using GThorRepositorioNHibernate.Helpers.Ext;
 
 namespace GThorNegocio.Negocios
 {
@@ -17,27 +19,47 @@ namespace GThorNegocio.Negocios
 
         public void SalvarOuAtualizar(PerfilMdfe entity)
         {
-            _repositorioPerfilMdfe.SalvarOuAtualizar(entity);
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
+            {
+                _repositorioPerfilMdfe.SetNHibernateHelper(instancia);
+                _repositorioPerfilMdfe.SalvarOuAtualizar(entity);
+            }
         }
 
         public void Deletar(PerfilMdfe entity)
         {
-            _repositorioPerfilMdfe.Deletar(entity);
+            using (var instancia = NHibernateHelper.InstanciaComTransacao())
+            {
+                _repositorioPerfilMdfe.SetNHibernateHelper(instancia);
+                _repositorioPerfilMdfe.Deletar(entity);
+            }
         }
 
         public IEnumerable<PerfilMdfeDto> BuscarParaGridModel()
         {
-            return _repositorioPerfilMdfe.BuscarParaGridModel();
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioPerfilMdfe.SetNHibernateHelper(instancia);
+                return _repositorioPerfilMdfe.BuscarParaGridModel();
+            }
         }
 
         public PerfilMdfe CarregarPorId(int id)
         {
-            return _repositorioPerfilMdfe.CarregarPorId(id);
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioPerfilMdfe.SetNHibernateHelper(instancia);
+                return _repositorioPerfilMdfe.CarregarPorId(id);
+            }
         }
 
         public IEnumerable<PerfilMdfe> Lista()
         {
-            return _repositorioPerfilMdfe.Lista();
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioPerfilMdfe.SetNHibernateHelper(instancia);
+                return _repositorioPerfilMdfe.Lista();
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioCertificadoDigital.SetSession(instancia);
+                _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
                 _repositorioCertificadoDigital.SalvarOuAtualizar(certificadoDigital);
             }
         }
@@ -29,7 +29,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetSession(instancia);
+                _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
                 return _repositorioCertificadoDigital.CarregarPorId(id);
             }
         }
@@ -38,7 +38,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.Instancia())
             {
-                _repositorioCertificadoDigital.SetSession(instancia);
+                _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
                 return _repositorioCertificadoDigital.Lista();
             }
         }
@@ -47,7 +47,7 @@ namespace GThorNegocio.Negocios
         {
             using (var instancia = NHibernateHelper.InstanciaComTransacao())
             {
-                _repositorioCertificadoDigital.SetSession(instancia);
+                _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
                 _repositorioCertificadoDigital.Deletar(certificadoDigital);
             }
         }

@@ -5,6 +5,7 @@ using GThor.Models;
 using GThor.Models.CertificadoDigitais;
 using GThor.Models.DocumentosMdfe;
 using GThor.Models.Empresas;
+using GThor.Models.PerfilsMdfe;
 using GThor.Models.Pessoas;
 using GThor.Models.Usuarios;
 using GThor.Models.Veiculos;
@@ -62,7 +63,7 @@ namespace GThor
 
         private void PerfilMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            AbrirTabItem("Perfils MDF-e", DataGridPadrao.Criar(new GridPerfilMdfe(NegocioCriador.CriaNegocioPerfilMdfe())));
         }
 
         private void AbrirTabItem(string titulo, UserControl janela)
