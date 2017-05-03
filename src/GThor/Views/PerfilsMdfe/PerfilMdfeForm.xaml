@@ -34,16 +34,18 @@
             SelectedValue="{Binding AmbienteSefaz}"
         ></ComboBox>
 
-        <comboBox:ComboBoxUf></comboBox:ComboBoxUf>
+        <comboBox:ComboBoxUf Margin="0,8,0,0" CLabel="UF Carregamento"></comboBox:ComboBoxUf>
 
-        <comboBox:ComboBoxUf></comboBox:ComboBoxUf>
+        <comboBox:ComboBoxUf Margin="0,8,0,0" CLabel="UF Descarregamento"></comboBox:ComboBoxUf>
 
 
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Ultimo Número Usado (Primeira vez é? Então é 0)</TextBlock>
+        
+        
+        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Observação</TextBlock>
         <TextBox
             MaxLength="9"
-            Style="{StaticResource GThorTextBoxNumeroInteiro}" 
-            Text="{Binding UltimoNumeroUsado}"></TextBox>
+            TextWrapping="Wrap" 
+            Text="{Binding Observacao}"></TextBox>
 
         <views1:BotoesCrud></views1:BotoesCrud>
     </StackPanel>
