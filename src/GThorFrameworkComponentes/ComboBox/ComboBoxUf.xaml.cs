@@ -17,6 +17,26 @@ namespace GThorFrameworkComponentes.ComboBox
             EventManager.RegisterRoutedEvent("PickItem", RoutingStrategy.Bubble,
                 typeof(RoutedEventHandler), typeof(ComboBoxUf));
 
+
+        public string CLabel
+        {
+            get => (string)GetValue(CLabelProperty);
+            set => SetValue(CLabelProperty, value);
+        }
+
+        public static readonly DependencyProperty CLabelProperty =
+            DependencyProperty.Register("CLabel", typeof(string), typeof(ComboBoxUf), new PropertyMetadata(string.Empty, CLabelCallback));
+
+        private static void CLabelCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var comboBoxUf = d as ComboBoxUf;
+
+            if (comboBoxUf == null) return;
+
+            comboBoxUf.CLabelNome.Text = e.NewValue.ToString();
+        }
+
+
         public event RoutedEventHandler PickItem
         {
             add => AddHandler(PickItemEvent, value);
