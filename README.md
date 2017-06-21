@@ -1,6 +1,6 @@
 # GThor
 
-Inicamos com a seguinte frase: Reid Hoffman - “Se você não tem vergonha da primeira versão do seu produto, você lançou tarde demais“
+Reid Hoffman - “Se você não tem vergonha da primeira versão do seu produto, você lançou tarde demais“
 
 Gerenciador Thor - Emissor Gratuito de Documentos Fiscais Eletrônicos 
 
