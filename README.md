@@ -17,8 +17,6 @@ NHibernate
 
 PostgreSQL 9.6.2
 
-Pencil - Protótipo
-
 ## Roteiro
 
 Para obter mais detalhes sobre a programação de lançamento, consulte o artigo [**Roteiro**](https://github.com/AutomacaoNet/GThor/wiki/Roteiro) no wiki.
