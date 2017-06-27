@@ -56,6 +56,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBox\Empresas\ComboBoxEmpresa.xaml.cs">
+      <DependentUpon>ComboBoxEmpresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ComboBox\EstadosUFs\ComboBoxCidade.xaml.cs">
       <DependentUpon>ComboBoxCidade.xaml</DependentUpon>
     </Compile>
@@ -92,6 +95,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ComboBox\Empresas\ComboBoxEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboBox\EstadosUFs\ComboBoxCidade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,8 +134,6 @@
       <Name>GThorRepositorio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComboBox\Empresas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

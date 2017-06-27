@@ -8,6 +8,7 @@
         xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
         xmlns:flags1="clr-namespace:GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;assembly=GThorFrameworkDominio"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
+        xmlns:empresas="clr-namespace:GThorFrameworkComponentes.ComboBox.Empresas;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
@@ -18,12 +19,7 @@
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
         <TextBox MaxLength="120" Text="{Binding Descricao}"></TextBox>
 
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Empresa</TextBlock>
-        <ComboBox
-            IsEditable="False"
-            ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags1:AmbienteSefaz}}}"
-            SelectedValue="{Binding AmbienteSefaz}"
-        ></ComboBox>
+        <empresas:ComboBoxEmpresa PickItemEmpresa="ComboBoxEmpresa_OnPickItemEmpresa"></empresas:ComboBoxEmpresa>
 
         <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Certificado Digital</TextBlock>
         <ComboBox

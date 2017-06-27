@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
+using GThorFrameworkDominio.Dto.Empresas;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioNHibernate.Helpers;
@@ -59,6 +60,15 @@ namespace GThorNegocio.Negocios
             {
                 _repositorioEmpresa.SetNHibernateHelper(instancia);
                 return _repositorioEmpresa.BuscarParaGridModel();
+            }
+        }
+
+        public IEnumerable<EmpresaComboBoxDto> BuscarParaComboBox()
+        {
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioEmpresa.SetNHibernateHelper(instancia);
+                return _repositorioEmpresa.BuscarParaComboBox();
             }
         }
     }

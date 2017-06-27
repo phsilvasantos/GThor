@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
+using GThorFrameworkDominio.Dto.Empresas;
 using GThorRepositorio.Contratos;
 using GThorRepositorioNHibernate.Imeplementacoes.Base;
 using NHibernate.Transform;
@@ -44,6 +45,22 @@ namespace GThorRepositorioNHibernate.Imeplementacoes
             query.TransformUsing(Transformers.AliasToBean<EmpresaDto>());
 
             var lista = query.List<EmpresaDto>();
+
+            return lista;
+        }
+
+        public IEnumerable<EmpresaComboBoxDto> BuscarParaComboBox()
+        {
+            Empresa empresaAlias = null;
+            EmpresaComboBoxDto resultado = null;
+
+            var query = Sessao.QueryOver(() => empresaAlias)
+                .SelectList(list => list.Select(() => empresaAlias.Id).WithAlias(() => resultado.Id)
+                    .Select(() => empresaAlias.RazaoSocial).WithAlias(() => resultado.RazaoSocial));
+
+            query.TransformUsing(Transformers.AliasToBean<EmpresaComboBoxDto>());
+
+            var lista = query.List<EmpresaComboBoxDto>();
 
             return lista;
         }

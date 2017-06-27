@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using GThor.Views.PerfilsMdfe;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dto;
 using GThorFrameworkWpf.Models.DataGrid;
@@ -44,6 +45,11 @@ namespace GThor.Models.PerfilsMdfe
             AdicionarDataGridColumn(() => perfilMdfeDto.Descricao);
             AdicionarDataGridColumn(() => perfilMdfeDto.AmbienteSefaz, 200);
             AdicionarDataGridColumn(() => perfilMdfeDto.UltimoNumeroEmitido, 200);
+        }
+
+        public override void NovoRegistroAction(object obj)
+        {
+            new PerfilMdfeForm().ShowDialog();
         }
     }
 }

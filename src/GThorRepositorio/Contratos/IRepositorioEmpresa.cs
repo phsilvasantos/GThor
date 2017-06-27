@@ -1,5 +1,7 @@
-﻿using GThorFrameworkDominio.Dominios.Empresas;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dto;
+using GThorFrameworkDominio.Dto.Empresas;
 using GThorFrameworkRepositorio.Contratos;
 using GThorRepositorio.Contratos.Base;
 
@@ -12,5 +14,6 @@ namespace GThorRepositorio.Contratos
         ISuporteDeletar<Empresa>,
         ISuporteGridModel<EmpresaDto>
     {
+        IEnumerable<EmpresaComboBoxDto> BuscarParaComboBox();
     }
 }

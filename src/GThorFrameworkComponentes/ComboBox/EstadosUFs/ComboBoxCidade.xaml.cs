@@ -17,7 +17,7 @@ namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
 
         private static readonly RoutedEvent PickItemCidadeEvent =
             EventManager.RegisterRoutedEvent("PickItemCidade", RoutingStrategy.Bubble,
-                typeof(RoutedEventHandler), typeof(EstadosUFs.ComboBoxUf));
+                typeof(RoutedEventHandler), typeof(ComboBoxUf));
 
         public event RoutedEventHandler PickItemCidade
         {
