@@ -1,8 +1,8 @@
 ﻿using FluentMigrator;
 
-namespace GThorMigracaoBancoDados.Migracoes
+namespace GThorMigracaoBancoDados.Migracoes.V09
 {
-    [Migration(131379040918671606)]
+    [Migration(9)]
     public class InsereCidades : Migration
     {
         public override void Up()

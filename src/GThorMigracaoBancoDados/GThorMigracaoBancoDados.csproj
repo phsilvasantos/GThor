@@ -47,17 +47,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExecutaMigracao.cs" />
-    <Compile Include="Migracoes\CriaTabelaCertificado.cs" />
-    <Compile Include="Migracoes\CriaTabelaCidade.cs" />
-    <Compile Include="Migracoes\CriaTabelaDocumentoMdfe.cs" />
-    <Compile Include="Migracoes\CriaTabelaEmpresa.cs" />
-    <Compile Include="Migracoes\CriaTabelaEstadoUf.cs" />
-    <Compile Include="Migracoes\CriaTabelaPerfilMdfe.cs" />
-    <Compile Include="Migracoes\CriaTabelaPessoaERelacoes.cs" />
-    <Compile Include="Migracoes\CriaTabelaUsuario.cs" />
-    <Compile Include="Migracoes\CriaTabelaVeiculo.cs" />
-    <Compile Include="Migracoes\InsereCidades.cs" />
-    <Compile Include="Migracoes\InsereEstadosUf.cs" />
+    <Compile Include="Migracoes\V04\CriaTabelaCertificado.cs" />
+    <Compile Include="Migracoes\V02\CriaTabelaCidade.cs" />
+    <Compile Include="Migracoes\V05\CriaTabelaDocumentoMdfe.cs" />
+    <Compile Include="Migracoes\V07\CriaTabelaEmpresa.cs" />
+    <Compile Include="Migracoes\V01\CriaTabelaEstadoUf.cs" />
+    <Compile Include="Migracoes\V11\CriaTabelaPerfilMdfe.cs" />
+    <Compile Include="Migracoes\V10\CriaTabelaPessoaERelacoes.cs" />
+    <Compile Include="Migracoes\V03\CriaTabelaUsuario.cs" />
+    <Compile Include="Migracoes\V06\CriaTabelaVeiculo.cs" />
+    <Compile Include="Migracoes\V09\InsereCidades.cs" />
+    <Compile Include="Migracoes\V08\InsereEstadosUf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

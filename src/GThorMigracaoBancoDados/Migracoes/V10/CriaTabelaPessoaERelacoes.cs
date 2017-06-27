@@ -1,8 +1,8 @@
 ﻿using FluentMigrator;
 
-namespace GThorMigracaoBancoDados.Migracoes
+namespace GThorMigracaoBancoDados.Migracoes.V10
 {
-    [Migration(131379850045588718)]
+    [Migration(10)]
     public class CriaTabelaPessoaERelacoes : Migration
     {
         public override void Up()
