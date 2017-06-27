@@ -18,7 +18,7 @@
         <Button 
                 controls:VisibilityHelper.IsVisible="{Binding MostrarBotaoSalvar}" 
                 Command="{Binding SalvarCommand}"
-                Height="45" Margin="0,0,5,0" Style="{StaticResource ComercialSuccessButton}">
+                 Margin="0,0,5,0" Style="{StaticResource ComercialSuccessButton}">
             <StackPanel Orientation="Horizontal" Width="147">
                 <iconPacks:PackIconModern Width="20"
                                               VerticalAlignment="Center"
@@ -32,7 +32,7 @@
         <Button 
             controls:VisibilityHelper.IsVisible="{Binding MostrarBotaoFechar}" 
                 Command="{Binding FecharCommand}"
-            Grid.Column="1" Height="45" Style="{StaticResource ComercialDangerButton}"
+            Grid.Column="1"  Style="{StaticResource ComercialDangerButton}"
                 >
             <StackPanel Orientation="Horizontal" Width="147">
                 <iconPacks:PackIconModern Width="20"

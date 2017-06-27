@@ -12,7 +12,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
+        Background="{StaticResource WhiteBrush}"
         Title="CADASTRO DE EMPRESA" Height="615" Width="900"
         ContentRendered="EmpresaForm_OnContentRendered">
 

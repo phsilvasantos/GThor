@@ -23,8 +23,6 @@
     <Style TargetType="TextBox" x:Key="GThorTextBox" BasedOn="{StaticResource MetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
-        <Setter Property="Height" Value="36"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True" />
         <Setter Property="helpers:GThorTextBoxHelper.Trim" Value="True"></Setter>
     </Style>
@@ -34,7 +32,6 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="ControlForm" BasedOn="{StaticResource MetroTextBlock}">
-        <Setter Property="FontSize" Value="15"></Setter>
         <Setter Property="Foreground" Value="White"></Setter>
     </Style>
 
@@ -46,23 +43,17 @@
     <Style TargetType="TextBox" x:Key="ComercialSearchTextBox" BasedOn="{StaticResource SearchMetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
-        <Setter Property="Height" Value="36"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True" />
     </Style>
 
     <Style TargetType="PasswordBox" x:Key="ComercialPasswordBox" BasedOn="{StaticResource Win8MetroPasswordBox}">
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
-        <Setter Property="Height" Value="36"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
         <Setter Property="controls:TextBoxHelper.SelectAllOnFocus" Value="True"></Setter>
     </Style>
 
     <Style TargetType="ComboBox" x:Key="ComercialComboBox" BasedOn="{StaticResource MetroComboBox}">
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
         <Setter Property="IsEditable" Value="True" />
-        <Setter Property="Height" Value="36"></Setter>
-        <Setter Property="FontSize" Value="20"></Setter>
     </Style>
 
     <Style TargetType="RadioButton" x:Key="ComercialRadioButton" BasedOn="{StaticResource MetroRadioButton}">
@@ -116,18 +107,13 @@
            TargetType="controls:MetroWindow"
            BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
 
-        <Setter Property="GlowBrush" Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="GlowBrush" Value="{DynamicResource AccentColorBrush}"/>
         <Setter Property="WindowTransitionsEnabled" Value="False" />
         <Setter Property="Language" Value="pt-BR" />
         <Setter Property="WindowState" Value="Maximized"></Setter>
         <!-- ICONE Setter Property="Icon" Value="../../Resources/Imagens/logo48x48.png" /-->
         <Setter Property="ShowIconOnTitleBar" Value="True" />
         <Setter Property="Title" Value="Sistema Thor"></Setter>
-    </Style>
-
-    <Style x:Key="ComercialFormWindow" TargetType="controls:MetroWindow" BasedOn="{StaticResource ComercialWindow}">
-        <Setter Property="WindowState" Value="Normal"></Setter>
-        <Setter Property="ResizeMode" Value="CanMinimize"></Setter>
     </Style>
 
     <Style x:Key="ToggleSwitchWin10" TargetType="controls:ToggleSwitch"
@@ -139,6 +125,11 @@
            TargetType="controls:MetroWindow"
            BasedOn="{StaticResource {x:Type controls:MetroWindow}}">
 
+        <Setter Property="GlowBrush" Value="{DynamicResource AccentColorBrush}" />
+        <Setter Property="WindowTransitionsEnabled" Value="False" />
+        <Setter Property="Language" Value="pt-BR" />
+        <!--Setter Property="Icon" Value="../../Resources/Imagens/logo48x48.png" /-->
+        <Setter Property="ShowIconOnTitleBar" Value="True" />
         <Setter Property="BorderThickness" Value="1" />
         <Setter Property="ResizeMode" Value="NoResize" />
         <Setter Property="WindowButtonCommandsOverlayBehavior" Value="Never" />
@@ -150,7 +141,6 @@
     </Style>
 
     <Style x:Key="ComercialDataGridRow"  BasedOn="{StaticResource MetroDataGridRow}" TargetType="{x:Type DataGridRow}" >
-        <Setter Property="Height" Value="40"></Setter>
     </Style>
 
     <Style TargetType="TextBox" BasedOn="{StaticResource GThorTextBox}" />
