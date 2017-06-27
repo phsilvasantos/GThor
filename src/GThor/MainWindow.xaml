@@ -42,27 +42,27 @@
                 </Style>
             </ListBox.ItemContainerStyle>
 
-            <Border BorderThickness="0" Background="OliveDrab">
-                <Expander Background="OliveDrab" Focusable="False">
-                    <Expander.Header>
-                        <BulletDecorator Focusable="False">
-                            <BulletDecorator.Bullet>
-                                <Image Focusable="False" Source="/Recursos/IconesMenuPrincipal/parametros.png" Width="64" Height="64" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                            </BulletDecorator.Bullet>
-                            <TextBlock Focusable="False" Margin="10,0,0,0" Text="Manutenção" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White" />
-                        </BulletDecorator>
-                    </Expander.Header>
-                    <WrapPanel Orientation="Vertical"  Focusable="False">
-                        <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Empresas" MouseDown="GerenciarEmpresa_OnMouseDown"/>
-                        <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Usuários" MouseDown="GerenciarUsuarios_OnMouseDown"/>
-                        <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Certificado Digitais" MouseDown="CertificadoDigitais_OnMouseDown" />
-                        <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Documento MDF-e" MouseDown="DocumentoMdfe_OnMouseDown"/>
-                    </WrapPanel>
-                </Expander>
-            </Border>
+            
+            <Expander Style="{StaticResource ExpanderGThorMenu}" Background="OliveDrab" Focusable="False">
+                <Expander.Header>
+                    <BulletDecorator Focusable="False">
+                        <BulletDecorator.Bullet>
+                            <Image Focusable="False" Source="/Recursos/IconesMenuPrincipal/parametros.png" Width="64" Height="64" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        </BulletDecorator.Bullet>
+                        <TextBlock Focusable="False" Margin="10,0,0,0" Text="Manutenção" VerticalAlignment="Center" HorizontalAlignment="Stretch" Foreground="White" />
+                    </BulletDecorator>
+                </Expander.Header>
+                <WrapPanel Orientation="Vertical"  Focusable="False">
+                    <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Empresas" MouseDown="GerenciarEmpresa_OnMouseDown"/>
+                    <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Usuários" MouseDown="GerenciarUsuarios_OnMouseDown"/>
+                    <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Certificado Digitais" MouseDown="CertificadoDigitais_OnMouseDown" />
+                    <Label Focusable="False" Margin="20,5,5,5" Foreground="white" Content="Documento MDF-e" MouseDown="DocumentoMdfe_OnMouseDown"/>
+                </WrapPanel>
+            </Expander>
 
-            <Border BorderThickness="0" Background="OrangeRed">
-                <Expander Focusable="False" Background="OrangeRed">
+
+
+            <Expander Style="{StaticResource ExpanderGThorMenu}" Focusable="False" Background="OrangeRed">
                     <Expander.Header>
                         <BulletDecorator>
                             <BulletDecorator.Bullet>
@@ -77,10 +77,10 @@
                         <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui"/>
                     </WrapPanel>
                 </Expander>
-            </Border>
 
-            <Border BorderThickness="0" Background="Teal">
-                <Expander Focusable="False" Background="Teal">
+
+
+            <Expander Style="{StaticResource ExpanderGThorMenu}" Focusable="False" Background="Teal">
                     <Expander.Header>
                         <BulletDecorator>
                             <BulletDecorator.Bullet>
@@ -95,10 +95,10 @@
                         <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui"/>
                     </WrapPanel>
                 </Expander>
-            </Border>
 
-            <Border BorderThickness="0" Background="Orange">
-                <Expander Focusable="False" Background="Orange">
+
+
+            <Expander Style="{StaticResource ExpanderGThorMenu}" Focusable="False" Background="Orange">
                     <Expander.Header>
                         <BulletDecorator>
                             <BulletDecorator.Bullet>
@@ -115,10 +115,10 @@
                         <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui"/>
                     </WrapPanel>
                 </Expander>
-            </Border>
             
+
             <Border BorderThickness="0" Background="Blue">
-                <Expander Focusable="False" Background="Blue">
+                <Expander Focusable="False" Background="Blue" Template="{DynamicResource ExpanderControlTemplateGThor}">
                     <Expander.Header>
                         <BulletDecorator>
                             <BulletDecorator.Bullet>

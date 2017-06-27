@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\Contratos\" />
+    <Folder Include="Views\ExpanderCustom\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
