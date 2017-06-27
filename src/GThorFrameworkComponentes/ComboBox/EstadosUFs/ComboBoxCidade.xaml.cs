@@ -9,7 +9,7 @@ using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Criadores;
 using JetBrains.Annotations;
 
-namespace GThorFrameworkComponentes.ComboBox
+namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
 {
     public partial class ComboBoxCidade : INotifyPropertyChanged
     {
@@ -17,7 +17,7 @@ namespace GThorFrameworkComponentes.ComboBox
 
         private static readonly RoutedEvent PickItemCidadeEvent =
             EventManager.RegisterRoutedEvent("PickItemCidade", RoutingStrategy.Bubble,
-                typeof(RoutedEventHandler), typeof(ComboBoxUf));
+                typeof(RoutedEventHandler), typeof(EstadosUFs.ComboBoxUf));
 
         public event RoutedEventHandler PickItemCidade
         {

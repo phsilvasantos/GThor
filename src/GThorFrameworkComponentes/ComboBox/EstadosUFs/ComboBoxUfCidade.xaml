@@ -1,9 +1,10 @@
-﻿<UserControl x:Class="GThorFrameworkComponentes.ComboBox.ComboBoxUfCidade"
+﻿<UserControl x:Class="GThorFrameworkComponentes.ComboBox.EstadosUFs.ComboBoxUfCidade"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:GThorFrameworkComponentes.ComboBox"
+             xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs"
              mc:Ignorable="d" 
              Loaded="ComboBoxUfCidade_OnLoaded"
              d:DesignHeight="70" d:DesignWidth="600" Background="Transparent">
@@ -14,10 +15,10 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <local:ComboBoxUf x:Name="ComboBoxUfPicker"></local:ComboBoxUf>
+            <estadosUFs:ComboBoxUf x:Name="ComboBoxUfPicker"></estadosUFs:ComboBoxUf>
             
-            <local:ComboBoxCidade 
-                x:Name="ComboBoxCidadePicker" Grid.Column="1" Margin="5,0,0,0"></local:ComboBoxCidade>
+            <estadosUFs:ComboBoxCidade 
+                x:Name="ComboBoxCidadePicker" Grid.Column="1" Margin="5,0,0,0"></estadosUFs:ComboBoxCidade>
         </Grid>
     </StackPanel>
 </UserControl>

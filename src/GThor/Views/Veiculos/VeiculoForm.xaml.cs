@@ -2,6 +2,7 @@
 using GThor.Models.Veiculos;
 using GThorFrameworkComponentes.ComboBox;
 using GThorFrameworkDominio.Dominios.EstadosUf;
+using ComboBoxUf = GThorFrameworkComponentes.ComboBox.EstadosUFs.ComboBoxUf;
 
 namespace GThor.Views.Veiculos
 {

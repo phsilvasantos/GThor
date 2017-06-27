@@ -2,7 +2,7 @@
 using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 
-namespace GThorFrameworkComponentes.ComboBox
+namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
 {
     public partial class ComboBoxUfCidade
     {

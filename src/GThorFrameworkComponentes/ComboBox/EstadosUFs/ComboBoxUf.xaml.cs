@@ -7,7 +7,7 @@ using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorNegocio.Criadores;
 using JetBrains.Annotations;
 
-namespace GThorFrameworkComponentes.ComboBox
+namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {

@@ -56,13 +56,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComboBox\ComboBoxCidade.xaml.cs">
+    <Compile Include="ComboBox\EstadosUFs\ComboBoxCidade.xaml.cs">
       <DependentUpon>ComboBoxCidade.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComboBox\ComboBoxUf.xaml.cs">
+    <Compile Include="ComboBox\EstadosUFs\ComboBoxUf.xaml.cs">
       <DependentUpon>ComboBoxUf.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ComboBox\ComboBoxUfCidade.xaml.cs">
+    <Compile Include="ComboBox\EstadosUFs\ComboBoxUfCidade.xaml.cs">
       <DependentUpon>ComboBoxUfCidade.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,15 +92,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ComboBox\ComboBoxCidade.xaml">
+    <Page Include="ComboBox\EstadosUFs\ComboBoxCidade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ComboBox\ComboBoxUf.xaml">
+    <Page Include="ComboBox\EstadosUFs\ComboBoxUf.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="ComboBox\ComboBoxUfCidade.xaml">
+    <Page Include="ComboBox\EstadosUFs\ComboBoxUfCidade.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -126,6 +126,9 @@
       <Project>{50881F48-DE6F-4BE7-A859-EBE1A582DEC9}</Project>
       <Name>GThorRepositorio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ComboBox\Empresas\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

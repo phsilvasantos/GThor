@@ -2,6 +2,7 @@
 using System.Windows;
 using GThor.Models.Empresas;
 using GThorFrameworkComponentes.ComboBox;
+using ComboBoxUfCidade = GThorFrameworkComponentes.ComboBox.EstadosUFs.ComboBoxUfCidade;
 
 namespace GThor.Views.Empresas
 {

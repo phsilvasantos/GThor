@@ -8,6 +8,7 @@
         xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:comboBox="clr-namespace:GThorFrameworkComponentes.ComboBox;assembly=GThorFrameworkComponentes"
+        xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
@@ -159,7 +160,7 @@
                 </Grid.ColumnDefinitions>
 
                 <StackPanel Margin="0,8,0,0">
-                    <comboBox:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></comboBox:ComboBoxUfCidade>
+                    <estadosUFs:ComboBoxUfCidade x:Name="ComboBoxUfCidade" PickItemComboUfCidade="ComboBoxUfCidade_OnPickItemComboUfCidade"></estadosUFs:ComboBoxUfCidade>
                 </StackPanel>
 
                 <StackPanel Grid.Column="1" Margin="5,0,0,0">
