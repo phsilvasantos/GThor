@@ -13,8 +13,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
-        Title="CADASTRO DE PERFIL MDF-E" Height="700" Width="600">
+        Title="CADASTRO DE PERFIL MDF-E" Width="600">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>

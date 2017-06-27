@@ -14,8 +14,7 @@
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
-        Background="{StaticResource AccentColorBrush}"
-        Title="CADASTRO DE PESSOA" Height="665" Width="900"
+        Title="CADASTRO DE PESSOA" Width="900"
         LoadedCommand="{Binding LoadedCommand}"
                    ContentRendered="PessoaForm_OnContentRendered">
 

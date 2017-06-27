@@ -10,8 +10,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
-        Title="Certificado Digital" Height="460" Width="600">
+        Title="Certificado Digital" Width="600">
 
 
     <StackPanel Margin="24">

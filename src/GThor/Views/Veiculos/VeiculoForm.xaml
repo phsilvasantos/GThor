@@ -12,8 +12,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
-        Title="CADASTRO DE VEÍCULO" Height="400" Width="1000">
+        Title="CADASTRO DE VEÍCULO" Width="1000">
     
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Código Interno</TextBlock>

@@ -32,11 +32,9 @@
     </Style>
 
     <Style TargetType="TextBlock" x:Key="ControlForm" BasedOn="{StaticResource MetroTextBlock}">
-        <Setter Property="Foreground" Value="White"></Setter>
     </Style>
 
     <Style TargetType="TextBlock" x:Key="ControlFormBlack" BasedOn="{StaticResource ControlForm}">
-        <Setter Property="Foreground" Value="Black"></Setter>
     </Style>
 
 
@@ -128,6 +126,7 @@
         <Setter Property="GlowBrush" Value="{DynamicResource AccentColorBrush}" />
         <Setter Property="WindowTransitionsEnabled" Value="False" />
         <Setter Property="Language" Value="pt-BR" />
+        <Setter Property="SizeToContent" Value="Height"></Setter>
         <!--Setter Property="Icon" Value="../../Resources/Imagens/logo48x48.png" /-->
         <Setter Property="ShowIconOnTitleBar" Value="True" />
         <Setter Property="BorderThickness" Value="1" />

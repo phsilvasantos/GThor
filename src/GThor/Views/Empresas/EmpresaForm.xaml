@@ -13,7 +13,7 @@
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
         Background="{StaticResource WhiteBrush}"
-        Title="CADASTRO DE EMPRESA" Height="615" Width="900"
+        Title="CADASTRO DE EMPRESA" Width="900"
         ContentRendered="EmpresaForm_OnContentRendered">
 
     <StackPanel Margin="24">

@@ -11,8 +11,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
-        Title="Cadastro de Usuário" MinWidth="470" MinHeight="270" Width="470" Height="270">
+        Title="Cadastro de Usuário" Width="470">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Login</TextBlock>

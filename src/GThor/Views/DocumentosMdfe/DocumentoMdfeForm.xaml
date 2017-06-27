@@ -11,8 +11,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
-        Background="{StaticResource AccentColorBrush}"
-        Title="Documento MDF-e" Height="400" Width="600">
+        Title="Documento MDF-e" Width="600">
 
     <StackPanel Margin="24">
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
