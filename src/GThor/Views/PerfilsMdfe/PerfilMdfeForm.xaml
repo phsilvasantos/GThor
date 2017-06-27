@@ -8,7 +8,6 @@
         xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
         xmlns:flags1="clr-namespace:GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;assembly=GThorFrameworkDominio"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
-        xmlns:comboBox="clr-namespace:GThorFrameworkComponentes.ComboBox;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
@@ -32,19 +31,6 @@
             ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags1:AmbienteSefaz}}}"
             SelectedValue="{Binding AmbienteSefaz}"
         ></ComboBox>
-
-        <comboBox:ComboBoxUf Margin="0,8,0,0" CLabel="UF Carregamento"></comboBox:ComboBoxUf>
-
-        <comboBox:ComboBoxUf Margin="0,8,0,0" CLabel="UF Descarregamento"></comboBox:ComboBoxUf>
-
-
-        
-        
-        <TextBlock Margin="0,8,0,0" Style="{StaticResource ControlForm}">Observação</TextBlock>
-        <TextBox
-            MaxLength="9"
-            TextWrapping="Wrap" 
-            Text="{Binding Observacao}"></TextBox>
 
         <views1:BotoesCrud></views1:BotoesCrud>
     </StackPanel>
