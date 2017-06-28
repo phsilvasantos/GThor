@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using GThor.Models.PerfilsMdfe;
 using GThorFrameworkComponentes.ComboBox.CertificadosDigitais;
+using GThorFrameworkComponentes.ComboBox.DocumentosDfe;
 using GThorFrameworkComponentes.ComboBox.Empresas;
 
 namespace GThor.Views.PerfilsMdfe
@@ -15,9 +16,9 @@ namespace GThor.Views.PerfilsMdfe
             DataContext = _model;
             InitializeComponent();
 
-            ComboBoxEmpresa.EmpresaSelecionada = ComboBoxEmpresa.Default;
-            ComboBoxCertificadoDigital.CertificadoDigitalSelecionado =
-                ComboBoxCertificadoDigital.Default;
+            ComboBoxEmpresa.EmpresaSelecionada = ComboBoxEmpresa.Padrao;
+            ComboBoxCertificadoDigital.CertificadoDigitalSelecionado = ComboBoxCertificadoDigital.Padrao;
+            ComboBoxDocumentoMdfe.DocumentoMdfeSelecionado = ComboBoxDocumentoMdfe.Padrao;
         }
 
         private void ComboBoxEmpresa_OnPickItemEmpresa(object sender, RoutedEventArgs e)
@@ -36,6 +37,15 @@ namespace GThor.Views.PerfilsMdfe
             var certificadoDigitalComboBoxDto = comboBoxCertificadoDigital?.CertificadoDigitalSelecionado;
 
             _model.CertificadoDigitalComboBoxDto = certificadoDigitalComboBoxDto;
+        }
+
+        private void ComboBoxDocumentoMdfe_OnPickItemDocumentoMdfe(object sender, RoutedEventArgs e)
+        {
+            var comboBoxDocumentoMdfe = e.Source as ComboBoxDocumentoMdfe;
+
+            var documentoMdfeComboBoxDto = comboBoxDocumentoMdfe?.DocumentoMdfeSelecionado;
+
+            _model.DocumentoMdfeComboBoxDto = documentoMdfeComboBoxDto;
         }
     }
 }

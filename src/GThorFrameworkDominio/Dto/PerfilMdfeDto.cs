@@ -7,6 +7,6 @@ namespace GThorFrameworkDominio.Dto
         public int Id { get; set; }
         public string Descricao { get; set; }
         public AmbienteSefaz AmbienteSefaz { get; set; }
-        public int UltimoNumeroEmitido { get; set; }
+        public long UltimoNumeroEmitido { get; set; }
     }
 }

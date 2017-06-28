@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
+using GThorFrameworkDominio.Dto.DocumentosMdfe;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioNHibernate.Helpers;
@@ -51,6 +52,16 @@ namespace GThorNegocio.Negocios
             {
                 _repositorioDocumentoMdfe.SetNHibernateHelper(instancia);
                 _repositorioDocumentoMdfe.Deletar(documentoMdfe);
+            }
+        }
+
+        public IEnumerable<DocumentoMdfeComboBoxDto> BuscarParaComboBox()
+        {
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioDocumentoMdfe.SetNHibernateHelper(instancia);
+
+                return _repositorioDocumentoMdfe.BuscarParaComboBox();
             }
         }
     }

@@ -55,7 +55,7 @@ namespace GThorFrameworkComponentes.ComboBox.CertificadosDigitais
             }
         }
 
-        public CertificadoDigitalComboBoxDto Default { get; } = new CertificadoDigitalComboBoxDto{Id = 1};
+        public CertificadoDigitalComboBoxDto Padrao { get; } = new CertificadoDigitalComboBoxDto {Id = 1};
 
         public ComboBoxCertificadoDigital()
         {
@@ -64,10 +64,7 @@ namespace GThorFrameworkComponentes.ComboBox.CertificadosDigitais
             ListaCertificadoDigital = new ObservableCollection<CertificadoDigitalComboBoxDto>();
             InicializaCertificadosDigitais();
 
-            PesquisarPorCertificadoDigital(new CertificadoDigitalComboBoxDto
-            {
-                Id = 1
-            });
+            PesquisarPorCertificadoDigital(Padrao);
         }
 
         private void InicializaCertificadosDigitais()

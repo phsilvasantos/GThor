@@ -10,6 +10,7 @@
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:empresas="clr-namespace:GThorFrameworkComponentes.ComboBox.Empresas;assembly=GThorFrameworkComponentes"
         xmlns:certificadosDigitais="clr-namespace:GThorFrameworkComponentes.ComboBox.CertificadosDigitais;assembly=GThorFrameworkComponentes"
+        xmlns:documentosDfe="clr-namespace:GThorFrameworkComponentes.ComboBox.DocumentosDfe;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
@@ -20,6 +21,8 @@
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
         <TextBox MaxLength="120" Text="{Binding Descricao}"></TextBox>
 
+        <documentosDfe:ComboBoxDocumentoMdfe x:Name="ComboBoxDocumentoMdfe" PickItemDocumentoMdfe="ComboBoxDocumentoMdfe_OnPickItemDocumentoMdfe"></documentosDfe:ComboBoxDocumentoMdfe>
+        
         <empresas:ComboBoxEmpresa x:Name="ComboBoxEmpresa" PickItemEmpresa="ComboBoxEmpresa_OnPickItemEmpresa"></empresas:ComboBoxEmpresa>
 
         <certificadosDigitais:ComboBoxCertificadoDigital x:Name="ComboBoxCertificadoDigital" PickItemCertificadoDigital="ComboBoxCertificadoDigital_OnPickItemCertificadoDigital"></certificadosDigitais:ComboBoxCertificadoDigital>

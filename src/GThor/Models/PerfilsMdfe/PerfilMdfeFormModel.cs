@@ -1,9 +1,11 @@
 ﻿using System;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkDominio.Dominios.Certificados;
+using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
 using GThorFrameworkDominio.Dominios.Empresas;
 using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
 using GThorFrameworkDominio.Dto.CertificadosDigitais;
+using GThorFrameworkDominio.Dto.DocumentosMdfe;
 using GThorFrameworkDominio.Dto.Empresas;
 using GThorFrameworkWpf.Models.Base;
 using GThorNegocio.Contratos;
@@ -30,6 +32,7 @@ namespace GThor.Models.PerfilsMdfe
 
         public EmpresaComboBoxDto EmpresaComboBoxDto { get; set; }
         public CertificadoDigitalComboBoxDto CertificadoDigitalComboBoxDto { get; set; }
+        public DocumentoMdfeComboBoxDto DocumentoMdfeComboBoxDto { get; set; }
 
         public PerfilMdfeFormModel(INegocioPerfilMdfe negocioPerfilMdfe)
         {
@@ -47,6 +50,7 @@ namespace GThor.Models.PerfilsMdfe
             PerfilMdfe.Descricao = Descricao;
             PerfilMdfe.CertificadoDigital = new CertificadoDigital {Id = CertificadoDigitalComboBoxDto.Id};
             PerfilMdfe.Empresa = new Empresa {Id = EmpresaComboBoxDto.Id};
+            PerfilMdfe.DocumentoMdfe = new DocumentoMdfe { Id = DocumentoMdfeComboBoxDto.Id };
 
             _negocioPerfilMdfe.SalvarOuAtualizar(PerfilMdfe);
         }
@@ -54,6 +58,8 @@ namespace GThor.Models.PerfilsMdfe
         private void ValidarInformacoes(object sender, EventArgs e)
         {
             Descricao = Descricao.TrimOrEmptyIsNotNull("Hmm, seu perfil não tem descrição. So pode cadastrar se tiver");
+
+            if (DocumentoMdfeComboBoxDto == null) throw new ArgumentException("Hmm, seu perfil não tem documento mdf-e. So pode cadastrar se tiver");
 
             if (EmpresaComboBoxDto == null) throw new ArgumentException("Hmm, seu perfil não tem empresa. So pode cadastrar se tiver");
 

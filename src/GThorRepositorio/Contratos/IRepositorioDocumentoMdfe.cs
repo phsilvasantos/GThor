@@ -1,4 +1,6 @@
-﻿using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos;
+using GThorFrameworkDominio.Dto.DocumentosMdfe;
 using GThorFrameworkRepositorio.Contratos;
 
 namespace GThorRepositorio.Contratos
@@ -9,6 +11,6 @@ namespace GThorRepositorio.Contratos
         ISuporteSalvar<DocumentoMdfe>,
         ISuporteDeletar<DocumentoMdfe>
     {
-        
+        IEnumerable<DocumentoMdfeComboBoxDto> BuscarParaComboBox();
     }
 }
