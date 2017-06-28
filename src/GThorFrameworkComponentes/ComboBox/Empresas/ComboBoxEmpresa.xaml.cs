@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using GThorFrameworkDominio.Dto.Empresas;
@@ -65,10 +64,7 @@ namespace GThorFrameworkComponentes.ComboBox.Empresas
             ListaEmpresa = new ObservableCollection<EmpresaComboBoxDto>();
             InicializaEmpresas();
 
-            PesquisarPorEmpresa(new EmpresaComboBoxDto
-            {
-                Id = 1
-            });
+            AtualizarComboBox();
         }
 
         private void InicializaEmpresas()
@@ -86,25 +82,16 @@ namespace GThorFrameworkComponentes.ComboBox.Empresas
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        private void PesquisarPorEmpresa(EmpresaComboBoxDto empresa)
+        private void AtualizarComboBox()
         {
-            if (empresa == null)
-            {
-                return;
-            }
-
             ListaEmpresa.Clear();
 
-            var empresasFiltradas = _cacheEmpresas.Where(e => e.Id == empresa.Id);
-
-            var empresasComboBoxDtos = empresasFiltradas as IList<EmpresaComboBoxDto> ?? empresasFiltradas.ToList();
-
-            foreach (var empresaComboBoxDto in empresasComboBoxDtos)
+            foreach (var empresaComboBoxDto in _cacheEmpresas)
             {
                 ListaEmpresa.Add(empresaComboBoxDto);
             }
 
-            EmpresaSelecionada = empresasComboBoxDtos[0];
+            EmpresaSelecionada = ListaEmpresa[0];
         }
     }
 }

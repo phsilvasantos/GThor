@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using GThorFrameworkDominio.Dto.DocumentosMdfe;
@@ -64,7 +63,7 @@ namespace GThorFrameworkComponentes.ComboBox.DocumentosDfe
             ListaDocumentoMdfe = new ObservableCollection<DocumentoMdfeComboBoxDto>();
             InicializaDocumentosMdfe();
 
-            PesquisarPorDocumentoMdfe(Padrao);
+            AtualizarComboBox();
         }
 
         private void InicializaDocumentosMdfe()
@@ -74,25 +73,16 @@ namespace GThorFrameworkComponentes.ComboBox.DocumentosDfe
             _cacheDocumentoMdfeComboBoxDtos = new ObservableCollection<DocumentoMdfeComboBoxDto>(negocio.BuscarParaComboBox());
         }
 
-        private void PesquisarPorDocumentoMdfe(DocumentoMdfeComboBoxDto documentoMdfeComboBoxDto)
+        private void AtualizarComboBox()
         {
-            if (documentoMdfeComboBoxDto == null)
-            {
-                return;
-            }
-
             ListaDocumentoMdfe.Clear();
 
-            var documentosMdfeFiltradas = _cacheDocumentoMdfeComboBoxDtos.Where(e => e.Id == documentoMdfeComboBoxDto.Id);
-
-            var documentoMdfeComboBoxDtos = documentosMdfeFiltradas as IList<DocumentoMdfeComboBoxDto> ?? documentosMdfeFiltradas.ToList();
-
-            foreach (var mdfeComboBoxDto in documentoMdfeComboBoxDtos)
+            foreach (var mdfeComboBoxDto in _cacheDocumentoMdfeComboBoxDtos)
             {
                 ListaDocumentoMdfe.Add(mdfeComboBoxDto);
             }
 
-            DocumentoMdfeSelecionado = documentoMdfeComboBoxDtos[0];
+            DocumentoMdfeSelecionado = ListaDocumentoMdfe[0];
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

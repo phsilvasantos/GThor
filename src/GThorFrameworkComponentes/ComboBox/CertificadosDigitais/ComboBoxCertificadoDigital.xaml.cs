@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using GThorFrameworkDominio.Dto.CertificadosDigitais;
@@ -64,7 +63,7 @@ namespace GThorFrameworkComponentes.ComboBox.CertificadosDigitais
             ListaCertificadoDigital = new ObservableCollection<CertificadoDigitalComboBoxDto>();
             InicializaCertificadosDigitais();
 
-            PesquisarPorCertificadoDigital(Padrao);
+            AtualizarComboBox();
         }
 
         private void InicializaCertificadosDigitais()
@@ -74,25 +73,16 @@ namespace GThorFrameworkComponentes.ComboBox.CertificadosDigitais
             _cacheCertificadosDigitais = new ObservableCollection<CertificadoDigitalComboBoxDto>(negocio.BuscarParaComboBox());
         }
 
-        private void PesquisarPorCertificadoDigital(CertificadoDigitalComboBoxDto certificadoDigital)
+        private void AtualizarComboBox()
         {
-            if (certificadoDigital == null)
-            {
-                return;
-            }
-
             ListaCertificadoDigital.Clear();
 
-            var certificadosDigitaisFiltradas = _cacheCertificadosDigitais.Where(e => e.Id == certificadoDigital.Id);
-
-            var certificadoDigitalComboBoxDtos = certificadosDigitaisFiltradas as IList<CertificadoDigitalComboBoxDto> ?? certificadosDigitaisFiltradas.ToList();
-
-            foreach (var certificadoDigitalComboBoxDto in certificadoDigitalComboBoxDtos)
+            foreach (var certificadoDigitalComboBoxDto in _cacheCertificadosDigitais)
             {
                 ListaCertificadoDigital.Add(certificadoDigitalComboBoxDto);
             }
 
-            CertificadoDigitalSelecionado = certificadoDigitalComboBoxDtos[0];
+            CertificadoDigitalSelecionado = ListaCertificadoDigital[0];
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

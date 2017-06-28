@@ -15,6 +15,7 @@
         Style="{StaticResource ComercialDialog}"
         WindowStartupLocation="CenterScreen"
         LoadedCommand="{Binding LoadedCommand}"
+        ContentRendered="PerfilMdfeForm_OnContentRendered"
         Title="CADASTRO DE PERFIL MDF-E" Width="600">
 
     <StackPanel Margin="24">

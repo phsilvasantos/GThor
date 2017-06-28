@@ -59,9 +59,25 @@ namespace GThor.Models.PerfilsMdfe
             new PerfilMdfeForm(model).ShowDialog();
         }
 
+        public override void DuploClickDataGrid()
+        {
+            var perfilBuscado = _negocioPerfilMdfe.CarregarPorId(EntidadeSelecionada.Id);
+
+            var model = new PerfilMdfeFormModel(NegocioCriador.CriaNegocioPerfilMdfe()) { PerfilMdfe = perfilBuscado };
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new PerfilMdfeForm(model).ShowDialog();
+        }
+
         private void AtualizarLista(object sender, EventArgs e)
         {
             IniciaPesquisa(PesquisarTexto);
+        }
+
+        protected override void DeletarRegistroSelecionado()
+        {
+            _negocioPerfilMdfe.Deletar(_negocioPerfilMdfe.CarregarPorId(EntidadeSelecionada.Id));
         }
     }
 }

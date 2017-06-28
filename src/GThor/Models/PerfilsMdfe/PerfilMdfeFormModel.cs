@@ -43,6 +43,27 @@ namespace GThor.Models.PerfilsMdfe
         {
             ValidaAntesSalvar += ValidarInformacoes;
             Salvar += SalvarConclui;
+
+            if (PerfilMdfe.Id == 0) return;
+
+            Descricao = PerfilMdfe.Descricao;
+            DocumentoMdfeComboBoxDto = new DocumentoMdfeComboBoxDto
+            {
+                Id = PerfilMdfe.DocumentoMdfe.Id,
+                Descricao = PerfilMdfe.DocumentoMdfe.Descricao
+            };
+
+            EmpresaComboBoxDto = new EmpresaComboBoxDto
+            {
+                Id = PerfilMdfe.Empresa.Id,
+                RazaoSocial = PerfilMdfe.Empresa.RazaoSocial
+            };
+
+            CertificadoDigitalComboBoxDto = new CertificadoDigitalComboBoxDto
+            {
+                Id = PerfilMdfe.CertificadoDigital.Id,
+                Descricao = PerfilMdfe.CertificadoDigital.Descricao
+            };
         }
 
         private void SalvarConclui(object sender, EventArgs e)

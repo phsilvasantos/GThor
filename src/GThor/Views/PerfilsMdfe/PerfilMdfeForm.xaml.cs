@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using GThor.Models.PerfilsMdfe;
 using GThorFrameworkComponentes.ComboBox.CertificadosDigitais;
 using GThorFrameworkComponentes.ComboBox.DocumentosDfe;
@@ -46,6 +47,15 @@ namespace GThor.Views.PerfilsMdfe
             var documentoMdfeComboBoxDto = comboBoxDocumentoMdfe?.DocumentoMdfeSelecionado;
 
             _model.DocumentoMdfeComboBoxDto = documentoMdfeComboBoxDto;
+        }
+
+        private void PerfilMdfeForm_OnContentRendered(object sender, EventArgs e)
+        {
+            if (_model.PerfilMdfe.Id == 0) return;
+
+            ComboBoxEmpresa.EmpresaSelecionada = _model.EmpresaComboBoxDto;
+            ComboBoxCertificadoDigital.CertificadoDigitalSelecionado = _model.CertificadoDigitalComboBoxDto;
+            ComboBoxDocumentoMdfe.DocumentoMdfeSelecionado = _model.DocumentoMdfeComboBoxDto;
         }
     }
 }
