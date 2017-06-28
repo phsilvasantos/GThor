@@ -60,6 +60,7 @@
     <Compile Include="Dominios\Veiculos\Flags\TipoCarroceria.cs" />
     <Compile Include="Dominios\Veiculos\Flags\TipoRodado.cs" />
     <Compile Include="Dominios\Veiculos\Veiculo.cs" />
+    <Compile Include="Dto\CertificadosDigitais\CertificadoDigitalComboBoxDto.cs" />
     <Compile Include="Dto\EmpresaDto.cs" />
     <Compile Include="Dto\Empresas\EmpresaComboBoxDto.cs" />
     <Compile Include="Dto\PerfilMdfeDto.cs" />

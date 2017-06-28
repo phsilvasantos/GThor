@@ -18,5 +18,10 @@ namespace GThor.Views.PerfilsMdfe
 
             //_model.EmpresaComboBox = empresaComboBox;
         }
+
+        private void ComboBoxCertificadoDigital_OnPickItemCertificadoDigital(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

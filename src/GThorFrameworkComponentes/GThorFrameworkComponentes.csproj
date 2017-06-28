@@ -56,6 +56,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboBox\CertificadosDigitais\ComboBoxCertificadoDigital.xaml.cs">
+      <DependentUpon>ComboBoxCertificadoDigital.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ComboBox\Empresas\ComboBoxEmpresa.xaml.cs">
       <DependentUpon>ComboBoxEmpresa.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="ComboBox\CertificadosDigitais\ComboBoxCertificadoDigital.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ComboBox\Empresas\ComboBoxEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

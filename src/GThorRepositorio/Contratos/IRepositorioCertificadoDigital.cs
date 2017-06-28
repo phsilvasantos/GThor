@@ -1,4 +1,6 @@
-﻿using GThorFrameworkDominio.Dominios.Certificados;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.Certificados;
+using GThorFrameworkDominio.Dto.CertificadosDigitais;
 using GThorFrameworkRepositorio.Contratos;
 
 namespace GThorRepositorio.Contratos
@@ -9,6 +11,6 @@ namespace GThorRepositorio.Contratos
         ISuporteSalvar<CertificadoDigital>,
         ISuporteDeletar<CertificadoDigital>
     {
-        
+        IEnumerable<CertificadoDigitalComboBoxDto> BuscarParaComboBox();
     }
 }

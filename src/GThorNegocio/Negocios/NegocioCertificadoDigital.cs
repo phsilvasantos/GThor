@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using GThorFrameworkDominio.Dominios.Certificados;
+using GThorFrameworkDominio.Dto.CertificadosDigitais;
 using GThorNegocio.Contratos;
 using GThorRepositorio.Contratos;
 using GThorRepositorioNHibernate.Helpers;
@@ -49,6 +50,15 @@ namespace GThorNegocio.Negocios
             {
                 _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
                 _repositorioCertificadoDigital.Deletar(certificadoDigital);
+            }
+        }
+
+        public IEnumerable<CertificadoDigitalComboBoxDto> BuscarParaComboBox()
+        {
+            using (var instancia = NHibernateHelper.Instancia())
+            {
+                _repositorioCertificadoDigital.SetNHibernateHelper(instancia);
+                return _repositorioCertificadoDigital.BuscarParaComboBox();
             }
         }
     }
