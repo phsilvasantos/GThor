@@ -20,9 +20,9 @@
         <TextBlock Style="{StaticResource ControlForm}">Descrição</TextBlock>
         <TextBox MaxLength="120" Text="{Binding Descricao}"></TextBox>
 
-        <empresas:ComboBoxEmpresa PickItemEmpresa="ComboBoxEmpresa_OnPickItemEmpresa"></empresas:ComboBoxEmpresa>
+        <empresas:ComboBoxEmpresa x:Name="ComboBoxEmpresa" PickItemEmpresa="ComboBoxEmpresa_OnPickItemEmpresa"></empresas:ComboBoxEmpresa>
 
-        <certificadosDigitais:ComboBoxCertificadoDigital PickItemCertificadoDigital="ComboBoxCertificadoDigital_OnPickItemCertificadoDigital"></certificadosDigitais:ComboBoxCertificadoDigital>
+        <certificadosDigitais:ComboBoxCertificadoDigital x:Name="ComboBoxCertificadoDigital" PickItemCertificadoDigital="ComboBoxCertificadoDigital_OnPickItemCertificadoDigital"></certificadosDigitais:ComboBoxCertificadoDigital>
 
         <views1:BotoesCrud></views1:BotoesCrud>
     </StackPanel>

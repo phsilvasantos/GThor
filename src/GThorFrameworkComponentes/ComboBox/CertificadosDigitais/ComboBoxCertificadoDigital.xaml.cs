@@ -55,6 +55,8 @@ namespace GThorFrameworkComponentes.ComboBox.CertificadosDigitais
             }
         }
 
+        public CertificadoDigitalComboBoxDto Default { get; } = new CertificadoDigitalComboBoxDto{Id = 1};
+
         public ComboBoxCertificadoDigital()
         {
             DataContext = this;

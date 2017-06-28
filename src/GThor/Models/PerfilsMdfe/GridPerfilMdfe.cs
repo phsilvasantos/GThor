@@ -1,9 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using GThor.Views.PerfilsMdfe;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
+using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
 using GThorFrameworkDominio.Dto;
 using GThorFrameworkWpf.Models.DataGrid;
 using GThorNegocio.Contratos;
+using GThorNegocio.Criadores;
 
 namespace GThor.Models.PerfilsMdfe
 {
@@ -49,7 +52,16 @@ namespace GThor.Models.PerfilsMdfe
 
         public override void NovoRegistroAction(object obj)
         {
-            new PerfilMdfeForm().ShowDialog();
+            var model = new PerfilMdfeFormModel(NegocioCriador.CriaNegocioPerfilMdfe()) {PerfilMdfe = new PerfilMdfe()};
+
+            model.AtualizarListaHandler += AtualizarLista;
+
+            new PerfilMdfeForm(model).ShowDialog();
+        }
+
+        private void AtualizarLista(object sender, EventArgs e)
+        {
+            IniciaPesquisa(PesquisarTexto);
         }
     }
 }

@@ -55,6 +55,8 @@ namespace GThorFrameworkComponentes.ComboBox.Empresas
             }
         }
 
+        public EmpresaComboBoxDto Default { get; } = new EmpresaComboBoxDto {Id = 1};
+
 
         public ComboBoxEmpresa()
         {

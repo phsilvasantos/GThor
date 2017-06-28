@@ -21,6 +21,18 @@ namespace GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores
             return valor?.Trim() ?? string.Empty;
         }
 
+        public static string TrimOrEmptyIsNotNull(this string valor, string mensagemNaoPassouValidao)
+        {
+            valor = valor.TrimOrEmpty();
+
+            if (valor.IsNullOrEmpty())
+            {
+                throw new ArgumentException(mensagemNaoPassouValidao);
+            }
+
+            return valor;
+        }
+
         public static string TrimOrNull(this string valor)
         {
             return valor?.Trim();
