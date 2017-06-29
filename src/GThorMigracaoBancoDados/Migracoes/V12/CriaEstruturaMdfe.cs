@@ -59,6 +59,20 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
             Create.ForeignKey("fk_mdfeMunicipioCarregamento__cidade")
                 .FromTable("mdfeMunicipioCarregamento").ForeignColumn("cidadeId")
                 .ToTable("cidade").PrimaryColumn("id");
+
+            // Cria tabela mdfePercurso
+            Create.Table("mdfePercurso")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("ufId").AsInt32();
+
+            Create.ForeignKey("fk_mdfePercurso__mdfe")
+                .FromTable("mdfePercurso").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            Create.ForeignKey("fk_mdfePercurso__uf")
+                .FromTable("mdfePercurso").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
         }
 
         public override void Down()
