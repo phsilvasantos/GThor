@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Criadores\Contratos\ICriaSessionFactory.cs" />
-    <Compile Include="Criadores\CriaSessionFactoryPostgreSql.cs" />
+    <Compile Include="Criadores\CriaSessionFactory.cs" />
     <Compile Include="Criadores\RepositorioCriador.cs" />
     <Compile Include="Helpers\Contratos\INHibernateHelper.cs" />
     <Compile Include="Helpers\Ext\ExNHibernateHelper.cs" />

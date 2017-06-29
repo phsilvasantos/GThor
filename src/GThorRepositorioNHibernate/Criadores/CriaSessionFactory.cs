@@ -12,7 +12,7 @@ using NHibernate.Mapping.ByCode;
 
 namespace GThorRepositorioNHibernate.Criadores
 {
-    public class CriaSessionFactoryPostgreSql : ICriaSessionFactory
+    public class CriaSessionFactory : ICriaSessionFactory
     {
         private BancoDeDados _bancoDeDados;
 
