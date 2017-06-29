@@ -36,8 +36,6 @@ namespace GThorRepositorioNHibernate.Criadores
             cfg.AddAssembly(Assembly.GetAssembly(typeof(Usuario)));
             cfg.AddDeserializedMapping(mappingClass, assembly.GetName().Name);
 
-
-
             var iSessionFactory = cfg.BuildSessionFactory();
 
             return iSessionFactory;

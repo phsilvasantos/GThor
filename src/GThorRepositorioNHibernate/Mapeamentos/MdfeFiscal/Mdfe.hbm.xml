@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="Mdfe" table="mdfe">
+    
+    <id name="Id" column="id" generator="native"/>
+    
+    <property name="Serie" column="serie" not-null="true" />
+    
+    <property name="NumeroManifesto" column="numeroManifesto" not-null="true" />
+
+    <many-to-one name="PerfilMdfe" cascade="none" not-null="true"
+                 column="perfilMdfeId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils.PerfilMdfe"></many-to-one>
+    
+    <property name="TipoEmitente" column="tipoEmitente" not-null="true" />
+    
+    <property name="TipoTransportador" column="tipoTransportador" not-null="true" />
+    
+    <property name="Modal" column="modal" not-null="true" />
+
+    <many-to-one name="UfCarregamento" cascade="none" not-null="true"
+                 column="ufCarregamentoId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"></many-to-one>
+
+    <many-to-one name="UfDescarregamento" cascade="none" not-null="true"
+                 column="ufDescarregamentoId" fetch="join"
+                 class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"></many-to-one>
+
+    <property name="Rntrc" column="rntrc" not-null="true" length="8" />
+
+    <property name="Observacao" column="observacao" not-null="true" length="5000" />
+    
+  </class>
+
+</hibernate-mapping>
