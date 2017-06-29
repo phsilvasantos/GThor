@@ -8,7 +8,7 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
     {
         public int Id { get; set; }
         public int Serie { get; set; }
-        public string NumeroManifesto { get; set; }
+        public long NumeroManifesto { get; set; }
         public PerfilMdfe PerfilMdfe { get; set; }
         public TipoEmitente TipoEmitente { get; set; }
         public TipoTransportador TipoTransportador { get; set; }

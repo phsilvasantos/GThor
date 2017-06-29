@@ -68,6 +68,7 @@
     <Compile Include="Migracoes\V06\CriaTabelaVeiculo.cs" />
     <Compile Include="Migracoes\V09\InsereCidades.cs" />
     <Compile Include="Migracoes\V08\InsereEstadosUf.cs" />
+    <Compile Include="Migracoes\V12\CriaEstruturaMdfe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
