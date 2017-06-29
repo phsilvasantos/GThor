@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeEmitente" table="mdfeEmitente">
+
+    <id name="MdfeId" column="mdfeId">
+      <generator class="foreign">
+        <param name="property">Mdfe</param>
+      </generator>
+    </id>
+
+    <one-to-one name="Mdfe" constrained="true" cascade="none" />
+    
+    <many-to-one name="Empresa" class="GThorFrameworkDominio.Dominios.Empresas.Empresa" 
+                 column="empresaId" cascade="none" fetch="join" not-null="true"/>
+    
+  </class>
+
+</hibernate-mapping>

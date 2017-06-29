@@ -53,6 +53,7 @@
     <Compile Include="Dominios\MdfeFiscal\Flags\TipoEmitente.cs" />
     <Compile Include="Dominios\MdfeFiscal\Flags\TipoTransportador.cs" />
     <Compile Include="Dominios\MdfeFiscal\Mdfe.cs" />
+    <Compile Include="Dominios\MdfeFiscal\MdfeEmitente.cs" />
     <Compile Include="Dominios\MdfeFiscal\Perfils\PerfilMdfe.cs" />
     <Compile Include="Dominios\Pessoas\Condutor.cs" />
     <Compile Include="Dominios\Pessoas\Flags\TipoPessoa.cs" />

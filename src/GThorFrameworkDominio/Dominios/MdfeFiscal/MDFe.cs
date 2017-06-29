@@ -17,5 +17,7 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
         public virtual Uf UfDescarregamento { get; set; }
         public virtual string Rntrc { get; set; }
         public virtual string Observacao { get; set; }
+
+        public virtual MdfeEmitente Emitente { get; set; }
     }
 }
