@@ -90,6 +90,32 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
             Create.ForeignKey("fk_mdfeMunicipioDescarga__cidade")
                 .FromTable("mdfeMunicipioDescarga").ForeignColumn("cidadeId")
                 .ToTable("cidade").PrimaryColumn("id");
+
+
+            // Cria tabela mdfeSeguro
+            Create.Table("mdfeSeguro")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("responsavel").AsInt16().NotNullable()
+                .WithColumn("documentoUnicoResponsavel").AsString(14).NotNullable()
+                .WithColumn("nome").AsString(30).NotNullable()
+                .WithColumn("documentoUnico").AsString(14).NotNullable()
+                .WithColumn("numeroApolice").AsString(20).NotNullable();
+
+            Create.ForeignKey("fk_mdfeSeguro__mdfe")
+                .FromTable("mdfeSeguro").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+
+            // Cria tabela mdfeNumeroAverbacao
+            Create.Table("mdfeNumeroAverbacao")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("seguroId").AsInt32().NotNullable()
+                .WithColumn("averbacao").AsString(40).NotNullable();
+
+            Create.ForeignKey("fk_mdfeNumeroAverbacao__mdfeSeguro")
+                .FromTable("mdfeNumeroAverbacao").ForeignColumn("seguroId")
+                .ToTable("mdfeSeguro").PrimaryColumn("id");
         }
 
         public override void Down()

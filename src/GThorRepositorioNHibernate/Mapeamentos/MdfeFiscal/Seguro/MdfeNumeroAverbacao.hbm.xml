@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal.Seguro"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeNumeroAverbacao" table="mdfeNumeroAverbacao">
+
+    <id name="Id" column="id" generator="identity"/>
+
+    <many-to-one name="Seguro" column="seguroId" cascade="none" fetch="join" not-null="true" />
+    
+    <property name="Averbacao" not-null="true" column="averbacao" length="40"/>
+    
+  </class>
+
+</hibernate-mapping>
