@@ -3,7 +3,7 @@ using FluentMigrator.Runner;
 using FluentMigrator.Runner.Announcers;
 using FluentMigrator.Runner.Initialization;
 using FluentMigrator.Runner.Processors;
-using FluentMigrator.Runner.Processors.Postgres;
+using GThorMigracaoBancoDados.Flags;
 
 namespace GThorMigracaoBancoDados
 {
@@ -11,7 +11,9 @@ namespace GThorMigracaoBancoDados
     {
         public void Executa()
         {
-            var connectionString = @"Server=localhost;Port=5432;User ID=postgres;Password=root;Database=gthor;";
+            const BancoDeDados bancoDeDados = BancoDeDados.Sqlite;
+
+            var connectionString = bancoDeDados.GetStringConexao();
 
             Announcer announcer = new TextWriterAnnouncer(s => System.Diagnostics.Debug.WriteLine(s));
 
@@ -26,7 +28,7 @@ namespace GThorMigracaoBancoDados
                 Timeout = 60
             };
 
-            var factory = new PostgresProcessorFactory();
+            var factory = bancoDeDados.GetFactory();
 
             using (var processor = factory.Create(connectionString, announcer, options))
             {

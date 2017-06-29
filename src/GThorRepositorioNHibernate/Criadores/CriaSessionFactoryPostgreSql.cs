@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using GThorFrameworkDominio.Dominios.Usuarios;
+using GThorMigracaoBancoDados.Flags;
 using GThorRepositorioNHibernate.Criadores.Contratos;
 using GThorRepositorioNHibernate.Helpers;
 using NHibernate;
@@ -12,10 +14,19 @@ namespace GThorRepositorioNHibernate.Criadores
 {
     public class CriaSessionFactoryPostgreSql : ICriaSessionFactory
     {
+        private BancoDeDados _bancoDeDados;
+
         public ISessionFactory CriaSessionFactoryNHibernate()
-        { 
+        {
+            _bancoDeDados = BancoDeDados.Sqlite;
+
             var cfg = new Configuration();
-            cfg.SetNamingStrategy(new PostgreSqlNamingStrategy());
+
+
+            if (_bancoDeDados == BancoDeDados.Postgresql)
+                cfg.SetNamingStrategy(new PostgreSqlNamingStrategy());
+
+
             var assembly = Assembly.GetAssembly(GetType());
 
             var mappingClass = ObterMapemanetoDeClasses();
@@ -47,10 +58,22 @@ namespace GThorRepositorioNHibernate.Criadores
             var property = new Dictionary<string, string>();
 
             property.Add("connection.provider", "NHibernate.Connection.DriverConnectionProvider");
-            property.Add("connection.isolation", "ReadUncommitted");
-            property.Add("dialect", "NHibernate.Dialect.PostgreSQL82Dialect");
-            property.Add("connection.driver_class", "NHibernate.Driver.NpgsqlDriver");
-            property.Add("connection.connection_string", "Server=localhost;Port=5432;User ID=postgres;Password=root;Database=gthor");
+
+            switch (_bancoDeDados)
+            {
+                case BancoDeDados.Postgresql:
+                    property.Add("connection.isolation", "ReadUncommitted");
+                    break;
+                case BancoDeDados.Sqlite:
+
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+
+            property.Add("dialect", _bancoDeDados.GetStringDialectNHibernate());
+            property.Add("connection.driver_class", _bancoDeDados.GetStringDriverNHibernate());
+            property.Add("connection.connection_string", _bancoDeDados.GetStringConexao());
             property.Add("cache.use_second_level_cache", "false");
 
 #if DEBUG

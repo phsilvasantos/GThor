@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Security.AccessControl;
 using System.Security.Principal;
 
-namespace ComercialBiblioteca.Ferramentas.HelpersPasta
+namespace GThorFrameworkBiblioteca.Ferramentas.HelpersPasta
 {
     public class ManipulaPastaHelper
     {
