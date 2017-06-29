@@ -12,6 +12,13 @@ NF-e Nota Fiscal Eletrônica
 MDF-e Manifesto Eletrônico de Documentos
 
 
+# Banco De Dados Suportados
+
+PostgreSql 9.6.2
+
+Sqlite
+
+
 # Tecnologias Usadas
 
 .Net 4.6.2
