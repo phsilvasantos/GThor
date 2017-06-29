@@ -19,6 +19,7 @@ MDF-e Manifesto Eletrônico de Documentos
 NHibernate
 
 PostgreSQL 9.6.2
+
 Sqlite
 
 ## Roteiro
