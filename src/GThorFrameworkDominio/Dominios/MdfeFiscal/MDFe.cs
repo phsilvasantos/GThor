@@ -23,5 +23,6 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
 
         public virtual List<MdfeMunicipioCarregamento> MuniciposDeCarregamento { get; set; }
         public virtual List<MdfePercurso> Percurso { get; set; }
+        public virtual List<MdfeMunicipioDescarga> Descarga { get; set; }
     }
 }

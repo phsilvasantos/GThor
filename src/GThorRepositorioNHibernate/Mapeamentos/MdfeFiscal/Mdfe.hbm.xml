@@ -44,6 +44,11 @@
       <key column="mdfeId"/>
       <one-to-many class="MdfePercurso"/>
     </bag>
+
+    <bag name="Descarga" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeMunicipioDescarga"/>
+    </bag>
     
   </class>
 

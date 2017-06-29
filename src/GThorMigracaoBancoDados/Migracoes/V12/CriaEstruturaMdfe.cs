@@ -7,6 +7,7 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
     {
         public override void Up()
         {
+            // Cria tabela mdfe
             Create.Table("mdfe")
                 .WithColumn("id").AsInt32().PrimaryKey().Identity()
                 .WithColumn("serie").AsInt16().NotNullable()
@@ -64,7 +65,7 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
             Create.Table("mdfePercurso")
                 .WithColumn("id").AsInt32().PrimaryKey()
                 .WithColumn("mdfeId").AsInt32().NotNullable()
-                .WithColumn("ufId").AsInt32();
+                .WithColumn("ufId").AsInt32().NotNullable();
 
             Create.ForeignKey("fk_mdfePercurso__mdfe")
                 .FromTable("mdfePercurso").ForeignColumn("mdfeId")
@@ -73,6 +74,22 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
             Create.ForeignKey("fk_mdfePercurso__uf")
                 .FromTable("mdfePercurso").ForeignColumn("ufId")
                 .ToTable("uf").PrimaryColumn("id");
+
+            // Cria tabela mdfeMunicipioDescarga
+            Create.Table("mdfeMunicipioDescarga")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("cidadeId").AsInt32().NotNullable()
+                .WithColumn("chaveAcesso").AsString(44).NotNullable()
+                .WithColumn("tipoDocumentoEletronico").AsInt16().NotNullable();
+
+            Create.ForeignKey("fk_mdfeMunicipioDescarga__mdfe")
+                .FromTable("mdfeMunicipioDescarga").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            Create.ForeignKey("fk_mdfeMunicipioDescarga__cidade")
+                .FromTable("mdfeMunicipioDescarga").ForeignColumn("cidadeId")
+                .ToTable("cidade").PrimaryColumn("id");
         }
 
         public override void Down()

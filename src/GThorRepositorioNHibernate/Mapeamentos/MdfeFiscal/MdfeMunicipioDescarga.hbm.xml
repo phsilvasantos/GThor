@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeMunicipioDescarga" table="mdfeMunicipioDescarga">
+
+    <id name="Id" column="id" generator="identity"/>
+
+    <many-to-one name="Mdfe" column="mdfeId" cascade="none" fetch="join" not-null="true" />
+    
+    <many-to-one name="Cidade" class="GThorFrameworkDominio.Dominios.Cidades.Cidade" 
+                 column="ufId" cascade="none" fetch="join" not-null="true"/>
+    
+    <property name="ChaveAcesso" length="44" not-null="true" column="chaveAcesso"/>
+    
+    <property name="TipoDocumentoEletronico" not-null="true" column="tipoDocumentoEletronico"/>
+    
+  </class>
+
+</hibernate-mapping>
