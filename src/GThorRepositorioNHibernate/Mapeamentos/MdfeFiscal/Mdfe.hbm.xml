@@ -34,6 +34,11 @@
     <property name="Observacao" column="observacao" not-null="true" length="5000" />
 
     <one-to-one name="Emitente" cascade="none" fetch="join" />
+
+    <bag name="MuniciposDeCarregamento" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeMunicipioCarregamento"/>
+    </bag>
     
   </class>
 

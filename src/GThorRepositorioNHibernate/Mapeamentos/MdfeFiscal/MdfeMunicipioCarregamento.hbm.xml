@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeMunicipioCarregamento" table="mdfeMunicipioCarregamento">
+
+    <id name="Id" column="id" generator="identity"/>
+
+    <many-to-one name="Mdfe" column="mdfeId" cascade="none" fetch="join" not-null="true" />
+    
+    <many-to-one name="Cidade" class="GThorFrameworkDominio.Dominios.Cidades.Cidade" 
+                 column="cidadeId" cascade="none" fetch="join" not-null="true"/>
+    
+  </class>
+
+</hibernate-mapping>

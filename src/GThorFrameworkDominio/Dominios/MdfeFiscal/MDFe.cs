@@ -1,4 +1,5 @@
-﻿using GThorFrameworkDominio.Dominios.EstadosUf;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.MdfeFiscal.Flags;
 using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
 
@@ -19,5 +20,7 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
         public virtual string Observacao { get; set; }
 
         public virtual MdfeEmitente Emitente { get; set; }
+
+        public virtual List<MdfeMunicipioCarregamento> MuniciposDeCarregamento { get; set; }
     }
 }
