@@ -1,6 +1,5 @@
 ﻿namespace GThorFrameworkDominio.Dominios.MdfeFiscal
 {
-    // todo mapear 2
     public class MdfeCiot
     {
         public virtual int Id { get; set; }

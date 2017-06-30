@@ -5,7 +5,6 @@ using GThorFrameworkDominio.Dominios.MdfeFiscal.Flags;
 
 namespace GThorFrameworkDominio.Dominios.MdfeFiscal
 {
-    // todo mapear 7
     public class MdfeEmissaoHistorico
     {
         public virtual int Id { get; set; }

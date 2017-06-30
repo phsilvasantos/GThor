@@ -1,11 +1,10 @@
 ﻿namespace GThorFrameworkDominio.Dominios.MdfeFiscal
 {
-    // todo mapear 4
     public class MdfeContratante
     {
         public virtual int Id { get; set; }
         public virtual int MdfeId { get; set; }
         public virtual Mdfe Mdfe { get; set; }
-        public virtual string DocumentoUnico { get; set; } // 14
+        public virtual string DocumentoUnico { get; set; } 
     }
 }

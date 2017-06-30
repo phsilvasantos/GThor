@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeEmissaoFinalizada" table="mdfeEmissaoFinalizada">
+
+    <id name="MdfeId" column="mdfeId">
+      <generator class="foreign">
+        <param name="property">Mdfe</param>
+      </generator>
+    </id>
+
+    <one-to-one name="Mdfe" constrained="true" cascade="none" />
+
+    <property name="VersaoLayout" column="versaoLayout" not-null="true" length="10" />
+    
+    <property name="ChaveTag" column="chaveTag" not-null="true" length="48" />
+
+    <many-to-one name="Uf" class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"
+                 column="ufId" cascade="none" fetch="join" not-null="true"/>
+
+    <property name="AmbienteSefaz" column="ambienteSefaz" not-null="true" />
+
+    <property name="ModeloDocumento" not-null="true" column="modeloDocumento" />
+
+    <property name="Serie" not-null="true" column="serie" />
+
+    <property name="NumeroManifesto" not-null="true" column="numeroManifesto" />
+
+    <property name="CodigoNumerico" not-null="true" column="codigoNumerico" />
+
+    <property name="DigitoVerificador" not-null="true" column="digitoVerificador" />
+
+    <property name="EmissaoFeitaEm" not-null="true" column="emissaoFeitaEm" />
+
+    <property name="TipoEmissao" not-null="true" column="tipoEmissao" />
+
+    <property name="XmlAutorizado" not-null="true" column="xmlAutorizado" />
+    
+  </class>
+
+</hibernate-mapping>

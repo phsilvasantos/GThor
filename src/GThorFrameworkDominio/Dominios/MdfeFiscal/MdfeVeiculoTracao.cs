@@ -3,7 +3,6 @@ using GThorFrameworkDominio.Dominios.Veiculos;
 
 namespace GThorFrameworkDominio.Dominios.MdfeFiscal
 {
-    // todo mapear 5
     public class MdfeVeiculoTracao
     {
         public virtual int MdfeId { get; set; }

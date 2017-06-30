@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="GThorFrameworkDominio"
+                   namespace="GThorFrameworkDominio.Dominios.MdfeFiscal"
+                   xmlns="urn:nhibernate-mapping-2.2">
+
+  <class name="MdfeTotal" table="mdfeTotal">
+
+    <id name="MdfeId" column="mdfeId">
+      <generator class="foreign">
+        <param name="property">Mdfe</param>
+      </generator>
+    </id>
+
+    <one-to-one name="Mdfe" constrained="true" cascade="none" />
+
+    <property name="QuantidadeCte" column="quantidadeCte" not-null="true" />
+    
+    <property name="QuantidadeNfe" column="quantidadeNfe" not-null="true" />
+    
+    <property name="ValorTotalCarga" column="valorTotalCarga" 
+              not-null="true" precision="15" scale="2"/>
+
+    <property name="PesoBrutoCarga" column="pesoBrutoCarga"
+              not-null="true" precision="15" scale="4"/>
+    
+    <property name="UnidadeMedida" not-null="true" column="unidadeMedida" />
+    
+  </class>
+
+</hibernate-mapping>

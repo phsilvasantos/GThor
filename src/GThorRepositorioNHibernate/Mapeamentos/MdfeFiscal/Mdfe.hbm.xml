@@ -34,6 +34,12 @@
     <property name="Observacao" column="observacao" not-null="true" length="5000" />
 
     <one-to-one name="Emitente" cascade="none" fetch="join" />
+    
+    <one-to-one name="Total" cascade="none" fetch="join" />
+
+    <one-to-one name="VeiculoTracao" cascade="none" outer-join="true" />
+    
+    <one-to-one name="Finalizada" cascade="none" outer-join="true" />
 
     <bag name="MuniciposDeCarregamento" cascade="none" inverse="true">
       <key column="mdfeId"/>
@@ -53,6 +59,26 @@
     <bag name="Seguro" cascade="none" inverse="true">
       <key column="mdfeId"/>
       <one-to-many class="MdfeSeguro"/>
+    </bag>
+
+    <bag name="Ciot" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeCiot"/>
+    </bag>
+
+    <bag name="ValePediagio" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeValePedagio"/>
+    </bag>
+
+    <bag name="Contratante" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeContratante"/>
+    </bag>
+
+    <bag name="Condutor" cascade="none" inverse="true">
+      <key column="mdfeId"/>
+      <one-to-many class="MdfeCondutor"/>
     </bag>
     
   </class>
