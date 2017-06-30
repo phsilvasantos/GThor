@@ -11,7 +11,7 @@ namespace GThorMigracaoBancoDados
     {
         public void Executa()
         {
-            const BancoDeDados bancoDeDados = BancoDeDados.Postgresql;
+            const BancoDeDados bancoDeDados = BancoDeDados.MySql;
 
             var connectionString = bancoDeDados.GetStringConexao();
 

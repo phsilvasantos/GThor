@@ -18,7 +18,7 @@ namespace GThorRepositorioNHibernate.Criadores
 
         public ISessionFactory CriaSessionFactoryNHibernate()
         {
-            _bancoDeDados = BancoDeDados.Postgresql;
+            _bancoDeDados = BancoDeDados.MySql;
 
             var cfg = new Configuration();
 
@@ -60,6 +60,7 @@ namespace GThorRepositorioNHibernate.Criadores
             switch (_bancoDeDados)
             {
                 case BancoDeDados.Postgresql:
+                case BancoDeDados.MySql:
                     property.Add("connection.isolation", "ReadUncommitted");
                     break;
                 case BancoDeDados.Sqlite:
