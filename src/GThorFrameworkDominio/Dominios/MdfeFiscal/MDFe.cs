@@ -20,10 +20,16 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
         public virtual string Observacao { get; set; }
 
         public virtual MdfeEmitente Emitente { get; set; }
+        public virtual MdfeVeiculoTracao VeiculoTracao { get; set; } // todo mapear
+        public virtual MdfeEmissaoFinalizada Finalizada { get; set; }// todo mapear
 
         public virtual List<MdfeMunicipioCarregamento> MuniciposDeCarregamento { get; set; }
         public virtual List<MdfePercurso> Percurso { get; set; }
         public virtual List<MdfeMunicipioDescarga> Descarga { get; set; }
         public virtual List<MdfeSeguro> Seguro { get; set; }
+        public virtual List<MdfeCiot> Ciot { get; set; } // todo mapear
+        public virtual List<MdfeValePedagio> ValePediagio { get; set; } // todo mapear
+        public virtual List<MdfeContratante> Contratante { get; set; } // todo mapear
+        public virtual List<MdfeCondutor> Condutor { get; set; } // todo mapear
     }
 }
