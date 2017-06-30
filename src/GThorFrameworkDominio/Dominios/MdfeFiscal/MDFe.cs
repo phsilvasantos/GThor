@@ -31,6 +31,5 @@ namespace GThorFrameworkDominio.Dominios.MdfeFiscal
         public virtual List<MdfeCiot> Ciot { get; set; } 
         public virtual List<MdfeValePedagio> ValePediagio { get; set; } 
         public virtual List<MdfeContratante> Contratante { get; set; } 
-        public virtual List<MdfeCondutor> Condutor { get; set; } 
     }
 }

@@ -9,11 +9,14 @@
 
     <many-to-one name="Mdfe" column="mdfeId" cascade="none" fetch="join" not-null="true" />
     
-    <property name="CnpjEmpresaFornecedora" column="cnpjEmpresaFornecedora" not-null="true" length="14" />
+    <property name="CnpjEmpresaFornecedora" 
+              column="cnpjEmpresaFornecedora" not-null="true" length="14" />
 
-    <property name="DocumentoUnicoResponsavelPagamento" column="documentoUnicoResponsavelPagamento" not-null="true" length="14" />
+    <property name="DocumentoUnicoResponsavelPagamento" 
+              column="documentoUnicoResponsavelPagamento" not-null="true" length="14" />
     
-    <property name="NumeroDoComprovanteCompra" column="numeroDoComprovanteCompra" not-null="true" length="20" />
+    <property name="NumeroDoComprovanteCompra" 
+              column="numeroDoComprovanteCompra" not-null="true" length="20" />
 
     <property name="Valor" column="valor" not-null="true" precision="15" scale="2" />
     

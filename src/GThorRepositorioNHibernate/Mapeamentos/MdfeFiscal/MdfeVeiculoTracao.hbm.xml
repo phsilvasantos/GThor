@@ -18,6 +18,11 @@
 
     <many-to-one name="Proprietario" class="GThorFrameworkDominio.Dominios.Pessoas.Pessoa"
                  column="proprietarioId" cascade="none" fetch="join" />
+
+    <bag name="Condutor" cascade="none" inverse="true">
+      <key column="mdfeVeiculoTracaoId"/>
+      <one-to-many class="MdfeCondutor"/>
+    </bag>
     
   </class>
 

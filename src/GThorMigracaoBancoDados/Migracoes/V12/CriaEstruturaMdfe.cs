@@ -116,6 +116,129 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
             Create.ForeignKey("fk_mdfeNumeroAverbacao__mdfeSeguro")
                 .FromTable("mdfeNumeroAverbacao").ForeignColumn("seguroId")
                 .ToTable("mdfeSeguro").PrimaryColumn("id");
+
+            // Cria tabela mdfeTotal
+            Create.Table("mdfeTotal")
+                .WithColumn("mdfeId").AsInt32().PrimaryKey()
+                .WithColumn("quantidadeCte").AsInt32().NotNullable()
+                .WithColumn("quantidadeNfe").AsInt32().NotNullable()
+                .WithColumn("valorTotalCarga").AsDecimal(15, 2).NotNullable()
+                .WithColumn("pesoBrutoCarga").AsDecimal(15, 4).NotNullable()
+                .WithColumn("unidadeMedida").AsInt16().NotNullable();
+
+            Create.ForeignKey("fk_mdfeTotal__mdfe")
+                .FromTable("mdfeTotal").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            // Cria tabela mdfeValePedagio
+            Create.Table("mdfeValePedagio")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("cnpjEmpresaFornecedora").AsString(14).NotNullable()
+                .WithColumn("documentoUnicoResponsavelPagamento").AsString(14).NotNullable()
+                .WithColumn("numeroDoComprovanteCompra").AsString(20).NotNullable()
+                .WithColumn("valor").AsDecimal(15, 2).NotNullable();
+
+            Create.ForeignKey("fk_mdfeValePedagio__mdfe")
+                .FromTable("mdfeValePedagio").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            // Cria Tabela mdfeCiot
+            Create.Table("mdfeCiot")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("ciot").AsInt64().NotNullable()
+                .WithColumn("documentoUnico").AsString(14).NotNullable();
+
+            Create.ForeignKey("fk_mdfeCiot__mdfe")
+                .FromTable("mdfeCiot").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            // Cria tabela mdfeContratante
+            Create.Table("mdfeContratante")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("mdfeId").AsInt32().NotNullable()
+                .WithColumn("documentoUnico").AsString(14).NotNullable();
+
+            Create.ForeignKey("fk_mdfeContratante__mdfe")
+                .FromTable("mdfeContratante").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            // Cria tabela mdfeVeiculoTracao
+            Create.Table("mdfeVeiculoTracao")
+                .WithColumn("mdfeId").AsInt32().PrimaryKey()
+                .WithColumn("veiculoId").AsInt32().NotNullable()
+                .WithColumn("proprietarioId").AsInt32();
+
+            Create.ForeignKey("fk_mdfeVeiculoTracao__mdfe")
+                .FromTable("mdfeVeiculoTracao").ForeignColumn("mdfeId")
+                .ToTable("mdfe").PrimaryColumn("id");
+
+            Create.ForeignKey("fk_mdfeVeiculoTracao__pessoaProprietaria")
+                .FromTable("mdfeVeiculoTracao").ForeignColumn("proprietarioId")
+                .ToTable("pessoa").PrimaryColumn("id");
+
+            // Cria tabela mdfeCondutor
+            Create.Table("mdfeCondutor")
+                .WithColumn("id").AsInt32().PrimaryKey()
+                .WithColumn("veiculoTracaoId").AsInt32().NotNullable()
+                .WithColumn("condutorId").AsInt32().NotNullable();
+
+            Create.ForeignKey("fk_mdfeCondutor__mdfeVeiculoTracao")
+                .FromTable("mdfeCondutor").ForeignColumn("veiculoTracaoId")
+                .ToTable("mdfeVeiculoTracao").PrimaryColumn("mdfeId");
+
+            Create.ForeignKey("fk_mdfeCondutor__condutor")
+                .FromTable("mdfeCondutor").ForeignColumn("condutorId")
+                .ToTable("condutor").PrimaryColumn("pesssoaId");
+
+            // Cria tabela mdfeEmissaoHistorico
+            Create.Table("mdfeEmissaoHistorico")
+                .WithColumn("mdfeId").AsInt32().PrimaryKey()
+                .WithColumn("versaoLayout").AsString(12).NotNullable()
+                .WithColumn("chaveTag").AsString(48).NotNullable()
+                .WithColumn("chave").AsString(44).NotNullable()
+                .WithColumn("ufId").AsInt32().NotNullable()
+                .WithColumn("ambienteSefaz").AsInt16().NotNullable()
+                .WithColumn("modeloDocumento").AsInt16().NotNullable()
+                .WithColumn("serie").AsInt32().NotNullable()
+                .WithColumn("numeroManifesto").AsInt64().NotNullable()
+                .WithColumn("codigoNumerico").AsInt32().NotNullable()
+                .WithColumn("digitoVerificador").AsInt16().NotNullable()
+                .WithColumn("emissaoFeitaEm").AsDateTime().NotNullable()
+                .WithColumn("tipoEmissao").AsInt16().NotNullable()
+                .WithColumn("xmlEnvio").AsString().NotNullable()
+                .WithColumn("xmlRetorno").AsString()
+                .WithColumn("mensagemRetorno").AsString(255).NotNullable()
+                .WithColumn("codigoAutorizacao").AsInt32().NotNullable()
+                .WithColumn("versaoProcessoEmissao").AsString(20).NotNullable()
+                .WithColumn("finalizou").AsBoolean().NotNullable();
+
+            Create.ForeignKey("fk_mdfeEmissaoHistorico__uf")
+                .FromTable("mdfeEmissaoHistorico").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
+
+
+            // Cria tabela mdfeEmissaoFinalizada
+            Create.Table("mdfeEmissaoHistorico")
+                .WithColumn("mdfeId").AsInt32().PrimaryKey()
+                .WithColumn("versaoLayout").AsString(12).NotNullable()
+                .WithColumn("chaveTag").AsString(48).NotNullable()
+                .WithColumn("chave").AsString(44).NotNullable()
+                .WithColumn("ufId").AsInt32().NotNullable()
+                .WithColumn("ambienteSefaz").AsInt16().NotNullable()
+                .WithColumn("modeloDocumento").AsInt16().NotNullable()
+                .WithColumn("serie").AsInt32().NotNullable()
+                .WithColumn("numeroManifesto").AsInt64().NotNullable()
+                .WithColumn("codigoNumerico").AsInt32().NotNullable()
+                .WithColumn("digitoVerificador").AsInt16().NotNullable()
+                .WithColumn("emissaoFeitaEm").AsDateTime().NotNullable()
+                .WithColumn("tipoEmissao").AsInt16().NotNullable()
+                .WithColumn("xmlAutorizado").AsString().NotNullable();
+
+            Create.ForeignKey("fk_mdfeEmissaoHistorico__uf")
+                .FromTable("mdfeEmissaoHistorico").ForeignColumn("ufId")
+                .ToTable("uf").PrimaryColumn("id");
         }
 
         public override void Down()

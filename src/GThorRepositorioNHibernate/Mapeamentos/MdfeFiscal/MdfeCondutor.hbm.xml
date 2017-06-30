@@ -5,13 +5,13 @@
 
   <class name="MdfeCondutor" table="mdfeCondutor">
 
-    <id name="MdfeId" column="mdfeId">
-      <generator class="foreign">
-        <param name="property">Mdfe</param>
+    <id name="Id" column="id">
+      <generator class="native">
       </generator>
     </id>
 
-    <one-to-one name="Mdfe" constrained="true" cascade="none" />
+    <many-to-one name="VeiculoTracao" 
+                 column="veiculoTracaoId" cascade="none" fetch="join" />
 
     <many-to-one name="Condutor" class="GThorFrameworkDominio.Dominios.Pessoas.Condutor"
                  column="condutorId" cascade="none" fetch="join" />

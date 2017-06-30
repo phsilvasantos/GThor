@@ -17,6 +17,8 @@
     
     <property name="ChaveTag" column="chaveTag" not-null="true" length="48" />
 
+    <property name="Chave" column="chave" not-null="true" length="48" />
+
     <many-to-one name="Uf" class="GThorFrameworkDominio.Dominios.EstadosUf.Uf"
                  column="ufId" cascade="none" fetch="join" not-null="true"/>
 

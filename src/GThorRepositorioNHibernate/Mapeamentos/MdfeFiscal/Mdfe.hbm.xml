@@ -75,11 +75,6 @@
       <key column="mdfeId"/>
       <one-to-many class="MdfeContratante"/>
     </bag>
-
-    <bag name="Condutor" cascade="none" inverse="true">
-      <key column="mdfeId"/>
-      <one-to-many class="MdfeCondutor"/>
-    </bag>
     
   </class>
 
