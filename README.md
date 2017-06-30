@@ -16,6 +16,8 @@ MDF-e Manifesto Eletrônico de Documentos
 
 PostgreSql 9.6.2
 
+MySql
+
 Sqlite
 
 
@@ -26,6 +28,8 @@ Sqlite
 NHibernate
 
 PostgreSQL 9.6.2
+
+MySql
 
 Sqlite
 
