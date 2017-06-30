@@ -190,7 +190,7 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
 
             Create.ForeignKey("fk_mdfeCondutor__condutor")
                 .FromTable("mdfeCondutor").ForeignColumn("condutorId")
-                .ToTable("condutor").PrimaryColumn("pesssoaId");
+                .ToTable("condutor").PrimaryColumn("pessoaId");
 
             // Cria tabela mdfeEmissaoHistorico
             Create.Table("mdfeEmissaoHistorico")
@@ -220,7 +220,7 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
 
 
             // Cria tabela mdfeEmissaoFinalizada
-            Create.Table("mdfeEmissaoHistorico")
+            Create.Table("mdfeEmissaoFinalizada")
                 .WithColumn("mdfeId").AsInt32().PrimaryKey()
                 .WithColumn("versaoLayout").AsString(12).NotNullable()
                 .WithColumn("chaveTag").AsString(48).NotNullable()
@@ -236,8 +236,8 @@ namespace GThorMigracaoBancoDados.Migracoes.V12
                 .WithColumn("tipoEmissao").AsInt16().NotNullable()
                 .WithColumn("xmlAutorizado").AsString().NotNullable();
 
-            Create.ForeignKey("fk_mdfeEmissaoHistorico__uf")
-                .FromTable("mdfeEmissaoHistorico").ForeignColumn("ufId")
+            Create.ForeignKey("fk_mdfeEmissaoFinalizada__uf")
+                .FromTable("mdfeEmissaoFinalizada").ForeignColumn("ufId")
                 .ToTable("uf").PrimaryColumn("id");
         }
 
