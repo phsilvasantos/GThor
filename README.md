@@ -22,8 +22,10 @@ Firebird 3.0
 
 Sqlite
 
+SqlServerCe40
 
-# Tecnologias Usadas
+
+# Principais Tecnologias Usadas
 
 .Net 4.6.2
 
@@ -36,6 +38,8 @@ MySql
 Firebird 3.0
 
 Sqlite
+
+SqlServerCe40
 
 ## Roteiro
 
