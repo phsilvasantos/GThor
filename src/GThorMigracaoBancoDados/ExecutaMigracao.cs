@@ -11,7 +11,7 @@ namespace GThorMigracaoBancoDados
     {
         public void Executa()
         {
-            const BancoDeDados bancoDeDados = BancoDeDados.FireBird;
+            const BancoDeDados bancoDeDados = BancoDeDados.Firebird;
 
             var connectionString = bancoDeDados.GetStringConexao();
 

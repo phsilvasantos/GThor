@@ -20,7 +20,7 @@ namespace GThorMigracaoBancoDados.Flags
                     return new MySqlProcessorFactory();
                 case BancoDeDados.Sqlite:
                     return new SQLiteProcessorFactory();
-                case BancoDeDados.FireBird:
+                case BancoDeDados.Firebird:
                     return new FirebirdProcessorFactory();
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -35,7 +35,7 @@ namespace GThorMigracaoBancoDados.Flags
                     return @"Server=localhost;Port=5432;User ID=postgres;Password=root;Database=gthor;";
                 case BancoDeDados.MySql:
                     return @"Server=localhost;Database=gthor;UID=root;Password=root";
-                case BancoDeDados.FireBird:
+                case BancoDeDados.Firebird:
                     return $"User=SYSDBA; Password=root; Database={ManipulaPastaHelper.LocalSistema()}\\gthor.fdb; DataSource=localhost; Port=3050;";
                 case BancoDeDados.Sqlite:
                     return $"Data Source={ManipulaPastaHelper.LocalSistema()}\\gthor.db;Version=3;";
@@ -52,7 +52,7 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Driver.NpgsqlDriver";
                 case BancoDeDados.MySql:
                     return "NHibernate.Driver.MySqlDataDriver";
-                case BancoDeDados.FireBird:
+                case BancoDeDados.Firebird:
                     return "NHibernate.Driver.FirebirdClientDriver";
                 case BancoDeDados.Sqlite:
                     return "NHibernate.Driver.SQLite20Driver";
@@ -69,7 +69,7 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Dialect.PostgreSQL82Dialect";
                 case BancoDeDados.MySql:
                     return "NHibernate.Dialect.MySQLDialect";
-                case BancoDeDados.FireBird:
+                case BancoDeDados.Firebird:
                     return "NHibernate.Dialect.FirebirdDialect";
                 case BancoDeDados.Sqlite:
                     return "NHibernate.Dialect.SQLiteDialect";
@@ -86,6 +86,6 @@ namespace GThorMigracaoBancoDados.Flags
         Postgresql,
         MySql,
         Sqlite,
-        FireBird
+        Firebird
     }
 }

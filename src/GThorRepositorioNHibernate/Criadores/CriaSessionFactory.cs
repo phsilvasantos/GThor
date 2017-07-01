@@ -18,7 +18,7 @@ namespace GThorRepositorioNHibernate.Criadores
 
         public ISessionFactory CriaSessionFactoryNHibernate()
         {
-            _bancoDeDados = BancoDeDados.FireBird;
+            _bancoDeDados = BancoDeDados.Firebird;
 
             var cfg = new Configuration();
 
@@ -61,7 +61,7 @@ namespace GThorRepositorioNHibernate.Criadores
             {
                 case BancoDeDados.Postgresql:
                 case BancoDeDados.MySql:
-                case BancoDeDados.FireBird:
+                case BancoDeDados.Firebird:
                     property.Add("connection.isolation", "ReadUncommitted");
                     break;
                 case BancoDeDados.Sqlite:
