@@ -11,7 +11,7 @@ namespace GThorMigracaoBancoDados
     {
         public void Executa()
         {
-            const BancoDeDados bancoDeDados = BancoDeDados.SqlServerCe40;
+            const BancoDeDados bancoDeDados = BancoDeDados.SqlServer2008;
 
             var connectionString = bancoDeDados.GetStringConexao();
 

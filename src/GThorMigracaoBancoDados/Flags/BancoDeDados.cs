@@ -19,6 +19,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return new PostgresProcessorFactory();
                 case BancoDeDados.MySql:
                     return new MySqlProcessorFactory();
+                case BancoDeDados.SqlServer2008:
+                    return new SqlServer2008ProcessorFactory();
                 case BancoDeDados.SqlServerCe40:
                     return new SqlServerCeProcessorFactory();
                 case BancoDeDados.Sqlite:
@@ -44,6 +46,9 @@ namespace GThorMigracaoBancoDados.Flags
                     return $"Data Source={ManipulaPastaHelper.LocalSistema()}\\gthor.sdf;Persist Security Info=False;";
                 case BancoDeDados.Sqlite:
                     return $"Data Source={ManipulaPastaHelper.LocalSistema()}\\gthor.db;Version=3;";
+                case BancoDeDados.SqlServer2008:
+                    return
+                        @"Data Source=LOCALHOST\GThor;Initial Catalog=GThor;Persist Security Info=True;User ID=sa;Password=root;";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -63,6 +68,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Driver.SQLite20Driver";
                 case BancoDeDados.SqlServerCe40:
                     return "NHibernate.Driver.SqlServerCeDriver";
+                case BancoDeDados.SqlServer2008:
+                    return "NHibernate.Driver.SqlClientDriver";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -82,6 +89,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Dialect.SQLiteDialect";
                 case BancoDeDados.SqlServerCe40:
                     return "NHibernate.Dialect.MsSqlCe40Dialect";
+                case BancoDeDados.SqlServer2008:
+                    return "NHibernate.Dialect.MsSql2008Dialect";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -94,6 +103,7 @@ namespace GThorMigracaoBancoDados.Flags
     {
         Postgresql,
         MySql,
+        SqlServer2008,
         SqlServerCe40,
         Sqlite,
         Firebird

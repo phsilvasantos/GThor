@@ -18,7 +18,7 @@ namespace GThorRepositorioNHibernate.Criadores
 
         public ISessionFactory CriaSessionFactoryNHibernate()
         {
-            _bancoDeDados = BancoDeDados.SqlServerCe40;
+            _bancoDeDados = BancoDeDados.SqlServer2008;
 
             var cfg = new Configuration();
 
@@ -62,6 +62,7 @@ namespace GThorRepositorioNHibernate.Criadores
                 case BancoDeDados.Postgresql:
                 case BancoDeDados.MySql:
                 case BancoDeDados.Firebird:
+                case BancoDeDados.SqlServer2008:
                     property.Add("connection.isolation", "ReadUncommitted");
                     break;
                 case BancoDeDados.SqlServerCe40:
