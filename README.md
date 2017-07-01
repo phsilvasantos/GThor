@@ -20,6 +20,8 @@ MySql
 
 Firebird 3.0
 
+SqlServer 2008 R2
+
 Sqlite
 
 SqlServerCe40
@@ -31,11 +33,13 @@ SqlServerCe40
 
 NHibernate
 
-PostgreSQL 9.6.2
+PostgreSql 9.6.2
 
 MySql
 
 Firebird 3.0
+
+SqlServer 2008 R2
 
 Sqlite
 
