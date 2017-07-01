@@ -3,6 +3,7 @@ using FluentMigrator.Runner.Processors;
 using FluentMigrator.Runner.Processors.Firebird;
 using FluentMigrator.Runner.Processors.MySql;
 using FluentMigrator.Runner.Processors.Postgres;
+using FluentMigrator.Runner.Processors.SqlServer;
 using FluentMigrator.Runner.Processors.SQLite;
 using GThorFrameworkBiblioteca.Ferramentas.HelpersPasta;
 
@@ -18,6 +19,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return new PostgresProcessorFactory();
                 case BancoDeDados.MySql:
                     return new MySqlProcessorFactory();
+                case BancoDeDados.SqlServerCe40:
+                    return new SqlServerCeProcessorFactory();
                 case BancoDeDados.Sqlite:
                     return new SQLiteProcessorFactory();
                 case BancoDeDados.Firebird:
@@ -37,6 +40,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return @"Server=localhost;Database=gthor;UID=root;Password=root";
                 case BancoDeDados.Firebird:
                     return $"User=SYSDBA; Password=root; Database={ManipulaPastaHelper.LocalSistema()}\\gthor.fdb; DataSource=localhost; Port=3050;";
+                case BancoDeDados.SqlServerCe40:
+                    return $"Data Source={ManipulaPastaHelper.LocalSistema()}\\gthor.sdf;Persist Security Info=False;";
                 case BancoDeDados.Sqlite:
                     return $"Data Source={ManipulaPastaHelper.LocalSistema()}\\gthor.db;Version=3;";
                 default:
@@ -56,6 +61,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Driver.FirebirdClientDriver";
                 case BancoDeDados.Sqlite:
                     return "NHibernate.Driver.SQLite20Driver";
+                case BancoDeDados.SqlServerCe40:
+                    return "NHibernate.Driver.SqlServerCeDriver";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -73,6 +80,8 @@ namespace GThorMigracaoBancoDados.Flags
                     return "NHibernate.Dialect.FirebirdDialect";
                 case BancoDeDados.Sqlite:
                     return "NHibernate.Dialect.SQLiteDialect";
+                case BancoDeDados.SqlServerCe40:
+                    return "NHibernate.Dialect.MsSqlCe40Dialect";
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -85,6 +94,7 @@ namespace GThorMigracaoBancoDados.Flags
     {
         Postgresql,
         MySql,
+        SqlServerCe40,
         Sqlite,
         Firebird
     }
