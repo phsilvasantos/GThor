@@ -5,8 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GThor.Views.PerfilsMdfe"
         xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
-        xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
-        xmlns:flags1="clr-namespace:GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;assembly=GThorFrameworkDominio"
         xmlns:views1="clr-namespace:ComercialFrameworkWpf.Views;assembly=GThorFrameworkWpf"
         xmlns:empresas="clr-namespace:GThorFrameworkComponentes.ComboBox.Empresas;assembly=GThorFrameworkComponentes"
         xmlns:certificadosDigitais="clr-namespace:GThorFrameworkComponentes.ComboBox.CertificadosDigitais;assembly=GThorFrameworkComponentes"

@@ -115,6 +115,9 @@
     <Compile Include="Views\Empresas\EmpresaForm.xaml.cs">
       <DependentUpon>EmpresaForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MdfeFiscal\MdfeEmitirForm.xaml.cs">
+      <DependentUpon>MdfeEmitirForm.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PerfilsMdfe\PerfilMdfeForm.xaml.cs">
       <DependentUpon>PerfilMdfeForm.xaml</DependentUpon>
     </Compile>
@@ -148,6 +151,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Empresas\EmpresaForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MdfeFiscal\MdfeEmitirForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

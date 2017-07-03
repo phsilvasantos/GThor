@@ -110,7 +110,7 @@
                     <WrapPanel Orientation="Vertical">
                     <Label Margin="20,5,5,5" Foreground="white" Content="Veículos" MouseDown="Veiculo_OnMouseDown"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Perfil MDF-e" MouseDown="PerfilMdfe_OnMouseDown"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Outro aqui"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Emitir" MouseDown="EmitirMdfe_OnMouseDown"/>
                     </WrapPanel>
                 </Expander>
             

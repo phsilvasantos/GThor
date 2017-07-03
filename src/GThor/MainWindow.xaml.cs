@@ -9,6 +9,7 @@ using GThor.Models.PerfilsMdfe;
 using GThor.Models.Pessoas;
 using GThor.Models.Usuarios;
 using GThor.Models.Veiculos;
+using GThor.Views.MdfeFiscal;
 using GThorFrameworkWpf.Views.DataGrid;
 using GThorNegocio.Criadores;
 using MahApps.Metro.Controls;
@@ -78,6 +79,11 @@ namespace GThor
 
             TabControl.Items.Add(novaTab);
             novaTab.Focus();
+        }
+
+        private void EmitirMdfe_OnMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            new MdfeEmitirForm().ShowDialog();
         }
     }
 }
