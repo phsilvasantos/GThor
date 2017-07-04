@@ -10,20 +10,43 @@
         LoadedCommand="{Binding LoadedCommand}"
         MinHeight="670"
         Title="Emitir MDF-e" Width="1020">
-    
+    <views:GThorWindow.Resources>
+        <Storyboard x:Key="OnMouseEnter1">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC0A6C95"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseLeave1">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+    </views:GThorWindow.Resources>
+    <views:GThorWindow.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="rectangle">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="rectangle">
+            <BeginStoryboard x:Name="OnMouseLeave1_BeginStoryboard" Storyboard="{StaticResource OnMouseLeave1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="textBlock">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="textBlock">
+            <BeginStoryboard x:Name="OnMouseLeave1_BeginStoryboard1" Storyboard="{StaticResource OnMouseLeave1}"/>
+        </EventTrigger>
+    </views:GThorWindow.Triggers>
+
 
     <Grid>
         <Grid HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="200">
-            <Rectangle Fill="{StaticResource PrimaryBrush}" Height="48" Stroke="Black" Width="200"/>
-            <TextBlock TextWrapping="Wrap" Text="1 - Cabeçalho" TextAlignment="Center" 
+            <Rectangle x:Name="rectangle" Height="48" Stroke="Black" Width="200" Fill="#CC119EDA"/>
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="1 - CABEÇALHO" TextAlignment="Center" 
                        FontFamily="Bold"
                        FontSize="10"
                        Foreground="#fff"
                        VerticalAlignment="Center"
                        Width="200">
-
-                
-                
             </TextBlock>
         </Grid>
 
