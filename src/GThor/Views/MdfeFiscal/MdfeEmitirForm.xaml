@@ -11,62 +11,86 @@
         MinHeight="670"
         Title="Emitir MDF-e" Width="1020">
     <views:GThorWindow.Resources>
-        <Storyboard x:Key="OnMouseEnter1">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+        <Storyboard x:Key="OnMouseEnterCabecalho">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleCabecalho">
                 <EasingColorKeyFrame KeyTime="0" Value="#CC0A6C95"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
-        <Storyboard x:Key="OnMouseLeave1">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+        <Storyboard x:Key="OnMouseLeaveCabecalho">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleCabecalho">
                 <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
 
         <Storyboard x:Key="OnMouseEnterDocumentos">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangleDocumentos">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleDocumentos">
                 <EasingColorKeyFrame KeyTime="0" Value="#CC0A6C95"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="OnMouseLeaveDocumentos">
-            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangleDocumentos">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleDocumentos">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+
+        <Storyboard x:Key="OnMouseEnterModal">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleModal">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC0A6C95"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseLeaveModal">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="RectangleModal">
                 <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
     </views:GThorWindow.Resources>
     <views:GThorWindow.Triggers>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="rectangleDocumentos">
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="RectangleDocumentos">
             <BeginStoryboard Storyboard="{StaticResource OnMouseEnterDocumentos}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="rectangleDocumentos">
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="RectangleDocumentos">
             <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveDocumentos}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="textBlockDocumentos">
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="TextBlockDocumentos">
             <BeginStoryboard Storyboard="{StaticResource OnMouseEnterDocumentos}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="textBlockDocumentos">
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="TextBlockDocumentos">
             <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveDocumentos}"/>
         </EventTrigger>
-        
-        
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="rectangle">
-            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+
+
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="RectangleCabecalho">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterCabecalho}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="rectangle">
-            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave1}"/>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="RectangleCabecalho">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveCabecalho}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="textBlock">
-            <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="TextBlockCabecalho">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterCabecalho}"/>
         </EventTrigger>
-        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="textBlock">
-            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave1}"/>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="TextBlockCabecalho">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveCabecalho}"/>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="RectangleModal">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterModal}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="RectangleModal">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveModal}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="TextBlockModal">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterModal}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="TextBlockModal">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveModal}"/>
         </EventTrigger>
     </views:GThorWindow.Triggers>
 
 
     <Grid>
         <Grid HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="200">
-            <Rectangle x:Name="rectangle" Height="48" Stroke="Black" Width="200" Fill="#CC119EDA"/>
-            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Text="1 - CABEÇALHO" TextAlignment="Center" 
+            <Rectangle x:Name="RectangleCabecalho" Height="48" Width="200" Fill="#CC119EDA"/>
+            <TextBlock x:Name="TextBlockCabecalho" TextWrapping="Wrap" Text="1 - CABEÇALHO" TextAlignment="Center" 
                        FontFamily="Bold"
                        FontSize="10"
                        Foreground="#fff"
@@ -74,14 +98,22 @@
                        Width="200"/>
         </Grid>
         <Grid HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="200" Margin="200,0,0,0">
-            <Rectangle x:Name="rectangleDocumentos" Height="48" Stroke="Black" Width="200" Fill="#CC119EDA"/>
-            <TextBlock x:Name="textBlockDocumentos" TextWrapping="Wrap" Text="2 - DOCUMENTOS" TextAlignment="Center" 
+            <Rectangle x:Name="RectangleDocumentos" Height="48" Width="200" Fill="#CC119EDA"/>
+            <TextBlock x:Name="TextBlockDocumentos" TextWrapping="Wrap" Text="2 - DOCUMENTOS" TextAlignment="Center" 
                 FontFamily="Bold"
                 FontSize="10"
                 Foreground="#fff"
                 VerticalAlignment="Center"
                 Width="200"/>
         </Grid>
+        <Grid HorizontalAlignment="Left" Height="48" Margin="400,0,0,0" VerticalAlignment="Top" Width="200">
+            <Rectangle x:Name="RectangleModal" Fill="#CC119EDA" HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="3 - MODAL RODOVIÁRIO" VerticalAlignment="Center"
+                       x:Name="TextBlockModal"
+                       TextAlignment="Center" FontFamily="Bold" FontSize="10"
+                       Foreground="#fff" Width="200"/>
+        </Grid>
+
 
 
 
