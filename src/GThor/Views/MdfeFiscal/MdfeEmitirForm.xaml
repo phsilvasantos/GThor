@@ -21,19 +21,44 @@
                 <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
             </ColorAnimationUsingKeyFrames>
         </Storyboard>
+
+        <Storyboard x:Key="OnMouseEnterDocumentos">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangleDocumentos">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC0A6C95"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OnMouseLeaveDocumentos">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangleDocumentos">
+                <EasingColorKeyFrame KeyTime="0" Value="#CC119EDA"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
     </views:GThorWindow.Resources>
     <views:GThorWindow.Triggers>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="rectangleDocumentos">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterDocumentos}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="rectangleDocumentos">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveDocumentos}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="textBlockDocumentos">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseEnterDocumentos}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="textBlockDocumentos">
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeaveDocumentos}"/>
+        </EventTrigger>
+        
+        
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="rectangle">
             <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="rectangle">
-            <BeginStoryboard x:Name="OnMouseLeave1_BeginStoryboard" Storyboard="{StaticResource OnMouseLeave1}"/>
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave1}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="textBlock">
             <BeginStoryboard Storyboard="{StaticResource OnMouseEnter1}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="textBlock">
-            <BeginStoryboard x:Name="OnMouseLeave1_BeginStoryboard1" Storyboard="{StaticResource OnMouseLeave1}"/>
+            <BeginStoryboard Storyboard="{StaticResource OnMouseLeave1}"/>
         </EventTrigger>
     </views:GThorWindow.Triggers>
 
@@ -46,8 +71,16 @@
                        FontSize="10"
                        Foreground="#fff"
                        VerticalAlignment="Center"
-                       Width="200">
-            </TextBlock>
+                       Width="200"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Height="48" VerticalAlignment="Top" Width="200" Margin="200,0,0,0">
+            <Rectangle x:Name="rectangleDocumentos" Height="48" Stroke="Black" Width="200" Fill="#CC119EDA"/>
+            <TextBlock x:Name="textBlockDocumentos" TextWrapping="Wrap" Text="2 - DOCUMENTOS" TextAlignment="Center" 
+                FontFamily="Bold"
+                FontSize="10"
+                Foreground="#fff"
+                VerticalAlignment="Center"
+                Width="200"/>
         </Grid>
 
 
