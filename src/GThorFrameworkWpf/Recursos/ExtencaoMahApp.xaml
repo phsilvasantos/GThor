@@ -116,7 +116,7 @@
 
     <Style x:Key="ToggleSwitchWin10" TargetType="controls:ToggleSwitch"
            BasedOn="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}">
-        <Setter Property="Margin" Value="5" />
+        <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
     </Style>
 
     <Style x:Key="ComercialDialog"

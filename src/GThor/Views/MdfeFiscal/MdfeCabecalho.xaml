@@ -1,0 +1,189 @@
+﻿<UserControl x:Class="GThor.Views.MdfeFiscal.MdfeCabecalho"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GThor.Views.MdfeFiscal"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs;assembly=GThorFrameworkComponentes"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="670" d:DesignWidth="1020">
+    <StackPanel>
+        <GroupBox Header="Perfil MDF-e"  Style="{DynamicResource ComercialGroupBox}" VerticalAlignment="Top">
+            <StackPanel>
+                <TextBlock Text="Selecione um perfil MDF-e" VerticalAlignment="Top" />
+                <TextBox Style="{DynamicResource ComercialSearchTextBox}" VerticalAlignment="Top" />
+
+                <StackPanel Margin="0,5,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="0,0,5,0">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Margin="0,0,5,0">
+                                    <Grid Margin="0,0,0,5">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="4*"></ColumnDefinition>
+                                            <ColumnDefinition Width="6*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel>
+                                            <TextBlock Text="Número"></TextBlock>
+                                        </StackPanel>
+                                    </Grid>
+                                    <TextBox></TextBox>
+                                </StackPanel>
+
+                                <StackPanel Margin="0,0,5,3" Grid.Column="1" VerticalAlignment="Bottom">
+                                    <controls:ToggleSwitch OnLabel="Gerarção automático" OffLabel="Geração manual"></controls:ToggleSwitch>
+                                </StackPanel>
+
+                            </Grid>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Série" Margin="0,0,0,5"></TextBlock>
+                            <TextBox Width="100" HorizontalAlignment="Left"></TextBox>
+                        </StackPanel>
+
+                    </Grid>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="CONFIGURAÇÃO DA EMISSÃO">
+                <StackPanel>
+                    <TextBlock Text="Tipo Emitente"></TextBlock>
+                    <ComboBox></ComboBox>
+                    <TextBlock Text="Unidade Medida"></TextBlock>
+                    <ComboBox></ComboBox>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Margin="0,0,5,0">
+                            <TextBlock Text="Peso Bruto"></TextBlock>
+                            <TextBox></TextBox>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Valor Total da Carga"></TextBlock>
+                            <TextBox></TextBox>
+                        </StackPanel>
+
+                    </Grid>
+                </StackPanel>
+            </GroupBox>
+
+            <GroupBox Header="Observação" Grid.Column="1">
+                <StackPanel>
+                    <TextBox Height="130" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                </StackPanel>
+            </GroupBox>
+        </Grid>
+
+        <Grid Margin="5,0,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <estadosUFs:ComboBoxUf CLabel="UF - Carregamento" Margin="0,0,5,0"></estadosUFs:ComboBoxUf>
+
+            <estadosUFs:ComboBoxUf CLabel="UF - Descarregamento" Grid.Column="1"></estadosUFs:ComboBoxUf>
+        </Grid>
+        
+        <Grid Margin="0,5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="217"></ColumnDefinition>
+                <ColumnDefinition Width="400"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <GroupBox Header="Percurso" Height="240">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <estadosUFs:ComboBoxUf></estadosUFs:ComboBoxUf>
+                        
+                        <StackPanel Margin="2,0,0,0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <Button Style="{StaticResource ComercialSuccessButton}">
+                                <iconPacks:PackIconModern Width="20"
+                                                          Height="20"
+                                                          Kind="Add" Foreground="{StaticResource WhiteBrush}"
+                                                          FontWeight="Bold"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+                    
+                    <ListBox Margin="0,5,0,0" Height="149"></ListBox>
+                    
+                </StackPanel>
+            </GroupBox>
+            
+            <GroupBox Header="Municipio Carregamento" Grid.Column="1">
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+                        <estadosUFs:ComboBoxCidade></estadosUFs:ComboBoxCidade>
+
+                        <StackPanel Margin="2,0,0,0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                            <Button Style="{StaticResource ComercialSuccessButton}">
+                                <iconPacks:PackIconModern Width="20"
+                                                          Height="20"
+                                                          Kind="Add" Foreground="{StaticResource WhiteBrush}"
+                                                          FontWeight="Bold"/>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
+
+                    <ListBox Margin="0,5,0,0" Height="149"></ListBox>
+
+                </StackPanel>
+            </GroupBox>
+            
+            <StackPanel VerticalAlignment="Bottom" Grid.Column="2">
+                <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Margin="0,0,5,0">Proximo Passo</TextBlock>
+                            <iconPacks:PackIconModern Width="20"
+                                                      Height="20"
+                                                      Kind="ArrowRight" Foreground="{StaticResource WhiteBrush}"
+                                                      FontWeight="Bold"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+            
+        </Grid>
+
+    </StackPanel>
+</UserControl>
