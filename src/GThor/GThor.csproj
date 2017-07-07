@@ -118,6 +118,9 @@
     <Compile Include="Views\MdfeFiscal\MdfeCabecalho.xaml.cs">
       <DependentUpon>MdfeCabecalho.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MdfeFiscal\MdfeDocumentosControl.xaml.cs">
+      <DependentUpon>MdfeDocumentosControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MdfeFiscal\MdfeEmitirForm.xaml.cs">
       <DependentUpon>MdfeEmitirForm.xaml</DependentUpon>
     </Compile>
@@ -158,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MdfeFiscal\MdfeCabecalho.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MdfeFiscal\MdfeDocumentosControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

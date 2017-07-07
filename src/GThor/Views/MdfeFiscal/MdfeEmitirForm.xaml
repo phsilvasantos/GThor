@@ -20,7 +20,9 @@
             <TabItem Header="1- CABEÇALHO">
                 <local:MdfeCabecalho/>
             </TabItem>
-            <TabItem Header="2 - DOCUMENTOS"></TabItem>
+            <TabItem Header="2 - DOCUMENTOS">
+                <local:MdfeDocumentosControl></local:MdfeDocumentosControl>
+            </TabItem>
 
             <TabItem Header="3 - MODAL RODOVIÁRIO"></TabItem>
 
