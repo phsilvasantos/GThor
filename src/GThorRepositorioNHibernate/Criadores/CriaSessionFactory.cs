@@ -18,7 +18,7 @@ namespace GThorRepositorioNHibernate.Criadores
 
         public ISessionFactory CriaSessionFactoryNHibernate()
         {
-            _bancoDeDados = BancoDeDados.SqlServer2008;
+            _bancoDeDados = BancoDeDados.Sqlite;
 
             var cfg = new Configuration();
 
