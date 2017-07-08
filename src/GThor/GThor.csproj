@@ -133,6 +133,9 @@
     <Compile Include="Views\MdfeFiscal\MdfeModalRodoviarioInformacoes.xaml.cs">
       <DependentUpon>MdfeModalRodoviarioInformacoes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MdfeFiscal\MdfeModalRodoviarioVeiculo.xaml.cs">
+      <DependentUpon>MdfeModalRodoviarioVeiculo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PerfilsMdfe\PerfilMdfeForm.xaml.cs">
       <DependentUpon>PerfilMdfeForm.xaml</DependentUpon>
     </Compile>
@@ -186,6 +189,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MdfeFiscal\MdfeModalRodoviarioInformacoes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MdfeFiscal\MdfeModalRodoviarioVeiculo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
