@@ -32,7 +32,9 @@
                 <local:MdfeModalRodoviarioVeiculo></local:MdfeModalRodoviarioVeiculo>
             </TabItem>
 
-            <TabItem Header="5 - SEGURADORA"></TabItem>
+            <TabItem Header="5 - SEGURADORA">
+                <local:MdfeSeguradoras></local:MdfeSeguradoras>
+            </TabItem>
         </TabControl>
 
 
