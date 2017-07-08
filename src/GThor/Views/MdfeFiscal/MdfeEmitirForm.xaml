@@ -24,9 +24,13 @@
                 <local:MdfeDocumentosControl></local:MdfeDocumentosControl>
             </TabItem>
 
-            <TabItem Header="3 - MODAL RODOVIÁRIO"></TabItem>
+            <TabItem Header="3 - MODAL RODOVIÁRIO - INFORMAÇÕES">
+                <local:MdfeModalRodoviarioInformacoes></local:MdfeModalRodoviarioInformacoes>
+            </TabItem>
 
-            <TabItem Header="4 - SEGURADORA"></TabItem>
+            <TabItem Header="4 - MODAL RODOVIÁRIO - VEÍCULOS"></TabItem>
+
+            <TabItem Header="5 - SEGURADORA"></TabItem>
         </TabControl>
 
 
