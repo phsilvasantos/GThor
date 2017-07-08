@@ -1,17 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
+using MahApps.Metro.SimpleChildWindow;
 
 namespace GThor.Views.MdfeFiscal
 {
@@ -30,6 +23,17 @@ namespace GThor.Views.MdfeFiscal
         private void OnClickDeletaItem(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        {
+            var shildwindow = new MdfeAdicionarDocumentoFiscal();
+
+            var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive) as MetroWindow;
+
+            window.ShowChildWindowAsync(shildwindow, ChildWindowManager.OverlayFillBehavior.FullWindow);
+
+
         }
     }
 }
