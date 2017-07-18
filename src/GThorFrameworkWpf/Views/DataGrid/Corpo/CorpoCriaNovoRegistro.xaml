@@ -17,7 +17,7 @@
             Height="45"
             controls:VisibilityHelper.IsVisible="{Binding BotaoNovoVisivel}"
             Command="{Binding CommandNovoRegistro}"
-            Style="{StaticResource ComercialSuccessButton}" Margin="0,5,0,0"
+            Background="#0D47A1" Margin="0,5,0,0"
             ToolTipService.ShowDuration="10000"
             >
             <Button.ToolTip>
