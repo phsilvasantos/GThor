@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Windows;
 using GThor.Models.MdfeFiscal.Abas;
 using GThorFrameworkComponentes.ComboBox.EstadosUFs;
@@ -14,7 +15,9 @@ namespace GThor.Views.MdfeFiscal
             InitializeComponent();
         }
 
-        private void InicializaComboBox()
+        private MdfeCabecalhoModel Model => DataContext as MdfeCabecalhoModel;
+
+        private void InicializaCabecalho(object sender, EventArgs e)
         {
             CbUfCarregamento.PickItem += ComboBoxUfCarregamento_OnPickItem;
             CbUfCarregamento.UfSelecionado = CbUfCarregamento.Default;
@@ -24,17 +27,34 @@ namespace GThor.Views.MdfeFiscal
 
             CbCidadeCarregamento.PickItemCidade += ComboBoxCidadeCarregamento_OnPickItem;
             CbCidadeCarregamento.PesquisaPorUf(CbUfCarregamento.Default);
+
+            CbPercurso.PickItem += ComboBoxPercurso_OnPickItem;
+            CbPercurso.UfSelecionado = CbPercurso.Default;
+
+            Model.Percurso.CollectionChanged += AtualizaComboCidade;
+        }
+
+        private void AtualizaComboCidade(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            PesquisarCidadesPorUf();
+        }
+
+        private void ComboBoxPercurso_OnPickItem(object sender, RoutedEventArgs e)
+        {
+            var comboBoxUf = e.Source as ComboBoxUf;
+            Model.PercursoSelecionado = comboBoxUf?.UfSelecionado;
         }
 
         private void ComboBoxCidadeCarregamento_OnPickItem(object sender, RoutedEventArgs e)
         {
-            
+            var comboBoxCidade = e.Source as ComboBoxCidade;
+            Model.MunicipioCarregamentoSelecionado = comboBoxCidade?.CidadeSelecionado;
         }
 
         private void ComboBoxUfDescarregamento_OnPickItem(object sender, RoutedEventArgs e)
         {
             var comboBoxUf = e.Source as ComboBoxUf;
-            (DataContext as MdfeCabecalhoModel).UfDescarregamento = comboBoxUf?.UfSelecionado;
+            Model.UfDescarregamento = comboBoxUf?.UfSelecionado;
             PesquisarCidadesPorUf();
         }
 
@@ -52,31 +72,33 @@ namespace GThor.Views.MdfeFiscal
                 filtroList.Add(CbUfDescarregamento.UfSelecionado);
             }
 
+            filtroList.AddRange(Model.Percurso);
+
             CbCidadeCarregamento.PesquisaPorUf(filtroList.ToArray());
         }
 
         private void ComboBoxUfCarregamento_OnPickItem(object sender, RoutedEventArgs e)
         {
             var comboBoxUf = e.Source as ComboBoxUf;
-            (DataContext as MdfeCabecalhoModel).UfCarregamento = comboBoxUf?.UfSelecionado;
+            Model.UfCarregamento = comboBoxUf?.UfSelecionado;
             PesquisarCidadesPorUf();
-        }
-
-        private void MdfeCabecalho_OnLoaded(object sender, RoutedEventArgs e)
-        {
-            InicializaComboBox();
-            (DataContext as MdfeCabecalhoModel).TrocouUfCarregamentoHandler += TrocouUfCarregamentoAction;
-            (DataContext as MdfeCabecalhoModel).TrocouUfDescarregamentoHandler += TrocouUfDescarregamentoAction;
         }
 
         private void TrocouUfCarregamentoAction(object sender, EventArgs e)
         {
-            CbUfCarregamento.UfSelecionado = (DataContext as MdfeCabecalhoModel)?.UfCarregamento;
+            CbUfCarregamento.UfSelecionado = Model.UfCarregamento;
         }
 
         private void TrocouUfDescarregamentoAction(object sender, EventArgs e)
         {
-            CbUfDescarregamento.UfSelecionado = (DataContext as MdfeCabecalhoModel)?.UfDescarregamento;
+            CbUfDescarregamento.UfSelecionado = Model.UfDescarregamento;
+        }
+
+        private void This_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            Model.LoadedCabecalho += InicializaCabecalho;
+            Model.TrocouUfCarregamentoHandler += TrocouUfCarregamentoAction;
+            Model.TrocouUfDescarregamentoHandler += TrocouUfDescarregamentoAction;
         }
     }
 }

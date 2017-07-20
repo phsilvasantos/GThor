@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
+using System.Windows.Input;
 using GThor.Models.MdfeFiscal.Base;
+using GThorFrameworkDominio.Dominios.Cidades;
 using GThorFrameworkDominio.Dominios.DocumentosFiscaisEletronicos.flags;
 using GThorFrameworkDominio.Dominios.EstadosUf;
 using GThorFrameworkDominio.Dominios.MdfeFiscal.Flags;
@@ -25,6 +28,9 @@ namespace GThor.Models.MdfeFiscal.Abas
         private decimal _pesoBruto;
         private decimal _valorTotalCarga;
         private string _observacoes;
+        private bool _isPerfilSelecionado;
+        private ObservableCollection<Uf> _percurso;
+        private Uf _percursoSelecionado;
 
         public ObservableCollection<PerfilMdfeDto> ColecaoPerfilMdfe
         {
@@ -151,6 +157,28 @@ namespace GThor.Models.MdfeFiscal.Abas
         public Uf UfCarregamento { get; set; }
         public Uf UfDescarregamento { get; set; }
 
+        public bool IsPerfilSelecionado
+        {
+            get => _isPerfilSelecionado;
+            set
+            {
+                if (value == _isPerfilSelecionado) return;
+                _isPerfilSelecionado = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public ObservableCollection<Uf> Percurso
+        {
+            get => _percurso;
+            set
+            {
+                if (Equals(value, _percurso)) return;
+                _percurso = value;
+                OnPropertyChanged();
+            }
+        }
+
         private void PreenchePerfil()
         {
             var perfilSelecionado = NegocioCriador.CriaNegocioPerfilMdfe().CarregarPorId(PerfilMdfeDtoSelecionado.Id);
@@ -162,7 +190,11 @@ namespace GThor.Models.MdfeFiscal.Abas
 
             OnTrocouUfCarregamentoHandler();
             OnTrocouUfDescarregamentoHandler();
+
+            IsPerfilSelecionado = true;
         }
+
+        public event EventHandler LoadedCabecalho;
 
         protected override void Loaded()
         {
@@ -173,6 +205,19 @@ namespace GThor.Models.MdfeFiscal.Abas
             UnidadeMedida = UnidadeMedida.Kg;
 
             InicializaComboBoxPerfilMdfe();
+            InicializaPercurso();
+            InicializaMunicipioCarregamento();
+            OnLoadedCabecalho();
+        }
+
+        private void InicializaMunicipioCarregamento()
+        {
+            MunicipioCarregamento = new ObservableCollection<Cidade>();
+        }
+
+        private void InicializaPercurso()
+        {
+            Percurso = new ObservableCollection<Uf>();
         }
 
         private void InicializaComboBoxPerfilMdfe()
@@ -192,6 +237,100 @@ namespace GThor.Models.MdfeFiscal.Abas
         protected virtual void OnTrocouUfDescarregamentoHandler()
         {
             TrocouUfDescarregamentoHandler?.Invoke(this, EventArgs.Empty);
+        }
+
+        public ICommand AdicionarPercursoCommand => GetSimpleCommand(AdicionarPercursoAction);
+
+        public Uf PercursoSelecionado
+        {
+            get => _percursoSelecionado;
+            set
+            {
+                if (Equals(value, _percursoSelecionado)) return;
+                _percursoSelecionado = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private void AdicionarPercursoAction(object obj)
+        {
+            ValidacoesUfs();
+
+            if (UfCarregamento == UfDescarregamento)
+            {
+                throw new ArgumentException("A uf de carregamento é igual a uf de descarregamento, logo então não tenho percurso");
+            }
+
+            if (PercursoSelecionado == UfCarregamento)
+            {
+                throw new ArgumentException("Não pode adicionar a uf de carregamento no percurso");
+            }
+
+            if (PercursoSelecionado == UfDescarregamento)
+            {
+                throw new ArgumentException("Não pode adicionar a uf de descarregamento no percurso");
+            }
+
+            if (Percurso.Any(p => p == PercursoSelecionado))
+            {
+                throw new ArgumentException("Xii, esta uf já esta na lista");
+            }
+
+            Percurso.Add(PercursoSelecionado);
+
+        }
+
+        private void ValidacoesUfs()
+        {
+            if (UfCarregamento == null) throw new ArgumentException("Selecione uma Uf de carregamento hehe");
+
+            if (UfDescarregamento == null) throw new ArgumentException("Selecione uma Uf de descarregamento hehe");
+
+            if (PercursoSelecionado == null) throw new ArgumentException("Selecione uma percurso hehe");
+        }
+
+        public ICommand DeletarPercursoCommand => GetSimpleCommand(DeletarPercursoAction);
+
+        public ICommand DeletarCidadeCommand => GetSimpleCommand(DeletarCidadeAction);
+
+        public ObservableCollection<Cidade> MunicipioCarregamento { get; set; }
+
+        public Cidade MunicipioCarregamentoSelecionado { get; set; }
+
+        public ICommand AdicionarMunicipioCarregamentoCommand => GetSimpleCommand(AdicionarMunicipioCarregamentoAction);
+
+        private void AdicionarMunicipioCarregamentoAction(object obj)
+        {
+            MunicipioCarregamento.Add(MunicipioCarregamentoSelecionado);
+        }
+
+        private void DeletarCidadeAction(object obj)
+        {
+            var municipioCarregamentoSelecionadoAtualmente = MunicipioCarregamentoSelecionado;
+
+            MunicipioCarregamento.Remove(MunicipioCarregamentoSelecionado);
+
+            MunicipioCarregamentoSelecionado = municipioCarregamentoSelecionadoAtualmente;
+        }
+
+        private void DeletarPercursoAction(object obj)
+        {
+            if (MunicipioCarregamento.Count(m => m.Uf == PercursoSelecionado) != 0)
+            {
+                throw new ArgumentException("Deletar municipios carregamento vinculados a esta uf : " + PercursoSelecionado.Nome);
+            }
+
+
+            var percursoSelecionadoAtualmente = PercursoSelecionado;
+
+            Percurso.Remove(PercursoSelecionado);
+
+            PercursoSelecionado = percursoSelecionadoAtualmente;
+        }
+
+        protected virtual void OnLoadedCabecalho()
+        {
+            LoadedCabecalho?.Invoke(this, EventArgs.Empty);
         }
     }
 }

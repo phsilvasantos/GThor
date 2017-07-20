@@ -15,7 +15,8 @@
              Background="White"
              d:DataContext="{d:DesignInstance abas:MdfeCabecalhoModel}"
              d:DesignHeight="620" d:DesignWidth="1020"
-             Loaded="MdfeCabecalho_OnLoaded">
+             x:Name="This" 
+             DataContextChanged="This_DataContextChanged">
     <StackPanel>
         <GroupBox Header="Perfil MDF-e"  Style="{DynamicResource ComercialGroupBox}" VerticalAlignment="Top">
             <StackPanel>
@@ -26,7 +27,8 @@
                           SelectedValuePath="Id"
                           DisplayMemberPath="Descricao"
                           SelectedValue="{Binding PerfilMdfeDtoSelecionado.Id}"
-                          helpers:GThorComboBoxHelper.AbreDropDown="True"/>
+                          helpers:GThorComboBoxHelper.AbreDropDown="True"
+                          IsEditable="False"/>
 
                 <StackPanel Margin="0,5,0,0">
                     <Grid>
@@ -35,7 +37,7 @@
                             <ColumnDefinition Width="*"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <StackPanel Margin="0,0,5,0">
+                        <StackPanel Margin="0,0,5,0" IsEnabled="{Binding IsPerfilSelecionado}">
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*"></ColumnDefinition>
@@ -84,7 +86,9 @@
                                 <StackPanel>
                                     <TextBlock Text="Série" Margin="0,0,0,5" HorizontalAlignment="Left"></TextBlock>
                                     <TextBox 
+                                        IsEnabled="False"
                                         Text="{Binding Serie}"
+                                        IsReadOnly="True"
                                         Width="100" HorizontalAlignment="Left"></TextBox>
                                 </StackPanel>
 
@@ -105,7 +109,7 @@
             </StackPanel>
         </GroupBox>
 
-        <Grid>
+        <Grid IsEnabled="{Binding IsPerfilSelecionado}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="400"></ColumnDefinition>
@@ -155,7 +159,7 @@
             </GroupBox>
         </Grid>
 
-        <Grid Margin="5,0,5,0">
+        <Grid Margin="5,0,5,0" IsEnabled="{Binding IsPerfilSelecionado}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="*"></ColumnDefinition>
@@ -165,8 +169,8 @@
 
             <estadosUFs:ComboBoxUf CLabel="UF - Descarregamento" Grid.Column="1" x:Name="CbUfDescarregamento"></estadosUFs:ComboBoxUf>
         </Grid>
-        
-        <Grid Margin="0,5,0,0">
+
+        <Grid Margin="0,5,0,0" IsEnabled="{Binding IsPerfilSelecionado}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="217"></ColumnDefinition>
                 <ColumnDefinition Width="400"></ColumnDefinition>
@@ -181,10 +185,10 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <estadosUFs:ComboBoxUf></estadosUFs:ComboBoxUf>
+                        <estadosUFs:ComboBoxUf x:Name="CbPercurso"></estadosUFs:ComboBoxUf>
                         
                         <StackPanel Margin="2,0,0,0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                            <Button Style="{StaticResource ComercialSuccessButton}">
+                            <Button Style="{StaticResource ComercialSuccessButton}" Command="{Binding AdicionarPercursoCommand}">
                                 <iconPacks:PackIconModern Width="20"
                                                           Height="20"
                                                           Kind="Add" Foreground="{StaticResource WhiteBrush}"
@@ -193,7 +197,36 @@
                         </StackPanel>
                     </Grid>
                     
-                    <ListBox Margin="0,5,0,0" Height="149"></ListBox>
+                    <ListBox Margin="0,5,0,0" Height="149" Focusable="False" ItemsSource="{Binding Percurso}"
+                             SelectedItem="{Binding PercursoSelecionado}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <StackPanel>
+                                            <Button Background="Transparent" 
+                                                    Command="{Binding DataContext.DeletarPercursoCommand, ElementName=This}">
+
+                                                <iconPacks:PackIconModern Width="24" Height="24"
+                                                                          Kind="Delete" Foreground="Blue"
+                                                                          FontWeight="Bold"/>
+
+                                            </Button>
+                                        </StackPanel>
+                                        
+                                        <TextBlock Grid.Column="1" VerticalAlignment="Center"
+                                                   FontSize="15"
+                                                   Text="{Binding Nome}"></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                     
                 </StackPanel>
             </GroupBox>
@@ -209,7 +242,8 @@
                         <estadosUFs:ComboBoxCidade x:Name="CbCidadeCarregamento"></estadosUFs:ComboBoxCidade>
 
                         <StackPanel Margin="2,0,0,0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                            <Button Style="{StaticResource ComercialSuccessButton}">
+                            <Button Style="{StaticResource ComercialSuccessButton}"
+                                    Command="{Binding AdicionarMunicipioCarregamentoCommand}">
                                 <iconPacks:PackIconModern Width="20"
                                                           Height="20"
                                                           Kind="Add" Foreground="{StaticResource WhiteBrush}"
@@ -218,7 +252,41 @@
                         </StackPanel>
                     </Grid>
 
-                    <ListBox Margin="0,5,0,0" Height="149"></ListBox>
+                    <ListBox Margin="0,5,0,0" Height="149" ItemsSource="{Binding MunicipioCarregamento}"
+                             SelectedItem="{Binding MunicipioCarregamentoSelecionado}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"></ColumnDefinition>
+                                            <ColumnDefinition Width="*"></ColumnDefinition>
+                                            <ColumnDefinition Width="50"></ColumnDefinition>
+                                        </Grid.ColumnDefinitions>
+
+                                        <StackPanel>
+                                            <Button Background="Transparent" 
+                                                    Command="{Binding DataContext.DeletarCidadeCommand, ElementName=This}">
+
+                                                <iconPacks:PackIconModern Width="24" Height="24"
+                                                                          Kind="Delete" Foreground="Blue"
+                                                                          FontWeight="Bold"/>
+
+                                            </Button>
+                                        </StackPanel>
+
+                                        <TextBlock Grid.Column="1" VerticalAlignment="Center"
+                                                   FontSize="15"
+                                                   Text="{Binding Nome}"></TextBlock>
+
+                                        <TextBlock Grid.Column="2" VerticalAlignment="Center"
+                                                   FontSize="15"
+                                                   Text="{Binding Uf.Sigla}"></TextBlock>
+                                    </Grid>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
 
                 </StackPanel>
             </GroupBox>
