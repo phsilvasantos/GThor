@@ -82,17 +82,19 @@ namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void PesquisaPorUf(Uf uf)
+        public void PesquisaPorUf(params Uf[] ufs)
         {
-            if (uf == null)
+            if (ufs == null || ufs.Length == 0)
             {
                 return;
             }
 
             ListaCidade.Clear();
-            var cidadesFiltradas = _cacheCidades.Where(c => c.Uf.Id == uf.Id);
 
-            var ufComboBoxDtos = cidadesFiltradas as IList<Cidade> ?? cidadesFiltradas.ToList();
+
+            IList<Cidade> cidadesFiltradas = ufs.SelectMany(uf => _cacheCidades.Where(c => c.Uf.Id == uf.Id)).ToList();
+
+            var ufComboBoxDtos = cidadesFiltradas;
 
             foreach (var ufComboBoxDto in ufComboBoxDtos)
             {

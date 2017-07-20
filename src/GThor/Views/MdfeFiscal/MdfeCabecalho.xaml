@@ -7,14 +7,26 @@
              xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs;assembly=GThorFrameworkComponentes"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:abas="clr-namespace:GThor.Models.MdfeFiscal.Abas"
+             xmlns:helpers="clr-namespace:GThorFrameworkWpf.Helpers;assembly=GThorFrameworkWpf"
+             xmlns:flags="clr-namespace:GThorFrameworkDominio.Dominios.MdfeFiscal.Flags;assembly=GThorFrameworkDominio"
+             xmlns:markupExtensions="clr-namespace:GThorFrameworkWpf.Helpers.MarkupExtensions;assembly=GThorFrameworkWpf"
              mc:Ignorable="d" 
              Background="White"
-             d:DesignHeight="620" d:DesignWidth="1020">
+             d:DataContext="{d:DesignInstance abas:MdfeCabecalhoModel}"
+             d:DesignHeight="620" d:DesignWidth="1020"
+             Loaded="MdfeCabecalho_OnLoaded">
     <StackPanel>
         <GroupBox Header="Perfil MDF-e"  Style="{DynamicResource ComercialGroupBox}" VerticalAlignment="Top">
             <StackPanel>
                 <TextBlock Text="Selecione um perfil MDF-e" VerticalAlignment="Top" />
-                <TextBox Style="{DynamicResource ComercialSearchTextBox}" VerticalAlignment="Top" />
+                <ComboBox VerticalAlignment="Top"
+                          ItemsSource="{Binding ColecaoPerfilMdfe}"
+                          SelectedItem="{Binding PerfilMdfeDtoSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                          SelectedValuePath="Id"
+                          DisplayMemberPath="Descricao"
+                          SelectedValue="{Binding PerfilMdfeDtoSelecionado.Id}"
+                          helpers:GThorComboBoxHelper.AbreDropDown="True"/>
 
                 <StackPanel Margin="0,5,0,0">
                     <Grid>
@@ -41,19 +53,51 @@
                                             <TextBlock Text="Número"></TextBlock>
                                         </StackPanel>
                                     </Grid>
-                                    <TextBox></TextBox>
+                                    <TextBox Text="{Binding NumeroFiscal}">
+                                        <TextBox.Style>
+                                            <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource GThorTextBoxNumeroInteiro}">
+                                                <Setter Property="IsEnabled" Value="False"></Setter>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding IsGeracaoNumeracaoManual}" Value="False">
+                                                        <Setter Property="IsEnabled" Value="True"></Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBox.Style>
+                                    </TextBox>
                                 </StackPanel>
 
                                 <StackPanel Margin="0,0,5,3" Grid.Column="1" VerticalAlignment="Bottom">
-                                    <controls:ToggleSwitch OnLabel="Gerarção automático" OffLabel="Geração manual"></controls:ToggleSwitch>
+                                    <controls:ToggleSwitch IsChecked="{Binding IsGeracaoNumeracaoManual}" OnLabel="Gerarção automático" OffLabel="Geração manual"></controls:ToggleSwitch>
                                 </StackPanel>
 
                             </Grid>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
-                            <TextBlock Text="Série" Margin="0,0,0,5"></TextBlock>
-                            <TextBox Width="100" HorizontalAlignment="Left"></TextBox>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*"/>
+                                    <ColumnDefinition Width="7*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel>
+                                    <TextBlock Text="Série" Margin="0,0,0,5" HorizontalAlignment="Left"></TextBlock>
+                                    <TextBox 
+                                        Text="{Binding Serie}"
+                                        Width="100" HorizontalAlignment="Left"></TextBox>
+                                </StackPanel>
+
+                                <StackPanel 
+                                    controls:VisibilityHelper.IsVisible="{Binding IsHomologacao}"
+                                    Background="{DynamicResource DangerBrush}"
+                                    Grid.Column="1" >
+                                    <TextBlock Margin="0,8,0,0" HorizontalAlignment="Center" 
+                                               FontFamily="Bold"
+                                               VerticalAlignment="Center" Text="HOMOLOGAÇÃO" FontSize="27"></TextBlock>
+                                </StackPanel>
+
+                            </Grid>
                         </StackPanel>
 
                     </Grid>
@@ -70,9 +114,17 @@
             <GroupBox Header="CONFIGURAÇÃO DA EMISSÃO">
                 <StackPanel>
                     <TextBlock Text="Tipo Emitente"></TextBlock>
-                    <ComboBox></ComboBox>
+                    <ComboBox
+                        IsEditable="False"
+                        ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:TipoEmitente}}}"
+                        SelectedValue="{Binding TipoEmitente}"
+                    ></ComboBox>
                     <TextBlock Text="Unidade Medida"></TextBlock>
-                    <ComboBox></ComboBox>
+                    <ComboBox
+                        IsEditable="False"
+                        ItemsSource="{Binding Source={markupExtensions:EnumBindingSource {x:Type flags:UnidadeMedida}}}"
+                        SelectedValue="{Binding UnidadeMedida}"
+                    ></ComboBox>
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -82,21 +134,23 @@
 
                         <StackPanel Margin="0,0,5,0">
                             <TextBlock Text="Peso Bruto"></TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox Text="{Binding PesoBruto, UpdateSourceTrigger=LostFocus, StringFormat=N3}"></TextBox>
                         </StackPanel>
 
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Valor Total da Carga"></TextBlock>
-                            <TextBox></TextBox>
+                            <TextBox Text="{Binding ValorTotalCarga, UpdateSourceTrigger=LostFocus, StringFormat=N2}"></TextBox>
                         </StackPanel>
 
                     </Grid>
                 </StackPanel>
             </GroupBox>
 
-            <GroupBox Header="Observação" Grid.Column="1">
+            <GroupBox Header="Obervações" Grid.Column="1">
                 <StackPanel>
-                    <TextBox Height="130" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
+                    <TextBox 
+                        Text="{Binding Observacoes}"
+                        Height="130" TextWrapping="Wrap" AcceptsReturn="True"></TextBox>
                 </StackPanel>
             </GroupBox>
         </Grid>
@@ -107,9 +161,9 @@
                 <ColumnDefinition Width="*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <estadosUFs:ComboBoxUf CLabel="UF - Carregamento" Margin="0,0,5,0"></estadosUFs:ComboBoxUf>
+            <estadosUFs:ComboBoxUf CLabel="UF - Carregamento" Margin="0,0,5,0" x:Name="CbUfCarregamento"></estadosUFs:ComboBoxUf>
 
-            <estadosUFs:ComboBoxUf CLabel="UF - Descarregamento" Grid.Column="1"></estadosUFs:ComboBoxUf>
+            <estadosUFs:ComboBoxUf CLabel="UF - Descarregamento" Grid.Column="1" x:Name="CbUfDescarregamento"></estadosUFs:ComboBoxUf>
         </Grid>
         
         <Grid Margin="0,5,0,0">
@@ -152,7 +206,7 @@
                             <ColumnDefinition Width="Auto"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
 
-                        <estadosUFs:ComboBoxCidade></estadosUFs:ComboBoxCidade>
+                        <estadosUFs:ComboBoxCidade x:Name="CbCidadeCarregamento"></estadosUFs:ComboBoxCidade>
 
                         <StackPanel Margin="2,0,0,0" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                             <Button Style="{StaticResource ComercialSuccessButton}">

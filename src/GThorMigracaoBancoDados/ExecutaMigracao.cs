@@ -11,7 +11,7 @@ namespace GThorMigracaoBancoDados
     {
         public void Executa()
         {
-            const BancoDeDados bancoDeDados = BancoDeDados.Sqlite;
+            const BancoDeDados bancoDeDados = BancoDeDados.Postgresql;
 
             var connectionString = bancoDeDados.GetStringConexao();
 

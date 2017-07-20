@@ -44,6 +44,11 @@ namespace GThorNegocio.Negocios
             }
         }
 
+        public IEnumerable<PerfilMdfeDto> BuscarParaComboBox()
+        {
+            return BuscarParaGridModel();
+        }
+
         public PerfilMdfe CarregarPorId(int id)
         {
             using (var instancia = NHibernateHelper.Instancia())

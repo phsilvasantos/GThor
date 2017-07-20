@@ -1,4 +1,5 @@
-﻿using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
+﻿using System.Collections.Generic;
+using GThorFrameworkDominio.Dominios.MdfeFiscal.Perfils;
 using GThorFrameworkDominio.Dto;
 using GThorNegocio.Contratos.Base;
 
@@ -10,6 +11,6 @@ namespace GThorNegocio.Contratos
         INegocioSuporteGridModel<PerfilMdfeDto>,
         INegocioBase<PerfilMdfe, int>
     {
-        
+        IEnumerable<PerfilMdfeDto> BuscarParaComboBox();
     }
 }

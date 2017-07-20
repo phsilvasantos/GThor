@@ -4,11 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:GThorFrameworkWpf.Views;assembly=GThorFrameworkWpf"
-        xmlns:local="clr-namespace:GThor.Views.MdfeFiscal" x:Class="GThor.Views.MdfeFiscal.MdfeEmitirForm"
+        xmlns:local="clr-namespace:GThor.Views.MdfeFiscal"
+        xmlns:mdfeFiscal="clr-namespace:GThor.Models.MdfeFiscal"
+        x:Class="GThor.Views.MdfeFiscal.MdfeEmitirForm"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         views:GThorWindow.LoadedCommand="{Binding LoadedCommand}"
         MinHeight="670"
+        d:DataContext="{d:DesignInstance mdfeFiscal:MdfeEmitirFormModel}"
         Title="Emitir MDF-e" Width="1020">
     <views:GThorWindow.Style>
         <StaticResource ResourceKey="ComercialDialog"/>
@@ -17,7 +20,11 @@
 
     <Grid>
         <TabControl>
-            <TabItem Header="1- CABEÇALHO">
+            <TabItem Header="1- CABEÇALHO"
+                     IsEnabled="{Binding Habilitado}"
+                     IsSelected="{Binding Selecionado}"
+                     DataContext="{Binding MdfeCabecalhoModel}"
+                     >
                 <local:MdfeCabecalho/>
             </TabItem>
             <TabItem Header="2 - DOCUMENTOS">
