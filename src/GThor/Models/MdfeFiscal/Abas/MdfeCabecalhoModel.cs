@@ -16,6 +16,7 @@ namespace GThor.Models.MdfeFiscal.Abas
     {
         public event EventHandler TrocouUfCarregamentoHandler;
         public event EventHandler TrocouUfDescarregamentoHandler;
+        public event EventHandler<MdfeCabecalhoModel> ProximoMdfeDocumento;
 
         private ObservableCollection<PerfilMdfeDto> _colecaoPerfilMdfe;
         private PerfilMdfeDto _perfilMdfeDtoSelecionado;
@@ -299,6 +300,13 @@ namespace GThor.Models.MdfeFiscal.Abas
 
         public ICommand AdicionarMunicipioCarregamentoCommand => GetSimpleCommand(AdicionarMunicipioCarregamentoAction);
 
+        public ICommand ProximaMdfeDocumentoCommand => GetSimpleCommand(ProximaMdfeDocumentoAction);
+
+        private void ProximaMdfeDocumentoAction(object obj)
+        {
+            OnProximoMdfeDocumento();
+        }
+
         private void AdicionarMunicipioCarregamentoAction(object obj)
         {
             MunicipioCarregamento.Add(MunicipioCarregamentoSelecionado);
@@ -331,6 +339,11 @@ namespace GThor.Models.MdfeFiscal.Abas
         protected virtual void OnLoadedCabecalho()
         {
             LoadedCabecalho?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected virtual void OnProximoMdfeDocumento()
+        {
+            ProximoMdfeDocumento?.Invoke(this, this);
         }
     }
 }

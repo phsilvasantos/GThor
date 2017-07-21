@@ -11,6 +11,7 @@ namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
 {
     public partial class ComboBoxUf : INotifyPropertyChanged
     {
+
         private static IEnumerable<Uf> _cacheUfs;
 
         private static readonly RoutedEvent PickItemEvent =

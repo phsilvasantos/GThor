@@ -1,4 +1,5 @@
-﻿using GThor.Models.MdfeFiscal.Abas;
+﻿using System;
+using GThor.Models.MdfeFiscal.Abas;
 using GThorFrameworkWpf.Models.Base;
 
 namespace GThor.Models.MdfeFiscal
@@ -6,6 +7,7 @@ namespace GThor.Models.MdfeFiscal
     public class MdfeEmitirFormModel : ModelViewBase
     {
         private MdfeCabecalhoModel _mdfeCabecalhoModel;
+        private MdfeDocumentosModel _mdfeDocumentosModel;
 
         public MdfeCabecalhoModel MdfeCabecalhoModel
         {
@@ -14,6 +16,17 @@ namespace GThor.Models.MdfeFiscal
             {
                 if (Equals(value, _mdfeCabecalhoModel)) return;
                 _mdfeCabecalhoModel = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public MdfeDocumentosModel MdfeDocumentosModel
+        {
+            get => _mdfeDocumentosModel;
+            set
+            {
+                if (Equals(value, _mdfeDocumentosModel)) return;
+                _mdfeDocumentosModel = value;
                 OnPropertyChanged();
             }
         }
@@ -28,6 +41,23 @@ namespace GThor.Models.MdfeFiscal
         {
             MdfeCabecalhoModel = new MdfeCabecalhoModel();
             MdfeCabecalhoModel.LoadedCommand.Execute(null);
+            MdfeCabecalhoModel.ProximoMdfeDocumento += ProximoMdfeDocumento;
+
+            MdfeDocumentosModel = new MdfeDocumentosModel();
+            MdfeDocumentosModel.LoadedCommand.Execute(null);
+            MdfeDocumentosModel.VoltarMdfeCabecalho += VoltarMdfeCabecalho;
+        }
+
+        private void VoltarMdfeCabecalho(object sender, EventArgs e)
+        {
+            MdfeCabecalhoModel.Habilitado = true;
+            MdfeCabecalhoModel.Selecionado = true;
+        }
+
+        private void ProximoMdfeDocumento(object sender, MdfeCabecalhoModel e)
+        {
+            MdfeDocumentosModel.Habilitado = true;
+            MdfeDocumentosModel.Selecionado = true;
         }
     }
 }
