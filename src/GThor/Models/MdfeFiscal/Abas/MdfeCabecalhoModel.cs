@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -283,11 +284,16 @@ namespace GThor.Models.MdfeFiscal.Abas
 
         private void ValidacoesUfs()
         {
+            ValidacaoCarregamentoEDescarregamento();
+
+            if (PercursoSelecionado == null) throw new ArgumentException("Selecione uma percurso hehe");
+        }
+
+        private void ValidacaoCarregamentoEDescarregamento()
+        {
             if (UfCarregamento == null) throw new ArgumentException("Selecione uma Uf de carregamento hehe");
 
             if (UfDescarregamento == null) throw new ArgumentException("Selecione uma Uf de descarregamento hehe");
-
-            if (PercursoSelecionado == null) throw new ArgumentException("Selecione uma percurso hehe");
         }
 
         public ICommand DeletarPercursoCommand => GetSimpleCommand(DeletarPercursoAction);
@@ -304,7 +310,32 @@ namespace GThor.Models.MdfeFiscal.Abas
 
         private void ProximaMdfeDocumentoAction(object obj)
         {
+            ValidacaoCarregamentoEDescarregamento();
+            ValidaPercursoXMunicipiosCarregamento();
+
             OnProximoMdfeDocumento();
+        }
+
+        private void ValidaPercursoXMunicipiosCarregamento()
+        {
+            if (MunicipioCarregamento.Count == 0)
+            {
+                throw new ArgumentException("Adicionar pelo menos um municipio de carregamento hihi");
+            }
+
+            var listaDeUfsCaminho = Percurso.ToList();
+
+            listaDeUfsCaminho.Add(UfCarregamento);
+            listaDeUfsCaminho.Add(UfDescarregamento);
+
+            IList<Cidade> cidadesFiltradas = listaDeUfsCaminho
+                .SelectMany(uf => MunicipioCarregamento.Where(c => c.Uf.Id == uf.Id)).ToList();
+
+            if (cidadesFiltradas.Count == 0)
+            {
+                throw new ArgumentException(
+                    "Bom pelo que olhei, você tem municipios de carregamentos que não é equivalente ao percurso");
+            }
         }
 
         private void AdicionarMunicipioCarregamentoAction(object obj)
