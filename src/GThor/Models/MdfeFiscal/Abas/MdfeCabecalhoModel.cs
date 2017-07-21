@@ -308,6 +308,7 @@ namespace GThor.Models.MdfeFiscal.Abas
 
         public ICommand ProximaMdfeDocumentoCommand => GetSimpleCommand(ProximaMdfeDocumentoAction);
 
+
         private void ProximaMdfeDocumentoAction(object obj)
         {
             ValidacaoCarregamentoEDescarregamento();

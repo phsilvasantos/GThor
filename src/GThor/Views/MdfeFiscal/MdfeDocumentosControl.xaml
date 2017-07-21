@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:GThor.Views.MdfeFiscal"
              xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
              xmlns:abas="clr-namespace:GThor.Models.MdfeFiscal.Abas"
+             xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
              mc:Ignorable="d" 
              Background="White"
              d:DataContext="{d:DesignInstance abas:MdfeDocumentosModel}"
@@ -25,7 +26,7 @@
                         <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
 
-                    <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}">
+                    <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}" controls:VisibilityHelper.IsVisible="{Binding IsCte}">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <iconPacks:PackIconModern Width="20"
@@ -37,7 +38,9 @@
                         </Button.Content>
                     </Button>
 
-                    <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}" Click="ButtonBase_OnClick">
+                    <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}" 
+                            controls:VisibilityHelper.IsVisible="{Binding IsNfe}"
+                            Click="ButtonBase_OnClick">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <iconPacks:PackIconModern Width="20"

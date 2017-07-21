@@ -1,5 +1,6 @@
 ﻿using System;
 using GThor.Models.MdfeFiscal.Abas;
+using GThorFrameworkDominio.Dominios.MdfeFiscal.Flags;
 using GThorFrameworkWpf.Models.Base;
 
 namespace GThor.Models.MdfeFiscal
@@ -56,6 +57,8 @@ namespace GThor.Models.MdfeFiscal
 
         private void ProximoMdfeDocumento(object sender, MdfeCabecalhoModel e)
         {
+            MdfeDocumentosModel.IsNfe = e.TipoEmitente == TipoEmitente.Propria;
+            MdfeDocumentosModel.IsCte = e.TipoEmitente == TipoEmitente.Transportadora;
             MdfeDocumentosModel.Habilitado = true;
             MdfeDocumentosModel.Selecionado = true;
         }
