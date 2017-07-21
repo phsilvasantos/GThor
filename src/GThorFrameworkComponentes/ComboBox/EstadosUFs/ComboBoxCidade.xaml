@@ -10,10 +10,18 @@
         <TextBlock Style="{StaticResource ControlForm}">Cidade</TextBlock>
         <ComboBox
             ItemsSource="{Binding Path=ListaCidade}"
-            DisplayMemberPath="Nome"
             SelectedItem="{Binding CidadeSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             SelectedValuePath="Id"
             SelectedValue="{Binding CidadeSelecionado.Id}"
-            helpers:GThorComboBoxHelper.AbreDropDown="True"/>
+            helpers:GThorComboBoxHelper.AbreDropDown="True">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Nome}"></TextBlock>
+                        <TextBlock Text="{Binding Uf.Sigla}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>    
+        </ComboBox>
     </StackPanel>
 </UserControl>

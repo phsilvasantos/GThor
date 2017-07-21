@@ -14,5 +14,10 @@ namespace GThorFrameworkDominio.Dominios.Cidades
         public virtual Uf Uf { get; set; }
 
         protected override int IdUnico => Id;
+
+        public override string ToString()
+        {
+            return Nome;
+        }
     }
 }
