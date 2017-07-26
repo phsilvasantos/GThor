@@ -25,6 +25,24 @@ namespace GThorFrameworkComponentes.ComboBox.EstadosUFs
             remove => RemoveHandler(PickItemCidadeEvent, value);
         }
 
+        public static readonly DependencyProperty CLabelProperty =
+            DependencyProperty.Register("CLabel", typeof(string), typeof(ComboBoxCidade), new PropertyMetadata(string.Empty, CLabelCallback));
+
+        private static void CLabelCallback(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            var comboBoxUf = d as ComboBoxCidade;
+
+            if (comboBoxUf == null) return;
+
+            comboBoxUf.CLabelNome.Text = e.NewValue.ToString();
+        }
+
+        public string CLabel
+        {
+            get => (string)GetValue(CLabelProperty);
+            set => SetValue(CLabelProperty, value);
+        }
+
         private void OnChanceItem()
         {
             RaiseEvent(new RoutedEventArgs(PickItemCidadeEvent, this));

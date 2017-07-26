@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:GThor.Views.MdfeFiscal"
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
+        xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs;assembly=GThorFrameworkComponentes"
         mc:Ignorable="d"
         CloseByEscape="True" EnableDropShadow="False" IsModal="True" ShowCloseButton="True"
         OverlayBrush="{StaticResource SemiTransparentGreyBrush}"
@@ -22,11 +23,7 @@
                 </StackPanel>
 
                 <StackPanel>
-                    <TextBlock>Cidade descarregamento</TextBlock>
-                    <TextBox 
-                             IsReadOnly="True"
-                             Text="{Binding Cidade.Nome}"
-                              />
+                    <estadosUFs:ComboBoxCidade x:Name="CbCidadeCarregamento" CLabel="Cidade descarregamento"></estadosUFs:ComboBoxCidade>
                 </StackPanel>
 
                 <StackPanel>
@@ -37,7 +34,7 @@
             </StackPanel>
         </GroupBox>
         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
-            <Button 
+            <Button Margin="0,0,5,5"
                     Style="{DynamicResource ComercialSuccessButton}"
                     >
                 <Button.Content>

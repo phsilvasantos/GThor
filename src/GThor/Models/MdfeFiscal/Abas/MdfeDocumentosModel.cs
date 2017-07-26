@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Input;
 using GThor.Models.MdfeFiscal.Base;
+using GThorFrameworkDominio.Dominios.EstadosUf;
 
 namespace GThor.Models.MdfeFiscal.Abas
 {
@@ -33,6 +35,8 @@ namespace GThor.Models.MdfeFiscal.Abas
                 OnPropertyChanged();
             }
         }
+
+        public IList<Uf> UfsPesquisa { get; set; }
 
         private void VoltarMdfeCabecalhoAction(object obj)
         {

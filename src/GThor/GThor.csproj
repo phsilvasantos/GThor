@@ -104,6 +104,7 @@
     <Compile Include="Models\MdfeFiscal\Abas\MdfeCabecalhoModel.cs" />
     <Compile Include="Models\MdfeFiscal\Abas\MdfeDocumentosModel.cs" />
     <Compile Include="Models\MdfeFiscal\Base\MdfeViewModel.cs" />
+    <Compile Include="Models\MdfeFiscal\MdfeAdicionarDocumentoFiscalModel.cs" />
     <Compile Include="Models\MdfeFiscal\MdfeEmitirFormModel.cs" />
     <Compile Include="Models\PerfilsMdfe\GridPerfilMdfe.cs" />
     <Compile Include="Models\PerfilsMdfe\PerfilMdfeFormModel.cs" />

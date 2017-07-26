@@ -377,5 +377,15 @@ namespace GThor.Models.MdfeFiscal.Abas
         {
             ProximoMdfeDocumento?.Invoke(this, this);
         }
+
+        public IList<Uf> ObterUfsParaPesquisa()
+        {
+            var ufs = Percurso.ToList();
+
+            ufs.Add(UfCarregamento);
+            ufs.Add(UfDescarregamento);
+
+            return ufs;
+        }
     }
 }

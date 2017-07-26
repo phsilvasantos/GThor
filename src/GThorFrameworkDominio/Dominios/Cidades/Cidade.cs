@@ -17,7 +17,7 @@ namespace GThorFrameworkDominio.Dominios.Cidades
 
         public override string ToString()
         {
-            return Nome;
+            return $"{Nome} - {Uf.Sigla}";
         }
     }
 }

@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="70" d:DesignWidth="300" Background="Transparent">
     <StackPanel>
-        <TextBlock Style="{StaticResource ControlForm}">Cidade</TextBlock>
+        <TextBlock Style="{StaticResource ControlForm}" x:Name="CLabelNome">Cidade</TextBlock>
         <ComboBox
             ItemsSource="{Binding Path=ListaCidade}"
             SelectedItem="{Binding CidadeSelecionado, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"

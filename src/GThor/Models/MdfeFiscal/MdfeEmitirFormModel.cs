@@ -59,6 +59,7 @@ namespace GThor.Models.MdfeFiscal
         {
             MdfeDocumentosModel.IsNfe = e.TipoEmitente == TipoEmitente.Propria;
             MdfeDocumentosModel.IsCte = e.TipoEmitente == TipoEmitente.Transportadora;
+            MdfeDocumentosModel.UfsPesquisa = e.ObterUfsParaPesquisa();
             MdfeDocumentosModel.Habilitado = true;
             MdfeDocumentosModel.Selecionado = true;
         }
