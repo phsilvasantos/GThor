@@ -52,6 +52,14 @@
     <Style TargetType="ComboBox" x:Key="ComercialComboBox" BasedOn="{StaticResource MetroComboBox}">
         <Setter Property="helpersWpf:FocoAvancado.AdvancesByEnterKey" Value="True" />
         <Setter Property="IsEditable" Value="True" />
+        <Setter Property="ScrollViewer.CanContentScroll" Value="True" />
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel  />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
 
     <Style TargetType="RadioButton" x:Key="ComercialRadioButton" BasedOn="{StaticResource MetroRadioButton}">
