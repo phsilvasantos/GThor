@@ -104,7 +104,9 @@
     <Compile Include="Models\MdfeFiscal\Abas\MdfeCabecalhoModel.cs" />
     <Compile Include="Models\MdfeFiscal\Abas\MdfeDocumentosModel.cs" />
     <Compile Include="Models\MdfeFiscal\Base\MdfeViewModel.cs" />
-    <Compile Include="Models\MdfeFiscal\MdfeAdicionarDocumentoFiscalModel.cs" />
+    <Compile Include="Models\MdfeFiscal\EntidadesModels\IDocumentoModel.cs" />
+    <Compile Include="Models\MdfeFiscal\EntidadesModels\NFeEntidadeModel.cs" />
+    <Compile Include="Models\MdfeFiscal\MdfeAdicionarDocumentoFiscalNFeModel.cs" />
     <Compile Include="Models\MdfeFiscal\MdfeEmitirFormModel.cs" />
     <Compile Include="Models\PerfilsMdfe\GridPerfilMdfe.cs" />
     <Compile Include="Models\PerfilsMdfe\PerfilMdfeFormModel.cs" />
@@ -123,8 +125,8 @@
     <Compile Include="Views\Empresas\EmpresaForm.xaml.cs">
       <DependentUpon>EmpresaForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\MdfeFiscal\MdfeAdicionarDocumentoFiscal.xaml.cs">
-      <DependentUpon>MdfeAdicionarDocumentoFiscal.xaml</DependentUpon>
+    <Compile Include="Views\MdfeFiscal\MdfeAdicionarDocumentoFiscalNFe.xaml.cs">
+      <DependentUpon>MdfeAdicionarDocumentoFiscalNFe.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MdfeFiscal\MdfeCabecalho.xaml.cs">
       <DependentUpon>MdfeCabecalho.xaml</DependentUpon>
@@ -180,7 +182,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\MdfeFiscal\MdfeAdicionarDocumentoFiscal.xaml">
+    <Page Include="Views\MdfeFiscal\MdfeAdicionarDocumentoFiscalNFe.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

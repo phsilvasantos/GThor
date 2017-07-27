@@ -10,6 +10,7 @@ using GThorFrameworkBiblioteca.Ferramentas.HelpersHidratacaoValores;
 using GThorFrameworkWpf.Models.Command;
 using JetBrains.Annotations;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace GThorFrameworkWpf.Models.Base
 {
@@ -132,8 +133,18 @@ namespace GThorFrameworkWpf.Models.Base
 
         protected virtual void FecharAction(object obj)
         {
-            var window = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive) as MetroWindow;
+            var window = ObtemWindowAtual();
             window?.Close();
+        }
+
+        protected async void ShowDialogMessageAsync(string mensagem, string titulo = "GThor")
+        {
+            await ObtemWindowAtual().ShowMessageAsync(titulo, mensagem);
+        }
+
+        private static MetroWindow ObtemWindowAtual()
+        {
+            return Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive) as MetroWindow;
         }
     }
 }

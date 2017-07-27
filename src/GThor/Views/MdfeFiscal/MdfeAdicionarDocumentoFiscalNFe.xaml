@@ -1,4 +1,4 @@
-﻿<simpleChildWindow:ChildWindow x:Class="GThor.Views.MdfeFiscal.MdfeAdicionarDocumentoFiscal"
+﻿<simpleChildWindow:ChildWindow x:Class="GThor.Views.MdfeFiscal.MdfeAdicionarDocumentoFiscalNFe"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,19 +7,21 @@
         xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         xmlns:simpleChildWindow="clr-namespace:MahApps.Metro.SimpleChildWindow;assembly=MahApps.Metro.SimpleChildWindow"
         xmlns:estadosUFs="clr-namespace:GThorFrameworkComponentes.ComboBox.EstadosUFs;assembly=GThorFrameworkComponentes"
+        xmlns:mdfeFiscal="clr-namespace:GThor.Models.MdfeFiscal"
         mc:Ignorable="d"
         CloseByEscape="True" EnableDropShadow="False" IsModal="True" ShowCloseButton="True"
         OverlayBrush="{StaticResource SemiTransparentGreyBrush}"
         GlowBrush="{DynamicResource AccentColorBrush}"                              
         BorderBrush="{DynamicResource AccentColorBrush}"
         ChildWindowWidth="800"
-        Title="Adicionar Documento Fiscal">
+        d:DataContext="{d:DesignInstance mdfeFiscal:MdfeAdicionarDocumentoFiscalNFeModel}"
+        Title="Adicionar NF-e">
     <DockPanel>
-        <GroupBox Header="Adicionar CT-e" DockPanel.Dock="Top">
+        <GroupBox Header="Adicionar NF-e" DockPanel.Dock="Top">
             <StackPanel Margin="0,5,5,0">
                 <StackPanel>
-                    <TextBlock>Chave CT-e</TextBlock>
-                    <TextBox MaxLength="44" Text="{Binding ChaveCte}" />
+                    <TextBlock>Chave NF-e</TextBlock>
+                    <TextBox MaxLength="44" Text="{Binding ChaveNFe}" />
                 </StackPanel>
 
                 <StackPanel>
@@ -36,6 +38,7 @@
         <DockPanel DockPanel.Dock="Top" HorizontalAlignment="Right">
             <Button Margin="0,0,5,5"
                     Style="{DynamicResource ComercialSuccessButton}"
+                    Command="{Binding AdicionarNfeCommand}"
                     >
                 <Button.Content>
                     <StackPanel Orientation="Horizontal">

@@ -41,7 +41,7 @@
 
                     <Button Margin="0,0,0,6" Style="{StaticResource ComercialSuccessButton}" 
                             controls:VisibilityHelper.IsVisible="{Binding IsNfe}"
-                            Click="ButtonBase_OnClick">
+                            Click="AdicionaNFe">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <iconPacks:PackIconModern Width="20"
@@ -58,7 +58,7 @@
                 <DataGrid AutoGenerateColumns="False"
                           IsReadOnly="True"
                           HorizontalScrollBarVisibility="Visible"
-                          ItemsSource="{Binding ListaDocumento}"
+                          ItemsSource="{Binding Documentos}"
                           SelectedItem="{Binding DocumentoSelecionado}">
 
                     <DataGrid.RowStyle>
@@ -95,16 +95,16 @@
                         </DataGridTemplateColumn>
 
                         <DataGridTextColumn Header="Chave" Width="Auto"
-                                            Binding="{Binding ChaveCTe}" />
+                                            Binding="{Binding Chave}" />
 
                         <DataGridTextColumn Header="Código Barras" Width="Auto"
-                                            Binding="{Binding CodigoBarra}" />
+                                            Binding="{Binding CodigoBarras}" />
 
                         <DataGridTextColumn Header="Cidade Descarregamento" Width="Auto"
                                             Binding="{Binding Cidade.Nome}" />
 
                         <DataGridTextColumn Header="UF da Cidade" Width="Auto"
-                                            Binding="{Binding Cidade.SiglaUf}" />
+                                            Binding="{Binding Cidade.Uf.Sigla}" />
 
                         <DataGridTextColumn Header="IBGE da Cidade" Width="Auto"
                                             Binding="{Binding Cidade.CodigoIbge}" />
