@@ -19,6 +19,7 @@
     <SolidColorBrush x:Key="InfoBrush" Color="Blue" />
     <SolidColorBrush x:Key="DangerBrush" Color="Red" />
     <SolidColorBrush x:Key="WarningBrush" Color="Yellow" />
+    
 
     <Style TargetType="TextBox" x:Key="GThorTextBox" BasedOn="{StaticResource MetroTextBox}">
         <Setter Property="CharacterCasing" Value="Upper" />
@@ -92,6 +93,8 @@
         <Setter Property="Background" Value="{DynamicResource WhiteBrush}" />
         <Setter Property="Foreground" Value="{DynamicResource GrayBrush1}" />
     </Style>
+
+    <Style TargetType="ListView" x:Key="ComercialListView" BasedOn="{StaticResource VirtualisedMetroListBox}" /> 
 
     <Style TargetType="GroupBox" x:Key="ComercialGroupBox" BasedOn="{StaticResource MetroGroupBox}">
         <Setter Property="Background"
@@ -404,6 +407,7 @@
     <Style TargetType="Button" BasedOn="{StaticResource ComercialFlatButton}" />
     <Style TargetType="DataGrid" BasedOn="{StaticResource ComercialAzureDataGrid}" />
     <Style TargetType="DataGridRow" BasedOn="{StaticResource ComercialDataGridRow}"></Style>
+    <Style TargetType="ListView" BasedOn="{StaticResource ComercialListView}"></Style>
 
 
 </ResourceDictionary>
