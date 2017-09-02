@@ -37,17 +37,17 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ControlzEx, Version=2.2.0.4, Culture=neutral, PublicKeyToken=f08b075e934b7045, processorArchitecture=MSIL">
-      <HintPath>..\packages\ControlzEx.2.2.0.4\lib\net45\ControlzEx.dll</HintPath>
+    <Reference Include="ControlzEx, Version=3.0.1.66, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ControlzEx.3.0.1.66\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
     <Reference Include="DFe.Classes, Version=0.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\DFe.Classes.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\DFe.Classes.dll</HintPath>
     </Reference>
     <Reference Include="DFe.Utils, Version=0.0.0.7, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\DFe.Utils.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\DFe.Utils.dll</HintPath>
     </Reference>
-    <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
-      <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
+    <Reference Include="JetBrains.Annotations, Version=11.0.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.11.0.0\lib\net20\JetBrains.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro, Version=1.5.0.23, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\MahApps.Metro.dll</HintPath>
@@ -56,22 +56,22 @@
       <HintPath>..\packages\MahApps.Metro.IconPacks.1.9.0\lib\net46\MahApps.Metro.IconPacks.dll</HintPath>
     </Reference>
     <Reference Include="NFe.Classes, Version=1.0.1.456, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\NFe.Classes.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\NFe.Classes.dll</HintPath>
     </Reference>
     <Reference Include="NFe.Servicos, Version=1.0.1.457, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\NFe.Servicos.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\NFe.Servicos.dll</HintPath>
     </Reference>
     <Reference Include="NFe.Utils, Version=1.0.1.456, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\NFe.Utils.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\NFe.Utils.dll</HintPath>
     </Reference>
     <Reference Include="NFe.Wsdl, Version=1.0.1.456, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.510\lib\net40\NFe.Wsdl.dll</HintPath>
+      <HintPath>..\packages\Zeus.Net.NFe.NFCe.1.0.1.551\lib\net40\NFe.Wsdl.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MahApps.Metro.1.5.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\ControlzEx.3.0.1.66\lib\net462\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
